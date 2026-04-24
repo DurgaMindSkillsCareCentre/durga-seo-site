@@ -394,15 +394,34 @@ button, .btn {
       <div class="feature"><div class="badge">4</div><div><b>Online Counseling</b><span>Video sessions with a Chennai psychologist — from anywhere in India.</span></div></div>
     </div>
 
-    <div class="panel lead">
-      <h3>Book an Appointment</h3>
-      <p>Psychologist consultation in Chennai — respond within 24 hours.</p>
-      <input type="text" placeholder="Your name" id="qi-name">
-      <input type="tel" placeholder="WhatsApp number" id="qi-phone">
-      <textarea placeholder="What brings you here today?" id="qi-msg"></textarea>
-      <a class="btn" id="qi-send" href="#" style="margin-top:12px">Send via WhatsApp</a>
-      <div class="small">Or take the <a href="ai-test.html" style="color:#ffd66a">free AI test first</a>, then book.</div>
+      <div class="panel lead form-container">
+  <h3>Book an Appointment</h3>
+  <p>Psychologist consultation in Chennai — private, safe and confidential.</p>
+
+  <form id="booking-form">
+
+    <div class="form-group">
+      <input type="text" placeholder="Your Name" required>
     </div>
+
+    <div class="form-group">
+      <input type="tel" placeholder="WhatsApp Number" required>
+    </div>
+
+    <div class="form-group">
+      <textarea placeholder="What brings you here today?" rows="4"></textarea>
+    </div>
+
+    <button class="btn primary-btn" type="submit">
+      Book via WhatsApp
+    </button>
+
+  </form>
+
+  <div class="small">
+    Or take the <a href="ai-test.html">free AI test</a> first.
+  </div>
+</div>
 
     <div class="panel">
       <h3>Patient Reviews ★★★★★</h3>
