@@ -1,22 +1,76 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Videos | YouTube Playlist for Mental Health & Workshops</title>
-<meta name="description" content="Watch the YouTube playlist for mental health education, counseling insights, workshops, and awareness sessions by D. Durga.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://durgapsychiatry.pages.dev/videos.html">
+<title>Mental Health Videos | Durga Psychiatry Centre Chennai</title>
+
+<meta name="description" content="Watch mental health videos, counseling insights, and awareness sessions by Durga Psychiatry Centre, Chennai.">
+
 <link rel="stylesheet" href="styles.css">
+
 <style>
-.video-wrap{margin-top:12px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#000;box-shadow:var(--shadow)}
-.video-wrap iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
-.vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
-@media(max-width:700px){.vgrid{grid-template-columns:1fr}}
+/* ===== VIDEO SECTION FIX ===== */
+
+.yt-section {
+  margin-top: 20px;
+}
+
+.yt-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.yt-embed {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Adaptive video */
+.yt-embed iframe {
+  width: 100%;
+  height: 260px;
+  border: none;
+}
+
+@media (max-width:768px){
+  .yt-embed iframe {
+    height: 340px; /* better for portrait */
+  }
+}
+
+.yt-content {
+  margin-top: 16px;
+}
+
+.yt-content h3 {
+  margin-bottom: 8px;
+}
+
+.yt-content p {
+  opacity: 0.9;
+}
+
+.yt-btn {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+}
 </style>
+
 </head>
+
 <body>
+
 <div class="wrap">
+
+  <!-- NAV -->
   <div class="nav">
     <div class="brand">
       <div class="logo"></div>
@@ -25,6 +79,7 @@
         <p>YouTube videos and awareness</p>
       </div>
     </div>
+
     <div class="actions">
       <a class="pill" href="index.html">Home</a>
       <a class="pill" href="about.html">About</a>
@@ -37,42 +92,47 @@
     </div>
   </div>
 
+  <!-- TITLE -->
+  <h2 class="section-title">🎬 Mental Health Videos</h2>
 
-  <h3 class="section-title">🎬 Mental Health Videos</h3>
+  <!-- VIDEO BLOCK -->
+  <div class="yt-section">
 
-<div class="yt-section">
-  <div class="yt-main">
+    <div class="yt-card">
 
-    <div class="yt-embed-wrap">
-      <iframe 
-        src="https://www.youtube.com/embed/videoseries?list=PL682GAq1ZyJDsXdpb09h1Mf0v5Gr1PS_e&rel=0&modestbranding=1"
-        title="Durga Psychiatric Centre Chennai Videos"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+      <div class="yt-embed">
+        <iframe 
+          src="https://www.youtube.com/embed/videoseries?list=PL682GAq1ZyJDsXdpb09h1Mf0v5Gr1PS_e&rel=0&modestbranding=1"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-    <div class="yt-info">
-      <div class="yt-badge">▶ YouTube Playlist</div>
-      <h3>Mental Health & Counseling Videos</h3>
-      <p>Watch expert guidance, awareness videos, and counseling insights by D. Durga.</p>
+      <div class="yt-content">
+        <h3>Mental Health & Counseling Videos</h3>
+        <p>Watch expert guidance, awareness sessions, and counseling insights by D. Durga.</p>
 
-      <a class="btn" href="https://youtube.com/playlist?list=PL682GAq1ZyJDsXdpb09h1Mf0v5Gr1PS_e" target="_blank">
-        ▶ Watch Full Playlist
-      </a>
+        <a class="btn yt-btn" href="https://youtube.com/playlist?list=PL682GAq1ZyJDsXdpb09h1Mf0v5Gr1PS_e" target="_blank">
+          ▶ Watch Full Playlist
+        </a>
+      </div>
+
     </div>
 
   </div>
-</div>
 
-
-  <div class="footer reveal">
-    <div><strong>Durga Psychiatry Centre</strong></div>
-    <div>Videos · Online Education · Chennai</div>
-    <div><a href="https://wa.me/917395944527" target="_blank" rel="noopener">+91 73959 44527</a></div>
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>Durga Psychiatry Centre</strong><br>
+    Chennai · Online Counseling<br>
+    <a href="https://wa.me/917395944527">+91 73959 44527</a>
   </div>
+
 </div>
-<a class="wa" href="https://wa.me/917395944527" target="_blank" rel="noopener">WhatsApp</a>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa" href="https://wa.me/917395944527">WhatsApp</a>
+
 <script src="script.js"></script>
+
 </body>
 </html>
