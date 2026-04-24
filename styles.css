@@ -389,3 +389,19 @@ h1, h2, h3, p, span {
   text-align: center;
   display: block;
 }
+
+/* WhatsApp FIX */
+a[href*="wa.me"],
+.wa,
+.wa-big {
+  background: #25D366 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+}
+.gold-btn {
+  background: linear-gradient(135deg, #FFD66A, #FF9F43);
+  color: #000;
+  font-weight: 600;
+  border: none;
+    }
