@@ -324,3 +324,68 @@ textarea{min-height:88px; resize:vertical}
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-item p{padding:0 20px 18px;margin:0;font-size:14px;color:rgba(255,255,255,.85);line-height:1.7}
 .faq-item a{color:#ffd66a}
+
+/* ===== SERVICES FIX ===== */
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.feature div:last-child {
+  flex: 1;
+  min-width: 0; /* 🔥 CRITICAL FIX */
+}
+
+.feature b,
+.feature span {
+  display: block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== PANEL FIX ===== */
+
+.panel {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* ===== FORM FINAL FIX ===== */
+
+.panel input,
+.panel textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.panel textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+/* ===== GLOBAL TEXT FIX ===== */
+
+h1, h2, h3, p, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* ===== MOBILE GRID FIX ===== */
+
+@media (max-width: 768px) {
+  .section-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
