@@ -234,6 +234,82 @@ input,textarea{width:100%;padding:12px;border-radius:10px}
     padding-top: 177.77%; /* 9:16 portrait */
   }
      }
+
+    /* ===== GLOBAL FIX ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===== CONTAINER SAFETY ===== */
+.container, section, div {
+  max-width: 100%;
+}
+
+/* ===== TEXT WRAP FIX ===== */
+h1, h2, h3, h4, h5, h6, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== FORM FIX ===== */
+input, textarea, select {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Prevent overflow */
+form {
+  width: 100%;
+}
+
+/* ===== BUTTON FIX ===== */
+button, .btn {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ===== SECTION SPACING MOBILE ===== */
+@media (max-width: 768px) {
+  section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+/* ===== WHATSAPP FLOAT FIX ===== */
+.whatsapp-float {
+  bottom: 20px;
+  right: 15px;
+  z-index: 999;
+}
+
+/* ===== CARD FIX ===== */
+.card, .box {
+  width: 100%;
+  overflow: hidden;
+} 
 </style>
 
 </head>
