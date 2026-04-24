@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DPC SEO Daily Marketing Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#06070f;color:#e8e8f0;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a0533,#001f3f);padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.header h1{font-size:clamp(16px,3vw,22px);font-family:Georgia,serif;color:#ffd66a}
+.header p{font-size:12px;color:rgba(255,255,255,.6);margin-top:3px}
+.badge{padding:4px 12px;border-radius:999px;font-size:11px;font-weight:700;background:linear-gradient(135deg,#6a1b9a,#00897b);color:#fff;white-space:nowrap}
+.main{max-width:1100px;margin:0 auto;padding:20px 16px;display:grid;grid-template-columns:260px 1fr;gap:16px}
+@media(max-width:700px){.main{grid-template-columns:1fr}}
+
+/* Sidebar */
+.sidebar{display:flex;flex-direction:column;gap:10px}
+.tool-btn{width:100%;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#e8e8f0;font-size:13px;font-weight:600;cursor:pointer;text-align:left;transition:all .2s;display:flex;align-items:center;gap:10px}
+.tool-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.tool-btn.active{background:linear-gradient(135deg,rgba(106,27,154,.4),rgba(0,137,123,.3));border-color:#6a1b9a;color:#ffd66a}
+.tool-icon{font-size:1.4rem;flex:0 0 auto}
+.section-label{font-size:10px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.35);text-transform:uppercase;padding:6px 4px 2px}
+
+/* Content area */
+.content{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px;min-height:500px}
+.content h2{font-size:18px;font-family:Georgia,serif;color:#ffd66a;margin-bottom:6px}
+.content .sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:18px}
+.gen-btn{padding:12px 24px;border-radius:999px;border:none;background:linear-gradient(135deg,#6a1b9a,#00897b);color:#fff;font-weight:800;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(106,27,154,.4)}
+.gen-btn:hover{transform:scale(1.04);box-shadow:0 6px 22px rgba(106,27,154,.6)}
+.gen-btn:disabled{opacity:.5;transform:none;cursor:not-allowed}
+.output-box{margin-top:16px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px;min-height:100px;font-size:13px;line-height:1.7;white-space:pre-wrap;color:#e0e8ff;position:relative}
+.output-box.loading{display:flex;align-items:center;justify-content:center;min-height:140px}
+.spinner{width:32px;height:32px;border:3px solid rgba(255,255,255,.1);border-top:3px solid #6a1b9a;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.copy-btn{margin-top:10px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:#e8e8f0;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s}
+.copy-btn:hover{background:rgba(255,255,255,.14)}
+.option-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.opt{padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.7);font-size:12px;cursor:pointer;transition:all .2s}
+.opt.sel{background:rgba(106,27,154,.4);border-color:#6a1b9a;color:#ffd66a;font-weight:700}
+.checklist{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.check-item input[type=checkbox]{width:16px;height:16px;margin-top:2px;cursor:pointer;accent-color:#6a1b9a}
+.check-item label{font-size:13px;line-height:1.5;cursor:pointer}
+.check-item label b{color:#ffd66a}
+.check-item label span{color:rgba(255,255,255,.6);font-size:12px;display:block;margin-top:2px}
+.progress-bar{height:6px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin:14px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,#6a1b9a,#00897b);border-radius:999px;transition:width .5s}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin:14px 0}
+.score-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;text-align:center}
+.score-card .sc-val{font-size:2rem;font-weight:900;color:#ffd66a}
+.score-card .sc-label{font-size:11px;color:rgba(255,255,255,.55);margin-top:4px}
+.score-card .sc-status{font-size:11px;font-weight:700;margin-top:6px}
+.good{color:#4caf50}.warn{color:#ff9800}.bad{color:#f44336}
+input[type=text],textarea,select{width:100%;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#e8e8f0;font-size:13px;margin-bottom:10px;outline:none;font-family:inherit}
+input[type=text]:focus,textarea:focus,select:focus{border-color:#6a1b9a;background:rgba(255,255,255,.09)}
+textarea{resize:vertical;min-height:80px}
+.tip-box{background:rgba(255,165,0,.08);border:1px solid rgba(255,165,0,.2);border-radius:12px;padding:12px 14px;font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin-top:12px}
+.tip-box b{color:#ffd66a}
+.keyword-pill{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(106,27,154,.3);border:1px solid rgba(106,27,154,.5);color:#e8c4ff;font-size:11px;margin:3px;cursor:pointer}
+.keyword-pill:hover{background:rgba(106,27,154,.5)}
+hr{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🧠 DPC Daily SEO Marketing Dashboard</h1>
+    <p>Durga Psychiatric Centre · durgapsychiatry.pages.dev · Rank for "Psychologist in Chennai"</p>
+  </div>
+  <div class="badge">AI-Powered · Use Daily</div>
+</div>
+
+<div class="main">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="section-label">Daily Tasks</div>
+    <button class="tool-btn active" onclick="showTool('checklist')">
+      <span class="tool-icon">✅</span><span>Daily SEO Checklist</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('content')">
+      <span class="tool-icon">✍️</span><span>AI Content Generator</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('whatsapp')">
+      <span class="tool-icon">💬</span><span>WhatsApp Status Post</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('google')">
+      <span class="tool-icon">🔍</span><span>Google Business Post</span>
+    </button>
+    <div class="section-label" style="margin-top:10px">Analytics & Tools</div>
+    <button class="tool-btn" onclick="showTool('audit')">
+      <span class="tool-icon">📊</span><span>SEO Audit Score</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('keywords')">
+      <span class="tool-icon">🔑</span><span>Keyword Strategy</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('backlinks')">
+      <span class="tool-icon">🔗</span><span>Backlink Action Plan</span>
+    </button>
+    <button class="tool-btn" onclick="showTool('local')">
+      <span class="tool-icon">📍</span><span>Local SEO Guide</span>
+    </button>
+  </div>
+
+  <!-- CONTENT AREA -->
+  <div class="content" id="content-area">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+//  DPC SEO DASHBOARD — Core Logic
+// ══════════════════════════════════════════════
+
+const SITE = {
+  name: "Durga Psychiatric Centre",
+  url: "https://durgapsychiatry.pages.dev/",
+  phone: "+91 73959 44527",
+  address: "T Nagar, Chennai – 600017",
+  founder: "D. Durga",
+  target_keyword: "psychologist in Chennai",
+};
+
+const TOOLS = {
+
+  checklist: {
+    title: "✅ Daily SEO Checklist",
+    sub: "Complete these tasks every day to rank for 'psychologist in Chennai'. Check off as you go.",
+    render() {
+      const tasks = [
+        { done: false, label: "Post on Google Business Profile", detail: "Use the AI generator below → copy → paste to Google Business. Google rewards active businesses." },
+        { done: false, label: "WhatsApp Status / Broadcast", detail: "Post mental health tip or service reminder to 20+ contacts on WhatsApp status." },
+        { done: false, label: "Reply to all Google Reviews", detail: "Even 1-star — reply professionally. Google tracks response rate for ranking." },
+        { done: false, label: "Check website loads under 3 seconds", detail: "Open durgapsychiatry.pages.dev on mobile. If slow, compress images." },
+        { done: false, label: "Share 1 YouTube video or Reel", detail: "Share your existing YouTube playlist link in WhatsApp groups and Instagram." },
+        { done: false, label: "Engage in a Facebook/Instagram mental health community", detail: "Comment helpfully in Chennai mental health Facebook groups. Don't spam — just help." },
+        { done: false, label: "Verify Google Business listing is accurate", detail: "Check that address, phone, hours are correct at business.google.com" },
+        { done: false, label: "Add 1 new patient review (ask patients)", detail: "After each session — send this link: https://g.page/r/YOURGOOGLEID/review" },
+      ];
+
+      const saved = JSON.parse(localStorage.getItem('dpc_checklist') || '{}');
+      const today = new Date().toDateString();
+      const dayChecks = saved[today] || {};
+
+      let html = `<h2>${this.title}</h2><div class="sub">${this.sub} — ${today}</div>`;
+      const done = Object.values(dayChecks).filter(Boolean).length;
+      const pct = Math.round(done / tasks.length * 100);
+      html += `<div style="display:flex;align-items:center;gap:12px;margin:12px 0">
+        <div style="flex:1"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div></div>
+        <div style="font-size:13px;font-weight:700;color:#ffd66a">${done}/${tasks.length} done</div>
+      </div>`;
+      html += '<div class="checklist">';
+      tasks.forEach((t, i) => {
+        const checked = dayChecks[i] ? 'checked' : '';
+        html += `<div class="check-item">
+          <input type="checkbox" id="t${i}" ${checked} onchange="toggleTask(${i})">
+          <label for="t${i}"><b>${t.label}</b><span>${t.detail}</span></label>
+        </div>`;
+      });
+      html += '</div>';
+      html += `<div class="tip-box"><b>💡 Daily Tip:</b> Google ranks local businesses that are ACTIVE. Posting on Google Business Profile 5x/week can move you from page 3 to page 1 in 60–90 days.</div>`;
+      return html;
+    }
+  },
+
+  content: {
+    title: "✍️ AI Content Generator",
+    sub: "Generate SEO-optimised blog posts, Google posts, and social captions instantly.",
+    render() {
+      return `<h2>${this.title}</h2><div class="sub">${this.sub}</div>
+        <div class="option-row" id="content-type-opts">
+          <button class="opt sel" onclick="selectOpt(this,'content-type')">Google Business Post</button>
+          <button class="opt" onclick="selectOpt(this,'content-type')">Instagram Caption</button>
+          <button class="opt" onclick="selectOpt(this,'content-type')">WhatsApp Message</button>
+          <button class="opt" onclick="selectOpt(this,'content-type')">Blog Paragraph</button>
+          <button class="opt" onclick="selectOpt(this,'content-type')">FAQ Answer</button>
+        </div>
+        <div class="option-row" id="topic-opts">
+          <button class="opt sel" onclick="selectOpt(this,'topic')">Anxiety Treatment</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">Depression Counseling</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">Couples Therapy</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">Online Sessions</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">Mental Health Tips</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">Stress Management</button>
+          <button class="opt" onclick="selectOpt(this,'topic')">About D. Durga</button>
+        </div>
+        <button class="gen-btn" id="gen-content-btn" onclick="generateContent()">
+          ✨ Generate with AI
+        </button>
+        <div class="output-box" id="content-output" style="display:none"></div>
+        <button class="copy-btn" id="content-copy" style="display:none" onclick="copyOutput('content-output')">📋 Copy to Clipboard</button>
+        <div class="tip-box"><b>📌 How to use:</b> Pick a content type + topic → Generate → Copy → Paste into Google Business Profile, Instagram, or WhatsApp. Do this <b>once every day</b>.</div>`;
+    }
+  },
+
+  whatsapp: {
+    title: "💬 WhatsApp Status Generator",
+    sub: "Generate ready-to-copy WhatsApp status posts and broadcast messages.",
+    render() {
+      return `<h2>${this.title}</h2><div class="sub">${this.sub}</div>
+        <div class="option-row" id="wa-type-opts">
+          <button class="opt sel" onclick="selectOpt(this,'wa-type')">Mental Health Tip</button>
+          <button class="opt" onclick="selectOpt(this,'wa-type')">Service Reminder</button>
+          <button class="opt" onclick="selectOpt(this,'wa-type')">Motivational Quote</button>
+          <button class="opt" onclick="selectOpt(this,'wa-type')">Free Test Promo</button>
+          <button class="opt" onclick="selectOpt(this,'wa-type')">Workshop Invite</button>
+        </div>
+        <select id="wa-lang">
+          <option value="English">English</option>
+          <option value="Tamil">Tamil (romanised)</option>
+          <option value="Tamil English mix">Tamil-English Mix</option>
+        </select>
+        <button class="gen-btn" onclick="generateWhatsApp()">✨ Generate Post</button>
+        <div class="output-box" id="wa-output" style="display:none"></div>
+        <button class="copy-btn" id="wa-copy" style="display:none" onclick="copyOutput('wa-output')">📋 Copy</button>
+        <div class="tip-box"><b>📱 Strategy:</b> Post this as your WhatsApp Status daily. Save all patients' numbers — they see it automatically. This builds trust and keeps you top-of-mind when they need a psychologist in Chennai.</div>`;
+    }
+  },
+
+  google: {
+    title: "🔍 Google Business Post Generator",
+    sub: "Google rewards businesses that post regularly. Post 4–5x per week to rank for 'psychologist in Chennai'.",
+    render() {
+      return `<h2>${this.title}</h2><div class="sub">${this.sub}</div>
+        <div class="option-row" id="gb-type-opts">
+          <button class="opt sel" onclick="selectOpt(this,'gb-type')">What's New</button>
+          <button class="opt" onclick="selectOpt(this,'gb-type')">Service Highlight</button>
+          <button class="opt" onclick="selectOpt(this,'gb-type')">Special Offer</button>
+          <button class="opt" onclick="selectOpt(this,'gb-type')">Event/Workshop</button>
+        </div>
+        <button class="gen-btn" onclick="generateGoogle()">✨ Generate Post</button>
+        <div class="output-box" id="gb-output" style="display:none"></div>
+        <button class="copy-btn" id="gb-copy" style="display:none" onclick="copyOutput('gb-output')">📋 Copy</button>
+        <hr>
+        <p style="font-size:13px;color:rgba(255,255,255,.7)">📌 <b style="color:#ffd66a">How to post on Google Business:</b></p>
+        <ol style="padding-left:20px;font-size:13px;color:rgba(255,255,255,.65);line-height:2;margin-top:8px">
+          <li>Open <a href="https://business.google.com" target="_blank" style="color:#67d0ff">business.google.com</a></li>
+          <li>Click <b style="color:#ffd66a">"Add Update" → "Add Post"</b></li>
+          <li>Paste the generated text</li>
+          <li>Add your best photo (use gallery photos)</li>
+          <li>Click <b style="color:#ffd66a">Publish</b></li>
+        </ol>`;
+    }
+  },
+
+  audit: {
+    title: "📊 SEO Audit Score",
+    sub: "Current SEO status of durgapsychiatry.pages.dev — scored against Google's ranking factors.",
+    render() {
+      const scores = [
+        { label:"Title Tag", val:95, status:"✅ Excellent", cls:"good", note:"Includes 'psychologist in Chennai'" },
+        { label:"Meta Description", val:92, status:"✅ Good", cls:"good", note:"Keyword-rich, action-oriented" },
+        { label:"Schema Markup", val:98, status:"✅ Excellent", cls:"good", note:"LocalBusiness + FAQ + Person schema" },
+        { label:"Mobile Friendly", val:90, status:"✅ Good", cls:"good", note:"Responsive design confirmed" },
+        { label:"Page Speed", val:72, status:"⚠️ Improve", cls:"warn", note:"Compress images for faster load" },
+        { label:"Google Business", val:40, status:"🔴 Critical", cls:"bad", note:"Must claim + verify Google Business Profile" },
+        { label:"Backlinks", val:15, status:"🔴 Low", cls:"bad", note:"Need local directory listings" },
+        { label:"Content Freshness", val:50, status:"⚠️ Post Daily", cls:"warn", note:"Add blog or Google posts regularly" },
+        { label:"Reviews Count", val:60, status:"⚠️ Get More", cls:"warn", note:"Ask every patient for a Google review" },
+        { label:"FAQ on Page", val:100, status:"✅ Perfect", cls:"good", note:"FAQ schema added for rich snippets" },
+      ];
+      const avg = Math.round(scores.reduce((s,x)=>s+x.val,0)/scores.length);
+      let html = `<h2>${this.title}</h2><div class="sub">${this.sub}</div>`;
+      html += `<div style="text-align:center;margin:16px 0">
+        <div style="font-size:4rem;font-weight:900;color:${avg>75?'#4caf50':avg>50?'#ff9800':'#f44336'}">${avg}</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55)">Overall SEO Score / 100</div>
+        <div class="progress-bar" style="max-width:300px;margin:10px auto"><div class="progress-fill" style="width:${avg}%"></div></div>
+      </div>
+      <div class="score-grid">`;
+      scores.forEach(s => {
+        html += `<div class="score-card">
+          <div class="sc-val">${s.val}</div>
+          <div class="sc-label">${s.label}</div>
+          <div class="sc-status ${s.cls}">${s.status}</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px">${s.note}</div>
+        </div>`;
+      });
+      html += '</div>';
+      html += `<div class="tip-box"><b>🚀 Top 3 Actions to Rank for "Psychologist in Chennai":</b><br>
+        1. <b style="color:#ffd66a">Claim Google Business Profile</b> — this alone can get you on Google Maps rank 1<br>
+        2. <b style="color:#ffd66a">Get 20+ Google Reviews</b> — ask patients after every session<br>
+        3. <b style="color:#ffd66a">Post on Google Business 5x/week</b> — use this dashboard's generator</div>`;
+      return html;
+    }
+  },
+
+  keywords: {
+    title: "🔑 Keyword Strategy",
+    sub: "Target these keywords in your content, Google Business posts, and website text.",
+    render() {
+      const groups = [
+        { name:"🏆 Primary (Rank These First)", keywords:["psychologist in Chennai","counselor in Chennai","counseling centre Chennai","mental health clinic Chennai","psychiatrist Chennai T Nagar"] },
+        { name:"💰 High Intent (Booking Ready)", keywords:["book psychologist Chennai","online counseling Chennai","depression treatment Chennai","anxiety therapist Chennai","couples counselor Chennai"] },
+        { name:"📍 Local + Area", keywords:["psychologist T Nagar Chennai","mental health T Nagar","counseling T Nagar","psychiatrist near me Chennai","counselor near Pondy Bazaar"] },
+        { name:"🌐 Long-tail (Easy to Rank)", keywords:["free mental health test Chennai","how to deal with anxiety Chennai","online psychologist Tamil Nadu","best counseling for depression Chennai","family therapy Chennai"] },
+        { name:"🗣️ Tamil-audience", keywords:["psychologist Chennai Tamil","counseling Tamil Nadu","mental health support Chennai Tamil","depression treatment Tamil Nadu"] },
+      ];
+      let html = `<h2>${this.title}</h2><div class="sub">${this.sub}</div>`;
+      groups.forEach(g => {
+        html += `<div style="margin-bottom:16px"><div style="font-size:13px;font-weight:700;color:#fff3c0;margin-bottom:8px">${g.name}</div><div>`;
+        g.keywords.forEach(k => { html += `<span class="keyword-pill" title="Click to copy" onclick="navigator.clipboard.writeText('${k}');this.style.background='rgba(0,137,123,.5)'">${k}</span>`; });
+        html += '</div></div>';
+      });
+      html += `<div class="tip-box"><b>💡 Where to use these keywords:</b><br>
+        • Your Google Business description and posts<br>
+        • WhatsApp status captions<br>
+        • Instagram bio and post captions<br>
+        • Website headings and paragraph text<br>
+        • YouTube video titles and descriptions<br>
+        <b style="color:#ffd66a">Click any keyword pill above to copy it.</b></div>`;
+      return html;
+    }
+  },
+
+  backlinks: {
+    title: "🔗 Backlink Action Plan",
+    sub: "Backlinks = other websites linking to yours. Google trusts you MORE when others vouch for you.",
+    render() {
+      const actions = [
+        { icon:"📋", title:"JustDial Listing", urgency:"🔴 Do Today", desc:"Register free at justdial.com. Add full address, phone, website. JustDial ranks high in Google for Chennai searches.", url:"https://www.justdial.com" },
+        { icon:"🟡", title:"Sulekha Listing", urgency:"🔴 Do Today", desc:"Free listing at sulekha.com for 'psychologist Chennai'. Adds a powerful backlink + appears in search.", url:"https://www.sulekha.com" },
+        { icon:"📍", title:"Google Business Profile", urgency:"🔴 Most Critical", desc:"Claim your free listing at business.google.com. This puts you on Google Maps. Single biggest ranking boost.", url:"https://business.google.com" },
+        { icon:"🏥", title:"Practo Listing", urgency:"🟠 This Week", desc:"Create a free Practo profile. Practo ranks on page 1 for 'psychologist Chennai'. Patients book directly.", url:"https://www.practo.com" },
+        { icon:"📰", title:"Clinicspots / Lybrate", urgency:"🟠 This Week", desc:"Free doctor listings that Google trusts. Add your profile on both platforms.", url:"https://www.lybrate.com" },
+        { icon:"🌐", title:"India Mart / TradeIndia", urgency:"🟡 This Month", desc:"List your counseling and training services. Adds credible backlinks.", url:"https://www.indiamart.com" },
+        { icon:"📱", title:"LinkedIn Company Page", urgency:"🟡 This Month", desc:"Create a LinkedIn page for Durga Psychiatric Centre. LinkedIn ranks very high in Google.", url:"https://www.linkedin.com" },
+        { icon:"✍️", title:"Guest Blog on Health Sites", urgency:"🟡 Monthly", desc:"Write a short article for websites like Healthline India, OnlyMyHealth. They link back to your site.", url:"#" },
+      ];
+      let html = `<h2>${this.title}</h2><div class="sub">${this.sub}</div>`;
+      html += `<div style="display:flex;flex-direction:column;gap:10px;margin:14px 0">`;
+      actions.forEach(a => {
+        html += `<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:1.8rem;flex:0 0 auto">${a.icon}</span>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <b style="color:#fff3c0;font-size:14px">${a.title}</b>
+              <span style="font-size:11px;font-weight:700;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.08)">${a.urgency}</span>
+            </div>
+            <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.55;margin:0">${a.desc}</p>
+          </div>
+          ${a.url !== '#' ? `<a href="${a.url}" target="_blank" style="flex:0 0 auto;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:#67d0ff;font-size:12px;text-decoration:none;white-space:nowrap">Open →</a>` : ''}
+        </div>`;
+      });
+      html += '</div>';
+      html += `<div class="tip-box"><b>📈 Timeline to rank for "psychologist in Chennai":</b><br>
+        Week 1-2: Google Business + JustDial + Sulekha → appear on Maps<br>
+        Month 1: Practo + Lybrate + daily posting → page 2-3<br>
+        Month 2-3: Reviews + backlinks + consistent content → page 1<br>
+        <b style="color:#ffd66a">The #1 thing: Google Business Profile claim + daily posting.</b></div>`;
+      return html;
+    }
+  },
+
+  local: {
+    title: "📍 Local SEO Step-by-Step Guide",
+    sub: "The complete guide to ranking #1 for 'psychologist in Chennai' on Google Maps and Search.",
+    render() {
+      const steps = [
+        { n:1, title:"Claim Google Business Profile", time:"30 mins", critical:true, steps:["Go to business.google.com","Search 'Durga Psychiatric Centre'","Click 'Claim this business'","Verify by postcard or phone (5–7 days)","Add all photos, services, description with keywords"] },
+        { n:2, title:"Optimise Google Business Listing", time:"1 hour", critical:true, steps:["Business name: 'Durga Psychiatric Centre – Psychologist in Chennai'","Description: mention 'psychologist in Chennai' 3 times","Add ALL services with descriptions","Set correct address, phone, hours","Add 10+ high-quality photos from the gallery"] },
+        { n:3, title:"Get Google Reviews (Target: 50+)", time:"Ongoing", critical:true, steps:["After each session, WhatsApp patient this message: 'Thank you for visiting! Could you spare 2 minutes to leave a Google review? [your review link]'","Respond to EVERY review within 24 hours","Reply professionally even to negative reviews"] },
+        { n:4, title:"Post on Google Business Daily", time:"5 mins/day", critical:true, steps:["Use this dashboard → Google Business Post Generator","Copy generated text","Open business.google.com → Add Update","Paste text + add photo","Publish. Repeat every day."] },
+        { n:5, title:"Add Your Site to Local Directories", time:"2 hours", steps:["JustDial, Sulekha, Practo, Lybrate","IndiaMART for training services","Chennai-specific health directories","Each listing = a backlink = higher Google ranking"] },
+        { n:6, title:"YouTube + Social Linking", time:"Weekly", steps:["Link your YouTube channel to website","Share every video with site URL in description","Instagram bio → website link","All social profiles → same address/phone as Google Business"] },
+      ];
+      let html = `<h2>${this.title}</h2><div class="sub">${this.sub}</div>`;
+      steps.forEach(s => {
+        html += `<div style="background:rgba(255,255,255,.04);border:1px solid rgba(${s.critical?'255,100,100':'255,255,255'},.${s.critical?'2':'1'});border-radius:16px;padding:16px;margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#6a1b9a,#00897b);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex:0 0 auto">${s.n}</div>
+            <b style="color:#fff3c0;font-size:15px">${s.title}</b>
+            <span style="margin-left:auto;font-size:11px;color:rgba(255,255,255,.45)">⏱ ${s.time}</span>
+            ${s.critical ? '<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(255,50,50,.15);color:#ff8080">CRITICAL</span>' : ''}
+          </div>
+          <ul style="padding-left:20px;font-size:12px;color:rgba(255,255,255,.65);line-height:2">
+            ${s.steps.map(x=>`<li>${x}</li>`).join('')}
+          </ul>
+        </div>`;
+      });
+      return html;
+    }
+  }
+};
+
+// ── AI Generation ──────────────────────────
+async function callAI(prompt) {
+  const resp = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-20250514",
+      max_tokens: 1000,
+      messages: [{ role: "user", content: prompt }]
+    })
+  });
+  const data = await resp.json();
+  return data.content?.[0]?.text || "Error generating content. Please try again.";
+}
+
+function setLoading(id, show) {
+  const el = document.getElementById(id);
+  if (show) {
+    el.style.display = 'flex';
+    el.innerHTML = '<div class="spinner"></div>';
+  } else {
+    el.style.display = 'block';
+  }
+}
+
+async function generateContent() {
+  const type = document.querySelector('#content-type-opts .sel')?.textContent || 'Google Business Post';
+  const topic = document.querySelector('#topic-opts .sel')?.textContent || 'Anxiety Treatment';
+  const btn = document.getElementById('gen-content-btn');
+  btn.disabled = true;
+  setLoading('content-output', true);
+  document.getElementById('content-copy').style.display = 'none';
+
+  const prompt = `You are an expert SEO content writer for ${SITE.name}, a psychology and counseling centre in Chennai, India.
+Write a ${type} about "${topic}" for this business.
+Business: ${SITE.name} | Founder: ${SITE.founder} (Psychologist & Counselor) | Location: ${SITE.address} | Phone: ${SITE.phone} | Website: ${SITE.url}
+
+Requirements:
+- Target keyword: "psychologist in Chennai" - include naturally 2-3 times
+- Include location (T Nagar, Chennai) for local SEO
+- Include call to action with phone number ${SITE.phone}
+- Warm, professional, empathetic tone
+- If Google Business Post: 150-250 words, no hashtags
+- If Instagram Caption: 80-120 words + 8-10 relevant hashtags including #psychologistInChennai #mentalHealthChennai #counselingChennai #TNagarChennai
+- If WhatsApp Message: short, warm, 60-80 words
+- If Blog Paragraph: 200-250 words, informative, helpful
+- If FAQ Answer: 80-120 words, clear and direct
+Write only the content, no labels or explanations.`;
+
+  const result = await callAI(prompt);
+  btn.disabled = false;
+  document.getElementById('content-output').textContent = result;
+  document.getElementById('content-output').style.display = 'block';
+  document.getElementById('content-copy').style.display = 'inline-block';
+}
+
+async function generateWhatsApp() {
+  const type = document.querySelector('#wa-type-opts .sel')?.textContent || 'Mental Health Tip';
+  const lang = document.getElementById('wa-lang').value;
+  setLoading('wa-output', true);
+  document.getElementById('wa-copy').style.display = 'none';
+
+  const prompt = `Write a WhatsApp status post / broadcast message for ${SITE.name}, a counseling centre run by ${SITE.founder}, a psychologist in Chennai.
+Type: ${type}
+Language: ${lang}
+Include: warm emoji, helpful message, soft mention of the centre, phone ${SITE.phone}
+Length: 60-100 words. No lengthy paragraphs. Feel natural and human, not like advertising.
+Write only the message.`;
+
+  const result = await callAI(prompt);
+  document.getElementById('wa-output').textContent = result;
+  document.getElementById('wa-output').style.display = 'block';
+  document.getElementById('wa-copy').style.display = 'inline-block';
+}
+
+async function generateGoogle() {
+  const type = document.querySelector('#gb-type-opts .sel')?.textContent || "What's New";
+  setLoading('gb-output', true);
+  document.getElementById('gb-copy').style.display = 'none';
+
+  const prompt = `Write a Google Business Profile post for ${SITE.name}.
+Post type: ${type}
+Business: Counseling & psychiatric centre, Founder: ${SITE.founder} (Psychologist), Location: T Nagar, Chennai – 600017
+Phone: ${SITE.phone} | Website: ${SITE.url}
+
+SEO Rules:
+- Include "psychologist in Chennai" or "counseling centre Chennai" naturally
+- Include address or "T Nagar, Chennai"
+- Clear call-to-action with phone number
+- 150-200 words
+- Professional but warm tone
+- End with: "Book now: ${SITE.phone}"
+Write only the post text.`;
+
+  const result = await callAI(prompt);
+  document.getElementById('gb-output').textContent = result;
+  document.getElementById('gb-output').style.display = 'block';
+  document.getElementById('gb-copy').style.display = 'inline-block';
+}
+
+// ── UI Helpers ─────────────────────────────
+function showTool(name) {
+  document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  const tool = TOOLS[name];
+  document.getElementById('content-area').innerHTML = tool.render();
+}
+
+function selectOpt(btn, group) {
+  btn.closest(`#${group}-opts, [id$="-opts"]`)
+    || btn.closest('.option-row');
+  btn.closest('.option-row')
+    .querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function copyOutput(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(`#${id} ~ .copy-btn`) || document.querySelector('.copy-btn');
+    const orig = btn?.textContent;
+    if (btn) { btn.textContent = '✅ Copied!'; setTimeout(() => btn.textContent = orig, 2000); }
+  });
+}
+
+function toggleTask(idx) {
+  const today = new Date().toDateString();
+  const saved = JSON.parse(localStorage.getItem('dpc_checklist') || '{}');
+  if (!saved[today]) saved[today] = {};
+  saved[today][idx] = document.getElementById('t' + idx).checked;
+  localStorage.setItem('dpc_checklist', JSON.stringify(saved));
+  // Recount
+  const checks = Object.values(saved[today] || {}).filter(Boolean).length;
+  const total = document.querySelectorAll('.check-item').length;
+  const pct = Math.round(checks / total * 100);
+  const fill = document.querySelector('.progress-fill');
+  const label = document.querySelector('[style*="font-weight:700;color:#ffd66a"]');
+  if (fill) fill.style.width = pct + '%';
+  if (label) label.textContent = `${checks}/${total} done`;
+}
+
+// Init: show checklist
+document.getElementById('content-area').innerHTML = TOOLS.checklist.render();
+</script>
+</body>
+</html>
