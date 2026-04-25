@@ -940,3 +940,55 @@ body { padding-bottom: 72px !important; }
   color: #9ae6b4;
   margin-top: 6px;
 }
+.contact-hero {
+  padding: 40px 20px;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, #1f3d3b, #3a2c2c);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.contact-card h1 {
+  color: #f4d06f;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.contact-sub {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.contact-actions {
+  margin-top: 20px;
+}
+
+.btn-whatsapp {
+  display: block;
+  background: #25d366;
+  color: white;
+  padding: 14px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-call {
+  display: block;
+  background: #222;
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.contact-trust {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+  }
