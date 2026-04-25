@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://durgapsychiatry.pages.dev/sitemap.xml
+Sitemap: https://durga-mindskillscare.pages.dev/sitemap.xml

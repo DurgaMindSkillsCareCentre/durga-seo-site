@@ -7,12 +7,21 @@
 const parallaxLayers = document.querySelectorAll('[data-parallax]');
 function runParallax() {
   const sy = window.scrollY;
+  const mobile = window.innerWidth <= 768;
   parallaxLayers.forEach(el => {
+    if (mobile) {
+      el.style.transform = 'none';
+      return;
+    }
     const sp = parseFloat(el.dataset.parallax || '0.12');
     el.style.transform = `translate3d(0,${sy * sp}px,0)`;
   });
   // Legacy support
   document.querySelectorAll('.parallax-layer[data-speed]').forEach(el => {
+    if (mobile) {
+      el.style.transform = 'none';
+      return;
+    }
     const s = parseFloat(el.dataset.speed || '0.1');
     el.style.transform = `translate3d(0,${sy * s}px,0) scale(1.08)`;
   });
@@ -262,3 +271,29 @@ document.querySelectorAll('.carousel').forEach(initCarousel);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildWidget);
   else buildWidget();
 })();
+
+
+/* ===== FINAL SCRIPT PATCH ===== */
+(function(){
+  const isMobile = () => window.innerWidth <= 768;
+
+  const originalRunParallax = window.runParallax;
+  function safeRunParallax() {
+    if (isMobile()) {
+      document.querySelectorAll('[data-parallax], .parallax-layer[data-speed]').forEach(el => {
+        el.style.transform = 'none';
+      });
+    } else if (typeof originalRunParallax === 'function') {
+      originalRunParallax();
+    }
+  }
+
+  // If original script already set listeners, still ensure on resize/scroll mobile is fixed.
+  window.addEventListener('scroll', safeRunParallax, { passive: true });
+  window.addEventListener('resize', safeRunParallax);
+  setTimeout(safeRunParallax, 50);
+
+  // Brand consistency: make sure hero WhatsApp buttons stay green and Chat AI stays gold if classes are present
+  document.querySelectorAll('.gold-btn').forEach(btn => btn.style.background = 'linear-gradient(135deg,#FFD66A,#FF9F43)');
+})();
+
