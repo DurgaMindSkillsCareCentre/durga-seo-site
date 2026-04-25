@@ -700,3 +700,18 @@ body { padding-bottom: 72px !important; }
   filter:brightness(1.02);
   transform:translateY(-1px);
 }
+.panel p {
+  margin-bottom: 10px;
+}
+
+.panel ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.panel li {
+  margin-bottom: 6px;
+    }
+.panel {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
