@@ -740,3 +740,9 @@ body { padding-bottom: 72px !important; }
   font-weight: 700;
   letter-spacing: 0.3px;
 }
+.panel a {
+  color: #ffd166;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,209,102,0.4);
+  }
