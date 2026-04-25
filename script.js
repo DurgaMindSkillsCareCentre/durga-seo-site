@@ -14,7 +14,7 @@ function runParallax() {
       return;
     }
     const sp = parseFloat(el.dataset.parallax || '0.12');
-    el.style.transform = `translate3d(0,${sy * sp}px,0)`;
+    el.style.transform = `translate3d(0,${sy * sp * 0.35}px,0)`;
   });
   // Legacy support
   document.querySelectorAll('.parallax-layer[data-speed]').forEach(el => {
@@ -23,7 +23,7 @@ function runParallax() {
       return;
     }
     const s = parseFloat(el.dataset.speed || '0.1');
-    el.style.transform = `translate3d(0,${sy * s}px,0) scale(1.08)`;
+    el.style.transform = `translate3d(0,${sy * s * 0.35}px,0) scale(1.08)`;
   });
   // Section reveal
   document.querySelectorAll('.reveal').forEach(el => {
