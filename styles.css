@@ -784,3 +784,10 @@ body { padding-bottom: 72px !important; }
 .panel.quick-answer {
   background: linear-gradient(135deg, #0f3d3e, #1f6f6f);
 }
+.quick-answer a {
+  color: #FFD700;
+  text-decoration: underline;
+  }
+.panel.quick-answer p {
+  margin-bottom: 10px;
+  }
