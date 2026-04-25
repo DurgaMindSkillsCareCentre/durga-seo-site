@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World-Class Mental Health Workshops | Chennai</title>
+
+<meta name="description" content="18+ premium mental health, relationship, soft skills and caregiver workshops in Chennai & online worldwide. Trusted by 1000+ clients.">
+
+<style>
+body{margin:0;font-family:Arial;background:#0f172a;color:#fff;}
+.hero{padding:50px 20px;text-align:center;background:linear-gradient(135deg,#1e3a8a,#0f172a);}
+.hero h1{color:#ffd700;font-size:32px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px;}
+.card{background:#1e293b;padding:20px;border-radius:15px;cursor:pointer;}
+.card:hover{transform:translateY(-5px);}
+.card h3{margin:10px 0;}
+.popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+background:#020617;padding:20px;border-radius:15px;width:90%;max-width:420px;}
+.popup.active{display:block;}
+.btn{display:block;padding:12px;margin:10px;border-radius:25px;text-align:center;text-decoration:none;}
+.wa{background:#25D366;color:#000;}
+.review{text-align:center;color:gold;padding:15px;}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Enterprise Mental Health Workshops</h1>
+<p>18+ Specialized Programs | Chennai & Global Online</p>
+</div>
+
+<div class="review">★★★★★ Rated 4.9 | 1000+ Clients</div>
+
+<div class="grid">
+
+<div class="card" onclick="openPopup('Mental Health Awareness','Covers stress, anxiety, depression')">
+🧠 <h3>Mental Health Awareness</h3>
+<p>Understanding emotions and wellbeing</p>
+</div>
+
+<div class="card" onclick="openPopup('Soft Skills Training','Communication, confidence, leadership')">
+🎯 <h3>Soft Skills</h3>
+<p>Professional growth skills</p>
+</div>
+
+<div class="card" onclick="openPopup('Couple Therapy','Relationship improvement & bonding')">
+💑 <h3>Couple Therapy</h3>
+<p>Healthy relationships</p>
+</div>
+
+<div class="card" onclick="openPopup('Mindfulness','Stress reduction & calm mind')">
+🧘 <h3>Mindfulness</h3>
+<p>Inner peace techniques</p>
+</div>
+
+</div>
+
+<div id="popup" class="popup">
+<h2 id="title"></h2>
+<p id="desc"></p>
+<a href="https://wa.me/917395944527" class="btn wa">Book via WhatsApp</a>
+<button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function openPopup(t,d){
+document.getElementById('popup').classList.add('active');
+document.getElementById('title').innerText=t;
+document.getElementById('desc').innerText=d;
+}
+function closePopup(){
+document.getElementById('popup').classList.remove('active');
+}
+</script>
+
+</body>
+</html>

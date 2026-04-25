@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Premium Workshops | Durga Psychiatric Centre Chennai</title>
+
+<meta name="description" content="18+ premium mental health, relationship, soft skills and caregiver workshops in Chennai and online worldwide. Book instantly via WhatsApp.">
+
+<style>
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#0f2027,#2c5364);
+  color:#fff;
+}
+
+.hero {
+  text-align:center;
+  padding:40px 20px;
+}
+
+.hero h1 {
+  color:#ffd700;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:15px;
+}
+
+.card {
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.card:hover {
+  transform:scale(1.03);
+}
+
+.popup {
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#111;
+  padding:20px;
+  border-radius:15px;
+  width:90%;
+  max-width:400px;
+}
+
+.popup.active {
+  display:block;
+}
+
+.btn {
+  display:block;
+  margin:10px;
+  padding:12px;
+  border-radius:20px;
+  text-align:center;
+  text-decoration:none;
+}
+
+.wa {
+  background:#25D366;
+  color:#000;
+}
+
+.review {
+  text-align:center;
+  color:gold;
+  padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Premium Workshops</h1>
+<p>18+ programs • Chennai & Online</p>
+</div>
+
+<div class="review">★★★★★ Trusted by 1000+ Clients</div>
+
+<div class="grid">
+
+<div class="card" onclick="openPopup('Mental Health')">🧠 Mental Health</div>
+<div class="card" onclick="openPopup('Soft Skills')">🎯 Soft Skills</div>
+<div class="card" onclick="openPopup('Couple Therapy')">💑 Couple Therapy</div>
+<div class="card" onclick="openPopup('Mindfulness')">🧘 Mindfulness</div>
+
+</div>
+
+<div id="popup" class="popup">
+<h3 id="title"></h3>
+<p>Premium workshop available.</p>
+<a href="https://wa.me/917395944527" class="btn wa">Book Now</a>
+<button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+function openPopup(t){
+ document.getElementById('popup').classList.add('active');
+ document.getElementById('title').innerText=t;
+}
+function closePopup(){
+ document.getElementById('popup').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
