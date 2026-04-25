@@ -297,3 +297,35 @@ document.querySelectorAll('.carousel').forEach(initCarousel);
   document.querySelectorAll('.gold-btn').forEach(btn => btn.style.background = 'linear-gradient(135deg,#FFD66A,#FF9F43)');
 })();
 
+
+
+/* Mobile menu toggle */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  if (!btn || !nav) return;
+
+  const closeMenu = () => {
+    document.body.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+  };
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = document.body.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!document.body.classList.contains('menu-open')) return;
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 640) closeMenu();
+  });
+});
