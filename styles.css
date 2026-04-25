@@ -735,3 +735,8 @@ body { padding-bottom: 72px !important; }
 .panel h2 {
   color: #fff;
 }
+.panel h2 {
+  color: #f5d37a; /* soft gold */
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
