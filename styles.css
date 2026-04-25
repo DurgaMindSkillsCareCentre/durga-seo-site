@@ -746,3 +746,38 @@ body { padding-bottom: 72px !important; }
   text-decoration: none;
   border-bottom: 1px solid rgba(255,209,102,0.4);
   }
+/* QUICK ANSWER — PREMIUM HIGHLIGHT PANEL */
+.panel.quick-answer {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glowing effect */
+.panel.quick-answer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%);
+  transform: rotate(25deg);
+}
+
+/* heading style */
+.panel.quick-answer h2 {
+  color: #FFD700;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* paragraph style */
+.panel.quick-answer p {
+  color: #e6edf3;
+  font-size: 15px;
+  line-height: 1.6;
+  }
