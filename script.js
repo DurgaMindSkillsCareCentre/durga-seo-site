@@ -329,3 +329,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth > 640) closeMenu();
   });
 });
+
+
+/* nav link auto-close */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.actions a').forEach((a) => {
+    a.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      const btn = document.querySelector('.menu-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
