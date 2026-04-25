@@ -781,3 +781,6 @@ body { padding-bottom: 72px !important; }
   font-size: 15px;
   line-height: 1.6;
   }
+.panel.quick-answer {
+  background: linear-gradient(135deg, #0f3d3e, #1f6f6f);
+}
