@@ -992,3 +992,13 @@ body { padding-bottom: 72px !important; }
   font-size: 0.9rem;
   color: #ccc;
   }
+.about-image-full {
+  padding: 20px;
+}
+
+.about-image-full img {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(212,175,55,0.6);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
