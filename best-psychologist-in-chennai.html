@@ -299,6 +299,31 @@ img{max-width:100%;display:block}
   .section{margin-left:12px;margin-right:12px}
   .footer{margin-left:12px;margin-right:12px}
 }
+  /* FULL MOBILE VIEWPORT FIX */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0b1220; /* your dark theme */
+}
+
+/* FIX ANDROID CHROME BOTTOM GAP */
+body {
+  min-height: 100dvh; /* dynamic viewport height (IMPORTANT) */
+  display: flex;
+  flex-direction: column;
+}
+
+/* MAIN WRAPPER MUST EXPAND */
+.wrap, .container, .main, .shell {
+  flex: 1;
+  min-height: 100%;
+}
+
+/* PREVENT WHITE FLASH */
+* {
+  box-sizing: border-box;
+}
 </style>
 </head>
 <body>
