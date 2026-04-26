@@ -2043,3 +2043,84 @@ button:active {
     0 0 18px rgba(0,195,255,.3);
   }
 
+/* ===== KEEP ORIGINAL CARD SIZE — ONLY VISUAL ENHANCEMENT ===== */
+.card {
+  position: relative;
+  border-radius: 18px;
+  padding: 14px 16px; /* keep compact */
+  background: linear-gradient(145deg, #06142a, #0a1f3f);
+  
+  /* subtle 3D depth */
+  box-shadow: 
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 4px 12px rgba(0,0,0,0.5);
+
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* ===== STRONG PREMIUM GLOW BORDER (WITHOUT INCREASING SIZE) ===== */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  padding: 1.5px;
+
+  background: linear-gradient(
+    120deg,
+    #00f0ff,
+    #8a2be2,
+    #ff00cc,
+    #00ffcc,
+    #00f0ff
+  );
+
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0.9;
+
+  /* glow */
+  filter: blur(6px);
+}
+
+/* ===== HOVER / TOUCH EFFECT ===== */
+.card:active {
+  transform: scale(0.97);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== TEXT — CONTROLLED GLOW (READABLE PREMIUM) ===== */
+.card {
+  color: #e6edf7;
+  font-size: 15px; /* KEEP ORIGINAL SIZE */
+  font-weight: 500;
+}
+
+/* apply glow only to text, not too strong */
+.card span,
+.card div,
+.card p {
+  background: linear-gradient(90deg, #ffffff, #cfe9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 6px rgba(0, 200, 255, 0.25),
+    0 0 10px rgba(138, 43, 226, 0.15);
+}
+
+
+.card::before {
+  opacity: 1 !important;
+  filter: blur(8px) !important;
+}
+
+
