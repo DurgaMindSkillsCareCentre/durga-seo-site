@@ -2184,3 +2184,17 @@ button:active {
 
 
 
+/* ===== FIX CRAMPED HEIGHT (BALANCED VERSION) ===== */
+.grid .card{
+  padding: 12px 14px !important;   /* small increase */
+  min-height: 58px;                /* ensures uniform height */
+  display: flex;
+  align-items: center;             /* vertical center text */
+  gap: 8px;                        /* space between icon + text */
+}
+
+/* keep text readable */
+.grid .card{
+  font-size: 14.5px;               /* slightly refined */
+  line-height: 1.3;
+}
