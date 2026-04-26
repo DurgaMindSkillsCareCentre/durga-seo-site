@@ -2449,4 +2449,36 @@ button:active {
 
 
 
+  /* ===== PREMIUM GRADIENT TEXT (STRONG + SAFE) ===== */
+.grid .card{
+  font-weight: 600;
+
+  /* Gradient */
+  background: linear-gradient(
+    90deg,
+    #fff6c5,
+    #ffd700,
+    #aee7ff,
+    #ffffff
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* Glow */
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.35),
+    0 0 10px rgba(0,195,255,0.25);
+  }
+
+
+
+@supports not (-webkit-background-clip: text) {
+  .grid .card{
+    color: #ffe082;
+  }
+                                                               }
   
