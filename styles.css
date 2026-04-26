@@ -1624,3 +1624,96 @@ button:active {
 
 
 
+/* === PREMIUM GLOW CARD FIX === */
+.card {
+  position: relative;
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(145deg,#0b1a3a,#09142d);
+  
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* REAL visible glow */
+.card:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,215,0,0.3),
+    0 0 12px rgba(255,215,0,0.6),
+    0 0 25px rgba(0,195,255,0.4),
+    0 10px 30px rgba(0,0,0,0.8);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+    }
+
+
+/* === POPUP BACKGROUND === */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* SHOW POPUP */
+.popup.active {
+  display: flex;
+}
+
+/* === POPUP BOX === */
+.popup-box {
+  width: 85%;
+  max-width: 320px;
+
+  background: linear-gradient(145deg,#0b1a3a,#09142d);
+  border-radius: 16px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.8),
+    0 0 12px rgba(255,215,0,0.3);
+
+  text-align: left;
+}
+
+/* TITLE */
+#title {
+  font-size: 18px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION BOX */
+#desc {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+/* CLOSE BUTTON */
+.popup-box a:last-child {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 12px;
+
+  background: #111;
+  border-radius: 20px;
+  color: #ffd700;
+  text-decoration: none;
+  }
