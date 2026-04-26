@@ -2482,3 +2482,46 @@ button:active {
   }
                                                                }
   
+
+
+
+
+/* ===== GOLD + SUBTLE 3D TEXT (ROBUST) ===== */
+.grid .card{
+  color: #f2e3a1 !important;          /* warm gold */
+  font-weight: 600;
+  letter-spacing: .2px;
+
+  /* soft 3D / emboss */
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.65),          /* base depth */
+    0 2px 2px rgba(0,0,0,.35),        /* lift */
+    0 0 6px rgba(255,215,0,.25);      /* mild gold glow */
+
+  /* ensure no old rules interfere */
+  -webkit-text-fill-color: currentColor !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  filter: none !important;
+}
+
+/* optional: slightly brighter on hover */
+.grid .card:hover{
+  color: #ffe8a6 !important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.7),
+    0 3px 4px rgba(0,0,0,.45),
+    0 0 10px rgba(255,215,0,.35);
+}
+
+
+
+.grid .card{
+  color: #e6cf7a !important;
+                 }
+
+
+
+
+
+  
