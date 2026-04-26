@@ -2124,3 +2124,63 @@ button:active {
 }
 
 
+/* KEEP OLD CARD SIZE EXACTLY — ONLY ADD GLOW */
+.grid .card{
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /* do NOT change size here */
+  min-height: unset !important;
+  height: auto !important;
+
+  /* keep existing old padding/font from your original file */
+  padding: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+
+  border-radius: 18px;
+  border: 1px solid transparent;
+
+  background:
+    linear-gradient(145deg, #0b1a3a, #09142d) padding-box,
+    linear-gradient(135deg,
+      #ffd700,
+      #00eaff,
+      #7b61ff,
+      #ff5eb1,
+      #ffd700
+    ) border-box;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.55),
+    0 0 10px rgba(255,215,0,.28),
+    0 0 16px rgba(0,195,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+  transition: box-shadow .25s ease, filter .25s ease;
+}
+
+/* subtle inner shine only */
+.grid .card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.10), transparent 38%);
+  opacity:.6;
+}
+
+/* keep hover simple so size does not jump */
+.grid .card:hover{
+  transform: none !important;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.65),
+    0 0 14px rgba(255,215,0,.34),
+    0 0 22px rgba(0,195,255,.20),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+
+
