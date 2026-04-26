@@ -2198,3 +2198,86 @@ button:active {
   font-size: 14.5px;               /* slightly refined */
   line-height: 1.3;
 }
+
+
+/* ===== WORKSHOP TEXT — PREMIUM SOFT GRADIENT ===== */
+.grid .card {
+  color: #e6edf7; /* fallback */
+}
+
+/* apply only to text inside card */
+.grid .card span,
+.grid .card div,
+.grid .card p {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d6ecff 40%,
+    #c8d8ff 70%,
+    #ffffff 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* very subtle glow (important: keep low) */
+  text-shadow:
+    0 0 4px rgba(0, 200, 255, 0.18),
+    0 0 6px rgba(138, 43, 226, 0.12);
+  }
+
+
+
+
+/* ===== HIGH VALUE WORKSHOPS ===== */
+
+/* Psychotherapy */
+.grid .card:nth-child(2),
+
+/* Sexual Health */
+.grid .card:nth-child(3),
+
+/* Couple */
+.grid .card:nth-child(6) {
+  
+  background:
+    linear-gradient(145deg, #0b1a3a, #09142d) padding-box,
+    linear-gradient(135deg,
+      #ffd700,
+      #ff4d6d,
+      #ff00cc,
+      #ffd700
+    ) border-box;
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.6),
+    0 0 16px rgba(255, 77, 109, 0.35),
+    0 0 22px rgba(255, 215, 0, 0.25);
+  }
+
+
+.grid .card:nth-child(2),
+.grid .card:nth-child(3),
+.grid .card:nth-child(6){
+  animation: premiumPulse 3s ease-in-out infinite;
+}
+
+@keyframes premiumPulse {
+  0%,100% { box-shadow:
+    0 10px 22px rgba(0,0,0,.6),
+    0 0 12px rgba(255, 77, 109, 0.25),
+    0 0 18px rgba(255, 215, 0, 0.2);
+  }
+  50% { box-shadow:
+    0 12px 26px rgba(0,0,0,.7),
+    0 0 22px rgba(255, 77, 109, 0.45),
+    0 0 30px rgba(255, 215, 0, 0.35);
+  }
+}
+
+
+
+
+
