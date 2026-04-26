@@ -2316,22 +2316,63 @@ button:active {
 
        
 /* ===== FORCE GRADIENT TEXT ON CARD ===== */
-.grid .card {
+
+/* REPAIR: restore readable workshop cards */
+.grid .card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-sizing: border-box;
+
+  /* keep old compact size */
+  min-height: 58px;
+  padding: 12px 14px;
+
+  /* readable text */
+  color: #e6edf7 !important;
+  -webkit-text-fill-color: initial !important;
+  -webkit-background-clip: initial !important;
+
+  /* premium border glow only */
+  background:
+    linear-gradient(145deg, #0b1a3a, #09142d) padding-box,
+    linear-gradient(135deg,
+      rgba(255,215,0,.95),
+      rgba(0,195,255,.85),
+      rgba(123,97,255,.85),
+      rgba(255,94,177,.85),
+      rgba(255,215,0,.95)
+    ) border-box;
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.55),
+    0 0 10px rgba(255,215,0,.22),
+    0 0 16px rgba(0,195,255,.12),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.grid .card *{
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  -webkit-background-clip: initial !important;
+  text-shadow: none !important;
+}
+
+.grid .card:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.65),
+    0 0 14px rgba(255,215,0,.28),
+    0 0 22px rgba(0,195,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+);ll.grid .card{
   font-weight: 600;
-
-  background-image: linear-gradient(
-    90deg,
-    #ffffff,
-    #c8f1ff,
-    #d5b3ff,
-    #ffffff
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* glow */
-  text-shadow:
-    0 0 6px rgba(0,200,255,0.5),
-    0 0 10px rgba(138,43,226,0.35);
-    }
+  font-size: 14px;
+  line-height: 1.3;
+  }
