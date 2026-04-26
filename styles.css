@@ -2356,4 +2356,67 @@ button:active {
 
 
 
+/* ===== WORKSHOP LIST BLUR FIX ===== */
+.grid,
+.grid * {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
 
+.grid .card {
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;
+  transform: none;
+  text-shadow: none !important;
+
+  /* keep your current size, only fix clarity */
+  color: #eaf2ff !important;
+  -webkit-text-fill-color: currentColor !important;
+  background:
+    linear-gradient(145deg, #0b1a3a, #09142d) padding-box,
+    linear-gradient(135deg,
+      rgba(255,215,0,.95),
+      rgba(0,195,255,.85),
+      rgba(123,97,255,.85),
+      rgba(255,94,177,.85),
+      rgba(255,215,0,.95)
+    ) border-box !important;
+  border: 1px solid transparent !important;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.55),
+    0 0 10px rgba(255,215,0,.22),
+    0 0 16px rgba(0,195,255,.12),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.10), transparent 38%);
+  opacity: .55;
+  filter: none !important;
+}
+
+.grid .card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(11,26,58,.98), rgba(9,20,45,.98));
+  z-index: -1;
+}
+
+.grid .card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.65),
+    0 0 14px rgba(255,215,0,.28),
+    0 0 22px rgba(0,195,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
