@@ -2523,3 +2523,25 @@ button:active {
 
 
 
+.call-btn{
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  z-index: 9999;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.7),
+    0
