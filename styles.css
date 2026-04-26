@@ -2279,5 +2279,40 @@ button:active {
 
 
 
+/* ===== FORCE PREMIUM TEXT GLOW ===== */
+.grid .card {
+  color: #ffffff !important;
+}
 
+/* target ALL text safely */
+.grid .card * {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d9f3ff 40%,
+    #caa8ff 70%,
+    #ffffff 100%
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  /* visible but controlled glow */
+  text-shadow:
+    0 0 6px rgba(0, 200, 255, 0.35),
+    0 0 10px rgba(138, 43, 226, 0.25);
+    }
+
+
+/* fallback glow if gradient fails */
+.grid .card {
+  text-shadow:
+    0 0 8px rgba(0, 200, 255, 0.6),
+    0 0 14px rgba(138, 43, 226, 0.4) !important;
+      }
+
+
+
+
+       
 
