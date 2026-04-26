@@ -2318,21 +2318,3 @@ button:active {
 /* ===== FORCE GRADIENT TEXT ON CARD ===== */
 
 /* REPAIR: restore readable workshop cards */
-.grid .card{
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  box-sizing: border-box;
-
-  /* keep old compact size */
-  min-height: 58px;
-  padding: 12px 14px;
-
-  /* readable text */
-  color: #e6edf7 !important;
-  -webkit-text-fill-color: initial !important;
-  -webkit-background-clip: initial !important;
-
-  /* premium border glow only */
-
-
