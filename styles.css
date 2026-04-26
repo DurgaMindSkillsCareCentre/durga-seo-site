@@ -1823,5 +1823,97 @@ button:active {
 
 
                   
+/* ===== WORKSHOP GRID: 2 COLUMNS + VISIBLE GLOW ===== */
 
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.grid .card{
+  position:relative;
+  min-height:120px;
+  padding:16px 14px;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+
+  /* real visible gradient border */
+  border:1px solid transparent;
+  background:
+    linear-gradient(145deg, #0f1f43, #09142d) padding-box,
+    linear-gradient(135deg,
+      rgba(255,215,0,.95),
+      rgba(0,195,255,.85),
+      rgba(123,97,255,.85),
+      rgba(255,94,177,.85),
+      rgba(255,215,0,.95)
+    ) border-box;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.62),
+    0 0 14px rgba(255,215,0,.18),
+    0 0 22px rgba(0,195,255,.10),
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+  transform: translateZ(0);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+.grid .card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 42%);
+  pointer-events:none;
+}
+
+.grid .card > *{
+  position:relative;
+  z-index:1;
+}
+
+.grid .card:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.72),
+    0 0 16px rgba(255,215,0,.22),
+    0 0 28px rgba(0,195,255,.16),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.grid .card b,
+.grid .card strong{
+  display:block;
+  color:#ffd86f;
+  font-size:16px;
+  line-height:1.25;
+  margin-top:2px;
+}
+
+.grid .card{
+  color:#eef3ff;
+  font-size:14px;
+  line-height:1.35;
+}
+
+/* Mobile: keep 2 columns, just make it compact */
+@media (max-width: 700px){
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .grid .card{
+    min-height:104px;
+    padding:14px 12px;
+    font-size:13px;
+  }
+
+  .grid .card b,
+  .grid .card strong{
+    font-size:15px;
+  }
+  }
 
