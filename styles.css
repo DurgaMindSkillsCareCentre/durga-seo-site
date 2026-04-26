@@ -2578,7 +2578,28 @@ button:active {
     0 2px 6px rgba(0,0,0,0.6),
     0 0 10px rgba(255,215,0,0.5);
 }
-  
+
+
+.logo-img{
+  box-shadow:
+    0 0 6px rgba(255,215,0,0.7),
+    0 0 10px rgba(255,215,0,0.35),
+    0 2px 6px rgba(0,0,0,0.6);
+  }
+
+
+.logo-img{
+  object-position: center top; /* focuses eyes/smile */
+  }
+
+
+
+.logo a:active{
+  transform: scale(0.96);
+}
+
+
+
 .call-btn{
   position: fixed;
   bottom: 20px;
