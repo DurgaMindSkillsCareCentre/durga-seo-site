@@ -1717,3 +1717,117 @@ button:active {
   color: #ffd700;
   text-decoration: none;
   }
+
+
+
+
+
+
+/* ===== WORKSHOP 18 CARDS PREMIUM 3D EFFECT ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.grid .card {
+  position: relative;
+  min-height: 110px;
+  padding: 16px 14px;
+  border-radius: 18px;
+  cursor: pointer;
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #0b1a3a, #09142d);
+  border: 1px solid rgba(255, 215, 0, 0.16);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  color: #f5f7ff;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 215, 0, 0.95),
+    rgba(0, 195, 255, 0.9),
+    rgba(123, 97, 255, 0.9),
+    rgba(255, 94, 177, 0.9),
+    rgba(255, 215, 0, 0.95)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  animation: workshopGlow 6s linear infinite;
+  pointer-events: none;
+}
+
+.grid .card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(9, 20, 45, 0.98));
+  z-index: -1;
+}
+
+.grid .card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(255, 215, 0, 0.18);
+  border-color: rgba(255, 215, 0, 0.28);
+}
+
+@keyframes workshopGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.grid .card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.grid .card b,
+.grid .card strong {
+  color: #ffd86f;
+  font-size: 16px;
+}
+
+.grid .card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #7ee7ff;
+  text-decoration: underline;
+  font-weight: 600;
+  }
+
+
+
+
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  }
+
+
+
+                  
+
+
