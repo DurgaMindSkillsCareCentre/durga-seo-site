@@ -3,16 +3,367 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MindSkillsCare | Psychology, Soft Skills & Wellness</title>
-<meta name="description" content="MindSkillsCare hub for psychology, counselling, soft skills, workshops and mental wellness in Chennai and online.">
-<link rel="canonical" href="https://care.pages.dev/mindskillscare.html">
-<link rel="stylesheet" href="styles-seo.css">
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "MindSkillsCare | Psychology, Soft Skills & Wellness", "description": "MindSkillsCare hub for psychology, counselling, soft skills, workshops and mental wellness in Chennai and online."}
-</script>
+<meta name="description" content="MindSkillsCare is the main hub for psychology, counselling, soft skills, workshops, and mental wellness in Chennai and online.">
+<meta name="theme-color" content="#091123">
+<style>
+:root{
+  --bg:#07101f;
+  --panel:#0f1834;
+  --panel2:#111d42;
+  --gold:#e0b84f;
+  --cyan:#53c8ff;
+  --text:#f5f7ff;
+  --muted:#b8c2df;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 20px 60px rgba(0,0,0,.42);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(61,96,190,.30), transparent 58%),
+    linear-gradient(135deg,#050814,#0b1227 55%,#050814);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:auto;padding:16px}
+.shell{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:linear-gradient(180deg, rgba(13,21,48,.94), rgba(9,14,30,.96));
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  background:rgba(7,11,24,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:60;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.brand img{
+  width:48px;height:48px;border-radius:14px;object-fit:cover;
+  border:2px solid rgba(224,184,79,.55);
+  box-shadow:0 0 0 6px rgba(224,184,79,.07);
+}
+.brand h1{
+  margin:0;
+  font-size:18px;
+  line-height:1.1;
+}
+.brand p{
+  margin:2px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
+.menu-btn{
+  width:46px;height:46px;border-radius:14px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  color:var(--text);
+  font-size:22px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+.menu-drawer{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(0,0,0,.55);
+  display:none;
+}
+.menu-drawer.open{display:block}
+.menu-panel{
+  width:min(360px, 88vw);
+  height:100%;
+  overflow:auto;
+  padding:18px;
+  background:linear-gradient(180deg,#0b1230,#090f21);
+  border-right:1px solid var(--line);
+}
+.menu-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:16px;
+}
+.menu-head h2{
+  margin:0;
+  color:var(--gold);
+  font-size:20px;
+}
+.close-btn{
+  width:42px;height:42px;border-radius:12px;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  color:var(--text);
+  cursor:pointer;
+}
+.menu-list{
+  display:grid;
+  gap:10px;
+}
+.menu-list a{
+  padding:13px 14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--line);
+  font-weight:600;
+}
+.menu-list a:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+.hero{
+  padding:26px 18px 12px;
+}
+.hero-card{
+  border:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(18,29,67,.98), rgba(8,14,32,.98));
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero-media{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  object-fit:cover;
+}
+.hero-body{
+  padding:18px 18px 20px;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+  color:var(--gold);
+  border:1px solid var(--line);
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:12px;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(2rem, 5vw, 3.2rem);
+  line-height:1.03;
+  letter-spacing:-.02em;
+  color:#f7f8ff;
+}
+.subtitle{
+  margin:12px 0 0;
+  font-size:1.05rem;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:72ch;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.badges span{
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  color:#f7f8ff;
+  font-size:13px;
+}
+.review-strip{
+  margin-top:16px;
+  padding:16px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+}
+.review-stars{
+  color:#ffd95b;
+  font-size:1.3rem;
+  letter-spacing:2px;
+}
+.review-link{
+  color:var(--cyan);
+  font-weight:700;
+  text-decoration:underline;
+}
+.section{
+  margin:0 18px 16px;
+  padding:18px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+}
+.section h2,
+.section h3{
+  margin:0 0 10px;
+  color:var(--gold);
+  line-height:1.18;
+}
+.section p{
+  margin:0 0 12px;
+  color:var(--text);
+  line-height:1.75;
+}
+.section ul{
+  margin:10px 0 0 20px;
+  color:var(--text);
+  line-height:1.7;
+}
+.tiles{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.tile{
+  position:relative;
+  min-height:220px;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(11,17,38,.84), rgba(7,12,26,.92));
+  box-shadow:var(--shadow);
+  display:block;
+}
+.tile img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+}
+.tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(2,5,14,.02) 0%, rgba(2,5,14,.18) 45%, rgba(2,5,14,.88) 100%);
+}
+.tile-body{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  z-index:2;
+  padding:16px;
+}
+.tile h3{
+  margin:0 0 6px;
+  color:#ffd95b;
+  font-size:1.2rem;
+  line-height:1.1;
+}
+.tile p{
+  margin:0;
+  color:#eef3ff;
+  line-height:1.55;
+  font-size:.95rem;
+}
+.tile .open{
+  display:inline-flex;
+  margin-top:12px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(82,199,255,.14);
+  color:#e9f9ff;
+  border:1px solid rgba(82,199,255,.22);
+  font-weight:700;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.img-card{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+}
+.img-card img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.caption{
+  margin:0;
+  padding:12px 14px 14px;
+  color:var(--muted);
+  line-height:1.65;
+}
+.faq{
+  display:grid;
+  gap:10px;
+}
+.faq details{
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  padding:12px 14px;
+}
+.faq summary{
+  cursor:pointer;
+  color:#fff;
+  font-weight:700;
+}
+.faq p{
+  margin-top:10px;
+}
+.footer{
+  margin:0 18px 18px;
+  padding:18px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  text-align:center;
+}
+.small-note{
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.6;
+}
+.related-list{
+  display:grid;
+  gap:10px;
+}
+.related-list a{
+  padding:13px 14px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  font-weight:700;
+}
+.related-list a:hover{background:rgba(255,255,255,.08)}
+@media (max-width: 760px){
+  .tiles,.grid-2{grid-template-columns:1fr}
+  .hero-body{padding:16px}
+  .section{margin-left:12px;margin-right:12px}
+  .footer{margin-left:12px;margin-right:12px}
+}
+</style>
 </head>
 <body>
-
 <div class="menu-drawer" id="menuDrawer" aria-hidden="true">
   <div class="menu-panel">
     <div class="menu-head">
@@ -64,101 +415,107 @@
       </div>
     </section>
 
+    <section class="section">
+      <h2>Start here if you are not sure where to go</h2>
+      <p>MindSkillsCare is the front door of the website. It helps a visitor quickly understand what the practice offers and choose the page that matches what they feel today.</p>
+      <p>You do not need to read everything. If you already know the problem, open that page. If you are not sure, use this hub as a simple guide and begin with the topic that feels closest to your concern.</p>
+    </section>
 
-<section class="section">
-  <h2>MindSkillsCare is the starting point</h2>
-  <p>Think of this page like the reception desk of the website. It gives a quick idea of who we are, what we help with, and where to go next. A visitor should be able to understand the brand in the first few seconds.</p>
-  <p>The goal is to make the journey simple. Some visitors want the main psychologist page first. Others want anxiety help, relationship support, family counseling, or online therapy. This hub makes that choice easy.</p>
-</section>
+    <section class="section">
+      <h2>Choose the page that matches your concern</h2>
+      <p>Each tile below opens one focused page. That keeps the site easy to use. A person who feels anxious can go to anxiety support. Someone feeling low can open depression support. A couple can go to relationship support.</p>
+      <p>This is better than mixing everything on one page, because people can move straight to the help they need.</p>
+    </section>
 
-<section class="section">
-  <h2>How to use this page</h2>
-  <p>Start with the main authority page if you want the broad picture. Use the other tiles when you already know the kind of help you need. This saves time and keeps the site easy to use on mobile.</p>
-  <p>Each tile below is a doorway to one focused topic. That is better for people because they do not need to scroll through everything at once.</p>
-</section>
+    <section class="section">
+      <h2>Featured topics</h2>
+      <div class="tiles">
+        <a class="tile" href="best-psychologist-in-chennai.html">
+          <img src="profile.jpg" alt="D. Durga profile portrait" onerror="this.onerror=null;this.src='images/psychologist.jpg';">
+          <div class="tile-body">
+            <h3>Best Psychologist in Chennai</h3>
+            <p>Main authority page for trust, location, and first contact.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+        <a class="tile" href="anxiety-treatment-chennai.html">
+          <img src="images/anxiety.jpg" alt="Anxiety support" loading="lazy">
+          <div class="tile-body">
+            <h3>Anxiety Treatment</h3>
+            <p>Support for worry, panic, and overthinking.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+        <a class="tile" href="depression-counselling-chennai.html">
+          <img src="images/depression.jpg" alt="Depression support" loading="lazy">
+          <div class="tile-body">
+            <h3>Depression Counselling</h3>
+            <p>Care for low mood, tiredness, and emotional heaviness.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+        <a class="tile" href="relationship-counselling-chennai.html">
+          <img src="images/couple.jpg" alt="Relationship support" loading="lazy">
+          <div class="tile-body">
+            <h3>Relationship Counselling</h3>
+            <p>Help with communication, trust, and emotional connection.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+        <a class="tile" href="family-counseling-chennai.html">
+          <img src="images/family.jpg" alt="Family support" loading="lazy">
+          <div class="tile-body">
+            <h3>Family Counseling</h3>
+            <p>Calmer conversations and better understanding at home.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+        <a class="tile" href="online-therapy-india.html">
+          <img src="images/online.jpg" alt="Online therapy" loading="lazy">
+          <div class="tile-body">
+            <h3>Online Therapy India</h3>
+            <p>Private sessions from home, across India and abroad.</p>
+            <span class="open">Open →</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
-<section class="section">
-  <h2>Featured topics</h2>
-  <div class="tiles">
-    <a class="tile" href="best-psychologist-in-chennai.html">
-      <img src="profile.jpg" alt="D. Durga profile portrait" onerror="this.onerror=null;this.src='images/psychologist.jpg';">
-      <div class="tile-body">
-        <h3>Best Psychologist in Chennai</h3>
-        <p>Main authority page for trust, location, and general support.</p>
-        <span class="open">Open →</span>
+    <section class="section">
+      <h2>How this page helps you</h2>
+      <p>The hub gives a quick overview of the clinic and then points you to the right service page. That means less confusion and faster help.</p>
+      <p>It is designed for real people, not just search engines. Families, adults, students, and online visitors can all find the right route in just a few clicks.</p>
+      <div class="grid-2" style="margin-top:14px">
+        <div class="img-card">
+          <img src="images/clinic.jpg" alt="Calm clinic interior" loading="lazy">
+          <p class="caption">A premium clinic visual helps establish real-world trust and a serious professional tone.</p>
+        </div>
+        <div class="img-card">
+          <img src="images/notes.jpg" alt="Counseling notes" loading="lazy">
+          <p class="caption">A structured consultation visual signals process, care, and attention to detail.</p>
+        </div>
       </div>
-    </a>
-    <a class="tile" href="anxiety-treatment-chennai.html">
-      <img src="images/anxiety.jpg" alt="Anxiety support" loading="lazy">
-      <div class="tile-body">
-        <h3>Anxiety Treatment</h3>
-        <p>For overthinking, panic feelings, and constant worry.</p>
-        <span class="open">Open →</span>
-      </div>
-    </a>
-    <a class="tile" href="depression-counselling-chennai.html">
-      <img src="images/depression.jpg" alt="Depression support" loading="lazy">
-      <div class="tile-body">
-        <h3>Depression Counselling</h3>
-        <p>For low mood, tiredness, and loss of motivation.</p>
-        <span class="open">Open →</span>
-      </div>
-    </a>
-    <a class="tile" href="relationship-counselling-chennai.html">
-      <img src="images/couple.jpg" alt="Relationship support" loading="lazy">
-      <div class="tile-body">
-        <h3>Relationship Counselling</h3>
-        <p>For communication, trust, and emotional connection.</p>
-        <span class="open">Open →</span>
-      </div>
-    </a>
-    <a class="tile" href="family-counseling-chennai.html">
-      <img src="images/family.jpg" alt="Family support" loading="lazy">
-      <div class="tile-body">
-        <h3>Family Counseling</h3>
-        <p>For calmer conversations and less conflict at home.</p>
-        <span class="open">Open →</span>
-      </div>
-    </a>
-    <a class="tile" href="online-therapy-india.html">
-      <img src="images/online.jpg" alt="Online therapy" loading="lazy">
-      <div class="tile-body">
-        <h3>Online Therapy India</h3>
-        <p>Private support from home, India-wide and NRI-friendly.</p>
-        <span class="open">Open →</span>
-      </div>
-    </a>
-  </div>
-</section>
+    </section>
 
-<section class="section">
-  <h2>What people usually come here for</h2>
-  <p>Many visitors are looking for one of four things: a calmer mind, better relationships, a more stable routine, or a private place to talk. The pages in this site are arranged around those needs, so people can go directly to the most useful page for them.</p>
-  <div class="grid-2" style="margin-top:14px">
-    <div class="img-card">
-      <img src="images/clinic.jpg" alt="Premium clinic interior" loading="lazy">
-      <p class="caption">A calm clinic image helps the site feel real, safe, and professional.</p>
-    </div>
-    <div class="img-card">
-      <img src="images/notes.jpg" alt="Counseling notes" loading="lazy">
-      <p class="caption">A process image helps people understand that support is structured and thoughtful.</p>
-    </div>
-  </div>
-</section>
+    <section class="section">
+      <h2>Why this structure is useful</h2>
+      <p>When one strong hub page connects several focused pages, the website feels organised and easier to trust. Visitors can see the whole service range at a glance and then go deeper only where needed.</p>
+      <p>This also helps search engines understand that the site has one main psychology hub and several supporting topic pages.</p>
+    </section>
 
-<section class="section">
-  <h2>Frequently asked questions</h2>
-  <div class="faq">
-    <details><summary>What is MindSkillsCare?</summary><p>It is the main hub page that connects all the psychology and wellness topics in one place.</p></details>
-    <details><summary>Should I start here or on the main psychologist page?</summary><p>Start here if you want to explore. Go to the main psychologist page if you already know you want the core clinic page.</p></details>
-    <details><summary>Can I open the pages from the menu too?</summary><p>Yes. The menu gives direct access to all major pages on the website.</p></details>
-  </div>
-</section>
-
+    <section class="section">
+      <h2>Quick FAQs</h2>
+      <div class="faq">
+        <details><summary>What should I open first?</summary><p>If you know your concern, open that topic page. If you are not sure, start with the main psychologist page.</p></details>
+        <details><summary>Do I need to read every page?</summary><p>No. The tiles are there so you can go straight to the page that matches your need.</p></details>
+        <details><summary>Is this only for people in Chennai?</summary><p>No. The site includes online support, so people outside Chennai can also use it.</p></details>
+        <details><summary>Can I book from the hub page?</summary><p>Yes. Use the menu or the contact page whenever you are ready.</p></details>
+      </div>
+    </section>
 
     <footer class="footer">
       <div><strong>D. Durga</strong> · Founder & CEO</div>
-      <div>Durga Counseling Centre · T Nagar, Chennai</div>
+      <div>Durga Psychiatric Centre · T Nagar, Chennai</div>
     </footer>
   </div>
 </div>
