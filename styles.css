@@ -2324,4 +2324,36 @@ button:active {
 
 /* ===== FORCE GRADIENT TEXT ON CARD ===== */
 
+/* FORCE GOLD LUXURY TEXT ON WORKSHOP CARDS */
+.grid .card{
+  color: #f6de9a !important;
+  font-weight: 600;
+  text-shadow:
+    0 0 4px rgba(255, 215, 0, 0.35),
+    0 0 10px rgba(255, 180, 0, 0.18);
+}
+
+/* make sure no earlier gradient rule is hiding the text */
+.grid .card *,
+.grid .card span,
+.grid .card div,
+.grid .card p{
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+  background: none !important;
+  text-shadow: inherit !important;
+}
+
+
+
+.grid .card{
+  color: #fff1bf !important;
+  text-shadow:
+    0 0 5px rgba(255, 215, 0, 0.45),
+    0 0 12px rgba(255, 200, 80, 0.22);
+}
+
+
+
+
 
