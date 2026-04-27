@@ -4058,6 +4058,83 @@ section.hero{
 }
 
 
+.workshop-carousel-wrap{
+  position:relative;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+/* TITLE BADGE */
+.ws-title-badge{
+  position:absolute;
+  top:-12px;
+  left:10px;
+  z-index:5;
+
+  font-size:11px;
+  font-weight:700;
+  padding:5px 10px;
+  border-radius:20px;
+
+  background:linear-gradient(135deg,#ffd97a,#ffb347);
+  color:#000;
+
+  box-shadow:0 4px 12px rgba(255,215,120,0.4);
+}
+
+/* CAROUSEL */
+.workshop-carousel{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:autoScroll 14s linear infinite;
+}
+
+@keyframes autoScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* CARD */
+.ws-card{
+  flex:0 0 auto;
+  padding:10px 16px;
+  border-radius:14px;
+
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,215,120,0.25);
+
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+
+  box-shadow:0 0 8px rgba(255,215,120,0.15);
+}
+
+/* FEATURED */
+.ws-card.featured{
+  border:1px solid rgba(255,215,120,0.6);
+  box-shadow:0 0 16px rgba(255,215,120,0.4);
+}
+
+/* BOOK BADGE */
+.ws-card{position:relative;}
+
+.badge{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+  font-size:10px;
+  padding:3px 6px;
+
+  background:linear-gradient(135deg,#ffd97a,#ffb347);
+  color:#000;
+
+  border-radius:6px;
+  font-weight:700;
+}
+
 .call-btn{
   position: fixed;
   bottom: 20px;
