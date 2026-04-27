@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Wall | Durga Psychiatric Centre</title>
+
+<style>
+
+/* ===== PAGE ONLY (SAFE CSS) ===== */
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#0b1220;
+  color:#fff;
+  padding-bottom:100px;
+}
+
+/* ===== CONTAINER ===== */
+.wrap{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
+}
+
+/* ===== HEADER ===== */
+.header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.header img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.header h1{
+  margin:0;
+  font-size:18px;
+  color:#facc15;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:linear-gradient(145deg,#0f1b33,#0a1326);
+  border-radius:18px;
+  padding:14px;
+  margin-bottom:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* ===== TITLE ===== */
+.title{
+  font-weight:700;
+  margin-bottom:10px;
+  color:#facc15;
+}
+
+/* ===== YOUTUBE (SMART) ===== */
+.yt-box{
+  width:100%;
+  max-width:720px;
+  margin:auto;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+  background:#000;
+}
+
+.yt-box iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ===== PORTRAIT MODE ===== */
+.vertical{
+  max-width:380px;
+  aspect-ratio:9/16;
+}
+
+/* ===== FACEBOOK / INSTAGRAM ===== */
+.vertical-box{
+  max-width:380px;
+  margin:auto;
+  aspect-ratio:9/16;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+}
+
+.vertical-box iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+  padding:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#facc15,#fb7185);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* ===== BACK ===== */
+.back{
+  display:inline-block;
+  margin-bottom:10px;
+  color:#ccc;
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<a href="index.html" class="back">← Back</a>
+
+<div class="header">
+  <img src="profile.jpg">
+  <h1>Social Updates</h1>
+</div>
+
+<!-- ================= YOUTUBE PLAYLIST ================= -->
+<div class="card">
+  <div class="title">🎬 Playlist</div>
+
+  <div class="yt-box">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLrS_NSf0TJcvTPZbYbFiJQ4idEdcXWlUZ" allowfullscreen></iframe>
+  </div>
+
+  <a class="btn" href="https://youtube.com/playlist?list=PLrS_NSf0TJcvTPZbYbFiJQ4idEdcXWlUZ" target="_blank">
+    View Playlist
+  </a>
+</div>
+
+<!-- ================= YOUTUBE LATEST ================= -->
+<div class="card">
+  <div class="title">⚡ Latest Videos</div>
+
+  <div class="yt-box">
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=durgachelladurai" allowfullscreen></iframe>
+  </div>
+
+  <a class="btn" href="https://youtube.com/@durgachelladurai" target="_blank">
+    Visit Channel
+  </a>
+</div>
+
+<!-- ================= INSTAGRAM ================= -->
+<div class="card">
+  <div class="title">📸 Instagram Reel</div>
+
+  <div class="vertical-box">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DXmWEQqAc2t/"
+      data-instgrm-version="14"
+      style="margin:0;">
+    </blockquote>
+  </div>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <a class="btn" href="https://www.instagram.com/durgachelladurai696/" target="_blank">
+    Open Instagram
+  </a>
+</div>
+
+<!-- ================= FACEBOOK ================= -->
+<div class="card">
+  <div class="title">📘 Facebook Reel</div>
+
+  <div class="vertical-box">
+    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1562821525851377/&show_text=false"
+      allowfullscreen="true"></iframe>
+  </div>
+
+  <a class="btn" href="https://www.facebook.com/reel/1562821525851377/" target="_blank">
+    Watch on Facebook
+  </a>
+</div>
+
+</div>
+
+</body>
+</html>
