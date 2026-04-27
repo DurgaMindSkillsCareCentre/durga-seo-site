@@ -3160,31 +3160,6 @@ section.hero::before {
 
 
 
-.lux-card-secondary {
-  background: linear-gradient(180deg, #111827, #0b1220);
-
-  border-radius: 18px;
-
-  border: 1px solid rgba(255,255,255,0.05);
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.03);
-
-  padding: 16px;
-  }
-
-
-
-  .panel {
-  margin-top: 14px;
-  }
-
-
-.lux-card-secondary h2 {
-  color: #e6c27a;
-  letter-spacing: 0.3px;
-}
 
 
 .call-btn{
