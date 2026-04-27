@@ -501,6 +501,37 @@
       .card-actions{padding:0 14px 14px}
       .btn{flex:1 1 100%}
     }
+
+
+    /* ===== ADF PORTRAIT FIX (SAFE ONLY THIS PAGE) ===== */
+
+/* Instagram + Facebook reel portrait */
+.fb-embed iframe,
+.insta-embed blockquote{
+  max-width:380px;
+  margin:auto;
+}
+
+/* make portrait ratio */
+.fb-embed{
+  display:flex;
+  justify-content:center;
+}
+
+.fb-embed iframe{
+  width:100%;
+  max-width:380px;
+  aspect-ratio:9/16;
+  height:auto !important;
+}
+
+/* YouTube stays landscape */
+.yt-embed{
+  max-width:720px;
+  margin:auto;
+  }
+
+    
   </style>
 </head>
 <body>
@@ -611,7 +642,7 @@
 
         <div class="embed-shell fb-embed">
           <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/1DrofAAmC9/&show_text=0&width=500"
+            src=src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1562821525851377/&show_text=false"
             title="Facebook video"
             width="100%"
             height="280"
