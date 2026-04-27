@@ -531,6 +531,38 @@
   margin:auto;
   }
 
+/* ===== YOUTUBE SMART EMBED ===== */
+
+.embed-shell.yt-embed{
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* DEFAULT LANDSCAPE (16:9) */
+.embed-shell.yt-embed::before{
+  content:"";
+  display:block;
+  padding-top:56.25%;
+}
+
+/* IFRAME FULL FIT */
+.embed-shell.yt-embed iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* PORTRAIT MODE (for shorts / reels style) */
+.embed-shell.yt-embed.portrait::before{
+  padding-top:177.77%; /* 9:16 */
+}
+
     
   </style>
 </head>
@@ -613,7 +645,7 @@
           </div>
         </div>
 
-        <div class="embed-shell yt-embed">
+        <div class="embed-shell yt-embed portrait">
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=UUIhyS9S0YSoXiicl4FIz2rQ"
             title="Latest YouTube uploads"
