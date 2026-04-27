@@ -3414,6 +3414,80 @@ section.hero{
 
 
 
+/* ===== ULTRA LUXURY TRUST BAR ===== */
+.trust-sticky{
+  position:sticky;
+  top:0;
+  z-index:999;
+  padding:6px 0;
+
+  background: linear-gradient(135deg,#0b1220,#0f1b35);
+  backdrop-filter: blur(18px);
+
+  border-bottom:1px solid rgba(255,215,0,0.15);
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.4),
+    inset 0 0 20px rgba(255,215,0,0.05);
+
+  overflow:hidden;
+}
+
+/* moving track */
+.trust-track{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  padding:6px 16px;
+  animation: luxuryScroll 28s linear infinite;
+}
+
+/* premium badge */
+.trust-item{
+  flex:0 0 auto;
+  font-size:12px;
+  padding:6px 14px;
+  border-radius:999px;
+
+  background: linear-gradient(135deg,#1a2747,#0f1b35);
+  border:1px solid rgba(255,215,0,0.25);
+
+  color:#f5f5f5;
+  white-space:nowrap;
+
+  box-shadow:
+    0 0 10px rgba(255,215,0,0.15),
+    inset 0 0 6px rgba(255,255,255,0.05);
+
+  transition: all 0.3s ease;
+}
+
+/* slight hover/touch effect */
+.trust-item:active{
+  transform: scale(0.95);
+}
+
+/* smooth slow motion */
+@keyframes luxuryScroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* pause on touch (mobile UX) */
+.trust-sticky:active .trust-track{
+  animation-play-state: paused;
+}
+
+
+
+.trust-item:nth-child(1){
+  animation: fadeSwap 12s infinite;
+}
+
+@keyframes fadeSwap{
+  0%,20%{ opacity:1 }
+  25%,100%{ opacity:0.4 }
+}
+
 
 
 
