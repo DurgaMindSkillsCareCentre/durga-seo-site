@@ -4437,107 +4437,18 @@ button{
 
 /* ===== LUXURY GOLD TEXT (NO BAND, HIGH-END) ===== */
 
-.gold {
-  color: #ffd97a;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-
-  /* soft layered glow (very controlled) */
-  text-shadow:
-    0 0 4px rgba(255,215,120,0.25),
-    0 0 10px rgba(255,215,120,0.15);
-
-  /* slight richness */
-  filter: saturate(1.1);
-}
 
 
-
-/* shimmer effect */
-.gold {
-  position: relative;
-  overflow: hidden;
-}
-
-.gold::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;
-  height: 100%;
-
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,215,120,0.25),
-    transparent 70%
-  );
-
-  animation: shine 4s infinite;
-}
-
-@keyframes shine {
-  0% { left: -120%; }
-  100% { left: 120%; }
-}
-
-
-rgba(255,215,120,0.25) → 0.15
-animation: 4s → 6s (slower = more premium)
-
-
-/* ===== PRO GOLD TEXT ===== */
 .gold {
   background: linear-gradient(135deg, #fff3c4, #ffd97a, #ffcc66);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   font-weight: 800;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
 
-  text-shadow:
-    0 2px 8px rgba(255,215,120,0.15);
-
-  filter: contrast(1.05) saturate(1.1);
+  /* subtle premium feel (no glow mess) */
+  text-shadow: 0 1px 2px rgba(255,215,120,0.15);
 }
-
-
-
-
-.gold::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,0.25),
-    transparent 70%
-  );
-  opacity: 0.3;
-  animation: shine 6s infinite linear;
-}
-
-@keyframes shine {
-  0% { transform: translateX(-120%); }
-  100% { transform: translateX(120%); }
-}
-
-
-/* reduce space between header and hero */
-.hero {
-  margin-top: 6px !important;   /* adjust 4–10px if needed */
-  padding-top: 12px !important;
-}
-
-
-.hero-inner > div {
-  padding-left: 18px !important;
-  padding-right: 14px !important;
-}
-
-
-
 
 
