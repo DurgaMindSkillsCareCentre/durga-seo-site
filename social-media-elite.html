@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Durga Psychiatric Centre | Social Wall</title>
+  <meta name="description" content="Cinematic social wall with latest YouTube videos, Facebook updates, and Instagram reel embeds for Durga Psychiatric Centre." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg2:#111a33;
+      --panel:#0f1629;
+      --panel2:#121c34;
+      --line:rgba(255,255,255,.08);
+      --gold:#f4d88a;
+      --gold2:#ffb85c;
+      --text:#eef2ff;
+      --muted:rgba(238,242,255,.74);
+      --shadow:0 16px 42px rgba(0,0,0,.55);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,215,0,.08), transparent 24%),
+        radial-gradient(circle at 90% 20%, rgba(72,118,255,.11), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(255,105,180,.07), transparent 25%),
+        linear-gradient(180deg, #060913 0%, #0b1020 100%);
+      min-height:100vh;
+      padding-bottom:112px;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px 14px 28px;
+    }
+
+    /* Top bar */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      margin-bottom:16px;
+      padding:12px 0 8px;
+      background:linear-gradient(180deg, rgba(6,9,19,.96), rgba(6,9,19,.82), rgba(6,9,19,0));
+      backdrop-filter: blur(10px);
+    }
+    .topcard{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255,255,255,.06), transparent 34%),
+        radial-gradient(circle at 82% 90%, rgba(255,215,0,.12), transparent 38%),
+        linear-gradient(145deg, rgba(20,30,60,.96), rgba(10,18,40,.96));
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.05);
+      padding:14px 14px 14px 14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:58px;height:58px;border-radius:50%;
+      overflow:hidden;flex:0 0 auto;
+      border:2px solid rgba(255,215,0,.58);
+      box-shadow:0 0 14px rgba(255,215,0,.45),0 0 28px rgba(255,215,0,.20);
+      background:#111;
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .brand{
+      flex:1 1 auto;
+      min-width:0;
+    }
+    .brand h1{
+      margin:0;
+      font-size:clamp(20px,3.4vw,32px);
+      line-height:1.15;
+      letter-spacing:.2px;
+      background:linear-gradient(180deg,#fff4cc 0%,#ffd96d 45%,#c8952b 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.35;
+    }
+    .menu-btn{
+      width:52px;height:52px;border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+      flex:0 0 auto;
+    }
+
+    .hero{
+      margin-top:16px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.05), transparent 30%),
+        radial-gradient(circle at 85% 10%, rgba(255,215,0,.10), transparent 24%),
+        radial-gradient(circle at 80% 100%, rgba(0,204,255,.09), transparent 32%),
+        linear-gradient(145deg, rgba(18,28,53,.98), rgba(10,16,31,.98));
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);
+      padding:20px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -15% -55% auto;
+      width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle, rgba(255,215,0,.10), transparent 65%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#ecd9a1;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .hero h2{
+      margin:0;
+      font-size:clamp(28px,5vw,56px);
+      line-height:1.05;
+      letter-spacing:.2px;
+      max-width:10ch;
+      background:linear-gradient(180deg,#fff2c5 0%,#ffd76a 44%,#c8972e 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:0 2px 10px rgba(0,0,0,.35);
+    }
+    .hero p{
+      margin:16px 0 0;
+      max-width:56rem;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:16px;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#dff2e1;
+      font-size:13px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .section-head{
+      margin:22px 4px 10px;
+    }
+    .section-head h3{
+      margin:0;
+      font-size:22px;
+      line-height:1.15;
+      color:#f4dd9d;
+      letter-spacing:.2px;
+    }
+    .section-head p{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.65;
+      max-width:70ch;
+      font-size:15px;
+    }
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:16px 0 6px;
+    }
+    .tab{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      color:#eaeefc;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:13px;
+      font-weight:600;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:14px;
+    }
+    .card{
+      position:relative;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.07);
+      background:
+        radial-gradient(circle at 14% 10%, rgba(255,215,0,.08), transparent 24%),
+        radial-gradient(circle at 86% 88%, rgba(0,196,255,.06), transparent 30%),
+        linear-gradient(180deg, rgba(19,25,44,.98), rgba(10,15,29,.98));
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.05);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:0;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      padding:1px;
+      background:linear-gradient(135deg, rgba(255,215,0,.65), rgba(0,195,255,.32), rgba(255,105,180,.35), rgba(255,215,0,.65));
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+      opacity:.55;
+    }
+    .card-top{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:16px 16px 12px;
+    }
+    .card-icon{
+      width:48px;height:48px;border-radius:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(255,215,0,.18), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.09);
+      flex:0 0 auto;
+      font-size:24px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .card-top h4{
+      margin:0;
+      font-size:19px;
+      line-height:1.1;
+      color:#fff0bf;
+      letter-spacing:.2px;
+    }
+    .card-sub{
+      margin-top:4px;
+      color:rgba(233,238,252,.64);
+      font-size:13px;
+      line-height:1.35;
+    }
+    .embed-shell{
+      margin:0 16px 14px;
+      border-radius:20px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.06), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      min-height:240px;
+      position:relative;
+    }
+    .embed-shell::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .embed-shell iframe{
+      display:block;
+      width:100%;
+      border:0;
+      min-height:240px;
+      background:#111827;
+    }
+    .yt-embed{aspect-ratio:16/9;}
+    .yt-embed iframe{min-height:auto;height:100%}
+    .fb-embed iframe{min-height:320px}
+    .insta-embed{padding:8px 8px 0}
+    .insta-embed blockquote{
+      margin:0 auto !important;
+      max-width:100%;
+    }
+    .card-body{
+      padding:0 16px 12px;
+      color:var(--muted);
+      line-height:1.72;
+      font-size:14px;
+      flex:1 1 auto;
+    }
+    .card-actions{
+      display:flex;
+      gap:10px;
+      padding:0 16px 16px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      text-decoration:none;
+      padding:11px 14px;
+      font-size:14px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      flex:1 1 150px;
+      color:#07101d;
+      background:linear-gradient(135deg,#fff0a8,#ffb85c);
+      box-shadow:0 8px 18px rgba(255,180,80,.18);
+    }
+    .btn.secondary{
+      color:#dfe9ff;
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.08);
+      box-shadow:none;
+    }
+    .btn:active{transform:translateY(1px) scale(.99)}
+
+    .wide{
+      margin-top:16px;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.07);
+      background:linear-gradient(180deg, rgba(14,20,38,.96), rgba(10,14,26,.96));
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);
+      padding:18px;
+    }
+    .wide h3{
+      margin:0 0 8px;
+      font-size:20px;
+      color:#f4dd9d;
+    }
+    .wide p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .footer{
+      margin-top:18px;
+      color:rgba(233,238,252,.62);
+      text-align:center;
+      line-height:1.65;
+      font-size:13px;
+      padding-bottom:8px;
+    }
+
+    .floating{
+      position:fixed;
+      right:14px;
+      bottom:14px;
+      z-index:60;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .float{
+      width:56px;height:56px;border-radius:50%;
+      display:grid;place-items:center;
+      text-decoration:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.46);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:26px;
+    }
+    .call{background:linear-gradient(135deg,#ffb347,#ff7a18);color:#111}
+    .wa{background:linear-gradient(135deg,#25D366,#16a85a);color:#fff}
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.50);
+      backdrop-filter:blur(2px);
+      opacity:0;
+      pointer-events:none;
+      transition:.22s ease;
+      z-index:80;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+    .drawer{
+      position:fixed;
+      top:0;
+      right:-320px;
+      width:min(320px, 88vw);
+      height:100vh;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,215,0,.10), transparent 24%),
+        linear-gradient(180deg, #10182d, #0a1120);
+      border-left:1px solid rgba(255,255,255,.08);
+      box-shadow:-18px 0 40px rgba(0,0,0,.4);
+      z-index:90;
+      transition:right .24s ease;
+      padding:18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .drawer.open{right:0}
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding-bottom:6px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .drawer-head .mini-logo{
+      width:44px;height:44px;border-radius:50%;
+      overflow:hidden;
+      border:2px solid rgba(255,215,0,.45);
+      box-shadow:0 0 12px rgba(255,215,0,.28);
+      flex:0 0 auto;
+    }
+    .drawer-head .mini-logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .drawer-head strong{
+      font-size:16px;
+      color:#fff0bf;
+    }
+    .drawer-head span{
+      display:block;
+      color:rgba(233,238,252,.62);
+      font-size:12px;
+      margin-top:2px;
+    }
+    .drawer-links{
+      display:grid;
+      gap:10px;
+      margin-top:4px;
+    }
+    .drawer-links a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      text-decoration:none;
+      border-radius:16px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#eaf1ff;
+      font-weight:600;
+    }
+    .drawer-links a .tag{
+      font-size:12px;
+      color:#ffd96d;
+      font-weight:700;
+    }
+    .drawer-note{
+      margin-top:auto;
+      color:rgba(233,238,252,.60);
+      font-size:12px;
+      line-height:1.6;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .hero h2{max-width:12ch}
+    }
+    @media (max-width: 520px){
+      .wrap{padding:12px 12px 24px}
+      .topcard{padding:12px}
+      .logo{width:52px;height:52px}
+      .menu-btn{width:46px;height:46px;border-radius:16px}
+      .hero{padding:18px}
+      .section-head h3{font-size:20px}
+      .card-top h4{font-size:18px}
+      .embed-shell{margin:0 14px 12px}
+      .card-body{padding:0 14px 12px}
+      .card-actions{padding:0 14px 14px}
+      .btn{flex:1 1 100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="topbar">
+      <div class="topcard">
+        <div class="logo">
+          <img src="profile.jpg" alt="Durga Psychiatric Centre" onerror="this.style.display='none';this.parentElement.innerHTML='🌺'">
+        </div>
+        <div class="brand">
+          <h1>Durga Psychiatric Centre</h1>
+          <p>Social wall · cinematic updates · live platform content</p>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">✨ Official Social Wall · T. Nagar, Chennai</div>
+      <h2>Watch the latest posts, reels, and videos in one premium page.</h2>
+      <p>
+        A clean, cinematic social wall for quick browsing. Use this page to watch our featured YouTube playlist,
+        latest uploads, Facebook video, and Instagram reel without leaving the website.
+      </p>
+      <div class="chips">
+        <span class="chip">🎥 YouTube latest</span>
+        <span class="chip">📘 Facebook video</span>
+        <span class="chip">📸 Instagram reel</span>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <h3>Featured platforms</h3>
+      <p>Each card is designed like a premium media tile. Tap the buttons to open the original platform whenever you want the full social experience.</p>
+      <div class="tabs">
+        <a class="tab" href="#youtube">YouTube</a>
+        <a class="tab" href="#facebook">Facebook</a>
+        <a class="tab" href="#instagram">Instagram</a>
+      </div>
+    </div>
+
+    <section class="grid">
+
+      <article class="card" id="youtube">
+        <div class="card-top">
+          <div class="card-icon">▶</div>
+          <div>
+            <h4>Featured YouTube Playlist</h4>
+            <div class="card-sub">Curated mental health videos and awareness content</div>
+          </div>
+        </div>
+
+        <div class="embed-shell yt-embed">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=PLrS_NSf0TJcvTPZbYbFiJQ4idEdcXWlUZ"
+            title="Featured YouTube playlist"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="card-body">
+          A selected playlist for people who want deeper viewing: therapy tips, relationship guidance, soft skills,
+          and mental health learning in a single cinematic flow.
+        </div>
+        <div class="card-actions">
+          <a class="btn" href="https://youtube.com/playlist?list=PLrS_NSf0TJcvTPZbYbFiJQ4idEdcXWlUZ&si=JavbarOQ5ieQvRfl" target="_blank" rel="noopener">Watch Playlist</a>
+          <a class="btn secondary" href="https://youtube.com/@durgachelladurai?si=UxtGBEOREBbqeYoP" target="_blank" rel="noopener">Open Channel</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="card-icon">⚡</div>
+          <div>
+            <h4>Latest YouTube Uploads</h4>
+            <div class="card-sub">Auto-updating channel uploads feed</div>
+          </div>
+        </div>
+
+        <div class="embed-shell yt-embed">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=UUIhyS9S0YSoXiicl4FIz2rQ"
+            title="Latest YouTube uploads"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="card-body">
+          This uses the channel uploads feed so the newest videos appear automatically whenever a fresh upload goes live.
+        </div>
+        <div class="card-actions">
+          <a class="btn" href="https://youtube.com/@durgachelladurai?si=UxtGBEOREBbqeYoP" target="_blank" rel="noopener">Visit Channel</a>
+          <a class="btn secondary" href="https://www.youtube.com/channel/UCIhyS9S0YSoXiicl4FIz2rQ/videos" target="_blank" rel="noopener">Latest Tab</a>
+        </div>
+      </article>
+
+      <article class="card" id="facebook">
+        <div class="card-top">
+          <div class="card-icon">f</div>
+          <div>
+            <h4>Facebook Video</h4>
+            <div class="card-sub">Public video post from our page</div>
+          </div>
+        </div>
+
+        <div class="embed-shell fb-embed">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/1DrofAAmC9/&show_text=0&width=500"
+            title="Facebook video"
+            width="100%"
+            height="280"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+
+        <div class="card-body">
+          Best used for announcements, public awareness clips, community updates, and social proof through video.
+        </div>
+        <div class="card-actions">
+          <a class="btn" href="https://www.facebook.com/share/17ZGdhukDh/" target="_blank" rel="noopener">Open Facebook Page</a>
+          <a class="btn secondary" href="https://www.facebook.com/share/v/1DrofAAmC9/" target="_blank" rel="noopener">Open Video</a>
+        </div>
+      </article>
+
+      <article class="card" id="instagram">
+        <div class="card-top">
+          <div class="card-icon">◎</div>
+          <div>
+            <h4>Instagram Reel</h4>
+            <div class="card-sub">Featured reel with preview style embedding</div>
+          </div>
+        </div>
+
+        <div class="embed-shell insta-embed">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DXmWEQqAc2t/?igsh=dWlibm0zY2syYzB1"
+            data-instgrm-version="14"
+            style="background:#0b1220;border-radius:20px;margin:0;max-width:100%;min-width:0;padding:0;">
+          </blockquote>
+        </div>
+
+        <div class="card-body">
+          Instagram is perfect for short reels, visually strong guidance, clinic updates, and trust-building snippets.
+        </div>
+        <div class="card-actions">
+          <a class="btn" href="https://www.instagram.com/durgachelladurai696?igsh=MXEybHFkbjlrN3MwNg==" target="_blank" rel="noopener">Open Instagram</a>
+          <a class="btn secondary" href="https://www.instagram.com/reel/DXmWEQqAc2t/?igsh=dWlibm0zY2syYzB1" target="_blank" rel="noopener">Open Reel</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="wide">
+      <h3>Cinematic social wall strategy</h3>
+      <p>
+        One playlist for evergreen content, one live uploads feed for freshness, one Facebook video for community trust,
+        and one Instagram reel for visual impact. This keeps the page premium, fast, and easy to use on mobile.
+      </p>
+    </section>
+
+    <div class="footer">
+      © Durga Psychiatric Centre · Social Wall<br />
+      Clean, premium, and easy to browse on mobile.
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Navigation menu">
+    <div class="drawer-head">
+      <div class="mini-logo">
+        <img src="profile.jpg" alt="Durga Psychiatric Centre" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <strong>Durga Psychiatric Centre</strong>
+        <span>Quick navigation</span>
+      </div>
+    </div>
+
+    <div class="drawer-links">
+      <a href="index.html"><span>🏠 Home</span><span class="tag">Open</span></a>
+      <a href="#youtube"><span>▶ YouTube</span><span class="tag">Watch</span></a>
+      <a href="#facebook"><span>f Facebook</span><span class="tag">Watch</span></a>
+      <a href="#instagram"><span>◎ Instagram</span><span class="tag">Watch</span></a>
+      <a href="tel:+917395944527"><span>📞 Call</span><span class="tag">Now</span></a>
+      <a href="https://wa.me/917395944527" target="_blank" rel="noopener"><span>💬 WhatsApp</span><span class="tag">Chat</span></a>
+    </div>
+
+    <div class="drawer-note">
+      Tip: this page is optimized for hosted HTTPS viewing. Some embeds are unreliable in local preview or in-app file viewers.
+    </div>
+  </aside>
+
+  <div class="floating">
+    <a class="float call" href="tel:+917395944527" aria-label="Call now">📞</a>
+    <a class="float wa" href="https://wa.me/917395944527" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+
+    function closeDrawer(){
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function openDrawer(){
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    menuBtn.addEventListener('click', () => {
+      if(drawer.classList.contains('open')) closeDrawer();
+      else openDrawer();
+    });
+
+    overlay.addEventListener('click', closeDrawer);
+
+    drawer.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeDrawer);
+    });
+
+    (function loadInstagram(){
+      if (window.__instaLoaded) return;
+      window.__instaLoaded = true;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
