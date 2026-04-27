@@ -3149,7 +3149,45 @@ section.hero::before {
 
 
 
+/* ===== HERO TOP ===== */
+section.hero{
+  position: relative !important;
+  margin: 0 0 16px 0 !important;
+  padding: 20px 16px 18px !important;
+  border-radius: 22px !important;
 
+  background: linear-gradient(
+    180deg,
+    rgba(26, 31, 52, 0.98) 0%,
+    rgba(14, 18, 34, 0.98) 100%
+  ) !important;
+
+  border: 1px solid rgba(255,255,255,0.08) !important;
+
+  box-shadow:
+    0 14px 36px rgba(0,0,0,0.55) !important,
+    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+}
+
+/* ===== SECOND PANEL ===== */
+.panel.lux-card-secondary{
+  position: relative !important;
+  margin: 16px 0 0 0 !important;
+  padding: 16px !important;
+  border-radius: 18px !important;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 23, 40, 0.98) 0%,
+    rgba(10, 14, 26, 0.98) 100%
+  ) !important;
+
+  border: 1px solid rgba(255,255,255,0.06) !important;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.45) !important,
+    inset 0 1px 0 rgba(255,255,255,0.03) !important;
+    }
 
 
 .call-btn{
