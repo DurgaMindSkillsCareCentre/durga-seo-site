@@ -4266,6 +4266,12 @@ button{
     0 0 40px rgba(255,215,120,0.08);
 }
 
+
+.hero{
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,215,120,0.12), transparent 55%),
+    linear-gradient(180deg, #0b1220 0%, #111c33 48%, #0a1324 100%);
+}
   .call-btn{
   position: fixed;
   bottom: 20px;
