@@ -4315,8 +4315,25 @@ button{
 }
 
 
+.hero {
+  background: #0b1220 !important;   /* clean dark */
+}
+
+.hero-inner {
+  background: #0e1a30 !important;   /* slightly lighter panel */
+  border-radius: 20px;
+}
 
 
+
+.hero,
+.hero-inner {
+  background-image: none !important;
+}
+
+.parallax-layer {
+  display: none !important;
+}
 
 
   .call-btn{
