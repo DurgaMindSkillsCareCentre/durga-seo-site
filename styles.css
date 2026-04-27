@@ -4448,3 +4448,20 @@ section.hero{
 }
 
 
+/* FIX: Send via WhatsApp (btn) */
+a.btn,
+button.btn {
+  background: linear-gradient(135deg, #ffd97a, #ffb84d) !important;
+  color: #1a1a1a !important;
+  font-weight: 700;
+  border: none;
+}
+
+/* FIX: Free AI Test (small button) */
+a.small,
+button.small {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4) !important;
+  color: #1a1a1a !important;
+  font-weight: 600;
+  border: none;
+}
