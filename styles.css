@@ -3148,16 +3148,6 @@ section.hero::before {
 
 
 
-.hero {
-  padding: 24px 18px 18px;
-
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-
-  border-radius: 20px;
-
-  backdrop-filter: blur(6px);
-}
-
 
 
 
