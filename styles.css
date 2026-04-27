@@ -4414,8 +4414,17 @@ button{
 
 
 
-.hero * {
+.gold {
+  background: none !important;
   background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #ffd97a !important;
 }
 
-
+.hero h1,
+.hero h2 {
+  text-shadow: none !important;
+  background: none !important;
+    }
