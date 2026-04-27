@@ -2837,86 +2837,10 @@ button:active {
 
 
 
-.hero {
-  padding: 28px 16px 20px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(20,30,60,0.95),
-    rgba(10,18,40,0.95)
-  );
-
-  border-radius: 22px;
-
-  box-shadow:
-    0 12px 40px rgba(0,0,0,0.6),
-    inset 0 0 40px rgba(255,215,0,0.04);
-  }
 
 
-.hero-inner > div {
-  display: flex;
-  flex-direction: column;
-}
 
 
-.eyebrow {
-  margin-bottom: 10px;
-  opacity: 0.8;
-  font-size: 13px;
-}
-
-
-.hero h2 {
-  font-size: 26px;
-  line-height: 1.25;
-  letter-spacing: 0.4px;
-
-  margin-bottom: 16px;
-  }
-
-
-.hero p {
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.85);
-
-  margin-bottom: 18px;
-    }
-
-
-.trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  margin-bottom: 18px;
-}
-
-.trust {
-  padding: 8px 12px;
-  border-radius: 20px;
-
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,215,0,0.2);
-
-  font-size: 13px;
-}
-
-.cta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  margin-bottom: 14px;
-}
-
-
-.fine {
-  margin-top: 12px;
-  font-size: 14px;
-  opacity: 0.85;
-}
 
 
 .gold {
@@ -2926,7 +2850,40 @@ button:active {
 }
 
 
+/* subtle spacing only */
+.hero-inner {
+  gap: 10px;
+  }
 
+
+.cta-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  }
+
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.trust {
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+.hero p {
+  margin-bottom: 10px;
+}
+
+
+.hero h2 {
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
 
 
 .call-btn{
