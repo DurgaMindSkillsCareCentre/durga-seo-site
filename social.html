@@ -562,6 +562,33 @@
   padding-top:177.77%; /* 9:16 */
 }
 
+/* ===== YOUTUBE LANDSCAPE FIX (PLAYLIST) ===== */
+
+.embed-shell.yt-landscape{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* force proper 16:9 */
+.embed-shell.yt-landscape::before{
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.embed-shell.yt-landscape iframe{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
     
   </style>
 </head>
@@ -616,7 +643,7 @@
           </div>
         </div>
 
-        <div class="embed-shell yt-embed">
+        <div class="embed-shell yt-embed yt-landscape">
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=PLrS_NSf0TJcvTPZbYbFiJQ4idEdcXWlUZ"
             title="Featured YouTube playlist"
