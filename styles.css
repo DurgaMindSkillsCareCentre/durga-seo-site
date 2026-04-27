@@ -3722,17 +3722,6 @@ section.hero{
   color:#ffd97a;
 }
 
-body{
-  margin: 0;
-  color: #e9ecf5;
-  background:
-    radial-gradient(circle at top left, rgba(255, 215, 0, 0.10), transparent 28%),
-    radial-gradient(circle at top right, rgba(120, 140, 255, 0.10), transparent 30%),
-    radial-gradient(circle at center 20%, rgba(255, 255, 255, 0.05), transparent 42%),
-    linear-gradient(180deg, #0b1220 0%, #111c33 48%, #0a1324 100%);
-  background-attachment: fixed;
-}
-
 
 .call-btn{
   position: fixed;
