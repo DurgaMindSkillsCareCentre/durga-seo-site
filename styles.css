@@ -3217,21 +3217,6 @@ section.hero{
 
 
 
-.cta-row{
-  display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;   /* keep in one line */
-}
-
-.cta-row .btn{
-  flex: 1;             /* equal width */
-}
-
-.cta-row .pill{
-  flex: 1;
-  text-align: center;
-                         }
-
 
 
 
