@@ -3285,6 +3285,34 @@ section.hero{
   animation:scrollLoop 20s linear infinite;
   }
 
+
+
+.cred-strip{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:12px 16px;   /* increase side padding */
+  scroll-behavior:smooth;
+}
+
+
+
+.cred-badge{
+  flex:0 0 auto;   /* prevents shrinking */
+}
+
+
+
+.cred-badge{
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 8px rgba(255,215,0,0.2)}
+  50%{box-shadow:0 0 18px rgba(255,215,0,0.5)}
+  }
+
+
 .call-btn{
   position: fixed;
   bottom: 20px;
