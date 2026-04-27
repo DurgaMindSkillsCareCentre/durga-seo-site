@@ -2982,6 +2982,89 @@ button:active {
                               }
 
 
+section.hero {
+  position: relative !important;
+
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,255,255,0.08), transparent 35%),
+    radial-gradient(circle at 85% 90%, rgba(255,215,0,0.12), transparent 40%),
+    linear-gradient(180deg, #1c1f2f 0%, #12141f 100%) !important;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 -1px 0 rgba(255,215,0,0.08) !important;
+                    }
+
+
+.hero h2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.35),
+    transparent 70%
+  );
+
+  animation: shimmer 3.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+
+.btn-primary {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 4px 14px rgba(255,180,80,0.4);
+  }
+  50% {
+    box-shadow:
+      0 6px 22px rgba(255,180,80,0.7);
+  }
+  }
+
+
+
+.trust {
+  transition: all 0.25s ease;
+}
+
+.trust:active {
+  transform: scale(0.96);
+}
+
+
+.hero p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  letter-spacing: 0.2px;
+}
+
+
+
+                         
 
 
 
