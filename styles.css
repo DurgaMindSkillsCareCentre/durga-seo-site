@@ -4220,7 +4220,51 @@ section.hero{
 }
 
 
+.hero{
+  margin-top: -20px;   /* pulls content up */
+  padding-top: 10px;   /* keeps breathing space */
+}
 
+
+.hero-card{
+  width: 94%;          /* increase width */
+  max-width: 520px;    /* mobile safe */
+  margin: 0 auto;
+
+  padding: 18px 16px;  /* reduce side padding */
+}
+
+
+.hero-title{
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  }
+
+
+.btn-gold{
+  background: linear-gradient(135deg,#ffe7a3,#ffbf47);
+  color: #2b2b2b;
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 15px rgba(255,190,80,0.25);
+
+  border: none;
+}
+
+
+
+button{
+  background: linear-gradient(135deg,#ffe7a3,#ffbf47) !important;
+  color:#2b2b2b !important;
+}
+
+
+.hero-card{
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    0 0 40px rgba(255,215,120,0.08);
+}
 
   .call-btn{
   position: fixed;
