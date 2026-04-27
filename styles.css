@@ -3682,7 +3682,33 @@ section.hero{
 }
 
 
+/* MAIN PILL */
+.trust-pill{
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
 
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #f5d77a;
+
+  background: rgba(255,215,0,0.08);
+  border: 1px solid rgba(255,215,0,0.25);
+
+  box-shadow:
+    inset 0 0 10px rgba(255,215,0,0.08),
+    0 0 12px rgba(255,215,0,0.15);
+
+  margin-top: 10px;
+}
+
+/* SUB TEXT */
+.trust-sub{
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  margin-top: 6px;
+    }
 
 
 .call-btn{
