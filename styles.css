@@ -3254,8 +3254,36 @@ section.hero{
   to{transform:translateX(-50%);}
 }
 
+.cred-strip-wrap{
+  margin: 18px 0 10px;
+  padding: 0 12px;
+  overflow: hidden;
+}
+
+.cred-strip{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:10px 4px;
+  scroll-behavior:smooth;
+}
+
+.cred-strip::-webkit-scrollbar{
+  display:none;
+                        }
 
 
+
+@keyframes scrollLoop{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+.cred-strip{
+  display:flex;
+  width:max-content;
+  animation:scrollLoop 20s linear infinite;
+  }
 
 .call-btn{
   position: fixed;
