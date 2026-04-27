@@ -3313,6 +3313,111 @@ section.hero{
   }
 
 
+
+/* ===== STICKY TRUST BAR ===== */
+.trust-sticky{
+  position:sticky;
+  top:0;
+  z-index:999;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(90deg,#0b1220,#111a2e);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  overflow:hidden;
+}
+
+.trust-track{
+  display:flex;
+  gap:40px;
+  width:max-content;
+  padding:10px 20px;
+  animation: scrollLoop 22s linear infinite;
+}
+
+.trust-item{
+  font-size:13px;
+  color:#e6e6e6;
+  white-space:nowrap;
+  opacity:0.9;
+}
+
+/* smooth infinite scroll */
+@keyframes scrollLoop{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+.card, .btn, .cred-badge{
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover, .btn:hover{
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+.gold-glow{
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow{
+  0%,100%{ box-shadow:0 0 6px rgba(255,215,0,0.2); }
+  50%{ box-shadow:0 0 18px rgba(255,215,0,0.5); }
+}
+
+
+.btn:active{
+  transform: scale(0.96);
+}
+
+
+.shine{
+  position:relative;
+  overflow:hidden;
+}
+
+.shine::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
+  animation:shineMove 3s infinite;
+}
+
+@keyframes shineMove{
+  to{ left:150%; }
+}
+
+@media (max-width:768px){
+  .trust-track{
+    animation-duration:28s; /* slower = smoother */
+  }
+}
+
+
+
+
+
+
+
 .call-btn{
   position: fixed;
   bottom: 20px;
