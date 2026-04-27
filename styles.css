@@ -3932,7 +3932,7 @@ section.hero{
   display:flex;
   gap:14px;
   width:max-content;
-  animation:autoScroll 12s linear infinite; /* faster */
+  animation:autoScroll 16s linear infinite; /* faster */
 }
 
 @keyframes autoScroll{
@@ -3996,7 +3996,66 @@ section.hero{
 
 
 
+.workshop-carousel-wrap{
+  position: relative;
+  overflow: hidden;
+  padding: 4px 0 10px;
+}
 
+/* fade edges */
+.workshop-carousel-wrap::before,
+.workshop-carousel-wrap::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:34px;
+  z-index:2;
+  pointer-events:none;
+}
+
+.workshop-carousel-wrap::before{
+  left:0;
+  background: linear-gradient(to right, #0b1220 0%, rgba(11,18,32,0) 100%);
+}
+
+.workshop-carousel-wrap::after{
+  right:0;
+  background: linear-gradient(to left, #0b1220 0%, rgba(11,18,32,0) 100%);
+}
+
+.workshop-carousel{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:autoScroll 16s linear infinite;
+  will-change: transform;
+}
+
+/* pause on touch / press */
+.workshop-carousel:hover,
+.workshop-carousel:active{
+  animation-play-state: paused;
+}
+
+@keyframes autoScroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+  }
+
+
+.ws-card{
+  flex:0 0 auto;
+  padding:10px 16px;
+  border-radius:14px;
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,215,120,0.25);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow: 0 0 8px rgba(255,215,120,0.15);
+}
 
 
 .call-btn{
