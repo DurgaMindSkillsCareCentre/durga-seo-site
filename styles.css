@@ -2774,6 +2774,66 @@ button:active {
 }
 
 
+.hero-panel {
+  padding: 26px 18px 22px;
+  border-radius: 20px;
+}
+
+
+.hero-panel h1 {
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+
+  margin-top: 12px;
+  margin-bottom: 16px;
+  }
+
+.hero-panel p {
+  font-size: 15.5px;
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.85);
+}
+
+
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  }
+
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-contact {
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+
+.hero-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(20,30,60,0.95),
+    rgba(10,18,40,0.95)
+  );
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.6),
+    inset 0 0 40px rgba(255,215,0,0.04);
+}
 
 
 .call-btn{
