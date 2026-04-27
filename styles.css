@@ -4335,7 +4335,21 @@ button{
   display: none !important;
 }
 
+/* HERO: hard reset to remove any residual glow/gradients */
+.hero,
+.hero-inner {
+  background: #0b1220 !important;     /* flat dark */
+  background-image: none !important;  /* kill gradients */
+}
 
+/* In case a ::before/::after is adding shine */
+.hero::before,
+.hero::after,
+.hero-inner::before,
+.hero-inner::after {
+  content: none !important;
+  background: none !important;
+}
   .call-btn{
   position: fixed;
   bottom: 20px;
