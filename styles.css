@@ -3710,7 +3710,17 @@ section.hero{
   margin-top: 6px;
     }
 
+.trust-line{
+  margin-top:10px;
+  margin-bottom:8px;
+  font-size:14px;
+  color:rgba(255,255,255,0.85);
+  font-weight:600;
+}
 
+.trust-strong{
+  color:#ffd97a;
+}
 .call-btn{
   position: fixed;
   bottom: 20px;
