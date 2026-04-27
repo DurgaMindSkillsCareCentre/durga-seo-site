@@ -3651,6 +3651,40 @@ section.hero{
 }
 
 
+
+.urgent-line{
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* GOLD ONLY FOR IMPORTANT WORD */
+.gold{
+  background: linear-gradient(90deg,#f5d77a,#fff3c4,#d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 2px 10px rgba(255,215,0,0.25);
+}
+
+
+.gold{
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+  0%,100%{ text-shadow: 0 2px 8px rgba(255,215,0,0.2); }
+  50%{ text-shadow: 0 2px 16px rgba(255,215,0,0.4); }
+}
+
+
+
+
+
 .call-btn{
   position: fixed;
   bottom: 20px;
