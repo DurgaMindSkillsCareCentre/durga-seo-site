@@ -3160,7 +3160,7 @@ section.hero::before {
 
 
 
-.panel.lux-card-secondary {
+.lux-card-secondary {
   background: linear-gradient(180deg, #111827, #0b1220);
 
   border-radius: 18px;
@@ -3181,7 +3181,7 @@ section.hero::before {
   }
 
 
-.panel.lux-card-secondary h2 {
+.lux-card-secondary h2 {
   color: #e6c27a;
   letter-spacing: 0.3px;
 }
