@@ -4373,3 +4373,49 @@ button{
     0 8px 22px rgba(0,0,0,0.7);
   }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== HERO PANEL FINAL FIX ===== */
+
+.hero {
+  background: #0b1220 !important;
+  background-image: none !important;
+}
+
+.hero-inner {
+  background: transparent !important;
+}
+
+/* kill all overlays causing glow/line */
+.hero::before,
+.hero::after,
+.hero-inner::before,
+.hero-inner::after,
+.hero .parallax-layer {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+
+
+
+.hero * {
+  background-image: none !important;
+}
+
+
