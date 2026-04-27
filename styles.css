@@ -3586,7 +3586,69 @@ section.hero{
   transition: 0.3s ease;
 }
 
+.urgent-line{
+  color: #ffd97a;
+  font-weight: 600;
+  font-size: 14px;
 
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+
+  margin-top: 10px;
+  margin-bottom: 6px;
+
+  text-shadow: 0 2px 8px rgba(255,215,0,0.25);
+}
+
+
+
+.urgent-line{
+  display: inline-block;
+  padding-left: 2px;
+}
+
+
+
+/* Base style (keep or merge with your existing .urgent-line) */
+.urgent-line{
+  color: #ffd97a;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  position: relative;
+
+  /* initial soft glow */
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.25),
+    0 0 14px rgba(255,215,0,0.15);
+
+  /* animation */
+  animation: trustGlow 3.2s ease-in-out infinite;
+}
+
+/* Subtle “breathing” glow */
+@keyframes trustGlow{
+  0%, 100%{
+    text-shadow:
+      0 0 6px rgba(255,215,0,0.25),
+      0 0 14px rgba(255,215,0,0.15);
+    transform: translateY(0);
+  }
+  50%{
+    text-shadow:
+      0 0 10px rgba(255,215,0,0.45),
+      0 0 22px rgba(255,215,0,0.25);
+    transform: translateY(-1px);
+  }
+  }
+
+
+.urgent-line strong{
+  color: #fff3c4;
+}
 
 
 .call-btn{
