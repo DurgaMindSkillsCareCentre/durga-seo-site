@@ -4180,6 +4180,48 @@ section.hero{
 }
 
 
+.ws-title-badge{
+  position:absolute;
+  top:2px;                  /* was negative → causing cut */
+  left:50%;
+  transform:translateX(-50%);
+
+  z-index:20;
+
+  font-size:12px;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:20px;
+
+  background:linear-gradient(135deg,#ffd97a,#ffb347);
+  color:#000;
+
+  box-shadow:
+    0 4px 12px rgba(255,215,120,0.4),
+    0 0 18px rgba(255,215,120,0.25);
+}
+
+.workshop-carousel-wrap{
+  position:relative;
+  overflow:hidden;
+  padding-top:26px;   /* increase so badge has room */
+}
+
+
+.workshop-carousel{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:autoScroll 20s linear infinite; /* was 14s */
+}
+
+.ws-title-badge{
+  backdrop-filter: blur(6px);
+}
+
+
+
+
 
   .call-btn{
   position: fixed;
