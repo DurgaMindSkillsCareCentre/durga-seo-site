@@ -2599,6 +2599,95 @@ button:active {
 }
 
 
+/* ===== PREMIUM HERO CARD ===== */
+.lux-card-primary{
+  position: relative;
+  padding: 20px 18px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(18,28,60,0.95),
+    rgba(30,45,90,0.9)
+  );
+
+  border: 1px solid rgba(255,215,0,0.25);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.7),
+    0 0 25px rgba(255,215,0,0.12);
+
+  backdrop-filter: blur(12px);
+}
+
+/* glowing gold border animation */
+.lux-card-primary::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:1px;
+
+  background: linear-gradient(
+    120deg,
+    #FFD700,
+    #FFB300,
+    #FFD700
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* title highlight */
+.lux-card-primary strong,
+.lux-card-primary a{
+  color:#FFD700;
+  font-weight:700;
+}
+
+/* slightly larger text */
+.lux-card-primary p{
+  font-size:16px;
+  line-height:1.65;
+  color:rgba(255,255,255,0.95);
+}
+
+
+
+
+
+/* ===== SUBTLE SUPPORT CARD ===== */
+.lux-card-secondary{
+  padding: 18px 16px;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(10,18,40,0.85),
+    rgba(18,28,60,0.8)
+  );
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.5);
+
+  backdrop-filter: blur(8px);
+}
+
+.lux-card-secondary p{
+  font-size:14.5px;
+  color:rgba(255,255,255,0.85);
+}
+
+
+
+
+
 
 .call-btn{
   position: fixed;
