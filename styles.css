@@ -4135,7 +4135,53 @@ section.hero{
   font-weight:700;
 }
 
-.call-btn{
+
+.ws-title-badge{
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+
+  z-index:10;
+
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.5px;
+
+  padding:6px 14px;
+  border-radius:20px;
+
+  background:linear-gradient(135deg,#ffd97a,#ffb347);
+  color:#000;
+
+  box-shadow:
+    0 4px 12px rgba(255,215,120,0.4),
+    0 0 18px rgba(255,215,120,0.25);
+
+}
+
+
+
+.workshop-carousel-wrap{
+  position:relative;
+  overflow:hidden;
+  padding-top:16px; /* gives space for badge */
+}
+
+
+
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 4px 12px rgba(255,215,120,0.4)}
+  50%{box-shadow:0 6px 20px rgba(255,215,120,0.7)}
+}
+
+.ws-title-badge{
+  animation:glowPulse 3s ease-in-out infinite;
+}
+
+
+
+  .call-btn{
   position: fixed;
   bottom: 20px;
   left: 15px;
