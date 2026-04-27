@@ -655,23 +655,31 @@ document.getElementById('qi-send').addEventListener('click', function(e){
 });
 </script>
      <!-- FLOATING SOCIAL BUTTON -->
-<a href="social.html" class="social-float">🌐 Social</a>
+<a href="social.html" class="social-btn">🌐 Social</a>
 
 <style>
-.social-float{
+.social-btn{
   position:fixed;
-  left:16px;   /* 👈 moved to left */
-  bottom:110px; /* above bottom bar */
+  left:12px;
+  bottom:20px;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  padding:8px 12px;
+  border-radius:999px;
+
+  font-size:13px;
+  font-weight:600;
+
   background:linear-gradient(135deg,#facc15,#fb7185);
   color:#000;
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:600;
-  font-size:13px;
   text-decoration:none;
-  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+
+  box-shadow:0 6px 16px rgba(0,0,0,0.5);
   z-index:999;
 }
-</style>
+     </style>
 </body>
 </html>
