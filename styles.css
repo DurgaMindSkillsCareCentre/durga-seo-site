@@ -3233,17 +3233,6 @@ section.hero{
                          }
 
 
-@media (max-width: 480px){
-  .cta-row{
-    gap: 8px;
-  }
-
-  .cta-row .btn,
-  .cta-row .pill{
-    font-size: 13px;
-    padding: 10px 8px;
-  }
-}
 
 
 
