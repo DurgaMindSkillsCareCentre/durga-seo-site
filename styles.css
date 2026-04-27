@@ -3928,8 +3928,77 @@ section.hero{
 }
 
 
-animation:autoScroll 35s linear infinite;
-  
+.workshop-carousel{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:autoScroll 12s linear infinite; /* faster */
+}
+
+@keyframes autoScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+
+.ws-card{
+  flex:0 0 auto;
+  padding:10px 16px;
+  border-radius:14px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+
+  border:1px solid rgba(255,215,120,0.25);
+
+  box-shadow:
+    0 0 8px rgba(255,215,120,0.15),
+    inset 0 0 6px rgba(255,215,120,0.05);
+
+  transition: all 0.3s ease;
+}
+
+
+.ws-card:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 0 14px rgba(255,215,120,0.35),
+    inset 0 0 10px rgba(255,215,120,0.1);
+}
+
+
+.ws-card.featured{
+  border:1px solid rgba(255,215,120,0.6);
+  box-shadow:
+    0 0 18px rgba(255,215,120,0.5),
+    inset 0 0 12px rgba(255,215,120,0.15);
+}
+
+
+.badge{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+
+  font-size:10px;
+  padding:3px 6px;
+
+  background:linear-gradient(135deg,#ffd97a,#ffb347);
+  color:#000;
+  border-radius:6px;
+
+  font-weight:700;
+}
+
+
+
+
+
+
 .call-btn{
   position: fixed;
   bottom: 20px;
