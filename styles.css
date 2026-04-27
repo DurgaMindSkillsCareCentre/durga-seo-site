@@ -4465,3 +4465,31 @@ button.small {
   font-weight: 600;
   border: none;
 }
+
+
+
+
+/* ===== GLOBAL HERO SPACING FIX ===== */
+
+/* Reduce gap between header and top panel */
+.hero {
+  margin-top: -10px !important;   /* tune: -6 to -14 */
+  padding-top: 10px !important;
+}
+
+/* Make panel use full width (no side squeeze) */
+.hero-inner {
+  max-width: 100% !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+/* Ensure inner card stretches nicely */
+.hero-inner > div {
+  width: 100%;
+}
+
+/* Bring eyebrow/tag slightly up */
+.eyebrow {
+  margin-top: -6px !important;
+}
