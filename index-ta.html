@@ -501,31 +501,31 @@
     </div>
   </section>
 
-  <script>
-    // SEO Carousel Auto-scroll (exactly as in English version - works forever)
-    const carousel = document.querySelector('.seo-carousel');
-    setInterval(() => {
-      carousel.scrollBy({
-        left: 250,
-        behavior: 'smooth'
-      });
-      // loop back
-      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      }
-    }, 3000);
+<script>
+// SEO Carousel Auto-scroll (works forever, exactly like English version)
+const carousel = document.querySelector('.seo-carousel');
 
-    // Language switcher
-    function setLanguage(lang) {
-      if (lang === 'ta') window.location.href = "index-ta.html";
-      else if (lang === 'en') window.location.href = "index.html";
+if (carousel) {
+  setInterval(() => {
+    carousel.scrollBy({ left: 250, behavior: 'smooth' });
+    // reset to beginning when reaching the end
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
     }
+  }, 3000);
+}
 
-    // HTTPS redirect
-    if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
-      location.replace("https://" + location.hostname + location.pathname);
-    }
-  </script>
+// Language switcher
+function setLanguage(lang) {
+  if (lang === 'ta') window.location.href = "index-ta.html";
+  else if (lang === 'en') window.location.href = "index.html";
+}
+
+// HTTPS redirect
+if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
+  location.replace("https://" + location.hostname + location.pathname);
+}
+</script>
 
 </body>
 </html>
