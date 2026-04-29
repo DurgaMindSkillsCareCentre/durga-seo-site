@@ -4853,3 +4853,35 @@ backdrop-filter: blur(10px);
 .lang-toggle button:hover{
   background:rgba(255,255,255,0.15);
   }
+
+
+.lang-toggle{
+  position: absolute;
+  top: 58px;          /* moves it below the address line */
+  right: 72px;        /* keeps it near the menu side */
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  z-index: 9999;
+  transform: scale(0.82);
+}
+
+.lang-toggle button{
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 14px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang-toggle button:hover{
+  background: rgba(255,255,255,0.14);
+}
+
