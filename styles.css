@@ -4967,3 +4967,20 @@ backdrop-filter: blur(10px);
   background: rgba(255,215,120,0.16);
   color: #fff7d6;
 }
+
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
+  }
+
+                   
