@@ -4647,7 +4647,7 @@ button.small {
 
 .lux-footer{
   position: fixed;
-  bottom: 70px;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -4664,6 +4664,8 @@ button.small {
   z-index: 9998;
 
   transition: all 0.4s ease;
+  background: rgba(20,25,40,0.35);
+backdrop-filter: blur(10px);
 }
 
 .lux-footer a{
