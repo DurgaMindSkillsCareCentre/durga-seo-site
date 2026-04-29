@@ -4747,5 +4747,47 @@ backdrop-filter: blur(10px);
 
 
 
+/* Social (left) */
+.social-btn{
+  bottom: 16px;
+}
+
+/* WhatsApp (right) */
+.wa{
+  bottom: 22px;   /* slightly higher */
+  right: 14px;
+}
+
+
+
+.wa{
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg,#25D366,#20b858);
+  filter: saturate(0.8) brightness(0.95);
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+
+.social-btn{
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+
+
+.wa, .social-btn{
+  backdrop-filter: blur(6px);
+    }
+
 
 
