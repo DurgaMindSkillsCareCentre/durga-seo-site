@@ -4642,3 +4642,40 @@ button.small {
     grid-template-columns: 1fr;
   }
   }
+
+
+
+.lux-footer{
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+  padding: 10px 16px;
+  border-radius: 25px;
+
+  background: rgba(20,25,40,0.55);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,215,120,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+  z-index: 9998;
+
+  transition: all 0.4s ease;
+}
+
+.lux-footer a{
+  color: #e8d9a2;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* hidden state */
+.lux-footer.hide{
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  }
