@@ -519,6 +519,29 @@ function setLanguage(lang) {
   else if (lang === 'en') window.location.href = "index.html";
 }
 </script>
+
+<script>
+// Fix for SEO carousel auto-scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const seoCarousel = document.querySelector('.seo-carousel');
+  if (seoCarousel) {
+    setInterval(() => {
+      // scroll by 250px
+      seoCarousel.scrollBy({ left: 250, behavior: 'smooth' });
+      // reset to start when reaching the end
+      if (seoCarousel.scrollLeft + seoCarousel.clientWidth >= seoCarousel.scrollWidth - 10) {
+        setTimeout(() => {
+          seoCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+        }, 500); // small delay after smooth scroll ends
+      }
+    }, 3000);
+  }
+});
+
+// Also ensure the main image carousel (if any) works separately
+// (already defined in script.js, so no conflict)
+</script>
+  
   
   <script>
 const carousel = document.querySelector('.seo-carousel');
@@ -535,6 +558,10 @@ setInterval(() => {
   }
 }, 3000);
   </script>
+
+
+
+  
 <script>
 if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
   location.replace("https://" + location.hostname + location.pathname);
