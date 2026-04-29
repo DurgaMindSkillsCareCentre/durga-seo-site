@@ -674,6 +674,24 @@ if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
   <a href="/anxiety-treatment-chennai.html">Anxiety</a>
   <a href="/contact.html">Contact</a>
 </div>
+  <script>
+let lastScroll = 0;
+const footer = document.querySelector('.lux-footer');
+
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll){
+    // scrolling down → hide
+    footer.classList.add('hide');
+  } else {
+    // scrolling up → show
+    footer.classList.remove('hide');
+  }
+
+  lastScroll = currentScroll;
+});
+  </script>
 
 </body>
 </html>
