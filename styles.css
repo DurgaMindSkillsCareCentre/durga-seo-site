@@ -4605,6 +4605,37 @@ button.small {
   .seo-carousel a {
   min-width: 75%;
   }
+
+
+
+.seo-carousel {
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  padding: 6px 14px 10px 14px; /* 👈 FIX */
+  }
+
+
+.seo-carousel a {
+  min-width: 72%;
+}
+
+
+.seo-carousel {
+  scroll-padding-left: 14px;
+}
+
+.seo-carousel {
+  scroll-snap-type: x mandatory;
+}
+
+.seo-carousel a {
+  scroll-snap-align: center;
+}
+
 /* mobile */
 @media (max-width: 480px) {
   .seo-grid {
