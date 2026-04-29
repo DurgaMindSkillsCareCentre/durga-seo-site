@@ -221,7 +221,7 @@
   <button type="button" onclick="setLanguage('en')">EN</button>
 </div>
 
-<div id="google_translate_element" style="display:none;"></div>
+
 <div class="actions">
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="services.html">Services</a>
@@ -675,8 +675,18 @@ if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
   <!-- your carousel section ends -->
 
 <!-- ADD HERE 👇 -->
+<button disabled>EN</button>
+  
 
-
+<script>
+function setLanguage(lang) {
+  if (lang === 'ta') {
+    window.location.href = "index-ta.html";
+  } else {
+    window.location.href = "index.html";
+  }
+}
+</script>
   
 </body>
 </html>
