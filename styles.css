@@ -4560,7 +4560,51 @@ button.small {
     0 6px 18px rgba(0,0,0,0.5),
     0 0 10px rgba(255,215,120,0.25);
 }
+/* horizontal scroll carousel */
+.seo-carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 6px;
 
+  -webkit-overflow-scrolling: touch;
+}
+
+/* hide scrollbar */
+.seo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* items */
+.seo-carousel a {
+  min-width: 80%;
+  flex: 0 0 auto;
+
+  scroll-snap-align: start;
+
+  padding: 12px;
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: #e6e9f2;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,215,120,0.15);
+
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.seo-carousel a:hover {
+  transform: scale(1.02);
+  color: #f5d27a;
+  background: rgba(255,215,120,0.08);
+}
+
+  .seo-carousel a {
+  min-width: 75%;
+  }
 /* mobile */
 @media (max-width: 480px) {
   .seo-grid {
