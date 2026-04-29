@@ -634,7 +634,8 @@ document.getElementById('qi-send').addEventListener('click', function(e){
      <!-- SEO Internal Links -->
 <section class="seo-card">
   <h3>Our Services</h3>
-  <div class="seo-grid">
+
+  <div class="seo-carousel">
     <a href="/best-psychologist-in-chennai.html">Best Psychologist in Chennai</a>
     <a href="/anxiety-treatment-chennai.html">Anxiety Treatment Chennai</a>
     <a href="/depression-counselling-chennai.html">Depression Counselling Chennai</a>
@@ -642,7 +643,24 @@ document.getElementById('qi-send').addEventListener('click', function(e){
     <a href="/family-counseling-chennai.html">Family Counseling Chennai</a>
     <a href="/online-therapy-india.html">Online Therapy India</a>
   </div>
+
 </section>
+
+  <script>
+const carousel = document.querySelector('.seo-carousel');
+
+setInterval(() => {
+  carousel.scrollBy({
+    left: 250,
+    behavior: 'smooth'
+  });
+
+  // loop back
+  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+  }
+}, 3000);
+  </script>
 <script>
 if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
   location.replace("https://" + location.hostname + location.pathname);
