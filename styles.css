@@ -4927,3 +4927,43 @@ backdrop-filter: blur(10px);
   background: linear-gradient(135deg, rgba(255,215,120,0.22), rgba(255,215,120,0.10));
   color: #fff7d6;
 }
+
+
+
+
+.nav{
+  position: relative;
+}
+
+.lang-toggle{
+  position: absolute;
+  top: 68px;     /* slightly lower */
+  right: 6px;   /* far right edge */
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,215,120,0.14);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+  z-index: 9999;
+  transform: scale(0.80);
+}
+
+.lang-toggle button{
+  border: none;
+  background: transparent;
+  color: #f1e4b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang-toggle button.active{
+  background: rgba(255,215,120,0.16);
+  color: #fff7d6;
+}
