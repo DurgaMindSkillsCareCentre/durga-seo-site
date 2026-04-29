@@ -489,33 +489,107 @@
   </style>
 
   <!-- SEO Internal Links -->
-  <section class="seo-card">
-    <h3>எங்கள் சேவைகள்</h3>
-    <div class="seo-carousel">
-      <a href="/best-psychologist-in-chennai.html">சென்னையில் சிறந்த உளவியலாளர்</a>
-      <a href="/anxiety-treatment-chennai.html">சென்னை பதட்ட சிகிச்சை</a>
-      <a href="/depression-counselling-chennai.html">சென்னை மனஅழுத்த ஆலோசனை</a>
-      <a href="/relationship-counselling-chennai.html">சென்னை உறவு ஆலோசனை</a>
-      <a href="/family-counseling-chennai.html">சென்னை குடும்ப ஆலோசனை</a>
-      <a href="/online-therapy-india.html">இந்தியா ஆன்லைன் சிகிச்சை</a>
-    </div>
-  </section>
+  
+<!-- SEO Internal Links - TAMIL VERSION WITH UNIQUE CLASS -->
+<section class="seo-card">
+  <h3>எங்கள் சேவைகள்</h3>
+  <div class="seo-carousel-ta">
+    <a href="/best-psychologist-in-chennai.html">சென்னையில் சிறந்த உளவியலாளர்</a>
+    <a href="/anxiety-treatment-chennai.html">சென்னை பதட்ட சிகிச்சை</a>
+    <a href="/depression-counselling-chennai.html">சென்னை மனஅழுத்த ஆலோசனை</a>
+    <a href="/relationship-counselling-chennai.html">சென்னை உறவு ஆலோசனை</a>
+    <a href="/family-counseling-chennai.html">சென்னை குடும்ப ஆலோசனை</a>
+    <a href="/online-therapy-india.html">இந்தியா ஆன்லைன் சிகிச்சை</a>
+  </div>
+</section>
 
+<style>
+  /* Force scrollable carousel for Tamil version */
+  .seo-carousel-ta {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .seo-carousel-ta a {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #ffd966;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.2s;
+  }
+  .seo-carousel-ta a:hover {
+    background: #ffd966;
+    color: #000;
+  }
+  /* Hide scrollbar for cleaner look (optional) */
+  .seo-carousel-ta::-webkit-scrollbar {
+    height: 4px;
+  }
+  .seo-carousel-ta::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+  }
+  .seo-carousel-ta::-webkit-scrollbar-thumb {
+    background: #ffd966;
+    border-radius: 10px;
+  }
+</style>
 
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var el = document.querySelector('.seo-carousel');
-  if (!el) return;
-  setInterval(function() {
-    el.scrollBy({ left: 250, behavior: 'smooth' });
-    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 5) {
-      setTimeout(function() { el.scrollTo({ left: 0, behavior: 'smooth' }); }, 500);
-    }
-  }, 3000);
-});
-function setLanguage(lang) { if(lang==='ta') location.href="index-ta.html"; else location.href="index.html"; }
-if(location.hostname.includes("pages.dev")&&location.protocol!=="https:") location.replace("https://"+location.hostname+location.pathname);
-  </script>
+<script>
+// Auto-scroll for Tamil SEO carousel (WORKS FOREVER)
+(function() {
+  function startAutoScroll() {
+    const carousel = document.querySelector('.seo-carousel-ta');
+    if (!carousel) return;
+    
+    // Clear any existing interval on this carousel
+    if (carousel._autoInterval) clearInterval(carousel._autoInterval);
+    
+    carousel._autoInterval = setInterval(() => {
+      // Pause if user is hovering
+      if (carousel.matches(':hover')) return;
+      
+      // Scroll by 250px
+      carousel.scrollBy({ left: 250, behavior: 'smooth' });
+      
+      // Check if reached end
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      if (carousel.scrollLeft >= maxScroll - 5) {
+        setTimeout(() => {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        }, 500);
+      }
+    }, 3000);
+  }
+  
+  // Run when page loads
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startAutoScroll);
+  } else {
+    startAutoScroll();
+  }
+})();
+
+// Language switcher (keep as is)
+function setLanguage(lang) {
+  if (lang === 'ta') location.href = "index-ta.html";
+  else location.href = "index.html";
+}
+
+// HTTPS redirect
+if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
+  location.replace("https://" + location.hostname + location.pathname);
+}
+</script>
 
 </body>
 </html>
