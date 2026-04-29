@@ -4823,3 +4823,33 @@ backdrop-filter: blur(10px);
 
   filter:saturate(0.8) brightness(0.95);
   }
+
+
+
+.lang-toggle{
+  position:absolute;
+  top:15px;
+  right:70px;
+  display:flex;
+  gap:4px;
+  padding:4px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  z-index:9999;
+}
+
+.lang-toggle button{
+  border:none;
+  background:transparent;
+  color:#fff;
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:16px;
+  cursor:pointer;
+}
+
+.lang-toggle button:hover{
+  background:rgba(255,255,255,0.15);
+  }
