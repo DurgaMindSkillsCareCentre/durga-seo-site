@@ -4791,3 +4791,35 @@ backdrop-filter: blur(10px);
 
 
 
+/* LEFT - Social */
+.social-btn{
+  bottom:16px;
+  left:12px;
+
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:500;
+
+  border-radius:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* RIGHT - WhatsApp */
+.wa{
+  position:fixed;
+  bottom:22px;
+  right:14px;
+
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:500;
+
+  border-radius:18px;
+
+  background:linear-gradient(135deg,#25D366,#20b858);
+  color:#fff;
+
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+
+  filter:saturate(0.8) brightness(0.95);
+  }
