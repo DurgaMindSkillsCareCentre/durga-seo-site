@@ -4710,3 +4710,42 @@ backdrop-filter: blur(10px);
 .whatsapp-btn{
   filter: saturate(0.9);
 }
+
+
+
+
+
+.whatsapp-btn{
+  position: fixed;
+  bottom: 18px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 12px;     /* ↓ slimmer */
+  font-size: 12px;       /* ↓ tighter */
+  font-weight: 500;
+
+  border-radius: 20px;
+
+  background: linear-gradient(135deg,#25D366,#1ebe5d);
+  color: #fff;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+  transform: scale(0.95); /* subtle shrink */
+  z-index: 9999;
+}
+
+
+
+.whatsapp-btn{
+  filter: saturate(0.85) brightness(0.95);
+}
+
+
+
+
+
