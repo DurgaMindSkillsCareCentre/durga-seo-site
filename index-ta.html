@@ -568,5 +568,31 @@ if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
 }
 </script>
   <!-- your carousel section ends -->
+
+
+
+  <script>
+const carousel = document.querySelector('.seo-carousel');
+
+setInterval(() => {
+  carousel.scrollBy({
+    left: 250,
+    behavior: 'smooth'
+  });
+
+  // loop back
+  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+  }
+}, 3000);
+  </script>
+<script>
+if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
+  location.replace("https://" + location.hostname + location.pathname);
+}
+</script>
+  <!-- your carousel section ends -->
+
+  
 </body>
 </html>
