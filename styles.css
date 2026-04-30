@@ -5194,80 +5194,8 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
    INVISIBLE DOCK – 90% transparent, perfect for floating buttons
    ============================================================ */
 
-/* 1. Ultra‑thin, almost‑transparent bar */
-body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 52px;                  /* snugly fits social & whatsapp buttons */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: none;
-  box-shadow: none;
-  z-index: 100;
-  pointer-events: none;
-}
 
-/* 2. Larger, ghosted profile logo right in the centre */
-body::before {
-  content: "";
-  position: fixed;
-  bottom: 10px;                  /* vertical alignment inside bar */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 34px;
-  height: 34px;
-  background-image: url('profile.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  opacity: 0.2;
-  z-index: 101;
-  pointer-events: none;
-}
 
-/* 3. Prevent content from hiding behind floating elements */
-body {
-  padding-bottom: 70px;
-}
-
-/* 4. Social button – clean text, no background */
-a.social-btn {
-  position: fixed;
-  left: 20px;
-  bottom: 12px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 0;
-  border-radius: 0;
-  font-size: 14px;
-  font-weight: 500;
-  background: none;
-  color: #b08c4c;
-  text-decoration: none;
-  box-shadow: none;
-}
-
-/* 5. WhatsApp button – small gold pill, right side */
-.wa {
-  position: fixed;
-  right: 20px;
-  bottom: 12px;
-  z-index: 999;
-  background: linear-gradient(135deg, #f0c45a, #d18e2c);
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  text-decoration: none;
-  }
 
 
 /* ============================================================
