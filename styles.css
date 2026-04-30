@@ -5819,7 +5819,26 @@ body {
    SCROLL FLASH FIX – remove layer isolation & force backgrounds
    ============================================================ */
 
-/* 1. Kill all will-change (they cause compositor flash) */
+
+
+
+
+
+/* ============================================================
+   SCROLL FLASH FIX (safe, no colour changes)
+   ============================================================ */
+
+/* 1. Disable smooth scroll – it triggers repaint flashes */
+html {
+  scroll-behavior: auto;
+}
+
+/* 2. Solid background on html prevents transparent flash */
+html {
+  background-color: #0e1a26;   /* dark hero base, won't be seen normally */
+}
+
+/* 3. Remove GPU layer isolation (the real flash cause) */
 .panel,
 .section-grid .panel,
 .lux-card-primary,
@@ -5835,39 +5854,18 @@ body {
 .car-slide,
 .yt-embed-wrap,
 .profile-shell,
-.hero {
+.hero,
+.wrap {
   will-change: auto;
 }
 
-/* 2. Remove perspective & 3D style from wrapper (prevents isolated layer) */
+/* 4. Remove perspective & 3D style from wrapper (also created isolations) */
 .wrap {
   perspective: none;
   transform-style: flat;
 }
 
-/* 3. Force explicit backgrounds on all key containers */
-html {
-  background-color: #0e1a26;
-  scroll-behavior: auto;            /* disable smooth scroll completely */
-}
-
+/* 5. Ensure body has a solid background (already set, just a safety) */
 body {
   background-color: #f9fafb;
-}
-
-.wrap,
-.hero,
-.section-grid,
-.pax-section,
-.ai-strip,
-.chat-invite,
-footer,
-.panel {
-  background-color: inherit;        /* fallback, will be overridden by existing rules */
-}
-
-/* 4. Safety: ensure no transparent gaps during scroll */
-body::before,
-body::after {
-  background: transparent;          /* our bottom dock won't flash */
 }
