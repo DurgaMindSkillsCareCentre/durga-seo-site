@@ -5081,3 +5081,31 @@ img {
 a {
   text-decoration-skip-ink: auto;
   }
+
+
+
+
+
+
+
+/* Fix readability on dark-background sections */
+.google-review-section h3,
+.google-review-section p,
+.seo-card h3,
+.seo-carousel a,
+.footer,
+.footer a,
+.footer span,
+.pax-content h2,
+.pax-content p,
+.ai-strip h3,
+.ai-strip p {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Keep gold-ish tone for review stars & links if preferred */
+.google-review-section .stars,
+.seo-carousel a:hover {
+  color: #FFD700 !important;
+}
