@@ -5146,3 +5146,11 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
   font-weight: 400;
   letter-spacing: 0.2px;
   }
+
+
+
+
+/* Luxury left padding for hero text (so it doesn't hug the edge) */
+.hero-inner > div:first-child {
+  padding-left: 16px;
+}
