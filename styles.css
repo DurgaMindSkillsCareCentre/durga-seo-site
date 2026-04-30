@@ -5809,3 +5809,65 @@ body {
 .profile-shell {
   will-change: auto;
 }
+
+
+
+
+
+
+/* ============================================================
+   SCROLL FLASH FIX – remove layer isolation & force backgrounds
+   ============================================================ */
+
+/* 1. Kill all will-change (they cause compositor flash) */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card,
+.ws-card,
+.media-card,
+.car-slide,
+.yt-embed-wrap,
+.profile-shell,
+.hero {
+  will-change: auto;
+}
+
+/* 2. Remove perspective & 3D style from wrapper (prevents isolated layer) */
+.wrap {
+  perspective: none;
+  transform-style: flat;
+}
+
+/* 3. Force explicit backgrounds on all key containers */
+html {
+  background-color: #0e1a26;
+  scroll-behavior: auto;            /* disable smooth scroll completely */
+}
+
+body {
+  background-color: #f9fafb;
+}
+
+.wrap,
+.hero,
+.section-grid,
+.pax-section,
+.ai-strip,
+.chat-invite,
+footer,
+.panel {
+  background-color: inherit;        /* fallback, will be overridden by existing rules */
+}
+
+/* 4. Safety: ensure no transparent gaps during scroll */
+body::before,
+body::after {
+  background: transparent;          /* our bottom dock won't flash */
+}
