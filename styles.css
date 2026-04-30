@@ -5189,7 +5189,14 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
    LUXURIOUS BOTTOM DOCK – unified bar with subtle brand mark
    ============================================================ */
 
-/* 1. Frosted glass footer bar */
+
+
+
+/* ============================================================
+   SEAMLESS BOTTOM DOCK — frosted bar + centred profile logo
+   ============================================================ */
+
+/* 1. Frosted bar behind the buttons */
 body::after {
   content: "";
   position: fixed;
@@ -5197,53 +5204,17 @@ body::after {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 215, 0, 0.12);
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.02);
-  z-index: 998;
+  border-top: 1px solid rgba(255,215,0,0.12);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.02);
+  z-index: 997;                     /* lowest, under buttons and logo */
   pointer-events: none;
 }
 
-/* 2. Push page content above the bar */
-body {
-  padding-bottom: 80px;
-}
-
-/* 3. Social button – left side, clean text */
-.social-btn {
-  position: fixed;
-  left: 24px;
-  bottom: 16px;
-  z-index: 999;
-  background: transparent;
-  box-shadow: none;
-  color: #b08c4c;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 0;
-  text-decoration: none;
-}
-
-/* 4. WhatsApp button – right side, subtle gold pill */
-.wa {
-  position: fixed;
-  right: 24px;
-  bottom: 16px;
-  z-index: 999;
-  background: linear-gradient(135deg, #f0c45a, #d18e2c);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  text-decoration: none;
-}
-
-/* 5. Centre brand mark – the profile image, ghosted */
-.social-btn::after {
+/* 2. Gentle profile logo in the centre */
+body::before {
   content: "";
   position: fixed;
   bottom: 18px;
@@ -5256,6 +5227,46 @@ body {
   background-position: center;
   border-radius: 50%;
   opacity: 0.25;
-  z-index: 998;               /* behind buttons, above bar */
+  z-index: 998;                     /* between bar and buttons */
   pointer-events: none;
+}
+
+/* 3. Push page content up so nothing is hidden */
+body {
+  padding-bottom: 80px;
+}
+
+/* 4. Override the old social‑button styles safely (higher specificity) */
+a.social-btn {
+  position: fixed;
+  left: 24px;
+  bottom: 16px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  color: #b08c4c;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+/* 5. WhatsApp button – gold pill, right side */
+.wa {
+  position: fixed;
+  right: 24px;
+  bottom: 16px;
+  z-index: 999;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  text-decoration: none;
 }
