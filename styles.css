@@ -5492,3 +5492,176 @@ summary:focus-visible {
   margin-right: 10px;
   }
   
+
+
+
+
+
+
+  /* ============================================================
+   ULTIMATE NO.1 FINISHING LAYER
+   (image, video, carousel, form, stars, chat, brand)
+   ============================================================ */
+
+/* 1. PROFILE IMAGE — soft golden halo (hero & carousel slides) */
+.profile-img,
+.car-slide img {
+  box-shadow: 0 0 0 4px rgba(240, 196, 90, 0.12), 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+.profile-img:hover,
+.car-slide img:hover {
+  box-shadow: 0 0 0 4px rgba(240, 196, 90, 0.2), 0 12px 40px rgba(0, 0, 0, 0.16);
+}
+
+/* 2. MEDIA CARD IMAGES — consistent soft radius */
+.cardimg {
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+  transition: transform 0.35s ease;
+}
+.media-card:hover .cardimg {
+  transform: scale(1.03);
+}
+
+/* 3. REVIEW STARS — warm gold (not browser yellow) */
+.stars {
+  color: #f0c45a;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+/* 4. FORM INPUTS — gold glow on focus */
+input[type="text"],
+input[type="tel"],
+textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #f0c45a;
+  box-shadow: 0 0 0 3px rgba(240, 196, 90, 0.15);
+}
+
+/* 5. CAROUSEL NAV BUTTONS — refined gold */
+.car-prev,
+.car-next {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f0c45a;
+  border: 1px solid rgba(240, 196, 90, 0.25);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.car-prev:hover,
+.car-next:hover {
+  background: rgba(240, 196, 90, 0.12);
+  border-color: #f0c45a;
+}
+
+/* 6. CAROUSEL DOTS — subtle gold indicators */
+.car-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.car-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.car-dots button.active,
+.car-dots button:hover {
+  background: #f0c45a;
+}
+
+/* 7. CHAT-INVITE — subtle left gold accent line */
+.chat-invite {
+  border-left: 3px solid rgba(240, 196, 90, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.chat-invite:hover {
+  border-left-color: rgba(240, 196, 90, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* 8. BRAND LOGO in nav — gentle hover lift */
+.brand .logo img {
+  transition: transform 0.25s ease;
+  border-radius: 50%;
+}
+.brand .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* 9. FEATURED WORKSHOP "Book Now" BADGE — gold pill */
+.ws-card.featured .badge {
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  margin-right: 6px;
+}
+
+/* 10. YOUTUBE IFRAME — gentle gold border accent */
+.yt-embed-wrap iframe {
+  border-radius: 14px;
+  border: 1px solid rgba(240, 196, 90, 0.1);
+}
+
+/* 11. LUX CARDS — subtle gold top border for distinction */
+.lux-card-primary,
+.lux-card-secondary {
+  border-top: 2px solid rgba(240, 196, 90, 0.15);
+}
+
+/* 12. SECTION SPACING — consistent breathing rhythm */
+.section-title {
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+/* 13. FLOATING WHATSAPP BUTTON — softer shadow, consistent */
+.wa {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* 14. RESPECT USER MOTION PREFERENCES */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  }
