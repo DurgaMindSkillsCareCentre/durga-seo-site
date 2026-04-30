@@ -5009,19 +5009,7 @@ body {
 
 /* ===== WORLD-CLASS ENHANCEMENTS ===== */
 
-:root {
-  --color-primary: #2A5C82;
-  --color-primary-hover: #1D405A;
-  --color-surface: #F8FAFC;
-  --color-text: #334155;
-  --color-text-light: #64748B;
-  --color-border: #E2E8F0;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --radius-md: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-}
+
 
 /* Gentle global typography – only enhances, doesn't break */
 body {
