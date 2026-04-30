@@ -5143,3 +5143,48 @@ a {
   padding: 6px 18px;
   border-radius: 6px;
 }
+
+
+
+
+
+/* ============================================================
+   FIX 1: Make section titles (Psychologist Services, etc.) 
+          readable on dark backgrounds
+   ============================================================ */
+.section-title,
+h3.section-title {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ============================================================
+   FIX 2: Ensure text on images / dark overlay sections 
+          is always legible
+   ============================================================ */
+.pax-content h2,
+.pax-content p,
+.ai-strip h3,
+.ai-strip p,
+.chat-invite h4,
+.chat-invite p,
+.footer,
+.footer a,
+.footer span {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   FIX 3: Keep hero trust badges on 2 lines (stop wrapping)
+   ============================================================ */
+.trust-row {
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+.trust-row .trust {
+  white-space: nowrap;
+  font-size: 0.82rem;
+  padding: 5px 12px;
+  flex-shrink: 0;
+}
