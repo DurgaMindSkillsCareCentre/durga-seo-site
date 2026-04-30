@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+
+
 
 :root{
   --bg1:#060710; --bg2:#10162b; --bg3:#241137;
@@ -4988,3 +4992,104 @@ body {
   opacity: 0.5;
   cursor: default;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== WORLD-CLASS ENHANCEMENTS ===== */
+
+:root {
+  --color-primary: #2A5C82;
+  --color-primary-hover: #1D405A;
+  --color-surface: #F8FAFC;
+  --color-text: #334155;
+  --color-text-light: #64748B;
+  --color-border: #E2E8F0;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --radius-md: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+/* Gentle global typography – only enhances, doesn't break */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-surface);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: #1E293B;
+}
+
+/* Modern card grid (for future use) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Subtle animated CTA button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), #3B82F6);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 32px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite alternate;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Prevent layout shifts (CLS booster) */
+img {
+  aspect-ratio: attr(width) / attr(height);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: cleaner underlines */
+a {
+  text-decoration-skip-ink: auto;
+  }
