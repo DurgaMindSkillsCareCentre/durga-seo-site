@@ -5869,3 +5869,39 @@ html {
 body {
   background-color: #f9fafb;
 }
+
+
+
+
+
+
+
+
+/* ============================================================
+   FINAL SCROLL FLASH PREVENTION (solid hero background)
+   ============================================================ */
+
+/* 1. Solid dark background on hero – nothing light can show through */
+.hero {
+  background-color: #0e1a26;   /* deep navy, same as your hero tone */
+}
+
+/* 2. Ensure body doesn't flash lighter than hero when scrolling past it quickly */
+body {
+  background-color: #0e1a26;   /* temporary, will be overridden below hero area */
+}
+
+/* 3. But the main content area below hero should stay light */
+.wrap {
+  background-color: #f9fafb;   /* resets to your soft off‑white below the hero */
+}
+
+/* 4. Remove any stray GPU layer settings that stills flicker */
+.hero,
+.wrap,
+.panel,
+.profile-shell {
+  will-change: auto;
+  transform-style: flat;
+  backface-visibility: hidden;
+}
