@@ -5866,3 +5866,43 @@ html, body, .wrap, .hero {
    ============================================================ */
 
 /* 1. Disable smooth scroll – it triggers repaint flashes */
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FINAL STABLE SCROLL – NO FLASH, NORMAL SCROLLBAR
+   ============================================================ */
+
+/* 1. Solid dark background behind everything – no transparency anywhere */
+html, body, .wrap {
+  background-color: #0e1a26;
+}
+
+/* 2. Remove custom scrollbar – use default, fast OS scrollbar */
+::-webkit-scrollbar {
+  width: auto;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* 3. No smooth‑scroll – instant, fast movement */
+html {
+  scroll-behavior: auto;
+}
+
+/* 4. Make panels appear instantly – disable reveal animations */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
