@@ -5180,3 +5180,82 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 /* ============================================================
    WORLD‑CLASS SERENE LIFT (calm + trustworthy)
    ============================================================ */
+
+
+
+
+
+/* ============================================================
+   LUXURIOUS BOTTOM DOCK – unified bar with subtle brand mark
+   ============================================================ */
+
+/* 1. Frosted glass footer bar */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 215, 0, 0.12);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.02);
+  z-index: 998;
+  pointer-events: none;
+}
+
+/* 2. Push page content above the bar */
+body {
+  padding-bottom: 80px;
+}
+
+/* 3. Social button – left side, clean text */
+.social-btn {
+  position: fixed;
+  left: 24px;
+  bottom: 16px;
+  z-index: 999;
+  background: transparent;
+  box-shadow: none;
+  color: #b08c4c;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+/* 4. WhatsApp button – right side, subtle gold pill */
+.wa {
+  position: fixed;
+  right: 24px;
+  bottom: 16px;
+  z-index: 999;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
+/* 5. Centre brand mark – the profile image, ghosted */
+.social-btn::after {
+  content: "";
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  background-image: url('profile.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.25;
+  z-index: 998;               /* behind buttons, above bar */
+  pointer-events: none;
+}
