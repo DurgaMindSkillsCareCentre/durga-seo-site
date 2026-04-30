@@ -5783,7 +5783,14 @@ textarea:focus {
 /* Remove all will-change: they create isolated layers that can flicker */
 
 
-
+/* ============================================================
+   ULTIMATE SCROLL FLASH FIX – solid dark wrap, zero white
+   ============================================================ */
+html,
+body,
+.wrap {
+  background-color: #0e1a26;
+}
 
 
 /* ============================================================
