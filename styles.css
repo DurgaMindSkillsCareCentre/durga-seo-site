@@ -5205,3 +5205,65 @@ a {
 .trust-row .trust:not(:first-child) {
   flex: 0 0 auto;        /* second and third share the second line */
 }
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   RESTORE & ENHANCE READABILITY (World‑Class, No White‑Wash)
+   ============================================================ */
+
+/* 1. GOLD GRADIENT for section titles (Psychologist Services, FAQ, etc.) */
+.section-title {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* 2. SUB‑HEADINGS inside service cards (Individual Counseling, etc.) – warm gradient */
+.section-grid .feature b {
+  background: linear-gradient(135deg, #f5e56c, #e69500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 3. CONTENT TEXT on dark backgrounds – soft, elegant, easy to read */
+.pax-content p,
+.ai-strip p,
+.chat-invite p,
+.footer p,
+.footer span,
+.panel p,
+.faq-section p,
+.google-review-section p,
+.feature span {
+  color: rgba(255,255,240,0.9);        /* soft cream, not harsh white */
+}
+
+/* 4. RESTORE original hero gold accents – do not override */
+.hero .gold,
+.hero .gold * {
+  color: #FFD700 !important;
+  -webkit-text-fill-color: #FFD700;
+}
+
+/* 5. KEEP trust badges in 2 lines exactly as before */
+.trust-row {
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.trust-row .trust:first-child {
+  flex: 0 0 100%;
+}
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;
+}
