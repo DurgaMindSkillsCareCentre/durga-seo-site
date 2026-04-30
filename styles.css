@@ -5182,3 +5182,26 @@ a {
   padding: 4px 10px;
   flex: 0 0 auto;
 }
+
+
+
+
+
+/* ===== FIX 1: Make “Psychologist Services” sub-headings readable ===== */
+.section-grid .feature b {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* ===== FIX 2: Restore original 2‑line trust badge layout ===== */
+.trust-row {
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.trust-row .trust:first-child {
+  flex: 0 0 100%;        /* first badge occupies full width → line break */
+}
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;        /* second and third share the second line */
+}
