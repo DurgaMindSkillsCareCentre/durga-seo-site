@@ -5109,3 +5109,37 @@ a {
 .seo-carousel a:hover {
   color: #FFD700 !important;
 }
+
+
+
+
+/* ===== READABILITY & TRUST ROW FIX ===== */
+
+/* 1. Make section titles (like "Psychologist Services in Chennai") readable on dark backgrounds */
+.section-title {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* 2. Show review author names (inside the Google Reviews section) */
+.google-review-section .review-card span,
+.google-review-section p {
+  color: #fff !important;
+  opacity: 0.95;
+}
+
+/* 3. Keep trust badges on 2 lines (Trusted by 1000+ patients, etc.) */
+.trust-row .trust {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  padding: 4px 10px;
+}
+
+/* Optional: if "Psychologist Services in Chennai" heading still blends, give it a subtle background */
+.section-title {
+  background-color: rgba(0,0,0,0.15);
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 6px;
+}
