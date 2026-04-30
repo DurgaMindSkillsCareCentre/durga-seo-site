@@ -5039,3 +5039,61 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 .trust-row .trust:not(:first-child) {
   flex: 0 0 auto;
   }
+
+
+                                                                                                                               
+
+                                                                                                             
+
+
+
+    /* ==================================================
+   1. GOLD TITLES & SUB-HEADINGS
+   ================================================== */
+.section-title,
+.section-grid .feature b {
+  background: linear-gradient(135deg, #FFD700, #f5b042);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ==================================================
+   2. ELEGANT, SEAMLESS HERO TRUST BADGES
+   (keeps 2‑line structure, no heavy pills)
+   ================================================== */
+.trust-row {
+  gap: 6px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.trust-row .trust {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: none;               /* no box, just text */
+  border: none;
+  color: #ffd966;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+}
+
+/* 1st badge alone on first line */
+.trust-row .trust:first-child {
+  flex: 0 0 100%;
+}
+
+/* Other two share second line */
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;
+}
+
+/* Optional: subtle separator between the two side‑by‑side badges */
+.trust-row .trust:nth-child(2)::after {
+  content: "·";
+  margin-left: 6px;
+  color: rgba(255,255,255,0.3);
+  }
