@@ -5339,19 +5339,7 @@ li a:hover,
 }
 
 /* 7. Custom scrollbar – thin & golden (webkit browsers) */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-::-webkit-scrollbar-thumb {
-  background: #e5c07b;
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #d4a547;
-}
+
 
 /* 8. Focus rings for accessibility (keyboard users) */
 a:focus-visible,
