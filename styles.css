@@ -5137,3 +5137,12 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 
 
   
+.trust-row .trust {
+  /* keep all your existing rules (font-size, padding, etc.), just replace color with: */
+  color: transparent;
+  background: linear-gradient(135deg, #FFD966, #f5b042);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  }
