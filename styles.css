@@ -5015,4 +5015,27 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 
 
 
-
+/* Sleek trust badges – no heavy button feel */
+.trust-row {
+  gap: 6px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.trust-row .trust {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ffd966;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+/* Ensure first badge takes full width → forces line break */
+.trust-row .trust:first-child {
+  flex: 0 0 100%;
+}
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;
+  }
