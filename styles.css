@@ -5789,11 +5789,7 @@ body {
 }
 
 /* Smooth scroll only when not reduced motion, safe from flash */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
+
 
 /* Remove all will-change: they create isolated layers that can flicker */
 .panel,
