@@ -5799,3 +5799,130 @@ body {
 .footer strong {
   color: #e0d3b0;
 }
+
+
+
+
+
+
+
+
+/* ============================================================
+   ULTIMATE MISSING POLISHES — safe, zero scroll risk
+   ============================================================ */
+
+/* ---------- 1. GOLD GRADIENT FOR ALL MAJOR HEADINGS ---------- */
+/* (headings inside specific sections that were previously missed) */
+
+.lux-card-secondary h2,
+.pax-content h2,
+.ai-strip h3,
+.chat-invite h4,
+.panel.lead h3,
+.google-review-section h3,
+.media-card h3,
+.seo-card h3 {
+  background: linear-gradient(135deg, #f0c45a, #e5a83e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Keep inline elements gold where needed */
+.lux-card-primary strong {
+  color: #f0c45a;
+}
+
+/* ---------- 2. WORKSHOP SECTION BADGE (🔥 Workshops) ---------- */
+.ws-title-badge {
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* ---------- 3. “Book Now” BADGE INSIDE FEATURED WORKSHOP CARD ---------- */
+.ws-card.featured .badge {
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  margin-right: 6px;
+}
+
+/* ---------- 4. FLOATING WHATSAPP BUTTON (right side) ---------- */
+.wa {
+  position: fixed;
+  right: 24px;
+  bottom: 18px;
+  z-index: 999;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+/* ---------- 5. GENERAL BUTTON / PILL HOVER ENHANCEMENT ---------- */
+.btn:not(.cta-row .btn):hover,
+.pill:hover,
+.wa-big:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:active,
+.pill:active,
+.wa-big:active {
+  transform: scale(0.97);
+}
+
+/* ---------- 6. BRAND LOGO IN NAV – GENTLE HOVER SCALE ---------- */
+.brand .logo img {
+  transition: transform 0.25s ease;
+  border-radius: 50%;
+}
+.brand .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- 7. FAQ ACCORDION CUSTOM GOLD +/− ICON (pure CSS) ---------- */
+.faq-item summary {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+  padding-right: 24px;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #f0c45a;
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after {
+  content: "−";
+  transform: translateY(-50%) rotate(180deg);
+  }
