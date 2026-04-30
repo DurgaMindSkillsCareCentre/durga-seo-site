@@ -5365,3 +5365,118 @@ summary:focus-visible {
 
 
 
+
+
+
+
+/* ============================================================
+   FINAL MISSING POLISHES & MICRO‑ANIMATIONS
+   ============================================================ */
+
+/* 1. Sticky trust bar – subtle animated gradient */
+.trust-sticky {
+  background: linear-gradient(90deg, rgba(44, 62, 80, .95), rgba(30, 55, 70, .95), rgba(44, 62, 80, .95));
+  background-size: 200% 100%;
+  animation: trustShimmer 12s ease infinite;
+}
+@keyframes trustShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* 2. Workshop carousel cards – elegant hover lift */
+.ws-card {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,240,0.12);
+}
+.ws-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.14);
+}
+.ws-card.featured {
+  border-color: rgba(240, 196, 90, 0.4);
+  background: rgba(240, 196, 90, 0.08);
+}
+
+/* 3. Workshop section badge – refined gold pill */
+.ws-title-badge {
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* 4. Parallax/hero sections – gentle hover lift (like cards) */
+.pax-section,
+.hero {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+.pax-section:hover,
+.hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* 5. YouTube video wrapper – soft, immersive frame */
+.yt-embed-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease;
+}
+.yt-embed-wrap:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* 6. SEO internal‑links carousel – subtle underline glow on hover */
+.seo-carousel a {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  color: #d4a547;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.seo-carousel a:hover {
+  color: #f0c45a;
+  text-shadow: 0 0 8px rgba(240, 196, 90, 0.3);
+  border-bottom: 1px solid rgba(240, 196, 90, 0.6);
+}
+
+/* 7. Footer – gentle top separator and spacing */
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+/* 8. FAQ accordion – smooth arrow rotation (pure CSS) */
+.faq-item summary {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+  padding-right: 24px;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #f0c45a;
+  transition: transform 0.25s ease;
+}
+.faq-item[open] summary::after {
+  content: "−";
+  transform: translateY(-50%) rotate(180deg);
+  }
