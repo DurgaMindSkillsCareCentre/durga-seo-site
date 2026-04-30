@@ -5251,9 +5251,10 @@ body {
    (safe, subtle, purely experiential)
    ============================================================ */
 
-/* 1. Silky smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling without repaint flash */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  body { background-color: #f9fafb; }   /* or #ffffff – guarantees no transparent flash */
 }
 
 /* 2. Elegant text selection */
