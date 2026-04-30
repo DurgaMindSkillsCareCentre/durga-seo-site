@@ -5173,7 +5173,10 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
   font-weight: 600;
   }
 
-
+.section-title,
+.section-grid .feature b {
+  text-shadow: 0 1px 4px rgba(180, 130, 60, 0.15);
+}
 /* ============================================================
    WORLD‑CLASS SERENE LIFT (calm + trustworthy)
    ============================================================ */
