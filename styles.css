@@ -5097,3 +5097,43 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
   margin-left: 6px;
   color: rgba(255,255,255,0.3);
   }
+
+
+
+
+
+/* World‑class 2‑line trust badges — no full‑width stretching */
+.trust-row {
+  text-align: left;
+  line-height: 1.5;
+}
+.trust-row .trust {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 1px 6px;
+  color: #ffd966;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  vertical-align: middle;
+}
+/* Force line break after first badge without making it full width */
+.trust-row .trust:first-child::after {
+  content: "";
+  display: block;          /* this creates the line break */
+}
+/* Optional: tiny dot between the two badges on second line */
+.trust-row .trust:nth-child(2)::after {
+  content: "·";
+  margin-left: 6px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* If you still see a third line, tighten the gap */
+.trust-row {
+  gap: 2px;
+}
+
+
+  
