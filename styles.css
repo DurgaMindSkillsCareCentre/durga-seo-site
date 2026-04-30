@@ -5374,16 +5374,11 @@ summary:focus-visible {
    ============================================================ */
 
 /* 1. Sticky trust bar – subtle animated gradient */
-.trust-sticky {
-  background: linear-gradient(90deg, rgba(44, 62, 80, .95), rgba(30, 55, 70, .95), rgba(44, 62, 80, .95));
-  background-size: 200% 100%;
-  animation: trustShimmer 12s ease infinite;
-}
-@keyframes trustShimmer {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
 
+.trust-sticky {
+  background: rgba(30, 40, 50, 0.95);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.12);
+}
 /* 2. Workshop carousel cards – elegant hover lift */
 .ws-card {
   transition: transform 0.25s ease, box-shadow 0.3s ease;
@@ -5480,3 +5475,20 @@ summary:focus-visible {
   content: "−";
   transform: translateY(-50%) rotate(180deg);
   }
+
+
+.feature .badge {
+  background: rgba(255, 255, 240, 0.08);
+  color: #f0c45a;
+  border: 1px solid rgba(240, 196, 90, 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  }
+  
