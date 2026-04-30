@@ -5267,3 +5267,70 @@ a {
 .trust-row .trust:not(:first-child) {
   flex: 0 0 auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FIX: Readable headings + Sleek 2‑line trust badges + Gold accents
+   ============================================================ */
+
+/* 1. Gradient gold for section titles (Psychologist Services, etc.) */
+.section-title {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* 2. Sub‑headings (Individual Counseling, Couples & Family Therapy…) – warm gradient */
+.section-grid .feature b {
+  background: linear-gradient(135deg, #f5e56c, #e69500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 3. Soft cream for all content text on dark backgrounds (no harsh white) */
+.pax-content p,
+.ai-strip p,
+.chat-invite p,
+.footer p,
+.footer span,
+.panel p:not(.gold),
+.faq-section p,
+.google-review-section p,
+.feature span {
+  color: rgba(255, 255, 240, 0.92);
+}
+
+/* 4. Trust badges: line 1 left‑aligned + line 2 two side‑by‑side, sleek */
+.trust-row {
+  text-align: left;
+  line-height: 1.4;
+}
+.trust-row .trust {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin: 2px 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffd966;
+  font-weight: 500;
+}
+.trust-row .trust:first-child::after {
+  content: '';
+  display: block;          /* forces a line break after the first badge */
+}
+
+/* 5. Keep original gold for hero “Private consultation” line (do NOT override) */
+/* No rule needed – we simply stopped forcing white on .hero * */
