@@ -5241,3 +5241,127 @@ body::before {
 body {
   padding-bottom: 72px;
 }
+
+
+
+
+
+/* ============================================================
+   ULTIMATE WORLD‑CLASS MICRO‑ENHANCEMENTS
+   (safe, subtle, purely experiential)
+   ============================================================ */
+
+/* 1. Silky smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Elegant text selection */
+::selection {
+  background: #f0c45a;
+  color: #1e293b;
+}
+
+/* 3. Cards & panels lift softly on hover (depth with no noise) */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card {
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* 4. Buttons & pills – gentle press-down feedback */
+.btn,
+.pill,
+a.btn,
+a.pill,
+.wa-big,
+.ai-cta-btn,
+.btn-primary {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.btn:active,
+.pill:active,
+a.btn:active,
+a.pill:active,
+.wa-big:active,
+.ai-cta-btn:active,
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* 5. Links inside content – subtle underline animation */
+p a,
+li a,
+.faq-item p a,
+.pax-content a:not(.btn),
+.ai-strip a:not(.ai-cta-btn) {
+  text-decoration: none;
+  background-image: linear-gradient(135deg, #f0c45a, #d18e2c);
+  background-size: 0% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+p a:hover,
+li a:hover,
+.faq-item p a:hover,
+.pax-content a:not(.btn):hover,
+.ai-strip a:not(.ai-cta-btn):hover {
+  background-size: 100% 1px;
+}
+
+/* 6. Carousel images – gentle zoom on hover (if any interactive) */
+.car-slide img {
+  transition: transform 0.4s ease;
+}
+.car-slide:hover img {
+  transform: scale(1.03);
+}
+
+/* 7. Custom scrollbar – thin & golden (webkit browsers) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #e5c07b;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a547;
+}
+
+/* 8. Focus rings for accessibility (keyboard users) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #f0c45a;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+
