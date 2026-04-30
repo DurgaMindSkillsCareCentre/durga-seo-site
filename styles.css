@@ -5157,7 +5157,21 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 
 
 
+/* Section titles (e.g. Frequently Asked Questions) – richer gold */
+.section-title,
+.section-grid .feature b {
+  background: linear-gradient(135deg, #e8b04c, #d18e2c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
 
+/* FAQ question text – lighter, softer gold */
+.faq-item summary {
+  color: #f5d48b;
+  font-weight: 600;
+  }
 
 
 /* ============================================================
