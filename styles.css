@@ -5779,37 +5779,8 @@ textarea:focus {
    SCROLL & REPAINT FIX (no yellow/white flash)
    ============================================================ */
 
-/* Solid background prevents transparent flash */
-html {
-  background-color: #0e1a26;   /* matches hero dark if scrolled to top */
-}
-
-body {
-  background-color: #f9fafb;   /* page base */
-}
-
-/* Smooth scroll only when not reduced motion, safe from flash */
-
 
 /* Remove all will-change: they create isolated layers that can flicker */
-.panel,
-.section-grid .panel,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.review-card,
-.pax-content,
-.seo-card,
-.ws-card,
-.media-card,
-.car-slide,
-.yt-embed-wrap,
-.profile-shell {
-  will-change: auto;
-}
-
 
 
 
@@ -5829,79 +5800,3 @@ body {
    ============================================================ */
 
 /* 1. Disable smooth scroll – it triggers repaint flashes */
-html {
-  scroll-behavior: auto;
-}
-
-/* 2. Solid background on html prevents transparent flash */
-html {
-  background-color: #0e1a26;   /* dark hero base, won't be seen normally */
-}
-
-/* 3. Remove GPU layer isolation (the real flash cause) */
-.panel,
-.section-grid .panel,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.review-card,
-.pax-content,
-.seo-card,
-.ws-card,
-.media-card,
-.car-slide,
-.yt-embed-wrap,
-.profile-shell,
-.hero,
-.wrap {
-  will-change: auto;
-}
-
-/* 4. Remove perspective & 3D style from wrapper (also created isolations) */
-.wrap {
-  perspective: none;
-  transform-style: flat;
-}
-
-/* 5. Ensure body has a solid background (already set, just a safety) */
-body {
-  background-color: #f9fafb;
-}
-
-
-
-
-
-
-
-
-/* ============================================================
-   FINAL SCROLL FLASH PREVENTION (solid hero background)
-   ============================================================ */
-
-/* 1. Solid dark background on hero – nothing light can show through */
-.hero {
-  background-color: #0e1a26;   /* deep navy, same as your hero tone */
-}
-
-/* 2. Ensure body doesn't flash lighter than hero when scrolling past it quickly */
-body {
-  background-color: #0e1a26;   /* temporary, will be overridden below hero area */
-}
-
-/* 3. But the main content area below hero should stay light */
-.wrap {
-  background-color: #f9fafb;   /* resets to your soft off‑white below the hero */
-}
-
-/* 4. Remove any stray GPU layer settings that stills flicker */
-.hero,
-.wrap,
-.panel,
-.profile-shell {
-  will-change: auto;
-  transform-style: flat;
-  backface-visibility: hidden;
-}
