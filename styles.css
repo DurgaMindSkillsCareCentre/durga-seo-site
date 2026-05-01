@@ -6369,8 +6369,13 @@ body { padding-bottom: 72px; }
    (no scroll risk, purely additive)
    ============================================================ */
 
-/* ---------- 1. WARM IVORY TEXT ON DARK BACKGROUNDS ---------- */
-/* Replace pure white with a soft, human cream */
+
+
+/* ============================================================
+   CORRECTED IVORY TEXT – only on dark backgrounds
+   ============================================================ */
+
+/* Hero, AI strip, chat‑invite, footer, parallax sections */
 .hero p,
 .hero .fine,
 .hero .eyebrow,
@@ -6381,100 +6386,43 @@ body { padding-bottom: 72px; }
 .footer strong,
 .pax-content p,
 .pax-content h2,
-.panel p,
-.faq-item p,
 .review-card p,
 .review-card span,
 .car-caption,
-.car-caption span,
-.feature span,
-.seo-carousel a {
+.car-caption span {
   color: #f5f0e8;
 }
 
-/* Keep gold headings untouched, but ensure body text inherits the warm tone */
-.section-title,
-.section-grid .feature b,
-.lux-card-primary strong,
-.ai-strip h3,
-.chat-invite h4,
-.pax-content h2,
-.google-review-section h3,
-.media-card h3 {
-  /* these remain gold gradient, no change */
-}
-
-/* ---------- 2. PANEL‑CARD AESTHETIC ---------- */
-/* Give every content section the feel of a soft, curated card */
-
-/* Wrapper background – barely there warmth */
-.wrap {
-  background-color: #faf8f4;
-}
-
-/* All main panels become subtle cards */
-.panel,
-.section-grid .panel,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.review-card,
-.pax-content,
-.seo-card {
-  background-color: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(240, 196, 90, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-}
-
-/* On hover, the existing lift still applies – we just enhance the border */
-.panel:hover,
-.section-grid .panel:hover,
-.lux-card-primary:hover,
-.lux-card-secondary:hover,
-.ai-strip:hover,
-.chat-invite:hover,
-.faq-item:hover,
-.review-card:hover,
-.pax-content:hover,
-.seo-card:hover {
-  border-color: rgba(240, 196, 90, 0.2);
-}
-
-/* ---------- 3. HERO TRUST BADGE – SUBTLE GOLD UNDERLINE ---------- */
-.trust-row .trust:first-child {
-  border-bottom: 1px solid rgba(240, 196, 90, 0.35);
-  padding-bottom: 1px;
-}
-
-/* ---------- 4. WORKSHOP CAROUSEL – FEATURED CARD LEFT GOLD LINE ---------- */
-.ws-card.featured {
-  border-left: 2px solid rgba(240, 196, 90, 0.5);
-}
-
-/* ---------- 5. SERVICE BADGE – GENTLE GLOW ON HOVER ---------- */
-.feature .badge:hover {
-  box-shadow: 0 0 8px rgba(240, 196, 90, 0.3);
-}
-
-/* ---------- 6. GOOGLE REVIEWS BUTTON – GOLD GRADIENT ---------- */
+/* Google Reviews button – gold gradient */
 .google-review-section .btn {
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   border: none;
   color: #1e293b;
 }
 
-/* ---------- 7. FAQ ANSWER TEXT – IVORY (already set globally above) ---------- */
+/* Service badge hover glow */
+.feature .badge:hover {
+  box-shadow: 0 0 8px rgba(240, 196, 90, 0.3);
+}
 
-/* ---------- 8. PARALLAX SECTION – IMPROVED LEGIBILITY ---------- */
+/* Trust badge underline */
+.trust-row .trust:first-child {
+  border-bottom: 1px solid rgba(240, 196, 90, 0.35);
+  padding-bottom: 1px;
+}
+
+/* Featured workshop card accent */
+.ws-card.featured {
+  border-left: 2px solid rgba(240, 196, 90, 0.5);
+}
+
+/* Parallax legibility */
 .pax-content h2,
 .pax-content p {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* ---------- 9. CAROUSEL CAPTIONS – BETTER CONTRAST ---------- */
+/* Carousel caption gradient */
 .car-slide {
   position: relative;
 }
@@ -6490,7 +6438,7 @@ body { padding-bottom: 72px; }
   pointer-events: none;
 }
 
-/* ---------- 10. FORM INPUTS – WARM PLACEHOLDER & GLOW ---------- */
+/* Form placeholders */
 input::placeholder,
 textarea::placeholder {
   color: #b0a090;
@@ -6502,9 +6450,39 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(240, 196, 90, 0.1);
 }
 
-/* ---------- 11. BOTTOM DOCK – ALREADY REFINED, NO CHANGES ---------- */
+/* Panel card styling – safe */
+.wrap {
+  background-color: #faf8f4;
+}
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(240, 196, 90, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover {
+  border-color: rgba(240, 196, 90, 0.2);
+}
 
-/* ---------- 12. FOCUS STATES – ACCESSIBILITY (if missing) ---------- */
+/* Accessibility focus rings */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
@@ -6513,10 +6491,7 @@ textarea:focus-visible {
   outline: 2px solid #f0c45a;
   outline-offset: 2px;
   border-radius: 4px;
-    }
-
-
-
+}
 
 
 
