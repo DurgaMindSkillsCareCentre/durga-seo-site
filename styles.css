@@ -5880,54 +5880,6 @@ body {
 }
 
 /* ---------- 5. GENERAL BUTTON / PILL HOVER ENHANCEMENT ---------- */
-.btn:not(.cta-row .btn):hover,
-.pill:hover,
-.wa-big:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn:active,
-.pill:active,
-.wa-big:active {
-  transform: scale(0.97);
-}
-
-/* ---------- 6. BRAND LOGO IN NAV – GENTLE HOVER SCALE ---------- */
-.brand .logo img {
-  transition: transform 0.25s ease;
-  border-radius: 50%;
-}
-.brand .logo img:hover {
-  transform: scale(1.05);
-}
-
-/* ---------- 7. FAQ ACCORDION CUSTOM GOLD +/− ICON (pure CSS) ---------- */
-.faq-item summary {
-  list-style: none;
-  position: relative;
-  cursor: pointer;
-  padding-right: 24px;
-}
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-.faq-item summary::after {
-  content: "+";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.3rem;
-  color: #f0c45a;
-  transition: transform 0.25s ease;
-}
-.faq-item[open] summary::after {
-  content: "−";
-  transform: translateY(-50%) rotate(180deg);
-  }
-
-
 
 
 
