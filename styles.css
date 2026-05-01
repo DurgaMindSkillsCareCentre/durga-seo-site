@@ -6094,3 +6094,68 @@ body {
 .brand .logo img:hover {
   transform: scale(1.05);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   HERO PORTRAIT – WORLD‑CLASS SIGNATURE LOOK
+   ============================================================ */
+
+/* 1. The profile image itself – soft, luminous, perfectly framed */
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 1px rgba(240, 196, 90, 0.25),
+    0 8px 28px rgba(0, 0, 0, 0.25),
+    0 0 0 6px rgba(15, 30, 50, 0.6);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* 2. On hover – a gentle, breathing gold halo */
+.profile-img:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(240, 196, 90, 0.6),
+    0 12px 36px rgba(0, 0, 0, 0.35),
+    0 0 0 6px rgba(15, 30, 50, 0.4),
+    0 0 20px rgba(240, 196, 90, 0.15);
+}
+
+/* 3. The shell container – no visible box, just a gentle lift */
+.profile-shell {
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  background: transparent;
+  border: none;
+}
+.profile-shell:hover {
+  transform: translateY(-2px);
+}
+
+/* 4. Remove any old background/fade that might compete */
+.profile-bg,
+.profile-fade {
+  opacity: 0.25;
+  background: radial-gradient(circle at center, rgba(240,196,90,0.08) 0%, transparent 70%);
+}
+
+/* 5. The profile tag (name) – whisper‑soft gold */
+.profile-tag {
+  color: #d4b87a;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
