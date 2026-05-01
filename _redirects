@@ -1,0 +1,14 @@
+# ═══════════════════════════════════════════════════════════════
+# _redirects — Cloudflare Pages URL Redirects
+# Upload this file to the ROOT of your GitHub repository
+# ═══════════════════════════════════════════════════════════════
+
+# Force HTTPS (Cloudflare handles this, but belt-and-suspenders)
+http://durga-mindskillscare.pages.dev/* https://durga-mindskillscare.pages.dev/:splat 301
+
+# Redirect /index.html → / (avoid duplicate content)
+/index.html / 301
+
+# Tamil page shortcut
+/ta /index-ta.html 302
+/tamil /index-ta.html 302

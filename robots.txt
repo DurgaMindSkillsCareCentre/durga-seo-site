@@ -1,10 +1,26 @@
+# ═══════════════════════════════════════════════════
+# robots.txt — Durga Psychiatric Centre
+# Site: https://durga-mindskillscare.pages.dev/
+# ═══════════════════════════════════════════════════
+
+# Allow all search engines full access
 User-agent: *
 Allow: /
 
+# Google — explicitly allow everything
 User-agent: Googlebot
 Allow: /
 
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
 User-agent: Bingbot
 Allow: /
 
+# No pages should be blocked
+# (no Disallow rules — entire site is public)
+
+# Sitemap location — must match exactly what is deployed
 Sitemap: https://durga-mindskillscare.pages.dev/sitemap.xml
