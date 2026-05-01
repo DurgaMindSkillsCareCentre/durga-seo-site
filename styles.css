@@ -6369,129 +6369,64 @@ body { padding-bottom: 72px; }
    (no scroll risk, purely additive)
    ============================================================ */
 
+/* ============================================================
+   SAFE OFF‑WHITE TEXT – only for dark‑background sections
+   ============================================================ */
 
+/* Hero section – general paragraph and fine print */
+.hero p,
+.hero .fine {
+  color: rgba(255, 250, 240, 0.90);
+}
+
+/* AI test strip – body text */
+.ai-strip p {
+  color: rgba(255, 250, 240, 0.88);
+}
+
+/* Chat‑invite – description text */
+.chat-invite p {
+  color: rgba(255, 250, 240, 0.86);
+}
+
+/* Footer – all text */
+.footer,
+.footer span,
+.footer strong {
+  color: rgba(255, 250, 240, 0.85);
+}
+
+/* Parallax sections – overlay text */
+.pax-content p,
+.pax-content h2 {
+  color: rgba(255, 250, 240, 0.90);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Google reviews – body text and reviewer names */
+.review-card p,
+.review-card span {
+  color: rgba(255, 250, 240, 0.88);
+}
+
+/* Carousel captions – name and description */
+.car-caption,
+.car-caption span {
+  color: rgba(255, 250, 240, 0.85);
+}
+
+/* Workshop carousel cards – text inside (if dark) */
+.ws-card {
+  color: rgba(255, 250, 240, 0.85);
+}
+
+/* Google review button – keep gold background, dark text */
+.google-review-section .btn {
+  color: #1e293b;
+}
 
 /* ============================================================
    CORRECTED IVORY TEXT – only on dark backgrounds
    ============================================================ */
 
 /* Hero, AI strip, chat‑invite, footer, parallax sections */
-.hero p,
-.hero .fine,
-.hero .eyebrow,
-.ai-strip p,
-.chat-invite p,
-.footer,
-.footer span,
-.footer strong,
-.pax-content p,
-.pax-content h2,
-.review-card p,
-.review-card span,
-.car-caption,
-.car-caption span {
-  color: #f5f0e8;
-}
-
-/* Google Reviews button – gold gradient */
-.google-review-section .btn {
-  background: linear-gradient(135deg, #f0c45a, #d18e2c);
-  border: none;
-  color: #1e293b;
-}
-
-/* Service badge hover glow */
-.feature .badge:hover {
-  box-shadow: 0 0 8px rgba(240, 196, 90, 0.3);
-}
-
-/* Trust badge underline */
-.trust-row .trust:first-child {
-  border-bottom: 1px solid rgba(240, 196, 90, 0.35);
-  padding-bottom: 1px;
-}
-
-/* Featured workshop card accent */
-.ws-card.featured {
-  border-left: 2px solid rgba(240, 196, 90, 0.5);
-}
-
-/* Parallax legibility */
-.pax-content h2,
-.pax-content p {
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Carousel caption gradient */
-.car-slide {
-  position: relative;
-}
-.car-slide::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
-  border-radius: 0 0 14px 14px;
-  pointer-events: none;
-}
-
-/* Form placeholders */
-input::placeholder,
-textarea::placeholder {
-  color: #b0a090;
-  opacity: 1;
-}
-input:focus,
-textarea:focus {
-  border-color: #f0c45a;
-  box-shadow: 0 0 0 3px rgba(240, 196, 90, 0.1);
-}
-
-/* Panel card styling – safe */
-.wrap {
-  background-color: #faf8f4;
-}
-.panel,
-.section-grid .panel,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.review-card,
-.pax-content,
-.seo-card {
-  background-color: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(240, 196, 90, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-}
-.panel:hover,
-.section-grid .panel:hover,
-.lux-card-primary:hover,
-.lux-card-secondary:hover,
-.ai-strip:hover,
-.chat-invite:hover,
-.faq-item:hover,
-.review-card:hover,
-.pax-content:hover,
-.seo-card:hover {
-  border-color: rgba(240, 196, 90, 0.2);
-}
-
-/* Accessibility focus rings */
-a:focus-visible,
-button:focus-visible,
-summary:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #f0c45a;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-
-
