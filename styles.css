@@ -5938,36 +5938,3 @@ body {
 
 
 /* Navigation */
-nav {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-nav a {
-  padding: 10px;
-  color: #333;
-  text-decoration: none;
-}
-nav a:hover {
-  color: #0077cc;
-  text-decoration: underline;
-}
-
-/* Buttons */
-
-
-/* Alternating section background */
-section:nth-child(even) {
-  background: #f9f9f9;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.25rem; }
-  nav ul { flex-direction: column; }
-  .content { padding: 20px; }
-}
-
