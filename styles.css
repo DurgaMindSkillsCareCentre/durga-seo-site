@@ -5785,3 +5785,312 @@ textarea:focus {
    SCROLL PERFORMANCE + INSTANT PANELS
    ============================================================ */
 
+/* ============================================================
+   ULTIMATE WORLD‑CLASS DESIGN (scroll‑safe, no breaking)
+   ============================================================ */
+
+/* ---------- 1. FONT SMOOTHING & HERO LEFT BREATHING ROOM ---------- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+.hero-inner > div:first-child {
+  padding-left: 16px;
+}
+
+/* ---------- 2. GOLD GRADIENT TITLES & SERVICE SUB‑HEADINGS ---------- */
+.section-title,
+.section-grid .feature b {
+  background: linear-gradient(135deg, #f0c45a, #e5a83e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(180, 130, 60, 0.15);
+}
+
+/* ---------- 3. FAQ ACCORDION QUESTIONS – LIGHTER GOLD ---------- */
+.faq-item summary {
+  color: #f5d48b;
+  font-weight: 600;
+}
+
+/* ---------- 4. TRUST BADGES (0.7rem, 2‑line layout, no heavy pills) ---------- */
+.trust-row {
+  gap: 6px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.trust-row .trust {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  color: #ffd966;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  white-space: nowrap;
+}
+.trust-row .trust:first-child {
+  flex: 0 0 auto;
+}
+.trust-row .trust:first-child::after {
+  content: "";
+  display: block;             /* line break after first badge */
+}
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;
+}
+
+/* ---------- 5. SOFT DEPTH – ALL CARDS & PANELS (no will‑change, no 3D) ---------- */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card,
+.ws-card,
+.media-card,
+.car-slide,
+.yt-embed-wrap {
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2), 
+              box-shadow 0.4s ease;
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover,
+.ws-card:hover,
+.media-card:hover,
+.car-slide:hover,
+.yt-embed-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero section – gentle lift */
+.hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- 6. IMAGE & VIDEO POLISH ---------- */
+
+/* Hero profile photo – soft halo and subtle zoom */
+.profile-img {
+  border-radius: 50%;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18), 0 0 0 1px rgba(240,196,90,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.profile-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(240,196,90,0.25);
+}
+
+/* Carousel slides (Meet D. Durga images) – gallery framing */
+.car-slide img {
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08), 0 0 0 1px rgba(240,196,90,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.car-slide:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.14), 0 0 0 1px rgba(240,196,90,0.18);
+}
+
+/* Media card images (One‑on‑one counseling etc.) */
+.cardimg {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.media-card:hover .cardimg {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Profile shell (if separate) */
+.profile-shell {
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1.2), 
+              box-shadow 0.4s ease;
+}
+.profile-shell:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* YouTube video wrapper – museum frame */
+.yt-embed-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 1px rgba(240,196,90,0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.yt-embed-wrap:hover {
+  box-shadow: 0 18px 42px rgba(0,0,0,0.15), 0 0 0 1px rgba(240,196,90,0.15);
+  transform: translateY(-2px);
+}
+
+/* ---------- 7. CTA BUTTON – BREATHING GLOW ---------- */
+.cta-row .btn {
+  animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 196, 90, 0.4); }
+  50% { box-shadow: 0 0 14px 4px rgba(240, 196, 90, 0.18); }
+}
+
+/* ---------- 8. SERVICE BADGE NUMBERS – SOFT GOLD ---------- */
+.feature .badge {
+  background: rgba(255, 255, 240, 0.08);
+  color: #f0c45a;
+  border: 1px solid rgba(240, 196, 90, 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+/* ---------- 9. REVIEW STARS – WARM GOLD ---------- */
+.stars {
+  color: #f0c45a;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+/* ---------- 10. INLINE LINKS – GOLD UNDERLINE ON HOVER ---------- */
+p a,
+li a,
+.faq-item p a,
+.pax-content a:not(.btn),
+.ai-strip a:not(.ai-cta-btn) {
+  text-decoration: none;
+  background-image: linear-gradient(135deg, #f0c45a, #d18e2c);
+  background-size: 0% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+p a:hover,
+li a:hover,
+.faq-item p a:hover,
+.pax-content a:not(.btn):hover,
+.ai-strip a:not(.ai-cta-btn):hover {
+  background-size: 100% 1px;
+}
+
+/* ---------- 11. ULTRA‑TRANSPARENT BOTTOM DOCK ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: none;
+  z-index: 100;
+  pointer-events: none;
+}
+body::before {
+  content: "";
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background-image: url('profile.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.38;
+  z-index: 101;
+  pointer-events: none;
+}
+body {
+  padding-bottom: 72px;       /* prevent content overlap with dock */
+}
+
+/* ---------- 12. WORKSHOP CAROUSEL – HOVER LIFT ---------- */
+.ws-card {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+.ws-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+.ws-card.featured {
+  border-color: rgba(240, 196, 90, 0.4);
+}
+
+/* ---------- 13. BUTTONS & PILLS – SOFT RADIUS & HOVER ---------- */
+.btn, .pill, .wa-big {
+  border-radius: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover, .pill:hover, .wa-big:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.btn:active, .pill:active, .wa-big:active {
+  transform: scale(0.97);
+}
+
+/* ---------- 14. CAROUSEL CAPTIONS & HERO MISC – WARM TONES ---------- */
+.car-caption,
+.car-caption span {
+  color: #f0e0b8;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.hero .eyebrow {
+  color: #f5e5c8;
+}
+.hero .fine {
+  color: #d4b87a;
+}
+.footer,
+.footer span,
+.footer strong {
+  color: #e0d3b0;
+}
+.seo-carousel a {
+  color: #d4a547;
+}
+.seo-carousel a:hover {
+  color: #f0c45a;
+}
+
+/* ---------- 15. BRAND LOGO HOVER ---------- */
+.brand .logo img {
+  transition: transform 0.25s ease;
+  border-radius: 50%;
+}
+.brand .logo img:hover {
+  transform: scale(1.05);
+  }
