@@ -6114,48 +6114,51 @@ body {
    HERO PORTRAIT – WORLD‑CLASS SIGNATURE LOOK
    ============================================================ */
 
-/* 1. The profile image itself – soft, luminous, perfectly framed */
+/* ============================================================
+   HERO PORTRAIT – REFINED, SEAMLESS, WORLD‑CLASS
+   ============================================================ */
+
+/* 1. The profile image itself – flawless rectangle with soft gold accent */
 .profile-img {
-  border-radius: 50%;
+  border-radius: 12px;
   object-fit: cover;
   box-shadow:
-    0 0 0 1px rgba(240, 196, 90, 0.25),
-    0 8px 28px rgba(0, 0, 0, 0.25),
-    0 0 0 6px rgba(15, 30, 50, 0.6);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+    0 1px 3px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.14);
+  border: 1px solid rgba(240, 196, 90, 0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* 2. On hover – a gentle, breathing gold halo */
+/* Gentle lift on hover – purely 2D, no rotation */
 .profile-img:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px);
   box-shadow:
-    0 0 0 1px rgba(240, 196, 90, 0.6),
-    0 12px 36px rgba(0, 0, 0, 0.35),
-    0 0 0 6px rgba(15, 30, 50, 0.4),
-    0 0 20px rgba(240, 196, 90, 0.15);
+    0 4px 12px rgba(0,0,0,0.18),
+    0 16px 40px rgba(0,0,0,0.20),
+    0 0 0 1px rgba(240, 196, 90, 0.35);
 }
 
-/* 3. The shell container – no visible box, just a gentle lift */
+/* 2. The profile shell – invisible container, just provides clean spacing */
 .profile-shell {
-  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  transition: transform 0.4s ease;
   background: transparent;
   border: none;
 }
 .profile-shell:hover {
-  transform: translateY(-2px);
+  transform: scale(1.01); /* barely perceptible, just a breath of life */
 }
 
-/* 4. Remove any old background/fade that might compete */
-.profile-bg,
-.profile-fade {
-  opacity: 0.25;
-  background: radial-gradient(circle at center, rgba(240,196,90,0.08) 0%, transparent 70%);
+/* 3. Optional: Subtle background glow behind the image (matching the hero) */
+.profile-bg {
+  opacity: 0.15;
+  background: radial-gradient(ellipse at center, rgba(240,196,90,0.1) 0%, transparent 70%);
 }
 
-/* 5. The profile tag (name) – whisper‑soft gold */
+/* 4. The profile tag (name/title) – quiet gold, no harshness */
 .profile-tag {
   color: #d4b87a;
   font-weight: 400;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  }
+  margin-top: 6px;
+}
