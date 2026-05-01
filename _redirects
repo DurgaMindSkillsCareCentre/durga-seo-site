@@ -1,9 +1,0 @@
-# Force HTTPS
-http://durga-mindskillscare.pages.dev/* https://durga-mindskillscare.pages.dev/:splat 301
-
-# Redirect /index.html → /
-/index.html / 301
-
-# Tamil page shortcut
-/ta /index-ta.html 302
-/tamil /index-ta.html 302
