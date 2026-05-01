@@ -1,13 +1,6 @@
-# ═══════════════════════════════════════════════════════════════
-# _headers — Cloudflare Pages HTTP Response Headers
-# THIS IS THE MAIN FIX for "Couldn't fetch" in Google Search Console
-# Upload this file to the ROOT of your GitHub repository
-# ═══════════════════════════════════════════════════════════════
-
-# SITEMAP — Tell browsers AND Googlebot this is XML
+# SITEMAP — Correct headers for Googlebot
 /sitemap.xml
   Content-Type: application/xml; charset=UTF-8
-  X-Robots-Tag: noindex
   Cache-Control: public, max-age=3600
 
 # ROBOTS.TXT
@@ -15,28 +8,28 @@
   Content-Type: text/plain; charset=UTF-8
   Cache-Control: public, max-age=3600
 
-# HTML PAGES — Security + performance headers
+# HTML PAGES
 /*.html
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Cache-Control: public, max-age=3600
 
-# ROOT (index.html served at /)
+# ROOT
 /
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Cache-Control: public, max-age=3600
 
-# CSS + JS — Long cache
+# CSS + JS
 /*.css
   Cache-Control: public, max-age=86400
 
 /*.js
   Cache-Control: public, max-age=86400
 
-# IMAGES — Long cache
+# IMAGES
 /*.jpg
   Cache-Control: public, max-age=604800
 
