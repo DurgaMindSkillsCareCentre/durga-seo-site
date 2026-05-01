@@ -6424,4 +6424,15 @@ body { padding-bottom: 72px; }
    CORRECTED IVORY TEXT – only on dark backgrounds
    ============================================================ */
 
+
+
+/* ============================================================
+   PREVENT WHITE FLASH DURING SCROLL
+   ============================================================ */
+html, body {
+  background-color: #0e1a26;   /* deep dark, matches hero base */
+}
+
+
+
 /* Hero, AI strip, chat‑invite, footer, parallax sections */
