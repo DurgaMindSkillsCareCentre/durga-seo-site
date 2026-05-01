@@ -6353,11 +6353,6 @@ body { padding-bottom: 72px; }
 .brand .logo img { border-radius: 50%; transition: transform 0.25s ease; }
 .brand .logo img:hover { transform: scale(1.05); }
 
-/* ---------- SCROLLBAR – DISCREET GOLD (safe, no flash) ---------- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d4a547; border-radius: 20px; }
-::-webkit-scrollbar-thumb:hover { background: #b58a2e; }
 
 
 
