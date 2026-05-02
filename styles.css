@@ -6476,3 +6476,50 @@ html, body {
   z-index: 1;
   background: rgba(0, 0, 0, 0.4);    /* dark overlay for readability */
 }
+
+/* ============================================================
+   SMOOTH PURE‑CSS PARALLAX (both sections, no HTML changes)
+   ============================================================ */
+
+/* ---------- 1. Prepare the section container ---------- */
+.pax-section {
+  position: relative;
+  overflow: hidden;               /* clips the fixed background to the section */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* the key – image stays still while text moves */
+  /* GPU acceleration for mobile smoothness */
+  transform: translateZ(0);
+}
+
+/* Set the correct image for each section */
+.pax-section:nth-of-type(1) {
+  background-image: url('services-visual.png');
+}
+.pax-section:nth-of-type(2) {
+  background-image: url('clinic-visual.png');
+}
+
+/* ---------- 2. Hide the old background div (so only the section background shows) ---------- */
+.pax-bg {
+  display: none !important;       /* completely remove the old div */
+  /* also kill any JS‑driven transforms */
+  transform: none !important;
+  opacity: 0 !important;
+}
+
+/* ---------- 3. Keep the content readable with a dark overlay ---------- */
+.pax-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);   /* soft dark overlay – adjust the last number for lightness */
+  padding: 40px 20px;                /* keeps text from touching edges */
+  border-radius: 12px;               /* optional – slightly softens the panel */
+}
+
+/* ---------- 4. Prevent any lingering JS from moving the old div ---------- */
+.pax-section {
+  /* overwrite any inline or JS‑set transforms on the old background div */
+  transform: translateZ(0) !important;
+}
