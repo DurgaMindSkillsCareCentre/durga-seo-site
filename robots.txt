@@ -1,4 +1,4 @@
-itUser-agent: *
+User-agent: *
 Allow: /
 
 User-agent: Googlebot
