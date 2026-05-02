@@ -6790,49 +6790,7 @@ li a:hover,
 }
 
 /* ---------- 6. PANEL CARDS – whisper of luxury gradient on hover ---------- */
-.panel,
-.section-grid .panel,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.review-card,
-.pax-content,
-.seo-card {
-  position: relative;
-}
-.panel::after,
-.section-grid .panel::after,
-.lux-card-primary::after,
-.lux-card-secondary::after,
-.ai-strip::after,
-.chat-invite::after,
-.faq-item::after,
-.review-card::after,
-.pax-content::after,
-.seo-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,250,240,0.4), rgba(255,250,240,0.1));
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  border-radius: inherit;
-  pointer-events: none;
-}
-.panel:hover::after,
-.section-grid .panel:hover::after,
-.lux-card-primary:hover::after,
-.lux-card-secondary:hover::after,
-.ai-strip:hover::after,
-.chat-invite:hover::after,
-.faq-item:hover::after,
-.review-card:hover::after,
-.pax-content:hover::after,
-.seo-card:hover::after {
-  opacity: 1;
-}
+
 
 /* ---------- 7. SEO INTERNAL LINKS – animated gold underline ---------- */
 .seo-carousel a {
