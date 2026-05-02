@@ -6457,47 +6457,158 @@ html, body {
 /* ============================================================
    PURE CSS PARALLAX – HERO IMAGE (no hidden elements)
    ============================================================ */
+/* ============================================================
+   FINAL WORLD‑CLASS POLISH (scroll‑safe, no hero parallax)
+   ============================================================ */
 
-/* Make the hero's content container relative for stacking */
+/* Remove any problematic hero‑image overrides */
+.profile-img {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.14);
+  border: 1px solid rgba(240, 196, 90, 0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  object-fit: cover;
+}
+.profile-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18), 0 16px 40px rgba(0,0,0,0.20), 0 0 0 1px rgba(240,196,90,0.35);
+}
+
+/* Hero section – clean, no parallax */
 .hero {
   position: relative;
-  overflow: hidden;           /* keeps the image inside the hero area */
-  background: transparent;    /* remove any solid background that could hide the image */
+  overflow: hidden;
+  background: transparent;   /* keep your existing gradient */
 }
-
-/* Keep the image fixed while the hero content scrolls over it */
-.profile-img {
-  display: block;            /* make sure it's visible */
-  position: fixed;           /* stays put relative to the viewport */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* covers the whole hero area without distortion */
-  z-index: 0;                /* behind the text */
-  transform: none;           /* kill any JS movement */
-}
-
-/* Put all the hero text above the image */
-.hero-inner,
-.hero-visual,
-.profile-shell,
-.profile-tag {
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional dark overlay to improve text readability */
 .hero::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.15);   /* increase the last number if text is hard to read */
-  z-index: 1;
-  pointer-events: none;
+  display: none;              /* disable any leftover pseudo‑element */
 }
 
+/* Warm ivory text on dark backgrounds (safe selectors) */
+.hero p,
+.hero .fine,
+.ai-strip p,
+.chat-invite p,
+.footer,
+.footer span,
+.footer strong,
+.pax-content p,
+.pax-content h2,
+.review-card p,
+.review-card span,
+.car-caption,
+.car-caption span {
+  color: #f5f0e8;
+}
+
+/* Soft depth – cards & panels (no will‑change) */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card,
+.ws-card,
+.media-card,
+.car-slide,
+.yt-embed-wrap {
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2), box-shadow 0.4s ease;
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover,
+.ws-card:hover,
+.media-card:hover,
+.car-slide:hover,
+.yt-embed-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Gold gradient titles, service badges, trust badges (already present) */
+/* (Keep your existing gold‑title & badge rules) */
+
+/* Breathing CTA button */
+.cta-row .btn {
+  animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 196, 90, 0.4); }
+  50% { box-shadow: 0 0 14px 4px rgba(240, 196, 90, 0.18); }
+}
+
+/* Panel card styling – subtle border & radius */
+.wrap {
+  background-color: #faf8f4;
+}
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(240, 196, 90, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover {
+  border-color: rgba(240, 196, 90, 0.2);
+}
+
+/* Google Reviews button – gold */
+.google-review-section .btn {
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  border: none;
+  color: #1e293b;
+}
+
+/* Form inputs – gold focus */
+input:focus,
+textarea:focus {
+  border-color: #f0c45a;
+  box-shadow: 0 0 0 3px rgba(240, 196, 90, 0.1);
+}
+
+/* Accessibility focus rings */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #f0c45a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Prevent white scroll flash */
+html, body {
+  background-color: #0e1a26;
+  }
 /* ---------- 1. Prepare the section container ---------- */
