@@ -6436,3 +6436,43 @@ html, body {
 
 
 /* Hero, AI strip, chat‑invite, footer, parallax sections */
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   TEST PARALLAX – section 1 only (Comprehensive Mental Health Care)
+   ============================================================ */
+
+/* Target the first .pax-section only */
+.pax-section:first-of-type {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Override the first .pax-bg with a smooth, mobile‑friendly parallax */
+.pax-section:first-of-type .pax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transform: translateZ(0);           /* force GPU layer – fixes iOS jank */
+  will-change: auto;                 /* disable any JS‑driven will‑change */
+}
+
+/* Ensure the content stays above the background */
+.pax-section:first-of-type .pax-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);    /* dark overlay for readability */
+}
