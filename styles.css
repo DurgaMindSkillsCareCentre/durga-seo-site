@@ -6454,41 +6454,50 @@ html, body {
    PURE CSS PARALLAX ON HERO IMAGE (corrected – works)
    ============================================================ */
 
-/* 1. Hide the old profile image */
-.profile-img {
-  display: none;
-}
+/* ============================================================
+   PURE CSS PARALLAX – HERO IMAGE (no hidden elements)
+   ============================================================ */
 
-/* 2. Force the hero section to use the profile image as a fixed background */
+/* Make the hero's content container relative for stacking */
 .hero {
-  background-image: url('profile.jpg') !important;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   position: relative;
-  /* remove any competing solid background color */
-  background-color: transparent !important;
+  overflow: hidden;           /* keeps the image inside the hero area */
+  background: transparent;    /* remove any solid background that could hide the image */
 }
 
-/* 3. Keep the content visible with a light overlay */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);   /* adjust last number for brightness */
-  z-index: 0;
+/* Keep the image fixed while the hero content scrolls over it */
+.profile-img {
+  display: block;            /* make sure it's visible */
+  position: fixed;           /* stays put relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* covers the whole hero area without distortion */
+  z-index: 0;                /* behind the text */
+  transform: none;           /* kill any JS movement */
 }
 
-/* 4. Ensure all hero content sits above the overlay */
+/* Put all the hero text above the image */
 .hero-inner,
 .hero-visual,
 .profile-shell,
 .profile-tag {
   position: relative;
   z-index: 1;
-}============================================
-   SMOOTH PURE‑CSS PARALLAX (both sections, no HTML changes)
-   ============================================================ */
+}
+
+/* Optional dark overlay to improve text readability */
+.hero::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.15);   /* increase the last number if text is hard to read */
+  z-index: 1;
+  pointer-events: none;
+}
 
 /* ---------- 1. Prepare the section container ---------- */
