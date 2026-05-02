@@ -6856,3 +6856,97 @@ body::before {
   border-color: rgba(240, 196, 90, 0.2);
   /* existing depth effect still applies */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FINAL PAX SECTIONS → WHITE CARDS + RESTORED DEPTH
+   ============================================================ */
+
+/* Hide the old background divs completely */
+.pax-bg {
+  display: none !important;
+}
+
+/* Transform the pax-section containers into panel cards */
+.pax-section {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(240, 196, 90, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+  margin: 24px 0;
+  padding: 40px 24px;
+  overflow: hidden;
+}
+
+/* Text inside those sections – dark & readable */
+.pax-content h2,
+.pax-content p {
+  color: #1e293b !important;
+  text-shadow: none !important;
+}
+
+/* Heading in gold gradient (like other section titles) */
+.pax-content h2 {
+  background: linear-gradient(135deg, #f0c45a, #e5a83e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Restore a more pronounced, luxurious lift on all cards */
+.pax-section,
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.seo-card,
+.ws-card,
+.media-card,
+.car-slide,
+.yt-embed-wrap {
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2), 
+              box-shadow 0.4s ease;
+}
+
+.pax-section:hover,
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.seo-card:hover,
+.ws-card:hover,
+.media-card:hover,
+.car-slide:hover,
+.yt-embed-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1), 
+              0 10px 20px rgba(0,0,0,0.06);
+}
+
+.hero:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
