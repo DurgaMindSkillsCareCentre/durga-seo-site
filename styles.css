@@ -6449,120 +6449,46 @@ html, body {
    TEST PARALLAX – section 1 only (Comprehensive Mental Health Care)
    ============================================================ */
 
-/* Target the first .pax-section only */
-.pax-section:first-of-type {
-  position: relative;
-  overflow: hidden;
-}
 
-/* Override the first .pax-bg with a smooth, mobile‑friendly parallax */
-.pax-section:first-of-type .pax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  transform: translateZ(0);           /* force GPU layer – fixes iOS jank */
-  will-change: auto;                 /* disable any JS‑driven will‑change */
-}
-
-/* Ensure the content stays above the background */
-.pax-section:first-of-type .pax-content {
-  position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.4);    /* dark overlay for readability */
-}
-
-/* ============================================================
-   SMOOTH PURE‑CSS PARALLAX (both sections, no HTML changes)
+/* ================/* ============================================================
+   PURE CSS PARALLAX ON HERO IMAGE (corrected – works)
    ============================================================ */
 
-/* ---------- 1. Prepare the section container ---------- */
-.pax-section {
-  position: relative;
-  overflow: hidden;               /* clips the fixed background to the section */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;   /* the key – image stays still while text moves */
-  /* GPU acceleration for mobile smoothness */
-  transform: translateZ(0);
-}
-
-/* Set the correct image for each section */
-.pax-section:nth-of-type(1) {
-  background-image: url('services-visual.png');
-}
-.pax-section:nth-of-type(2) {
-  background-image: url('clinic-visual.png');
-}
-
-/* ---------- 2. Hide the old background div (so only the section background shows) ---------- */
-.pax-bg {
-  display: none !important;       /* completely remove the old div */
-  /* also kill any JS‑driven transforms */
-  transform: none !important;
-  opacity: 0 !important;
-}
-
-/* ---------- 3. Keep the content readable with a dark overlay ---------- */
-.pax-content {
-  position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.45);   /* soft dark overlay – adjust the last number for lightness */
-  padding: 40px 20px;                /* keeps text from touching edges */
-  border-radius: 12px;               /* optional – slightly softens the panel */
-}
-
-/* ---------- 4. Prevent any lingering JS from moving the old div ---------- */
-.pax-section {
-  /* overwrite any inline or JS‑set transforms on the old background div */
-  transform: translateZ(0) !important;
-}
-
-
-
-
-
-
-/* ============================================================
-   PURE CSS PARALLAX ON HERO IMAGE (no HTML changes)
-   ============================================================ */
-
-/* 1. Hide the original profile image */
+/* 1. Hide the old profile image */
 .profile-img {
   display: none;
 }
 
-/* 2. Convert the hero section into a fixed background */
+/* 2. Force the hero section to use the profile image as a fixed background */
 .hero {
-  background-image: url('profile.jpg');
+  background-image: url('profile.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;   /* the parallax magic */
-  position: relative;             /* ensure content stays above */
+  background-attachment: fixed;
+  position: relative;
+  /* remove any competing solid background color */
+  background-color: transparent !important;
 }
 
-/* 3. Keep hero content readable – dark overlay already exists,
-   but we can reinforce it. */
+/* 3. Keep the content visible with a light overlay */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);   /* adjust opacity for more/less darkness */
+  background: rgba(0, 0, 0, 0.45);   /* adjust last number for brightness */
   z-index: 0;
 }
 
-/* 4. Bring all hero content above the overlay */
+/* 4. Ensure all hero content sits above the overlay */
 .hero-inner,
 .hero-visual,
 .profile-shell,
 .profile-tag {
   position: relative;
   z-index: 1;
-}
+}============================================
+   SMOOTH PURE‑CSS PARALLAX (both sections, no HTML changes)
+   ============================================================ */
+
+/* ---------- 1. Prepare the section container ---------- */
