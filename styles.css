@@ -6523,3 +6523,46 @@ html, body {
   /* overwrite any inline or JS‑set transforms on the old background div */
   transform: translateZ(0) !important;
 }
+
+
+
+
+
+
+/* ============================================================
+   PURE CSS PARALLAX ON HERO IMAGE (no HTML changes)
+   ============================================================ */
+
+/* 1. Hide the original profile image */
+.profile-img {
+  display: none;
+}
+
+/* 2. Convert the hero section into a fixed background */
+.hero {
+  background-image: url('profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* the parallax magic */
+  position: relative;             /* ensure content stays above */
+}
+
+/* 3. Keep hero content readable – dark overlay already exists,
+   but we can reinforce it. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);   /* adjust opacity for more/less darkness */
+  z-index: 0;
+}
+
+/* 4. Bring all hero content above the overlay */
+.hero-inner,
+.hero-visual,
+.profile-shell,
+.profile-tag {
+  position: relative;
+  z-index: 1;
+}
