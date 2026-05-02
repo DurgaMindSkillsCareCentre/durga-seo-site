@@ -6689,3 +6689,168 @@ li a:hover,
   50% { box-shadow: 0 0 14px 4px rgba(240, 196, 90, 0.18); }
   }
 /* ---------- 1. Prepare the section container ---------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   8 MICRO‑ENHANCEMENTS (hero frame, carousel captions,
+   media overlay, play icon, workshop accent, panel gradient,
+   SEO underline, dock watermark) – 100% safe
+   ============================================================ */
+
+/* ---------- 1. HERO PORTRAIT – subtle gold frame + halo on hover ---------- */
+.profile-img {
+  border: 1px solid rgba(240, 196, 90, 0.18);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.14);
+}
+.profile-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 4px rgba(240,196,90,0.2),
+              0 4px 12px rgba(0,0,0,0.18),
+              0 16px 40px rgba(0,0,0,0.2),
+              0 0 0 1px rgba(240,196,90,0.35);
+}
+
+/* ---------- 2. CAROUSEL CAPTIONS – soft dark gradient at the bottom ---------- */
+.car-slide {
+  position: relative;
+}
+.car-slide::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+  border-radius: 0 0 14px 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+.car-caption {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- 3. MEDIA CARDS – warm gold tint on hover ---------- */
+.media-card {
+  position: relative;
+  overflow: hidden;
+}
+.media-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(240, 196, 90, 0.08);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.media-card:hover::after {
+  opacity: 1;
+}
+
+/* ---------- 4. YOUTUBE WRAPPER – subtle play button on hover ---------- */
+.yt-embed-wrap {
+  position: relative;
+}
+.yt-embed-wrap::before {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(240, 196, 90, 0.85);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.yt-embed-wrap:hover::before {
+  opacity: 1;
+}
+
+/* ---------- 5. WORKSHOP FEATURED CARD – delicate gold left edge ---------- */
+.ws-card.featured {
+  border-left: 2px solid rgba(240, 196, 90, 0.5);
+}
+
+/* ---------- 6. PANEL CARDS – whisper of luxury gradient on hover ---------- */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card {
+  position: relative;
+}
+.panel::after,
+.section-grid .panel::after,
+.lux-card-primary::after,
+.lux-card-secondary::after,
+.ai-strip::after,
+.chat-invite::after,
+.faq-item::after,
+.review-card::after,
+.pax-content::after,
+.seo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,250,240,0.4), rgba(255,250,240,0.1));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.panel:hover::after,
+.section-grid .panel:hover::after,
+.lux-card-primary:hover::after,
+.lux-card-secondary:hover::after,
+.ai-strip:hover::after,
+.chat-invite:hover::after,
+.faq-item:hover::after,
+.review-card:hover::after,
+.pax-content:hover::after,
+.seo-card:hover::after {
+  opacity: 1;
+}
+
+/* ---------- 7. SEO INTERNAL LINKS – animated gold underline ---------- */
+.seo-carousel a {
+  color: #d4a547;
+  text-decoration: none;
+  background-image: linear-gradient(135deg, #f0c45a, #d18e2c);
+  background-size: 0% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+.seo-carousel a:hover {
+  color: #f0c45a;
+  background-size: 100% 1px;
+}
+
+/* ---------- 8. BOTTOM DOCK WATERMARK – slightly more visible ---------- */
+body::before {
+  opacity: 0.55;
+  }
