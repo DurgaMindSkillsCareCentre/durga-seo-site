@@ -6950,3 +6950,55 @@ body::before {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
+
+
+
+
+
+
+
+
+/* ============================================================
+   PAX‑SECTIONS → MATCH ORIGINAL DARK PANELS + DEPTH
+   ============================================================ */
+
+/* Hide the old parallax background divs */
+.pax-bg {
+  display: none !important;
+}
+
+/* Turn each pax‑section into a dark, elegant card */
+.pax-section {
+  background: #0e1a26;           /* same deep navy as the hero base / body */
+  border-radius: 18px;
+  border: 1px solid rgba(240, 196, 90, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+  margin: 24px 0;
+  padding: 40px 24px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2), 
+              box-shadow 0.4s ease;
+}
+
+/* Text inside – warm ivory (readable on dark) */
+.pax-content h2,
+.pax-content p {
+  color: #f5f0e8 !important;
+  text-shadow: none !important;
+}
+
+/* Gold gradient for the heading */
+.pax-content h2 {
+  background: linear-gradient(135deg, #f0c45a, #e5a83e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Subtle depth lift on hover – same as other panels */
+.pax-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12), 
+              0 10px 20px rgba(0,0,0,0.06);
+}
