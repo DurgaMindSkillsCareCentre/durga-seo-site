@@ -6854,3 +6854,47 @@ li a:hover,
 body::before {
   opacity: 0.55;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- 6. PANEL CARDS – touch‑safe, no washout ---------- */
+/* (No overlay – just the smooth depth you already have.) */
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-content,
+.seo-card {
+  /* No ::after needed – the original background stays clean */
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  border: 1px solid rgba(240, 196, 90, 0.06);
+}
+.panel:hover,
+.section-grid .panel:hover,
+.lux-card-primary:hover,
+.lux-card-secondary:hover,
+.ai-strip:hover,
+.chat-invite:hover,
+.faq-item:hover,
+.review-card:hover,
+.pax-content:hover,
+.seo-card:hover {
+  border-color: rgba(240, 196, 90, 0.2);
+  /* existing depth effect still applies */
+}
