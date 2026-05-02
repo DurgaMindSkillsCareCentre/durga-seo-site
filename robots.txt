@@ -1,4 +1,4 @@
-User-agent: *
+itUser-agent: *
 Allow: /
 
 User-agent: Googlebot
@@ -11,3 +11,4 @@ User-agent: Bingbot
 Allow: /
 
 Sitemap: https://durga-mindskillscare.pages.dev/sitemap.xml
+Sitemap: https://durga-mindskillscare.pages.dev/sitemap-main.xml
