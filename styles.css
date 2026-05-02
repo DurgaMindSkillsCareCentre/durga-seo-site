@@ -6543,5 +6543,149 @@ html, body {
 
 /* Remove any problematic hero‑image overrides */
 
+/* ============================================================
+   GOLD TITLES + TRUST + IVORY TEXT (safe, no layout changes)
+   ============================================================ */
 
+/* ---------- 1. Gold gradient for section titles & service sub‑headings ---------- */
+.section-title,
+.section-grid .feature b {
+  background: linear-gradient(135deg, #f0c45a, #e5a83e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(180, 130, 60, 0.15);
+}
+
+/* ---------- 2. FAQ accordion questions – lighter gold ---------- */
+.faq-item summary {
+  color: #f5d48b;
+  font-weight: 600;
+}
+
+/* ---------- 3. Trust badges – 0.7rem, 2‑line, sleek ---------- */
+.trust-row {
+  gap: 6px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.trust-row .trust {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  color: #ffd966;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  white-space: nowrap;
+}
+.trust-row .trust:first-child {
+  flex: 0 0 auto;
+}
+.trust-row .trust:first-child::after {
+  content: "";
+  display: block;               /* forces line break after first badge */
+}
+.trust-row .trust:not(:first-child) {
+  flex: 0 0 auto;
+}
+
+/* ---------- 4. Service badge numbers – soft gold ---------- */
+.feature .badge {
+  background: rgba(255, 255, 240, 0.08);
+  color: #f0c45a;
+  border: 1px solid rgba(240, 196, 90, 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+/* ---------- 5. Review stars – warm gold ---------- */
+.stars {
+  color: #f0c45a;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+/* ---------- 6. Warm ivory text on dark backgrounds (safe selectors only) ---------- */
+.hero p,
+.hero .fine,
+.ai-strip p,
+.chat-invite p,
+.footer,
+.footer span,
+.footer strong,
+.pax-content p,
+.pax-content h2,
+.review-card p,
+.review-card span,
+.car-caption,
+.car-caption span {
+  color: #f5f0e8;
+}
+
+/* ---------- 7. Carousel captions & hero misc – golden tones ---------- */
+.car-caption,
+.car-caption span {
+  color: #f0e0b8;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.hero .eyebrow {
+  color: #f5e5c8;
+}
+.hero .fine {
+  color: #d4b87a;
+}
+.footer,
+.footer span,
+.footer strong {
+  color: #e0d3b0;
+}
+
+/* ---------- 8. SEO carousel links – warm gold ---------- */
+.seo-carousel a {
+  color: #d4a547;
+}
+.seo-carousel a:hover {
+  color: #f0c45a;
+}
+
+/* ---------- 9. Inline links – gold underline on hover ---------- */
+p a,
+li a,
+.faq-item p a,
+.pax-content a:not(.btn),
+.ai-strip a:not(.ai-cta-btn) {
+  text-decoration: none;
+  background-image: linear-gradient(135deg, #f0c45a, #d18e2c);
+  background-size: 0% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+p a:hover,
+li a:hover,
+.faq-item p a:hover,
+.pax-content a:not(.btn):hover,
+.ai-strip a:not(.ai-cta-btn):hover {
+  background-size: 100% 1px;
+}
+
+/* ---------- 10. Breathing CTA button (optional – delete if you prefer static) ---------- */
+.cta-row .btn {
+  animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 196, 90, 0.4); }
+  50% { box-shadow: 0 0 14px 4px rgba(240, 196, 90, 0.18); }
+  }
 /* ---------- 1. Prepare the section container ---------- */
