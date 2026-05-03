@@ -7671,6 +7671,21 @@ h1:hover, h2:hover, h3:hover, h4:hover,
    ============================================================ */
 
 /* ---------- 1. TEXT GLOW (whisper‑soft halo) ---------- */
+
+
+/* ============================================================
+   RESTORE BOTTOM DOCK (safe layering, all enhancements kept)
+   ============================================================ */
+
+/* 1. Lower the grain texture so it stays behind the dock */
+
+
+  /* ============================================================
+   FINAL WORLD NO.1 POLISH + PERMANENT FOOTER DOCK
+   (safe, single block – copy/paste at the very end of styles.css)
+   ============================================================ */
+
+/* ---------- 1. TEXT GLOW (whisper‑soft halo) ---------- */
 .hero p,
 .hero .fine,
 .hero .eyebrow,
@@ -7693,17 +7708,14 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-/* ---------- 3. SMOOTH SCROLL (safe now – dark bg present) ---------- */
+/* ---------- 3. SMOOTH SCROLL (safe – dark bg present) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* ---------- 4. WHATSAPP BUTTON – GREEN PULSE ---------- */
-.wa {
-  animation: waPulse 3s ease-in-out infinite;
-}
+/* ---------- 4. WHATSAPP PULSE ANIMATION (only the glow, no positioning) ---------- */
 @keyframes waPulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
   50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
@@ -7729,54 +7741,25 @@ h1, h2, h3, h4 {
   animation-range: entry 0% entry 100%;
 }
 
-/* ---------- 7. FILM‑GRAIN TEXTURE (tactile depth) ---------- */
+/* ---------- 7. CORRECTED FILM‑GRAIN TEXTURE (low z‑index, never covers dock) ---------- */
 .wrap::after {
   content: "";
   position: fixed;
   inset: 0;
   opacity: 0.018;
-  z-index: 9999;
+  z-index: 1;                      /* safely below the dock (z‑index:100+) */
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
 }
 
+/* ========== 8. PERMANENT FOOTER DOCK RESTORATION ========== */
 
-
-
-
-
-
-
-
-
-
-/* ============================================================
-   RESTORE BOTTOM DOCK (safe layering, all enhancements kept)
-   ============================================================ */
-
-/* 1. Lower the grain texture so it stays behind the dock */
-
-
-  
-/* ============================================================
-   RESTORE ORIGINAL FOOTER DOCK (exact layout + safe layering)
-   ============================================================ */
-
-/* ============================================================
-   PROFESSOR‑GRADE FOOTER RESTORATION (definitive)
-   ============================================================ */
-
-/* 1. Force the grain texture to the deepest background layer */
-.wrap::after {
-  z-index: 1 !important;          /* was 9999 – now safely below everything */
-}
-
-/* 2. Reset any previous dock overrides & ensure padding */
+/* Ensure body padding so content never hides behind dock */
 body {
   padding-bottom: 72px !important;
 }
 
-/* 3. Transparent dock bar */
+/* Transparent frosted dock bar */
 body::after {
   content: "";
   position: fixed;
@@ -7784,17 +7767,17 @@ body::after {
   left: 0;
   right: 0;
   height: 56px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: none;
   box-shadow: none;
   z-index: 100;
   pointer-events: none;
-  display: block !important;     /* ensure it’s visible */
+  display: block !important;
 }
 
-/* 4. Centre profile watermark */
+/* Centre profile image watermark */
 body::before {
   content: "";
   position: fixed;
@@ -7813,7 +7796,7 @@ body::before {
   display: block !important;
 }
 
-/* 5. Social button – original transparent gold */
+/* Social button – original transparent gold (left) */
 a.social-btn {
   position: fixed;
   left: 20px;
@@ -7826,13 +7809,13 @@ a.social-btn {
   border-radius: 0;
   font-size: 14px;
   font-weight: 500;
-  background: none !important;     /* kill any gradient */
+  background: none !important;
   color: #b08c4c !important;
   text-decoration: none;
   box-shadow: none !important;
 }
 
-/* 6. WhatsApp button – right side, gold pill, green pulse */
+/* WhatsApp button – gold pill, green pulse, right side */
 .wa {
   position: fixed;
   right: 20px;
@@ -7847,8 +7830,15 @@ a.social-btn {
   text-decoration: none;
   animation: waPulse 3s ease-in-out infinite;
 }
+/* ============================================================
+   RESTORE ORIGINAL FOOTER DOCK (exact layout + safe layering)
+   ============================================================ */
 
-@keyframes waPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-  }
+/* ============================================================
+   PROFESSOR‑GRADE FOOTER RESTORATION (definitive)
+   ============================================================ */
+
+/* 1. Force the grain texture to the deepest background layer */
+
+
+/* 4. Centre profile watermark */
