@@ -7260,7 +7260,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
 /* 1. Reset conflicting transitions & force the animation */
 .profile-img,
 .car-slide img,
-.cardimg,
 .yt-embed-wrap,
 .ws-card.featured {
   transition: none !important;            /* kill any old transitions */
@@ -7350,7 +7349,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
 /* 3. Hover = pause + clean zoom (no animation) */
 .profile-img:hover,
 .car-slide img:hover,
-.cardimg:hover,
 .yt-embed-wrap:hover,
 .ws-card.featured:hover {
   animation-play-state: paused;
@@ -7363,5 +7361,113 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     28px 28px 0 #020508,
     40px 40px 75px rgba(0,0,0,0.7);
         }
+
+
+
+
+
+
+
+
+
+
+/* ---------- SAFE MEDIA CARD DEPTH (does not cut titles) ---------- */
+.media-card {
+  position: relative;
+  overflow: visible;         /* allow the ::before to extend without clipping */
+}
+
+/* The pseudo‑element replicates the 3D frame behind the image */
+.media-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;       /* match the image’s rounded corners */
+  background: transparent;
+  box-shadow: inherit;       /* will be overridden by animation */
+  animation: safeDepthCycle 10s ease-in-out infinite;
+  will-change: transform, box-shadow;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* The actual card image – static, no animation */
+.media-card .cardimg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  transition: transform 0.3s ease;   /* subtle zoom on hover only */
+  border-radius: 14px;
+}
+.media-card:hover .cardimg {
+  transform: scale(1.02);
+}
+
+/* The safe, title‑friendly keyframe */
+@keyframes safeDepthCycle {
+  0% {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,240,0.3),
+      inset 0 -1px 0 rgba(0,0,0,0.3),
+      6px 6px 0 #0a131f,
+      12px 12px 0 #060c14,
+      18px 18px 0 #020508,
+      25px 25px 50px rgba(0,0,0,0.6);
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
+  }
+  30% {
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      10px 10px 0 #0a131f,
+      20px 20px 0 #060c14,
+      30px 30px 0 #020508,
+      40px 40px 70px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
+  }
+  45% {
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      8px 8px 0 #0a131f,
+      18px 18px 0 #060c14,
+      28px 28px 0 #020508,
+      38px 38px 68px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(6deg) translateZ(5px);
+  }
+  60% {
+    box-shadow: /* same strong shadow, left tilt */
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      8px 8px 0 #0a131f,
+      18px 18px 0 #060c14,
+      28px 28px 0 #020508,
+      38px 38px 68px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(-6deg) translateZ(5px);
+  }
+  80% {
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      6px 6px 0 #0a131f,
+      15px 15px 0 #060c14,
+      24px 24px 0 #020508,
+      35px 35px 60px rgba(0,0,0,0.65);
+    transform: perspective(800px) rotateY(0deg) translateZ(15px);
+  }
+  100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,240,0.3),
+      inset 0 -1px 0 rgba(0,0,0,0.3),
+      6px 6px 0 #0a131f,
+      12px 12px 0 #060c14,
+      18px 18px 0 #020508,
+      25px 25px 50px rgba(0,0,0,0.6);
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
+  }
+  }
 
 
