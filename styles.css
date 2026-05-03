@@ -7237,9 +7237,29 @@ h1:hover, h2:hover, h3:hover, h4:hover,
    ============================================================ */
 
 /* Define a single keyframe that blends extrusion, tilt, and float */
+/* ============================================================
+   FINAL FUSED DEPTH ANIMATION (A+B+C) – confirmed working
+   ============================================================ */
+
+/* 1. RESET conflicting transitions & ensure proper display */
+.profile-img,
+.car-slide img,
+.cardimg,
+.yt-embed-wrap,
+.ws-card.featured {
+  transition: none !important;               /* kill any interfering transitions */
+  animation: fusedDepth 8s ease-in-out infinite;
+  will-change: transform, box-shadow;
+  transform-origin: center center;
+  display: block;                           /* fixes inline gaps */
+  position: relative;                       /* for z-index stacking */
+  z-index: 1;
+}
+
+/* 2. The Fused Keyframe (extrusion shadow + tilt + float) */
 @keyframes fusedDepth {
   0% {
-    /* Neutral – subtle extrusion, no tilt, resting position */
+    /* Neutral – subtle extrusion, no tilt, resting */
     box-shadow:
       inset 0 1px 0 rgba(255,255,240,0.3),
       inset 0 -1px 0 rgba(0,0,0,0.3),
@@ -7250,7 +7270,7 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     transform: perspective(800px) rotateY(0deg) translateZ(0);
   }
   25% {
-    /* Deeper extrusion + slight tilt right */
+    /* Slightly deeper extrusion + small tilt right */
     box-shadow:
       inset 0 2px 0 rgba(255,255,240,0.35),
       inset 0 -2px 0 rgba(0,0,0,0.4),
@@ -7261,7 +7281,7 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     transform: perspective(800px) rotateY(1.5deg) translateZ(4px);
   }
   50% {
-    /* Maximum tilt left + float up */
+    /* Peak: max tilt left + deeper float */
     box-shadow:
       inset 0 2px 0 rgba(255,255,240,0.4),
       inset 0 -3px 0 rgba(0,0,0,0.5),
@@ -7272,7 +7292,7 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     transform: perspective(800px) rotateY(-1.5deg) translateZ(6px);
   }
   75% {
-    /* Soften extrusion, back to slight tilt right */
+    /* Soften back, slight right tilt */
     box-shadow:
       inset 0 1.5px 0 rgba(255,255,240,0.35),
       inset 0 -1.5px 0 rgba(0,0,0,0.4),
@@ -7295,24 +7315,14 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   }
 }
 
-/* Apply the animation to all target elements */
-.profile-img,
-.car-slide img,
-.cardimg,
-.yt-embed-wrap,
-.ws-card.featured {
-  animation: fusedDepth 8s ease-in-out infinite;
-  transform-style: preserve-3d;
-}
-
-/* Pause on hover so the user can interact peacefully */
+/* 3. Hover state: pause animation + clean static look */
 .profile-img:hover,
 .car-slide img:hover,
 .cardimg:hover,
 .yt-embed-wrap:hover,
 .ws-card.featured:hover {
   animation-play-state: paused;
-  transform: scale(1.02);  /* subtle enlargement still works */
+  transform: scale(1.02);
   box-shadow:
     inset 0 2px 0 rgba(255,255,240,0.4),
     inset 0 -3px 0 rgba(0,0,0,0.5),
@@ -7320,4 +7330,4 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     14px 14px 0 #060c14,
     20px 20px 0 #020508,
     30px 30px 70px rgba(0,0,0,0.65);
-    }
+                         }
