@@ -7242,92 +7242,126 @@ h1:hover, h2:hover, h3:hover, h4:hover,
    ============================================================ */
 
 /* 1. RESET conflicting transitions & ensure proper display */
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   HIGH‑VISIBILITY FUSED DEPTH CYCLES (Extrude → Tilt → Float → Neutral)
+   ============================================================ */
+
+/* 1. Reset conflicting transitions & force the animation */
 .profile-img,
 .car-slide img,
 .cardimg,
 .yt-embed-wrap,
 .ws-card.featured {
-  transition: none !important;               /* kill any interfering transitions */
-  animation: fusedDepth 8s ease-in-out infinite;
+  transition: none !important;            /* kill any old transitions */
+  animation: intenseDepthCycle 10s ease-in-out infinite;
   will-change: transform, box-shadow;
   transform-origin: center center;
-  display: block;                           /* fixes inline gaps */
-  position: relative;                       /* for z-index stacking */
+  display: block;
+  position: relative;
   z-index: 1;
 }
 
-/* 2. The Fused Keyframe (extrusion shadow + tilt + float) */
-@keyframes fusedDepth {
+/* 2. Three‑stage visible cycle */
+@keyframes intenseDepthCycle {
+  /* ---------- STAGE 1: STRONG 3D EXTRUSION (0s–3s) ---------- */
   0% {
-    /* Neutral – subtle extrusion, no tilt, resting */
     box-shadow:
       inset 0 1px 0 rgba(255,255,240,0.3),
       inset 0 -1px 0 rgba(0,0,0,0.3),
-      4px 4px 0 #0a131f,
-      8px 8px 0 #060c14,
-      12px 12px 0 #020508,
-      18px 18px 40px rgba(0,0,0,0.5);
-    transform: perspective(800px) rotateY(0deg) translateZ(0);
-  }
-  25% {
-    /* Slightly deeper extrusion + small tilt right */
-    box-shadow:
-      inset 0 2px 0 rgba(255,255,240,0.35),
-      inset 0 -2px 0 rgba(0,0,0,0.4),
       6px 6px 0 #0a131f,
       12px 12px 0 #060c14,
       18px 18px 0 #020508,
-      24px 24px 50px rgba(0,0,0,0.55);
-    transform: perspective(800px) rotateY(1.5deg) translateZ(4px);
+      25px 25px 50px rgba(0,0,0,0.6);
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
   }
-  50% {
-    /* Peak: max tilt left + deeper float */
+  30% {
+    /* Extrusion at maximum – thick solid frame */
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      10px 10px 0 #0a131f,
+      20px 20px 0 #060c14,
+      30px 30px 0 #020508,
+      40px 40px 70px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(0deg) translateZ(0);
+  }
+
+  /* ---------- STAGE 2: NOTICEABLE TILT (3s–6s) ---------- */
+  45% {
+    /* Strong right tilt + extrusion still present */
     box-shadow:
       inset 0 2px 0 rgba(255,255,240,0.4),
       inset 0 -3px 0 rgba(0,0,0,0.5),
       8px 8px 0 #0a131f,
-      16px 16px 0 #060c14,
-      22px 22px 0 #020508,
-      28px 28px 60px rgba(0,0,0,0.6);
-    transform: perspective(800px) rotateY(-1.5deg) translateZ(6px);
+      18px 18px 0 #060c14,
+      28px 28px 0 #020508,
+      38px 38px 68px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(6deg) translateZ(5px);
   }
-  75% {
-    /* Soften back, slight right tilt */
+  60% {
+    /* Strong left tilt */
     box-shadow:
-      inset 0 1.5px 0 rgba(255,255,240,0.35),
-      inset 0 -1.5px 0 rgba(0,0,0,0.4),
-      5px 5px 0 #0a131f,
-      10px 10px 0 #060c14,
-      15px 15px 0 #020508,
-      21px 21px 45px rgba(0,0,0,0.5);
-    transform: perspective(800px) rotateY(0.8deg) translateZ(2px);
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      8px 8px 0 #0a131f,
+      18px 18px 0 #060c14,
+      28px 28px 0 #020508,
+      38px 38px 68px rgba(0,0,0,0.7);
+    transform: perspective(800px) rotateY(-6deg) translateZ(5px);
   }
+
+  /* ---------- STAGE 3: OBVIOUS FLOAT (6s–9s) ---------- */
+  80% {
+    /* Float forward with reduced tilt, extrusion still visible */
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,240,0.4),
+      inset 0 -3px 0 rgba(0,0,0,0.5),
+      6px 6px 0 #0a131f,
+      15px 15px 0 #060c14,
+      24px 24px 0 #020508,
+      35px 35px 60px rgba(0,0,0,0.65);
+    transform: perspective(800px) rotateY(0deg) translateZ(15px);
+  }
+
+  /* ---------- RETURN TO NEUTRAL (9s–10s) ---------- */
   100% {
-    /* Return to original neutral state */
     box-shadow:
       inset 0 1px 0 rgba(255,255,240,0.3),
       inset 0 -1px 0 rgba(0,0,0,0.3),
-      4px 4px 0 #0a131f,
-      8px 8px 0 #060c14,
-      12px 12px 0 #020508,
-      18px 18px 40px rgba(0,0,0,0.5);
+      6px 6px 0 #0a131f,
+      12px 12px 0 #060c14,
+      18px 18px 0 #020508,
+      25px 25px 50px rgba(0,0,0,0.6);
     transform: perspective(800px) rotateY(0deg) translateZ(0);
   }
 }
 
-/* 3. Hover state: pause animation + clean static look */
+/* 3. Hover = pause + clean zoom (no animation) */
 .profile-img:hover,
 .car-slide img:hover,
 .cardimg:hover,
 .yt-embed-wrap:hover,
 .ws-card.featured:hover {
   animation-play-state: paused;
-  transform: scale(1.02);
+  transform: perspective(800px) rotateY(0deg) translateZ(0) scale(1.02);
   box-shadow:
     inset 0 2px 0 rgba(255,255,240,0.4),
     inset 0 -3px 0 rgba(0,0,0,0.5),
-    6px 6px 0 #0a131f,
-    14px 14px 0 #060c14,
-    20px 20px 0 #020508,
-    30px 30px 70px rgba(0,0,0,0.65);
-                         }
+    8px 8px 0 #0a131f,
+    18px 18px 0 #060c14,
+    28px 28px 0 #020508,
+    40px 40px 75px rgba(0,0,0,0.7);
+        }
+
+
