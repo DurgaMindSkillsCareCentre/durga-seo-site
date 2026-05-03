@@ -7644,3 +7644,11 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   border-top: 1px solid rgba(240, 196, 90, 0.15);
   margin-top: 8px;
 }
+
+
+
+
+.lux-card-secondary {
+  border-top: 1px solid rgba(240, 196, 90, 0.25);  /* slightly more visible gold line */
+  margin-top: 6px;
+}
