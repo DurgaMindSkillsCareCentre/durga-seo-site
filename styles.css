@@ -7652,3 +7652,92 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   border-top: 1px solid rgba(240, 196, 90, 0.25);  /* slightly more visible gold line */
   margin-top: 6px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   ULTIMATE WORLD NO.1 POLISH (single block – safe & complete)
+   ============================================================ */
+
+/* ---------- 1. TEXT GLOW (whisper‑soft halo) ---------- */
+.hero p,
+.hero .fine,
+.hero .eyebrow,
+.ai-strip p,
+.chat-invite p,
+.footer,
+.footer span,
+.footer strong,
+.pax-content p,
+.pax-content h2,
+.review-card p,
+.review-card span,
+.car-caption,
+.car-caption span {
+  text-shadow: 0 0 6px rgba(255,255,240,0.12);
+}
+
+/* ---------- 2. BALANCED HEADINGS (no orphan words) ---------- */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* ---------- 3. SMOOTH SCROLL (safe now – dark bg present) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- 4. WHATSAPP BUTTON – GREEN PULSE ---------- */
+.wa {
+  animation: waPulse 3s ease-in-out infinite;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+
+/* ---------- 5. REVIEW CARDS – GOLD GLOW ON HOVER (using :has) ---------- */
+.review-card:has(.stars) {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:has(.stars):hover {
+  border-color: rgba(240, 196, 90, 0.4);
+  box-shadow: 0 0 20px rgba(240, 196, 90, 0.06);
+}
+
+/* ---------- 6. SCROLL‑DRIVEN FADE‑UP (modern browsers) ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  animation: fadeUp 0.65s cubic-bezier(0.25, 0.8, 0.25, 1.2) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+/* ---------- 7. FILM‑GRAIN TEXTURE (tactile depth) ---------- */
+.wrap::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.018;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
+
