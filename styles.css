@@ -7745,5 +7745,13 @@ h1, h2, h3, h4 {
 
 /* 1. Force the grain texture to the deepest background layer */
 
-
+.wrap::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.018;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,…");
+  }
 /* 4. Centre profile watermark */
