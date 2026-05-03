@@ -7607,3 +7607,32 @@ h1:hover, h2:hover, h3:hover, h4:hover,
 }
 
 /* Optional: keep the existing gold gradient heading, nothing else changes */
+
+
+
+
+
+/* ============================================================
+   SEPARATE THE TWO DARK PANELS – gold hairline top border
+   ============================================================ */
+
+.pax-section {
+  border-top: 1px solid rgba(240, 196, 90, 0.18);   /* gold line at the top of each panel */
+  margin-top: 12px;                                   /* small gap between panels */
+}
+
+/* First panel doesn’t need a top line (it’s the first one) */
+.pax-section:first-of-type {
+  border-top: none;
+  margin-top: 0;
+}
+
+
+
+/* Complete the second panel’s frame with a gold bottom line */
+.pax-section:last-of-type {
+  border-bottom: 1px solid rgba(240, 196, 90, 0.18);
+  margin-bottom: 12px;   /* a breath of space before the next section */
+}
+
+
