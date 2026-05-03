@@ -7713,11 +7713,6 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- 3. SMOOTH SCROLL (safe now – dark bg present) ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
 
 /* ---------- 4. WHATSAPP PULSE ANIMATION (only the glow, no positioning) ---------- */
 @keyframes waPulse {
@@ -7735,15 +7730,6 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- 6. SCROLL‑DRIVEN FADE‑UP (modern browsers) ---------- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  animation: fadeUp 0.65s cubic-bezier(0.25, 0.8, 0.25, 1.2) both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 100%;
-}
 
 /* ---------- 7. CORRECTED FILM‑GRAIN TEXTURE (low z‑index, never covers dock) ---------- */
 
