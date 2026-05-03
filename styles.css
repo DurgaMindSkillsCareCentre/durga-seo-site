@@ -7055,3 +7055,129 @@ body::before {
               0 2px 4px rgba(240,196,90,0.08);
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   EXPERIMENTAL SIGNATURE EFFECTS (safe, silent, removable)
+   ============================================================ */
+
+/* ---------- 1. LIGHT SWEEP ON PANELS (animated beam on hover) ---------- */
+/* Uses @property for silky gradient animation (Chrome/Edge/Safari) */
+@property --sweep-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: -20%;
+}
+.panel,
+.section-grid .panel,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.review-card,
+.pax-section,
+.seo-card,
+.ws-card,
+.media-card {
+  position: relative;
+  overflow: hidden;
+}
+/* The sweeping light beam */
+.panel::before,
+.section-grid .panel::before,
+.lux-card-primary::before,
+.lux-card-secondary::before,
+.ai-strip::before,
+.chat-invite::before,
+.faq-item::before,
+.review-card::before,
+.pax-section::before,
+.seo-card::before,
+.ws-card::before,
+.media-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0) calc(var(--sweep-x) - 10%),
+    rgba(255,255,240,0.08) var(--sweep-x),
+    rgba(255,255,255,0) calc(var(--sweep-x) + 10%)
+  );
+  pointer-events: none;
+  transition: --sweep-x 0.5s ease;
+  --sweep-x: -20%;
+}
+.panel:hover::before,
+.section-grid .panel:hover::before,
+.lux-card-primary:hover::before,
+.lux-card-secondary:hover::before,
+.ai-strip:hover::before,
+.chat-invite:hover::before,
+.faq-item:hover::before,
+.review-card:hover::before,
+.pax-section:hover::before,
+.seo-card:hover::before,
+.ws-card:hover::before,
+.media-card:hover::before {
+  --sweep-x: 120%;
+}
+
+/* ---------- 2. DYNAMIC VIGNETTE ON IMAGES (spotlight on hover) ---------- */
+.profile-img,
+.car-slide img,
+.cardimg,
+img {
+  mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
+  transition: mask-size 0.4s ease, -webkit-mask-size 0.4s ease;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+.profile-img:hover,
+.car-slide img:hover,
+.cardimg:hover,
+img:hover {
+  mask-size: 110% 110%;
+  -webkit-mask-size: 110% 110%;
+}
+
+/* ---------- 3. TEXT GLOW ON HOVER (multi‑layer warm shadow) ---------- */
+h1:hover, h2:hover, h3:hover, h4:hover,
+.section-title:hover,
+.section-grid .feature b:hover {
+  text-shadow:
+    0 0 10px rgba(240,196,90,0.3),
+    0 0 20px rgba(240,196,90,0.1),
+    0 0 30px rgba(240,196,90,0.05);
+  transition: text-shadow 0.4s ease;
+}
+
+/* ---------- 4. GOLD COLOR SHIFT ON BUTTON HOVER (using color-mix) ---------- */
+.btn:hover,
+.pill:hover,
+.wa-big:hover,
+.cta-row .btn:hover {
+  background-color: color-mix(in srgb, #f0c45a 80%, white);
+  transition: background-color 0.3s ease;
+    }
