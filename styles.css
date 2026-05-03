@@ -7837,3 +7837,90 @@ a.social-btn {
   }
 
   
+/* ============================================================
+   RESTORE ORIGINAL FOOTER DOCK (exact layout + safe layering)
+   ============================================================ */
+
+/* 1. Move grain texture below the dock */
+.wrap::after {
+  z-index: 50 !important;          /* grain must not cover dock */
+}
+
+/* 2. Transparent dock bar */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: none;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* 3. Centre profile image watermark */
+body::before {
+  content: "";
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background-image: url('profile.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.38;
+  z-index: 101;
+  pointer-events: none;
+}
+
+/* 4. Fix body padding so content doesn't hide behind dock */
+body {
+  padding-bottom: 72px;
+}
+
+/* 5. Social button – original style (invisible background, gold text) */
+a.social-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 16px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  color: #b08c4c;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+/* 6. WhatsApp button – right side, gold pill, pulse animation already included */
+.wa {
+  position: fixed;
+  right: 20px;
+  bottom: 16px;
+  z-index: 999;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  animation: waPulse 3s ease-in-out infinite;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+  }
