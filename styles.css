@@ -7502,4 +7502,48 @@ h1:hover, h2:hover, h3:hover, h4:hover,
 
 
 
+/* ============================================================
+   EMBOSSED 3D FRAME – for “Comprehensive…” and “Find Our…”
+   ============================================================ */
 
+.pax-section {
+  position: relative;
+  /* Enhance the existing border with a gold gradient via a pseudo‑element */
+}
+
+/* The embossed body of the card */
+.pax-section {
+  box-shadow:
+    /* Inner top highlight – light catching the raised edge */
+    inset 0 1px 0 rgba(255,255,240,0.12),
+    /* Inner bottom shadow – depth behind the plate */
+    inset 0 -1px 0 rgba(0,0,0,0.4),
+    /* Outer subtle glow – the frame sits above the page */
+    0 1px 0 rgba(255,255,240,0.05),
+    /* Deeper soft shadow – physicality */
+    0 10px 30px rgba(0,0,0,0.5),
+    /* Gold ambient light – ties into your brand */
+    0 0 20px rgba(240,196,90,0.06);
+  border: 1px solid rgba(240,196,90,0.15);
+}
+
+/* The glowing gold gradient frame (the actual “embossed” edge) */
+.pax-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;               /* frame thickness */
+  background: linear-gradient(
+    135deg,
+    rgba(240,196,90,0.35) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(240,196,90,0.25) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+      }
