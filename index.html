@@ -690,6 +690,18 @@ function setLanguage(lang) {
   }
 }
 </script>
+
+
+<script>
+const depthObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wrap, .ws-card.featured').forEach(el => depthObserver.observe(el));
+                                                                                                               </script>
+    
   
 </body>
 </html>
