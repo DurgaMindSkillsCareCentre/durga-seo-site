@@ -7144,23 +7144,7 @@ body::before {
 }
 
 /* ---------- 2. DYNAMIC VIGNETTE ON IMAGES (spotlight on hover) ---------- */
-.profile-img,
-.car-slide img,
-.cardimg,
-img {
-  mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 80%);
-  transition: mask-size 0.4s ease, -webkit-mask-size 0.4s ease;
-  mask-size: 100% 100%;
-  -webkit-mask-size: 100% 100%;
-}
-.profile-img:hover,
-.car-slide img:hover,
-.cardimg:hover,
-img:hover {
-  mask-size: 110% 110%;
-  -webkit-mask-size: 110% 110%;
-}
+
 
 /* ---------- 3. TEXT GLOW ON HOVER (multi‑layer warm shadow) ---------- */
 h1:hover, h2:hover, h3:hover, h4:hover,
