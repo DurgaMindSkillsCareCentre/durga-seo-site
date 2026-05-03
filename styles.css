@@ -7547,3 +7547,63 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   mask-composite: exclude;
   pointer-events: none;
       }
+
+
+
+/* ============================================================
+   ENGRAVED + FLOATING DEPTH PANEL (research‑level signature)
+   ============================================================ */
+
+.pax-section {
+  position: relative;
+  overflow: visible;               /* allow floating shadows to extend */
+  margin: 36px 0;                  /* extra breathing space */
+
+  /* -------- The Raised Plate Illusion -------- */
+  box-shadow:
+    /* 1. Engraved gold inner border (thin bright line inset) */
+    inset 0 0 0 2px rgba(240,196,90,0.25),
+    /* 2. Deep inner shadow – the plate sits in a recess */
+    inset 4px 4px 8px rgba(0,0,0,0.4),
+    inset -2px -2px 6px rgba(0,0,0,0.3),
+    /* 3. Outer embossed lift – solid dark edge */
+    0 2px 0 #0a131f,
+    0 6px 20px rgba(0,0,0,0.5),
+    /* 4. Gold ambient glow – quietly ties to your palette */
+    0 0 30px rgba(240,196,90,0.08);
+
+  /* -------- Subtle Floating Animation (breathe) -------- */
+  animation: paxFloat 6s ease-in-out infinite;
+}
+
+/* The float keyframe – slow vertical lift */
+@keyframes paxFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow:
+      inset 0 0 0 2px rgba(240,196,90,0.25),
+      inset 4px 4px 8px rgba(0,0,0,0.4),
+      inset -2px -2px 6px rgba(0,0,0,0.3),
+      0 2px 0 #0a131f,
+      0 6px 20px rgba(0,0,0,0.5),
+      0 0 30px rgba(240,196,90,0.08);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow:
+      inset 0 0 0 2px rgba(240,196,90,0.35),
+      inset 4px 4px 8px rgba(0,0,0,0.45),
+      inset -2px -2px 6px rgba(0,0,0,0.35),
+      0 4px 0 #0a131f,
+      0 14px 30px rgba(0,0,0,0.6),
+      0 0 40px rgba(240,196,90,0.12);
+  }
+}
+
+/* Pause float on hover – keep it calm for reading */
+.pax-section:hover {
+  animation-play-state: paused;
+  transform: translateY(0);
+}
+
+/* Optional: keep the existing gold gradient heading, nothing else changes */
