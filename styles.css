@@ -7378,14 +7378,28 @@ h1:hover, h2:hover, h3:hover, h4:hover,
    ============================================================ */
 
 /* 1. Reset the card container so shadows/tilt won’t be clipped */
+
+/* ============================================================
+   DIRECT IMAGE DEPTH – TITLE‑SAFE (no clipping)
+   ============================================================ */
+
+/* 1. Card container – allow shadows to breathe, protect the title */
 .media-card {
-  overflow: visible !important;   /* allow shadows to extend freely */
-  padding-bottom: 20px;           /* safe distance from the heading */
+  overflow: visible !important;   /* shadows can extend outside */
+  padding-bottom: 36px;           /* generous room for the deepest shadow */
   position: relative;
   z-index: 1;
 }
 
-/* 2. Apply the intense 3‑stage cycle directly to the card image */
+/* 2. Ensure the heading stays above any shadow that might creep up */
+.media-card h3,
+.media-card p {
+  position: relative;
+  z-index: 5;
+  background: inherit;            /* prevents shadow bleed-through */
+}
+
+/* 3. The intense 3‑stage cycle applied directly to the image */
 .media-card .cardimg {
   transition: none !important;
   animation: directImageCycle 10s ease-in-out infinite;
@@ -7394,12 +7408,11 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   display: block;
   position: relative;
   z-index: 2;
-  border-radius: 14px;           /* keep your existing soft corners */
+  border-radius: 14px;
 }
 
-/* 3. The visible, three‑phase cycle */
+/* 4. The visible, three‑phase cycle (unchanged) */
 @keyframes directImageCycle {
-  /* STAGE 1: STRONG 3D EXTRUSION (0s–3s) */
   0% {
     box-shadow:
       inset 0 1px 0 rgba(255,255,240,0.3),
@@ -7420,8 +7433,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
       40px 40px 70px rgba(0,0,0,0.7);
     transform: perspective(800px) rotateY(0deg) translateZ(0);
   }
-
-  /* STAGE 2: NOTICEABLE TILT (3s–6s) */
   45% {
     box-shadow:
       inset 0 2px 0 rgba(255,255,240,0.4),
@@ -7442,8 +7453,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
       38px 38px 68px rgba(0,0,0,0.7);
     transform: perspective(800px) rotateY(-6deg) translateZ(5px);
   }
-
-  /* STAGE 3: OBVIOUS FLOAT (6s–9s) */
   80% {
     box-shadow:
       inset 0 2px 0 rgba(255,255,240,0.4),
@@ -7454,8 +7463,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
       35px 35px 60px rgba(0,0,0,0.65);
     transform: perspective(800px) rotateY(0deg) translateZ(15px);
   }
-
-  /* RETURN TO NEUTRAL (9s–10s) */
   100% {
     box-shadow:
       inset 0 1px 0 rgba(255,255,240,0.3),
@@ -7468,7 +7475,7 @@ h1:hover, h2:hover, h3:hover, h4:hover,
   }
 }
 
-/* 4. Hover = pause + clean zoom */
+/* 5. Hover = pause + clean zoom */
 .media-card:hover .cardimg {
   animation-play-state: paused;
   transform: perspective(800px) rotateY(0deg) translateZ(0) scale(1.03);
@@ -7480,7 +7487,6 @@ h1:hover, h2:hover, h3:hover, h4:hover,
     28px 28px 0 #020508,
     40px 40px 75px rgba(0,0,0,0.7);
     }
-
 
 
 
