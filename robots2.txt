@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://durga-mindskillscare.pages.dev/sitemap.xml
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
