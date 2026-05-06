@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://durga-mindskillscare.pages.dev/sitemap.xml
+Sitemap: https://ddurga.dpdns.org/sitemap.txt
+Sitemap: https://ddurga.dpdns.org/sitemap.xml
