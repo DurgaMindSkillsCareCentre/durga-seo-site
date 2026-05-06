@@ -7887,3 +7887,62 @@ html::after {
   0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
   50%      { transform: translateY(-35px) scale(1.5); opacity: 0.95; }
 }
+
+
+
+
+
+/* ============================================================
+   AMBIENT GOLD WASH – gentle all‑over glow
+   ============================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240, 196, 90, 0.12) 0%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+
+
+
+
+
+/* ============================================================
+   ENHANCED INNER GLOW – amplifies the vignette edges
+   ============================================================ */
+.wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 100px rgba(240, 196, 90, 0.06),
+    inset 0 0 200px rgba(240, 196, 90, 0.03);
+  animation: enhanceVignette 4s ease-in-out infinite alternate;
+}
+
+@keyframes enhanceVignette {
+  0%   {
+    box-shadow:
+      inset 0 0 100px rgba(240, 196, 90, 0.06),
+      inset 0 0 200px rgba(240, 196, 90, 0.03);
+  }
+  100% {
+    box-shadow:
+      inset 0 0 140px rgba(240, 196, 90, 0.09),
+      inset 0 0 250px rgba(240, 196, 90, 0.05);
+  }
+}
+
+
+
+
