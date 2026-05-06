@@ -7946,3 +7946,23 @@ body::before {
 
 
 
+
+
+/* ============================================================
+   AMBIENT GOLD WASH – slightly more present
+   ============================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240, 196, 90, 0.20) 0%,   /* bump from 0.12 to 0.16 */
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+  
