@@ -7966,3 +7966,19 @@ body::before {
 }
 
   
+/* ============================================================
+   SAFE GOLDEN CONTENT GLOW (enhances light presence)
+   ============================================================ */
+.wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240, 196, 90, 0.12) 0%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+                           }
