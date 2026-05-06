@@ -701,8 +701,28 @@ const depthObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wrap, .ws-card.featured').forEach(el => depthObserver.observe(el));
                                                                                                                </script>
+
     
-  
+  <script>
+(function() {
+  const body = document.querySelector('body');
+  const particleCount = 20;  // how many fireflies
+  const container = document.createDocumentFragment();
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    // random starting position and animation delay to avoid synchrony
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top  = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 6 + 's';
+    container.appendChild(particle);
+  }
+  body.appendChild(container);
+})();
+</script>
+
+    
 </body>
 </html>
 </body>
