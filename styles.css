@@ -7982,3 +7982,35 @@ body::before {
   );
   mix-blend-mode: screen;
                            }
+
+
+/* ============================================================
+   RESTORE CENTRE PROFILE IMAGE IN FOOTER DOCK
+   ============================================================ */
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  bottom: 12px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 36px !important;
+  height: 36px !important;
+  background-image: url('profile.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 50% !important;
+  opacity: 0.38 !important;
+  z-index: 101 !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
