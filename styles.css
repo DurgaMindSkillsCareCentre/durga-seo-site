@@ -8023,3 +8023,114 @@ html body::before {
   right: auto !important;
 }
 
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FOUR RESEARCH‑LEVEL ENHANCEMENTS
+   (Staggered entrance · Glass cards · Scroll Snap · Organic Mask)
+   ============================================================ */
+
+/* ---------- 1. STAGGERED CARD ENTRANCE (wave‑like reveal) ---------- */
+/* Cards inside grid containers animate in sequence */
+.section-grid .panel,
+.reviews-grid .review-card,
+.section-grid .media-card {
+  animation: fadeUp 0.65s cubic-bezier(0.25, 0.8, 0.25, 1.2) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+/* Stagger each card by 80ms */
+.section-grid .panel:nth-child(1) { animation-delay: 0ms; }
+.section-grid .panel:nth-child(2) { animation-delay: 80ms; }
+.section-grid .panel:nth-child(3) { animation-delay: 160ms; }
+.section-grid .panel:nth-child(4) { animation-delay: 240ms; }
+
+.reviews-grid .review-card:nth-child(1) { animation-delay: 0ms; }
+.reviews-grid .review-card:nth-child(2) { animation-delay: 80ms; }
+.reviews-grid .review-card:nth-child(3) { animation-delay: 160ms; }
+
+.section-grid .media-card:nth-child(1) { animation-delay: 0ms; }
+.section-grid .media-card:nth-child(2) { animation-delay: 80ms; }
+.section-grid .media-card:nth-child(3) { animation-delay: 160ms; }
+
+
+/* ---------- 2. GLASSMORPHISM SERVICE CARDS (frosted glass) ---------- */
+/* Extends the dock's glass effect to key content panels */
+.section-grid .panel,
+.review-card,
+.panel.lead,
+.google-review-section .review-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 240, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Keep hover lift + slightly brighter background on hover */
+.section-grid .panel:hover,
+.review-card:hover,
+.panel.lead:hover,
+.google-review-section .review-card:hover {
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- 3. SMOOTH SCROLL‑SNAP (proximity snap, not forced) ---------- */
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;           /* you already have this safely */
+}
+
+/* Major sections snap into view when close */
+.hero,
+.pax-section,
+.section-grid,
+.faq-section,
+.chat-invite,
+.footer {
+  scroll-snap-align: start;
+}
+
+/* Exclude the dock and buttons from snapping */
+body::after,
+body::before,
+.social-btn,
+.wa {
+  scroll-snap-align: none;
+}
+
+
+/* ---------- 4. ORGANIC MASK‑IMAGE PATTERN (calming background texture) ---------- */
+/* A soft radial mask adds a living, organic bloom behind the content */
+.wrap {
+  position: relative;
+  z-index: 1;
+  mask-image: radial-gradient(
+    ellipse at 50% 50%,
+    black 60%,
+    transparent 85%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 50%,
+    black 60%,
+    transparent 85%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  }
+
+
