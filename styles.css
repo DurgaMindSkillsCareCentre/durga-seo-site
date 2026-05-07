@@ -8402,3 +8402,122 @@ body,
 }
 
 
+
+
+
+/* ============================================================
+   HOME PAGE HERO STACKING FIX + LANGUAGE TOGGLE
+   ============================================================ */
+
+/* ===== MOBILE (≤640px) ===== */
+@media (max-width: 640px) {
+
+  /* 1. Neutralise the hero’s stacking context so the menu can appear above it */
+  .hero {
+    transform: none !important;          /* kill any translate/scale */
+    z-index: auto !important;            /* let it sit in its natural layer */
+    isolation: auto !important;          /* prevent new stacking context */
+    overflow: visible !important;        /* allow menu to be seen */
+  }
+
+  .wrap {
+    isolation: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 2. Language toggle – fixed top‑left, always tappable */
+  .lang-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    z-index: 100000 !important;
+    display: flex !important;
+    gap: 4px !important;
+    padding: 4px !important;
+    border-radius: 20px !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    width: auto !important;
+    max-width: 120px !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .lang-toggle button {
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    border-radius: 16px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+  }
+
+  /* 3. Menu button – fixed top‑right */
+  .menu-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 100001 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  /* 4. Opened menu – forced above everything */
+  body.menu-open .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 100000 !important;
+    background: rgba(10, 14, 35, 0.96) !important;
+    border-radius: 18px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Hide the default inline nav so it doesn’t duplicate */
+  .nav .actions {
+    display: none !important;
+  }
+}
+
+/* ===== DESKTOP (≥641px) – unchanged ===== */
+@media (min-width: 641px) {
+  .lang-toggle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+    display: flex !important;
+    background: rgba(255,255,255,0.08) !important;
+    max-width: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .actions {
+    display: flex !important;
+  }
+}
