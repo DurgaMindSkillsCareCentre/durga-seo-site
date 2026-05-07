@@ -7975,52 +7975,50 @@ html body::before {
 
 
 
+
+
+
 /* ============================================================
-   THREE RESEARCH-LEVEL MICRO‑ENHANCEMENTS
-   (Spotlight Cursor Glow · Animated Gradient Border · Shimmer Text)
+   AMBIENT GOLD LIGHTING SYSTEM (Navy‑matched, research‑grade)
    ============================================================ */
 
-/* ---------- 1. SPOTLIGHT CURSOR GLOW ON CARDS ---------- */
-/* A radial glow follows the mouse/finger on hover.
-   Requires the JS snippet below to set --mouse-x and --mouse-y. */
-
-/* Apply the spotlight class to the panels you want to enhance */
-
-
-/* ---------- 2. ANIMATED GRADIENT BORDER (rotating conic glow) ---------- */
-/* 4s linear infinite;
+/* 1. Dual‑source golden ambient glow (opposite corners) */
+html {
+  background-color: #0e1a26;   /* fallback */
+  background-image:
+    radial-gradient(ellipse at 15% 25%, rgba(240,196,90,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(240,196,90,0.06) 0%, transparent 55%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  animation: ambientShift 25s ease-in-out infinite alternate;
 }
 
-@keyframes shimmerMove {
-  from { background-position: 0% center; }
-  to   { background-position: 200% center; }
-  }
+@keyframes ambientShift {
+  0%   { background-position: 0% 0%, 100% 100%; }
+  100% { background-position: 2% 2%, 98% 98%; }
+}
+
+/* 2. Tangible micro‑grain texture (luxury film feel) */
+.wrap::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* 3. Subtle warm vignette around the viewport */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%);
+}
 
 
 
-
-
-
-/* ============================================================
-   ABSOLUTE FINAL FIX – Menu, Language, Contact
-   ============================================================ */
-
-/* ============================================================
-   FINAL NAVIGATION & LANGUAGE TOGGLE – bulletproof
-   ============================================================ */
-
-  /* Mobile menu – appears above everything when open */
-  
-  
-/* ============================================================
-   HOME PAGE HERO FIX (mobile only, no side‑effects)
-   ============================================================ */
-
-
-    
-
-
-
-
-  /* 2. Language toggle – fixed below the trust bar, top‑left */
 
