@@ -184,6 +184,15 @@
 </head>
 <body>
 
+
+<div class="rotating-fall" aria-hidden="true">
+  <div class="fall-dust"></div>
+  <div class="fall-petals"></div>
+  <div class="fall-rings"></div>
+</div>
+
+  
+
 <div class="trust-sticky">
   <div class="trust-track">
 
@@ -742,6 +751,25 @@ document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wra
   });
 })();
     </script>
+
+    <script>
+(function() {
+  const dust = document.querySelector('.fall-dust');
+  const petals = document.querySelector('.fall-petals');
+  if (dust) {
+    for (let i = 0; i < 20; i++) {
+      const span = document.createElement('span');
+      dust.appendChild(span);
+    }
+  }
+  if (petals) {
+    for (let i = 0; i < 20; i++) {
+      const span = document.createElement('span');
+      petals.appendChild(span);
+    }
+  }
+})();
+      </script>
     
 </body>
 </html>
