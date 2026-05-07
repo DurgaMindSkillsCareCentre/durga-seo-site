@@ -8247,3 +8247,158 @@ body::before,
     display: flex !important;   /* restore the inline actions row */
   }
       }
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   PROFESSOR‑GRADE FINAL FIX ‑ Language, Menu, Readability
+   ============================================================ */
+
+/* 1. Remove any accidental hiding of the two buttons */
+.lang-toggle,
+.menu-toggle {
+  display: flex !important;
+}
+
+/* ===== MOBILE (max‑width 640px) ===== */
+@media (max-width: 640px) {
+
+  /* Language toggle – top‑left */
+  .lang-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    z-index: 100000 !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    padding: 4px !important;
+    gap: 4px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .lang-toggle button {
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    border-radius: 16px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+  }
+
+  /* Menu buttons – top‑right */
+  .menu-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 100001 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    border-radius: 14px !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  /* Open menu – appears above everything, even the hero */
+  body.menu-open .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 100000 !important;
+    background: rgba(10, 14, 35, 0.96) !important;
+    border-radius: 18px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Stop the hero or wrapper from clipping the menu */
+  .hero,
+  .wrap {
+    overflow: visible !important;
+  }
+
+  /* Hide the default inline nav (it’s replaced by the fixed menu) */
+  .nav .actions {
+    display: none !important;
+  }
+}
+
+/* ===== DESKTOP (min‑width 641px) ===== */
+@media (min-width: 641px) {
+  /* Restore language toggle to its natural place inside the nav */
+  .lang-toggle {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    z-index: 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: none !important;
+    max-width: none !important;
+  }
+
+  /* Hide the mobile menu button on desktop */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* Restore the normal actions row */
+  .actions,
+  .nav .actions {
+    display: flex !important;
+  }
+}
+
+/* ===== ALL PAGES – Readability ===== */
+/* Force a solid dark background so text is always ivory on navy */
+body,
+.wrap,
+.panel,
+.review-card,
+.section-grid .panel,
+.media-card,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.pax-section,
+.seo-card {
+  background-color: #0e1a26 !important;
+  color: #f5f0e8 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Remove any mask that might clip or hide content */
+.wrap {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+
