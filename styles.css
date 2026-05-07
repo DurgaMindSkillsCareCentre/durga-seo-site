@@ -8136,690 +8136,40 @@ body::before,
    FINAL NAVIGATION & LANGUAGE TOGGLE – bulletproof
    ============================================================ */
 
-/* Mobile only */
-@media (max-width: 640px) {
-
-  /* Language toggle – fixed top‑left, always visible */
-  .lang-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    left: 12px !important;
-    right: auto !important;
-    display: flex !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    border-radius: 20px !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    z-index: 100005 !important;
-    pointer-events: auto !important;
-    width: auto !important;
-    max-width: 120px !important;   /* prevent stretching across the screen */
-    backdrop-filter: blur(8px) !important;
-  }
-
-  .lang-toggle button {
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    padding: 4px 8px !important;
-    border-radius: 16px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-  }
-
-  /* Menu toggle – fixed top‑right, always on top */
-  .menu-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    right: 12px !important;
-    z-index: 100006 !important;   /* slightly above language toggle */
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* Hide the original nav’s actions so it doesn’t duplicate */
-  .nav .actions {
-    display: none !important;
-  }
-
   /* Mobile menu – appears above everything when open */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 64px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 100000 !important;   /* highest, ensures it’s above hero */
-    background: rgba(10, 14, 35, 0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.46) !important;
-    pointer-events: auto !important;
-  }
-
-  /* Force the hero to let the menu appear on top */
-  .hero, .wrap {
-    overflow: visible !important;
-    isolation: auto !important;
-  }
-}
-
-/* Desktop (everything back to normal) */
-@media (min-width: 641px) {
-  .lang-toggle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    display: flex !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    border-radius: 20px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    z-index: auto !important;
-    pointer-events: auto !important;
-    width: auto !important;
-    max-width: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .menu-toggle {
-    display: none !important;   /* desktop uses the normal nav */
-  }
-
-  .actions {
-    display: flex !important;   /* restore the inline actions row */
-  }
-      }
-
-
-
-
-
-
-
+  
+  
 
 
 /* ============================================================
-   PROFESSOR‑GRADE FINAL FIX ‑ Language, Menu, Readability
-   ============================================================ */
-
-/* 1. Remove any accidental hiding of the two buttons */
-.lang-toggle,
-.menu-toggle {
-  display: flex !important;
-}
-
-/* ===== MOBILE (max‑width 640px) ===== */
-@media (max-width: 640px) {
-
-  /* Language toggle – top‑left */
-  .lang-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    left: 12px !important;
-    right: auto !important;
-    z-index: 100000 !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 20px !important;
-    padding: 4px !important;
-    gap: 4px !important;
-    width: auto !important;
-    max-width: 120px !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  .lang-toggle button {
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    padding: 4px 8px !important;
-    border-radius: 16px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-  }
-
-  /* Menu buttons – top‑right */
-  .menu-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    right: 12px !important;
-    z-index: 100001 !important;
-    width: 42px !important;
-    height: 42px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    border-radius: 14px !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* Open menu – appears above everything, even the hero */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 64px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 100000 !important;
-    background: rgba(10, 14, 35, 0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
-    pointer-events: auto !important;
-  }
-
-  /* Stop the hero or wrapper from clipping the menu */
-  .hero,
-  .wrap {
-    overflow: visible !important;
-  }
-
-  /* Hide the default inline nav (it’s replaced by the fixed menu) */
-  .nav .actions {
-    display: none !important;
-  }
-}
-
-/* ===== DESKTOP (min‑width 641px) ===== */
-@media (min-width: 641px) {
-  /* Restore language toggle to its natural place inside the nav */
-  .lang-toggle {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    z-index: 0 !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: none !important;
-    max-width: none !important;
-  }
-
-  /* Hide the mobile menu button on desktop */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  /* Restore the normal actions row */
-  .actions,
-  .nav .actions {
-    display: flex !important;
-  }
-}
-
-/* ===== ALL PAGES – Readability ===== */
-/* Force a solid dark background so text is always ivory on navy */
-body,
-.wrap,
-.panel,
-.review-card,
-.section-grid .panel,
-.media-card,
-.lux-card-primary,
-.lux-card-secondary,
-.ai-strip,
-.chat-invite,
-.faq-item,
-.pax-section,
-.seo-card {
-  background-color: #0e1a26 !important;
-  color: #f5f0e8 !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-/* Remove any mask that might clip or hide content */
-.wrap {
-  mask-image: none !important;
-  -webkit-mask-image: none !important;
-}
-
-
-
-
-
-/* ============================================================
-   HOME PAGE HERO STACKING FIX + LANGUAGE TOGGLE
-   ============================================================ */
-
-/* ===== MOBILE (≤640px) ===== */
-@media (max-width: 640px) {
-
-  /* 1. Neutralise the hero’s stacking context so the menu can appear above it */
-  .hero {
-    transform: none !important;          /* kill any translate/scale */
-    z-index: auto !important;            /* let it sit in its natural layer */
-    isolation: auto !important;          /* prevent new stacking context */
-    overflow: visible !important;        /* allow menu to be seen */
-  }
-
-  .wrap {
-    isolation: auto !important;
-    overflow: visible !important;
-  }
-
-  /* 2. Language toggle – fixed top‑left, always tappable */
-  .lang-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    left: 12px !important;
-    right: auto !important;
-    z-index: 100000 !important;
-    display: flex !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    border-radius: 20px !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    width: auto !important;
-    max-width: 120px !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  .lang-toggle button {
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    padding: 4px 8px !important;
-    border-radius: 16px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-  }
-
-  /* 3. Menu button – fixed top‑right */
-  .menu-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    right: 12px !important;
-    z-index: 100001 !important;
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* 4. Opened menu – forced above everything */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 64px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 100000 !important;
-    background: rgba(10, 14, 35, 0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
-    pointer-events: auto !important;
-  }
-
-  /* Hide the default inline nav so it doesn’t duplicate */
-  .nav .actions {
-    display: none !important;
-  }
-}
-
-/* ===== DESKTOP (≥641px) – unchanged ===== */
-@media (min-width: 641px) {
-  .lang-toggle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    z-index: auto !important;
-    display: flex !important;
-    background: rgba(255,255,255,0.08) !important;
-    max-width: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .menu-toggle {
-    display: none !important;
-  }
-
-  .actions {
-    display: flex !important;
-  }
-}
-
-
-
-
-/* ============================================================
-   FINAL HOME-PAGE STACKING CONTEXT FIX (menu + language)
-   ============================================================ */
-
-/* ---------- MOBILE (max‑width 640px) ---------- */
-@media (max-width: 640px) {
-
-  /* 1. KILL the hero's stacking context so the menu can escape */
-  .hero {
-    transform: none !important;          /* remove translateY / scale / rotate */
-    isolation: auto !important;          /* no new stacking context */
-    z-index: auto !important;            /* sit in the normal flow */
-    overflow: visible !important;        /* don't clip anything */
-  }
-
-  .wrap {
-    isolation: auto !important;
-    overflow: visible !important;
-  }
-
-  /* 2. Language toggle – fixed top‑left, always visible & tappable */
-  .lang-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    left: 12px !important;
-    right: auto !important;
-    z-index: 100000 !important;
-    display: flex !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    border-radius: 20px !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    width: auto !important;
-    max-width: 120px !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  .lang-toggle button {
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    padding: 4px 8px !important;
-    border-radius: 16px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-  }
-
-  /* 3. Menu button – fixed top‑right */
-  .menu-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    right: 12px !important;
-    z-index: 100001 !important;
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    background: rgba(10, 14, 35, 0.9) !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* 4. Opened menu – forced above EVERYTHING */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 64px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 100000 !important;
-    background: rgba(10, 14, 35, 0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
-    pointer-events: auto !important;
-  }
-
-  /* Don't show the normal inline nav on mobile */
-  .nav .actions {
-    display: none !important;
-  }
-}
-
-/* ---------- DESKTOP (min‑width 641px) ---------- */
-@media (min-width: 641px) {
-  .lang-toggle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    z-index: auto !important;
-    background: rgba(255,255,255,0.08) !important;
-    display: flex !important;
-    max-width: none !important;
-    backdrop-filter: none !important;
-  }
-
-  .menu-toggle {
-    display: none !important;
-  }
-
-  .actions {
-    display: flex !important;
-  }
-  }
-                   
-
-
-
-
-
-/* ============================================================
-   PROFESSOR‑GRADE FINAL HOMEPAGE FIX (stacking context)
-   ============================================================ */
-
-/* ===== MOBILE (max‑width 640px) ===== */
-@media (max-width: 640px) {
-
-  /* 1. Flatten the hero completely */
-  .hero {
-    position: static !important;       /* remove any `relative` stacking */
-    z-index: 0 !important;             /* no stacking context */
-    transform: none !important;        /* kill any translate/scale */
-    isolation: auto !important;        /* prevent new context */
-    overflow: visible !important;      /* don't clip anything */
-  }
-
-  .wrap {
-    isolation: auto !important;
-    z-index: 0 !important;
-    overflow: visible !important;
-  }
-
-  /* 2. Language toggle – fixed top‑left, ABOVE trust‑sticky */
-  .lang-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    left: 12px !important;
-    right: auto !important;
-    z-index: 10000000 !important;      /* absolutely highest */
-    display: flex !important;
-    gap: 4px !important;
-    padding: 4px !important;
-    border-radius: 20px !important;
-    background: rgba(10, 14, 35, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    width: auto !important;
-    min-width: 80px !important;         /* ensure both buttons visible */
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  .lang-toggle button {
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 12px !important;
-    padding: 4px 8px !important;
-    border-radius: 16px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-  }
-
-  /* 3. Menu button – fixed top‑right, above everything */
-  .menu-toggle {
-    position: fixed !important;
-    top: 12px !important;
-    right: 12px !important;
-    z-index: 10000001 !important;      /* even higher */
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    background: rgba(10, 14, 35, 0.95) !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    pointer-events: auto !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* 4. Opened menu – forced above all content */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 64px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 10000000 !important;
-    background: rgba(10, 14, 35, 0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
-    pointer-events: auto !important;
-  }
-
-  /* Hide the default inline nav so it doesn't duplicate */
-  .nav .actions {
-    display: none !important;
-  }
-
-  /* Ensure trust-sticky doesn't interfere by lowering its stacking */
-  .trust-sticky {
-    z-index: 1 !important;            /* far below our fixed elements */
-  }
-}
-
-/* ===== DESKTOP (min‑width 641px) ===== */
-@media (min-width: 641px) {
-  .lang-toggle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    z-index: auto !important;
-    display: flex !important;
-    background: rgba(255,255,255,0.08) !important;
-    min-width: 0 !important;
-    backdrop-filter: none !important;
-  }
-
-  .menu-toggle {
-    display: none !important;
-  }
-
-  .actions {
-    display: flex !important;
-  }
-                                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================================
-   FINAL FIX – Mobile menu stacking & language position
+   DEFINITIVE NAVIGATION & STACKING FIX (zero side effects)
    ============================================================ */
 
 /* ---------- MOBILE (≤640px) ---------- */
 @media (max-width: 640px) {
 
-  /* ----- 1. Neutralise hero's containing block ----- */
+  /* 1. Disable the hero's transform – the root cause */
   .hero {
-    transform: none !important;          /* kills translateY, rotates, etc. */
-    will-change: auto !important;        /* stop any forced GPU layer */
-    isolation: auto !important;          /* prevent new stacking context */
-    position: relative !important;       /* keep it positioned but not isolated */
-    z-index: auto !important;            /* let it sit in the normal flow */
-    overflow: visible !important;        /* don't clip anything */
-    filter: none !important;             /* remove any blur/effects */
-    backdrop-filter: none !important;    /* remove any frosted glass */
+    transform: none !important;
+    will-change: auto !important;
+    isolation: auto !important;
+    z-index: auto !important;
+    overflow: visible !important;
   }
 
   .wrap {
     isolation: auto !important;
     overflow: visible !important;
     will-change: auto !important;
-    transform: none !important;
   }
 
-  /* ----- 2. Language toggle – fixed top‑left, below trust bar ----- */
+  /* 2. Language toggle – fixed below the trust bar, top‑left */
   .lang-toggle {
     position: fixed !important;
-    top: 50px !important;                /* below the trust‑sticky bar */
+    top: 48px !important;           /* below the sticky trust bar */
     left: 12px !important;
     right: auto !important;
-    z-index: 10000000 !important;
+    z-index: 100000 !important;
     display: flex !important;
     gap: 4px !important;
     padding: 4px !important;
@@ -8830,7 +8180,6 @@ body,
     min-width: 80px !important;
     pointer-events: auto !important;
     backdrop-filter: blur(8px) !important;
-    transform: none !important;          /* safety */
   }
 
   .lang-toggle button {
@@ -8844,12 +8193,12 @@ body,
     white-space: nowrap !important;
   }
 
-  /* ----- 3. Menu button – fixed top‑right ----- */
+  /* 3. Menu toggle – fixed below the trust bar, top‑right */
   .menu-toggle {
     position: fixed !important;
-    top: 50px !important;                /* same vertical line as language */
+    top: 48px !important;           /* same level as language toggle */
     right: 12px !important;
-    z-index: 10000001 !important;
+    z-index: 100001 !important;
     width: 42px !important;
     height: 42px !important;
     border-radius: 14px !important;
@@ -8862,18 +8211,17 @@ body,
     justify-content: center !important;
     pointer-events: auto !important;
     backdrop-filter: blur(8px) !important;
-    transform: none !important;
   }
 
-  /* ----- 4. Dropdown menu – forced above everything ----- */
+  /* 4. Dropdown menu – above everything */
   body.menu-open .actions {
     display: flex !important;
     flex-direction: column !important;
     position: fixed !important;
-    top: 100px !important;               /* clear of buttons */
+    top: 96px !important;           /* below the two buttons */
     left: 12px !important;
     right: 12px !important;
-    z-index: 10000000 !important;
+    z-index: 100000 !important;
     background: rgba(10, 14, 35, 0.96) !important;
     border-radius: 18px !important;
     padding: 14px !important;
@@ -8883,18 +8231,18 @@ body,
     pointer-events: auto !important;
   }
 
-  /* Hide the normal inline nav actions on mobile */
+  /* Hide the normal inline nav (mobile uses the fixed dropdown) */
   .nav .actions {
     display: none !important;
   }
 
-  /* Lower the trust‑sticky z‑index so it doesn't interfere */
+  /* Keep the trust‑sticky below the buttons */
   .trust-sticky {
     z-index: 10 !important;
   }
 }
 
-/* ---------- DESKTOP (≥641px) – everything back to normal ---------- */
+/* ---------- DESKTOP (≥641px) – unchanged ---------- */
 @media (min-width: 641px) {
   .lang-toggle {
     position: relative !important;
@@ -8906,7 +8254,6 @@ body,
     background: rgba(255,255,255,0.08) !important;
     backdrop-filter: none !important;
     min-width: 0 !important;
-    transform: none !important;
   }
 
   .menu-toggle {
@@ -8916,8 +8263,63 @@ body,
   .actions {
     display: flex !important;
   }
-    }
+}
 
+
+
+
+
+/* ============================================================
+   PROFESSOR‑GRADE FINAL FIX ‑ Language, Menu, Readability
+   ============================================================ */
+
+/* 1. Remove any accidental hiding of the two buttons */
+
+
+
+
+/* ============================================================
+   HOME PAGE HERO STACKING FIX + LANGUAGE TOGGLE
+   ============================================================ */
+
+/* ===== MOBILE (≤640px) ===== */
+
+    
+
+
+
+/* ============================================================
+   FINAL HOME-PAGE STACKING CONTEXT FIX (menu + language)
+   ============================================================ */
+
+
+
+
+
+
+
+
+/* ============================================================
+   PROFESSOR‑GRADE FINAL HOMEPAGE FIX (stacking context)
+   ============================================================ */
+
+
+  /* 2. Language toggle – fixed top‑left, ABOVE trust‑sticky */
+  
+
+  /* 3. Menu button – fixed top‑right, above everything */
+  
+
+  /* 4. Opened menu – forced above all content */
+
+/* ============================================================
+   FINAL FIX – Mobile menu stacking & language position
+   ============================================================ */
+
+    
+  /* ----- 3. Menu button – fixed top‑right ----- */
+   
+  /* Hide the normal inline nav actions on mobile */
 
 
 
