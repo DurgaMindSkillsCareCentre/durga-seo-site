@@ -8361,48 +8361,50 @@ input[type="radio"] {
    RESTORE ORIGINAL BOTTOM DOCK (Social · Profile · WhatsApp)
    ============================================================ */
 
-/* 1. Transparent frosted bar */
-body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 56px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: none;
-  box-shadow: none;
-  z-index: 100;
-  pointer-events: none;
-}
+/* ============================================================
+   PERMANENT FOOTER DOCK RESTORATION (zero conflicts)
+   ============================================================ */
 
-/* 2. Centre profile image watermark */
-body::before {
-  content: "";
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 36px;
-  height: 36px;
-  background-image: url('profile.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  opacity: 0.38;
-  z-index: 101;
-  pointer-events: none;
-}
-
-/* 3. Prevent content from hiding behind dock */
-body {
+html body {
   padding-bottom: 72px !important;
 }
 
-/* 4. Social button – fixed left, transparent background */
-a.social-btn {
+html body::after {
+  content: "" !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 56px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 100 !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+html body::before {
+  content: "" !important;
+  position: fixed !important;
+  bottom: 12px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 36px !important;
+  height: 36px !important;
+  background-image: url('profile.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 50% !important;
+  opacity: 0.38 !important;
+  z-index: 101 !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+html body a.social-btn {
   position: fixed !important;
   left: 20px !important;
   bottom: 16px !important;
@@ -8420,12 +8422,12 @@ a.social-btn {
   box-shadow: none !important;
 }
 
-/* 5. WhatsApp button – fixed right, gold pill */
-.wa {
+html body .wa {
   position: fixed !important;
   right: 20px !important;
   bottom: 16px !important;
   z-index: 999 !important;
+  display: block !important;
   background: linear-gradient(135deg, #f0c45a, #d18e2c) !important;
   color: #fff !important;
   padding: 8px 20px !important;
