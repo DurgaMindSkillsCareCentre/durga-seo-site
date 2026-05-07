@@ -8436,4 +8436,11 @@ html {
 
 
 
-
+.menu-toggle {
+  position: relative;
+  z-index: 9999 !important;   /* higher than any background layer */
+}
+.lang-toggle {
+  position: relative;
+  z-index: 9999 !important;
+}
