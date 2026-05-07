@@ -8771,3 +8771,153 @@ body,
   }
                                  }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   FINAL FIX – Mobile menu stacking & language position
+   ============================================================ */
+
+/* ---------- MOBILE (≤640px) ---------- */
+@media (max-width: 640px) {
+
+  /* ----- 1. Neutralise hero's containing block ----- */
+  .hero {
+    transform: none !important;          /* kills translateY, rotates, etc. */
+    will-change: auto !important;        /* stop any forced GPU layer */
+    isolation: auto !important;          /* prevent new stacking context */
+    position: relative !important;       /* keep it positioned but not isolated */
+    z-index: auto !important;            /* let it sit in the normal flow */
+    overflow: visible !important;        /* don't clip anything */
+    filter: none !important;             /* remove any blur/effects */
+    backdrop-filter: none !important;    /* remove any frosted glass */
+  }
+
+  .wrap {
+    isolation: auto !important;
+    overflow: visible !important;
+    will-change: auto !important;
+    transform: none !important;
+  }
+
+  /* ----- 2. Language toggle – fixed top‑left, below trust bar ----- */
+  .lang-toggle {
+    position: fixed !important;
+    top: 50px !important;                /* below the trust‑sticky bar */
+    left: 12px !important;
+    right: auto !important;
+    z-index: 10000000 !important;
+    display: flex !important;
+    gap: 4px !important;
+    padding: 4px !important;
+    border-radius: 20px !important;
+    background: rgba(10, 14, 35, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    width: auto !important;
+    min-width: 80px !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+    transform: none !important;          /* safety */
+  }
+
+  .lang-toggle button {
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    border-radius: 16px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+  }
+
+  /* ----- 3. Menu button – fixed top‑right ----- */
+  .menu-toggle {
+    position: fixed !important;
+    top: 50px !important;                /* same vertical line as language */
+    right: 12px !important;
+    z-index: 10000001 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    background: rgba(10, 14, 35, 0.95) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+    transform: none !important;
+  }
+
+  /* ----- 4. Dropdown menu – forced above everything ----- */
+  body.menu-open .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 100px !important;               /* clear of buttons */
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 10000000 !important;
+    background: rgba(10, 14, 35, 0.96) !important;
+    border-radius: 18px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Hide the normal inline nav actions on mobile */
+  .nav .actions {
+    display: none !important;
+  }
+
+  /* Lower the trust‑sticky z‑index so it doesn't interfere */
+  .trust-sticky {
+    z-index: 10 !important;
+  }
+}
+
+/* ---------- DESKTOP (≥641px) – everything back to normal ---------- */
+@media (min-width: 641px) {
+  .lang-toggle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+    display: flex !important;
+    background: rgba(255,255,255,0.08) !important;
+    backdrop-filter: none !important;
+    min-width: 0 !important;
+    transform: none !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .actions {
+    display: flex !important;
+  }
+    }
+
+
+
+
