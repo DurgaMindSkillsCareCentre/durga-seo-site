@@ -8494,3 +8494,86 @@ html, body {
   -webkit-backdrop-filter: none !important;
   background: rgba(0,0,0,0.8) !important;  /* temporary dark background for readability */
 }
+
+
+
+
+
+
+
+/* ============================================================
+   EMERGENCY RESET – disable all 06‑May experimental CSS
+   ============================================================ */
+
+/* 1. Restore scroll */
+html {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* 2. Unmask the whole page (remove organic mask) */
+.wrap {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+/* 3. Disable glassmorphism & spotlight layers that hide text */
+.panel,
+.review-card,
+.section-grid .panel,
+.media-card,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.pax-section,
+.seo-card,
+.ws-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: initial !important;   /* revert to original dark/light backgrounds */
+}
+
+/* 4. Remove any cursor‑glow or gradient‑border pseudo elements */
+.card-spotlight::before,
+.gradient-border::before,
+.rotating-fall,
+.fall-dust,
+.fall-petals,
+.fall-rings {
+  display: none !important;
+}
+
+/* 5. Cancel all staggered delays (so nothing stays hidden) */
+.section-grid .panel,
+.reviews-grid .review-card,
+.section-grid .media-card {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 6. Bring the menu toggle & language buttons to the top */
+.menu-toggle {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  display: flex !important;     /* ensure it’s visible */
+}
+.lang-toggle {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  display: flex !important;
+}
+
+/* 7. Ensure contact page text is readable */
+body, .wrap, .pax-section, .ai-strip, .chat-invite {
+  background-color: #0e1a26 !important;
+  color: #f5f0e8 !important;
+}
+
+/* 8. Keep the footer dock and all earlier gold‑title/trust‑badge/depth effects intact */
+/* No changes to those rules – they are already safe */
+
+
+  
