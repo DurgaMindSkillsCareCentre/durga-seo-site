@@ -747,24 +747,19 @@ document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wra
 })();
     </script>
 
-    <script>
+
+<script>
 (function() {
-  const dust = document.querySelector('.fall-dust');
-  const petals = document.querySelector('.fall-petals');
-  if (dust) {
-    for (let i = 0; i < 20; i++) {
-      const span = document.createElement('span');
-      dust.appendChild(span);
-    }
-  }
-  if (petals) {
-    for (let i = 0; i < 20; i++) {
-      const span = document.createElement('span');
-      petals.appendChild(span);
-    }
+  const toggle = document.querySelector('.menu-toggle');
+  const body = document.body;
+  if (toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      body.classList.toggle('menu-open');
+    });
   }
 })();
-      </script>
+</script>
     
 </body>
 </html>
