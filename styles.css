@@ -8298,3 +8298,60 @@ input[type="radio"] {
   background: rgba(240, 196, 90, 0.12);
   transform: scale(1.02);
 }
+
+
+
+
+/* Health-grade physiological easing (VA Clinical Design System) */
+.panel,
+.btn,
+.pill,
+.wa-big,
+.ai-cta-btn,
+.ws-card,
+.car-slide,
+.yt-embed-wrap {
+  transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+    }
+
+
+
+
+
+/* Layered physiological shadow (Josh Comeau method, calibrated for navy bg) */
+.panel,
+.review-card,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.pax-section,
+.seo-card {
+  box-shadow:
+    0 0.6px 0.8px rgba(0, 0, 0, 0.18),
+    0 1.4px 2px rgba(0, 0, 0, 0.14),
+    0 3px 5px rgba(0, 0, 0, 0.10),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+
+
+/* Medical-grade soft gradient border (Orakle / ACC Arches pattern) */
+.lux-card-primary,
+.lux-card-secondary,
+.pax-section {
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+    135deg,
+    rgba(240, 196, 90, 0.12) 0%,
+    rgba(240, 196, 90, 0.04) 50%,
+    rgba(240, 196, 90, 0.08) 100%
+  ) 1;
+}
+
+
+
+
+
+
