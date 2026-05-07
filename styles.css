@@ -8576,4 +8576,55 @@ body, .wrap, .pax-section, .ai-strip, .chat-invite {
 /* No changes to those rules – they are already safe */
 
 
-  
+  /* ============================================================
+   FINAL NAV & CONTACT‑PAGE FIX (no other changes)
+   ============================================================ */
+
+/* 1. Force the navigation elements to always be visible and clickable */
+.nav {
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+
+.menu-toggle {
+  position: relative !important;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+  display: flex !important;          /* make sure it’s not hidden */
+}
+
+.lang-toggle {
+  position: relative !important;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+  display: flex !important;          /* force flex display */
+}
+
+/* 2. Ensure the contact page & all light‑text sections have a solid dark background */
+body,
+.wrap,
+.panel,
+.review-card,
+.lux-card-primary,
+.lux-card-secondary,
+.ai-strip,
+.chat-invite,
+.faq-item,
+.pax-section,
+.seo-card,
+.media-card {
+  background-color: #0e1a26 !important;  /* solid navy – text stays ivory */
+  color: #f5f0e8 !important;            /* ivory text */
+}
+
+/* 3. Remove any scroll‑snap or unwanted backdrop‑filters that might hide content */
+html {
+  scroll-snap-type: none !important;
+}
+.panel,
+.review-card,
+.section-grid .panel {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
