@@ -8129,151 +8129,104 @@ body::before,
 
 
 /* ============================================================
-   RESTORE FAST SCROLL (remove snap + smooth)
+   ABSOLUTE FINAL FIX – Menu, Language, Contact
    ============================================================ */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: auto !important;
+
+/* Force dark background on all pages so text is never white‑on‑white */
+html body,
+html .wrap,
+html .panel,
+html .review-card,
+html .section-grid .panel,
+html .lux-card-primary,
+html .lux-card-secondary,
+html .ai-strip,
+html .chat-invite,
+html .faq-item,
+html .pax-section,
+html .seo-card,
+html .media-card {
+  background-color: #0e1a26 !important;
+  color: #f5f0e8 !important;
+}
+
+/* Remove any glass/blur overlays that hide text */
+html .panel,
+html .review-card,
+html .section-grid .panel,
+html .media-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Remove mask‑image that can clip content */
+html .wrap {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+/* Menu toggle – visible on mobile, hidden on desktop */
+html .menu-toggle {
+  display: none !important;
+}
+@media (max-width: 640px) {
+  html .menu-toggle {
+    display: flex !important;
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 100000 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: rgba(0,0,0,0.65) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
   }
 }
-html {
-  scroll-snap-type: none !important;
-  
-    }       
 
-        
-  
-
-
-
-
-
-
-
+/* Language toggle – always visible */
+html .lang-toggle {
+  display: flex !important;
+  position: fixed !important;
+  top: 16px !important;
+  left: 12px !important;
+  z-index: 100000 !important;
+  gap: 4px !important;
+  padding: 4px !important;
+  border-radius: 20px !important;
+  background: rgba(0,0,0,0.65) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  pointer-events: auto !important;
 }
-/* Petals visible 2.5s – 5.5s */
-.fall-petals {
-  animation: petalFade 8s ease-in-out infinite;
-  animation-fill-mode: both;
-  animation-delay: -2.5s;
-}
-/* Rings visible 5.5s – 8s */
-.fall-rings {
-  animation: ringFade 8s ease-in-out infinite;
-  animation-fill-mode: both;
-  animation-delay: -5.5s;
+html .lang-toggle button {
+  border: none !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  padding: 4px 8px !important;
+  border-radius: 16px !important;
+  cursor: pointer !important;
 }
 
-/* Opacity fade in/out keyframes */
-@keyframes dustFade {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  30%  { opacity: 1; }
-  35%  { opacity: 0; }
-  100% { opacity: 0; }
+/* Ensure the mobile menu actions are displayed correctly when open */
+html body.menu-open .actions {
+  display: flex !important;
+  flex-direction: column !important;
+  position: fixed !important;
+  top: 64px !important;
+  left: 12px !important;
+  right: 12px !important;
+  z-index: 9999 !important;
+  background: rgba(10,14,35,0.96) !important;
+  border-radius: 18px !important;
+  padding: 14px !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
 }
-@keyframes petalFade {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  30%  { opacity: 1; }
-  35%  { opacity: 0; }
-  100% { opacity: 0; }
+html .actions {
+  display: none !important;
 }
-@keyframes ringFade {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  30%  { opacity: 1; }
-  35%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-/* ---------- EFFECT 1: GOLDEN DUST MOTES (opacity 0.35) ---------- */
-.fall-dust span {
-  position: absolute;
-  top: -20px;
-  display: block;
-  width: 2px;
-  height: 2px;
-  background: rgba(240, 196, 90, 0.35);
-  border-radius: 50%;
-  animation: moteFall linear infinite;
-}
-.fall-dust span:nth-child(1)  { left: 5%;   animation-duration: 12s; animation-delay: 0s; }
-.fall-dust span:nth-child(2)  { left: 12%;  animation-duration: 15s; animation-delay: 1s; }
-.fall-dust span:nth-child(3)  { left: 22%;  animation-duration: 10s; animation-delay: 3s; }
-.fall-dust span:nth-child(4)  { left: 31%;  animation-duration: 14s; animation-delay: 0s; }
-.fall-dust span:nth-child(5)  { left: 40%;  animation-duration: 18s; animation-delay: 2s; }
-.fall-dust span:nth-child(6)  { left: 48%;  animation-duration: 11s; animation-delay: 4s; }
-.fall-dust span:nth-child(7)  { left: 55%;  animation-duration: 16s; animation-delay: 0s; }
-.fall-dust span:nth-child(8)  { left: 63%;  animation-duration: 13s; animation-delay: 3s; }
-.fall-dust span:nth-child(9)  { left: 72%;  animation-duration: 17s; animation-delay: 1s; }
-.fall-dust span:nth-child(10) { left: 81%;  animation-duration: 12s; animation-delay: 5s; }
-.fall-dust span:nth-child(11) { left: 90%;  animation-duration: 19s; animation-delay: 2s; }
-.fall-dust span:nth-child(12) { left: 8%;   animation-duration: 14s; animation-delay: 6s; }
-.fall-dust span:nth-child(13) { left: 17%;  animation-duration: 11s; animation-delay: 0s; }
-.fall-dust span:nth-child(14) { left: 27%;  animation-duration: 18s; animation-delay: 4s; }
-.fall-dust span:nth-child(15) { left: 36%;  animation-duration: 13s; animation-delay: 1s; }
-.fall-dust span:nth-child(16) { left: 44%;  animation-duration: 16s; animation-delay: 3s; }
-.fall-dust span:nth-child(17) { left: 52%;  animation-duration: 10s; animation-delay: 5s; }
-.fall-dust span:nth-child(18) { left: 60%;  animation-duration: 20s; animation-delay: 0s; }
-.fall-dust span:nth-child(19) { left: 69%;  animation-duration: 15s; animation-delay: 2s; }
-.fall-dust span:nth-child(20) { left: 78%;  animation-duration: 12s; animation-delay: 4s; }
-
-@keyframes moteFall {
-  0%   { transform: translateY(0)    translateX(0);    opacity: 0; }
-  10%  { opacity: 0.6; }
-  90%  { opacity: 0.4; }
-  100% { transform: translateY(100vh) translateX(30px); opacity: 0; }
-}
-
-/* ---------- EFFECT 2: GOLDEN PETAL SLIVERS (opacity 0.22) ---------- */
-.fall-petals span {
-  position: absolute;
-  top: -30px;
-  display: block;
-  width: 6px;
-  height: 12px;
-  background: rgba(240, 196, 90, 0.22);
-  border-radius: 50%;
-  animation: petalFall linear infinite;
-  transform: rotate(0deg);
-}
-.fall-petals span:nth-child(1)  { left: 3%;  animation-duration: 9s;  animation-delay: 0s;  width: 5px; height: 10px; }
-.fall-petals span:nth-child(2)  { left: 10%; animation-duration: 11s; animation-delay: 2s;  width: 7px; height: 14px; }
-.fall-petals span:nth-child(3)  { left: 20%; animation-duration: 8s;  animation-delay: 1s;  width: 4px; height: 9px; }
-.fall-petals span:nth-child(4)  { left: 33%; animation-duration: 13s; animation-delay: 3s;  width: 6px; height: 12px; }
-.fall-petals span:nth-child(5)  { left: 45%; animation-duration: 10s; animation-delay: 0s;  width: 8px; height: 16px; }
-.fall-petals span:nth-child(6)  { left: 55%; animation-duration: 12s; animation-delay: 4s;  width: 5px; height: 11px; }
-.fall-petals span:nth-child(7)  { left: 66%; animation-duration: 9s;  animation-delay: 2s;  width: 7px; height: 13px; }
-.fall-petals span:nth-child(8)  { left: 78%; animation-duration: 14s; animation-delay: 1s;  width: 6px; height: 12px; }
-.fall-petals span:nth-child(9)  { left: 88%; animation-duration: 11s; animation-delay: 3s;  width: 5px; height: 10px; }
-.fall-petals span:nth-child(10) { left: 94%; animation-duration: 10s; animation-delay: 0s;  width: 7px; height: 14px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================================
-   TEMPORARY FIX – disable all new CSS for testing
-   ============================================================ */
-
-
-/* 8. Keep the footer dock and all earlier gold‑title/trust‑badge/depth effects intact */
-/* No changes to those rules – they are already safe */
-
-
-  /* ============================================================
-   FINAL NAV & CONTACT‑PAGE FIX (no other changes)
-   ============================================================ */
-
