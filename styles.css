@@ -8238,3 +8238,19 @@ body::before,
   to   { background-position: 200% center; }
   }
 
+
+
+
+
+
+/* ============================================================
+   RESTORE FAST SCROLL (remove snap + smooth)
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  scroll-snap-type: none !important;
+                                                                       }
