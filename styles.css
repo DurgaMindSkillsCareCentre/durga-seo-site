@@ -7972,52 +7972,6 @@ html body::before {
 }
 
 
-/* ---------- 3. SMOOTH SCROLL‑SNAP (proximity snap, not forced) ---------- */
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;           /* you already have this safely */
-}
-
-/* Major sections snap into view when close */
-.hero,
-.pax-section,
-.section-grid,
-.faq-section,
-.chat-invite,
-.footer {
-  scroll-snap-align: start;
-}
-
-/* Exclude the dock and buttons from snapping */
-body::after,
-body::before,
-.social-btn,
-.wa {
-  scroll-snap-align: none;
-}
-
-
-/* ---------- 4. ORGANIC MASK‑IMAGE PATTERN (calming background texture) ---------- */
-/* A soft radial mask adds a living, organic bloom behind the content */
-.wrap {
-  position: relative;
-  z-index: 1;
-  mask-image: radial-gradient(
-    ellipse at 50% 50%,
-    black 60%,
-    transparent 85%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse at 50% 50%,
-    black 60%,
-    transparent 85%
-  );
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-  -webkit-mask-size: 100% 100%;
-  }
-
 
 
 
@@ -8029,93 +7983,12 @@ body::before,
 /* ---------- 1. SPOTLIGHT CURSOR GLOW ON CARDS ---------- */
 /* A radial glow follows the mouse/finger on hover.
    Requires the JS snippet below to set --mouse-x and --mouse-y. */
-.card-spotlight {
-  position: relative;
-  overflow: hidden;
-}
-.card-spotlight::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(240, 196, 90, 0.08),
-    transparent 40%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-.card-spotlight:hover::before {
-  opacity: 1;
-}
 
 /* Apply the spotlight class to the panels you want to enhance */
-.panel.card-spotlight::before,
-.review-card.card-spotlight::before {
-  border-radius: inherit;
-}
 
 
 /* ---------- 2. ANIMATED GRADIENT BORDER (rotating conic glow) ---------- */
-/* Uses @property for fluid rotation.  Add .gradient-border to any card. */
-@property --border-angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
-
-.gradient-border {
-  position: relative;
-  border-radius: 18px;
-  background: #0e1a26;   /* match your dark panel background */
-}
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: conic-gradient(
-    from var(--border-angle),
-    transparent 0%,
-    rgba(240, 196, 90, 0.3) 10%,
-    transparent 20%,
-    transparent 80%,
-    rgba(240, 196, 90, 0.15) 90%,
-    transparent 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: spinBorder 6s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes spinBorder {
-  from { --border-angle: 0deg; }
-  to   { --border-angle: 360deg; }
-}
-
-
-/* ---------- 3. SHIMMER TEXT (gold magnetic effect) ---------- */
-.shimmer-text {
-  background: linear-gradient(
-    90deg,
-    #f0c45a 0%,
-    #ffe9a0 25%,
-    #f0c45a 50%,
-    #ffe9a0 75%,
-    #f0c45a 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmerMove 4s linear infinite;
+/* 4s linear infinite;
 }
 
 @keyframes shimmerMove {
@@ -8143,56 +8016,9 @@ body::before,
    HOME PAGE HERO FIX (mobile only, no side‑effects)
    ============================================================ */
 
-@media (max-width: 640px) {
-  /* Disable the transform on the hero – this is the root cause */
-  .hero {
-    transform: none !important;
-    isolation: auto !important;
-    z-index: auto !important;
-    overflow: visible !important;   /* prevent clipping */
-  }
 
-  /* Make absolutely sure the language toggle stays visible */
-  .lang-toggle {
-    position: relative !important;
-    z-index: 99999 !important;
-    pointer-events: auto !important;
-  }
+    
 
-  /* Ensure the menu button is clickable and above everything */
-  .menu-toggle {
-    position: relative !important;
-    z-index: 99999 !important;
-    display: flex !important;
-    pointer-events: auto !important;
-  }
-
-  /* The dropdown menu – bring it to the very front */
-  body.menu-open .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 80px !important;
-    left: 12px !important;
-    right: 12px !important;
-    z-index: 999999 !important;
-    background: rgba(10,14,35,0.96) !important;
-    border-radius: 18px !important;
-    padding: 14px !important;
-    border: 1px solid rgba(255,255,255,0.14) !important;
-    backdrop-filter: blur(16px) !important;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.46) !important;
-  }
-
-  /* Hide the default inline nav actions on mobile */
-  .nav .actions {
-    display: none !important;
-  }
-}
-
-/* ============================================================
-   DEFINITIVE NAVIGATION & STACKING FIX (zero side effects)
-   ============================================================ */
 
 
 
