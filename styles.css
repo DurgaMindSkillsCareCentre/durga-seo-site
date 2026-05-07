@@ -8355,3 +8355,83 @@ input[type="radio"] {
 
 
 
+
+
+/* ============================================================
+   RESTORE ORIGINAL BOTTOM DOCK (Social · Profile · WhatsApp)
+   ============================================================ */
+
+/* 1. Transparent frosted bar */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: none;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* 2. Centre profile image watermark */
+body::before {
+  content: "";
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background-image: url('profile.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.38;
+  z-index: 101;
+  pointer-events: none;
+}
+
+/* 3. Prevent content from hiding behind dock */
+body {
+  padding-bottom: 72px !important;
+}
+
+/* 4. Social button – fixed left, transparent background */
+a.social-btn {
+  position: fixed !important;
+  left: 20px !important;
+  bottom: 16px !important;
+  z-index: 999 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 0 !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  background: none !important;
+  color: #b08c4c !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+/* 5. WhatsApp button – fixed right, gold pill */
+.wa {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 16px !important;
+  z-index: 999 !important;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c) !important;
+  color: #fff !important;
+  padding: 8px 20px !important;
+  border-radius: 24px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  }
+
