@@ -8132,4 +8132,118 @@ body::before,
    ABSOLUTE FINAL FIX – Menu, Language, Contact
    ============================================================ */
 
+/* ============================================================
+   FINAL NAVIGATION & LANGUAGE TOGGLE – bulletproof
+   ============================================================ */
 
+/* Mobile only */
+@media (max-width: 640px) {
+
+  /* Language toggle – fixed top‑left, always visible */
+  .lang-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    display: flex !important;
+    gap: 4px !important;
+    padding: 4px !important;
+    border-radius: 20px !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    z-index: 100005 !important;
+    pointer-events: auto !important;
+    width: auto !important;
+    max-width: 120px !important;   /* prevent stretching across the screen */
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .lang-toggle button {
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    border-radius: 16px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+  }
+
+  /* Menu toggle – fixed top‑right, always on top */
+  .menu-toggle {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 100006 !important;   /* slightly above language toggle */
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    background: rgba(10, 14, 35, 0.9) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  /* Hide the original nav’s actions so it doesn’t duplicate */
+  .nav .actions {
+    display: none !important;
+  }
+
+  /* Mobile menu – appears above everything when open */
+  body.menu-open .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 100000 !important;   /* highest, ensures it’s above hero */
+    background: rgba(10, 14, 35, 0.96) !important;
+    border-radius: 18px !important;
+    padding: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.46) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Force the hero to let the menu appear on top */
+  .hero, .wrap {
+    overflow: visible !important;
+    isolation: auto !important;
+  }
+}
+
+/* Desktop (everything back to normal) */
+@media (min-width: 641px) {
+  .lang-toggle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    gap: 4px !important;
+    padding: 4px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    z-index: auto !important;
+    pointer-events: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .menu-toggle {
+    display: none !important;   /* desktop uses the normal nav */
+  }
+
+  .actions {
+    display: flex !important;   /* restore the inline actions row */
+  }
+      }
