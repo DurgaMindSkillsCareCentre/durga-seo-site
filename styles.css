@@ -9040,7 +9040,7 @@ body::after {
 /* ═══ SCROLL-DRIVEN ANIMATIONS — Pure CSS, no JS ═══════ */
 
 /* Override your existing .reveal JS approach with CSS-native */
-@supports (animation-timeline: view()) {
+/*@supports (animation-timeline: view()) {
 
   .reveal {
     opacity: 0;
