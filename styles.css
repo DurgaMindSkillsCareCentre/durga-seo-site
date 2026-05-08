@@ -8960,6 +8960,80 @@ body::after {
 
 
 
+/* GOLD SHIMMER on hero heading */
+.hero h2 {
+  background: linear-gradient(
+    90deg,
+    #fff3c0 0%,
+    #ffd66a 30%,
+    #ffffff 50%,
+    #ffd66a 70%,
+    #fff3c0 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmerSweep 4s linear infinite;
+}
+@keyframes shimmerSweep {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+        }
+
+
+
+
+/* 3D TILT — panels and review cards */
+.panel, .review-card, .story {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.panel:hover, .review-card:hover, .story:hover {
+  transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-6px);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,214,106,0.2);
+}
+
+
+
+
+
+/* IMAGE ZOOM on hover */
+.cardimg, .car-slide img, .profile-img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+              filter 0.5s ease;
+  will-change: transform;
+}
+.cardimg:hover, .car-slide:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.08) saturate(1.1);
+}
+
+/* Contain zoom inside card */
+.panel, .story, .carousel {
+  overflow: hidden;
+}
+
+
+
+
+
+
+/* FAQ GOLD GLOW when open */
+.faq-item {
+  border-left: 3px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.faq-item[open] {
+  border-left: 3px solid #ffd66a;
+  background: rgba(255,214,106,0.06) !important;
+}
+.faq-item[open] summary {
+  color: #ffd66a !important;
+  }
+
 
 
 
