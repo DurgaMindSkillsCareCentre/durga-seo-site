@@ -8365,7 +8365,17 @@ input[type="radio"] {
    PERMANENT FOOTER DOCK RESTORATION (zero conflicts)
    ============================================================ */
 /* ============================================================
-   FINAL UNBREAKABLE DOCK (May‑7‑proven method)
+   CLAUDE AI FINAL UNBREAKABLE DOCK (May‑7‑proven method)
    ============================================================ */
 
-
+/* ═══ PREMIUM BRANDED SCROLLBAR ═══════════════════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #060710; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffd66a, #ff7db0);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fff2bf, #ffd66a);
+}
+* { scrollbar-width: thin; scrollbar-color: #ffd66a #060710; }
