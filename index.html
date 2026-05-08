@@ -606,43 +606,7 @@ Online appointments can be scheduled easily for both local and international cli
 
 </div>
 
-<script src="script.js"></script>
-<script>
-document.getElementById('qi-send').addEventListener('click', function(e){
-  e.preventDefault();
-  const n = document.getElementById('qi-name').value.trim() || 'Visitor';
-  const p = document.getElementById('qi-phone').value.trim();
-  const m = document.getElementById('qi-msg').value.trim() || 'I would like to book an appointment.';
-  const t = `Hello D. Durga 🙏\n\nName: ${n}\nPhone: ${p}\n\nMessage: ${m}\n\n(Sent from durga-mindskillscare.pages.dev)`;
-  window.open('https://wa.me/917395944527?text=' + encodeURIComponent(t), '_blank');
-});
-</script>
-     <!-- FLOATING SOCIAL BUTTON -->
 
-<style>
-.social-btn{
-  position:fixed;
-  left:12px;
-  bottom:20px;
-
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:8px 12px;
-  border-radius:999px;
-
-  font-size:13px;
-  font-weight:600;
-
-  background:linear-gradient(135deg,#facc15,#fb7185);
-  color:#000;
-  text-decoration:none;
-
-  box-shadow:0 6px 16px rgba(0,0,0,0.5);
-  z-index:999;
-}
-     </style>
      <!-- SEO Internal Links -->
 <section class="seo-card">
   <h3>Our Services</h3>
@@ -754,11 +718,59 @@ window.addEventListener('scroll', function() {
   document.body.style.setProperty('--scroll-progress', pct);
 });
 </script>
-    <a href="social.html" class="social-btn">🌐 Social</a>
     
-    <a class="wa" href="https://wa.me/917395944527" target="_blank" rel="noopener">WhatsApp</a>
+
     
+<a class="wa" href="https://wa.me/917395944527" target="_blank" rel="noopener">WhatsApp</a>
+<a href="social.html" class="social-btn">🌐 Social</a>
+
+<script src="script.js"></script>
+
+<script>
+// WhatsApp Send Logic
+document.getElementById('qi-send').addEventListener('click', function(e){
+  e.preventDefault();
+  const n = document.getElementById('qi-name').value.trim() || 'Visitor';
+  const p = document.getElementById('qi-phone').value.trim();
+  const m = document.getElementById('qi-msg').value.trim() || 'I would like to book an appointment.';
+  const t = `Hello D. Durga 🙏\n\nName: ${n}\nPhone: ${p}\n\nMessage: ${m}\n\n(Sent from durga-mindskillscare.pages.dev)`;
+  window.open('https://wa.me/917395944527?text=' + encodeURIComponent(t), '_blank');
+});
+
+// Language Toggle
+function setLanguage(lang) {
+  if (lang === 'ta') { window.location.href = "index-ta.html"; } 
+  else { window.location.href = "index.html"; }
+}
+
+// Animation Observer
+const depthObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wrap, .ws-card.featured').forEach(el => depthObserver.observe(el));
+
+// Particles Logic
+(function() {
+  const body = document.querySelector('body');
+  const particleCount = 20;
+  const container = document.createDocumentFragment();
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top  = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 6 + 's';
+    container.appendChild(particle);
+  }
+  body.appendChild(container);
+})();
+</script>
+
 </body>
 </html>
-</body>
-</html>
+
+
+
