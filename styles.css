@@ -9037,4 +9037,248 @@ body::after {
 
 
 
+/* ═══ SCROLL-DRIVEN ANIMATIONS — Pure CSS, no JS ═══════ */
+
+/* Override your existing .reveal JS approach with CSS-native */
+@supports (animation-timeline: view()) {
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: cssReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+
+  @keyframes cssReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger via animation-range offsets */
+  .stagger > *:nth-child(1) { animation-range: entry 0%  entry 25%; }
+  .stagger > *:nth-child(2) { animation-range: entry 5%  entry 30%; }
+  .stagger > *:nth-child(3) { animation-range: entry 10% entry 35%; }
+  .stagger > *:nth-child(4) { animation-range: entry 15% entry 40%; }
+  .stagger > *:nth-child(5) { animation-range: entry 20% entry 45%; }
+  .stagger > *:nth-child(6) { animation-range: entry 25% entry 50%; }
+
+  /* Scale hero image as user scrolls past */
+  .profile-shell {
+    animation: heroShrink linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 400px;
+  }
+  @keyframes heroShrink {
+    to { transform: scale(0.92); opacity: 0.7; }
+  }
+}
+
+
+
+
+/* ═══ @property ANIMATED BORDER — Houdini CSS ══════════ */
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Rotating gold + pink border on panel hover */
+.panel {
+  --border-angle: 0deg;
+  border: 1.5px solid rgba(255,214,106,0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(rgba(16,22,43,0.97), rgba(16,22,43,0.97)) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #ffd66a,
+      #ff7db0,
+      #67d0ff,
+      #ffd66a
+    ) border-box;
+  animation: rotateBorder 3s linear infinite;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+@keyframes rotateBorder {
+  to { --border-angle: 360deg; }
+}
+
+/* Also apply to review cards */
+.review-card:hover {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(rgba(16,22,43,0.97), rgba(16,22,43,0.97)) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      #ffd66a, #ff7db0, #67d0ff, #ffd66a
+    ) border-box;
+  animation: rotateBorder 3s linear infinite;
+    }
+
+
+
+
+
+/* ═══ FILM GRAIN TEXTURE — Stripe/Linear technique ═════ */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  animation: grainShift 0.4s steps(1) infinite;
+}
+
+@keyframes grainShift {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(-2px, 1px); }
+  50%  { transform: translate(1px, -2px); }
+  75%  { transform: translate(2px, 1px); }
+  100% { transform: translate(-1px, 2px); }
+}
+
+
+
+
+/* ═══ CSS :has() — Revolutionary Parent Selector ════════ */
+
+/* Nav darkens when mobile menu is open */
+.nav:has(.menu-toggle:checked) {
+  background: rgba(6, 7, 16, 0.98) !important;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.7) !important;
+}
+
+/* When ANY faq-item is open, dim the others */
+.faq-section:has(.faq-item[open]) .faq-item:not([open]) {
+  opacity: 0.55;
+  transform: scale(0.99);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When panel has a badge inside, give it gold left stripe */
+.panel:has(.badge) {
+  border-left: 3px solid rgba(255, 214, 106, 0.4);
+}
+
+/* Hero CTA area — when WhatsApp btn is nearby, add spacing */
+.hero-ctas:has(.wa-cta) {
+  gap: 14px;
+}
+
+
+
+
+
+
+
+/* ═══ PROFESSIONAL TYPOGRAPHY — text-wrap ═══════════════ */
+
+h1, h2, h3, h4,
+.hero h2,
+.section-title,
+.page-hero h2,
+.panel h3,
+.faq-item summary {
+  text-wrap: balance;
+}
+
+p, .review p, .panel p,
+.feature p, .story p {
+  text-wrap: pretty;
+}
+
+
+
+
+
+/* ═══ CONTENT-VISIBILITY — Performance Grade ════════════ */
+
+.yt-section,
+.faq-section,
+.carousel,
+.google-review-section,
+.media-section,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+
+
+
+
+
+/* ═══ VARIABLE FONT WEIGHT ANIMATION ════════════════════ */
+
+.actions a,
+.nav a,
+.nav-link {
+  font-variation-settings: 'wght' 400;
+  transition: font-variation-settings 0.25s ease;
+}
+
+.actions a:hover,
+.nav a:hover,
+.nav-link:hover {
+  font-variation-settings: 'wght' 700;
+}
+
+/* Hero heading — weight pulses gently */
+.hero h2 {
+  font-variation-settings: 'wght' 700;
+  animation: weightBreath 4s ease-in-out infinite;
+}
+@keyframes weightBreath {
+  0%, 100% { font-variation-settings: 'wght' 700; }
+  50%       { font-variation-settings: 'wght' 800; }
+  }
+
+
+
+
+
+/* ═══ MIX-BLEND-MODE — Cinematic Image Effect ═══════════ */
+
+.profile-img {
+  filter: grayscale(0.2) contrast(1.05);
+  mix-blend-mode: luminosity;
+  transition:
+    mix-blend-mode 0.6s ease,
+    filter 0.6s ease;
+}
+
+.profile-shell:hover .profile-img {
+  mix-blend-mode: normal;
+  filter: grayscale(0) contrast(1.08) saturate(1.12);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
