@@ -9058,7 +9058,7 @@ body::after {
   }
 
   /* Stagger via animation-range offsets */
-  .stagger > *:nth-child(1) { animation-range: entry 0%  entry 25%; }
+  /*.stagger > *:nth-child(1) { animation-range: entry 0%  entry 25%; }
   .stagger > *:nth-child(2) { animation-range: entry 5%  entry 30%; }
   .stagger > *:nth-child(3) { animation-range: entry 10% entry 35%; }
   .stagger > *:nth-child(4) { animation-range: entry 15% entry 40%; }
@@ -9066,7 +9066,7 @@ body::after {
   .stagger > *:nth-child(6) { animation-range: entry 25% entry 50%; }
 
   /* Scale hero image as user scrolls past */
-  .profile-shell {
+  /*.profile-shell {
     animation: heroShrink linear both;
     animation-timeline: scroll(root);
     animation-range: 0px 400px;
@@ -9272,6 +9272,43 @@ p, .review p, .panel p,
 
 
 
+
+
+/* ═══ SCROLL-DRIVEN ANIMATIONS — Safe Version ═══════════ */
+@supports (animation-timeline: view()) {
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: cssReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+
+  @keyframes cssReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stagger > *:nth-child(1) { animation-range: entry 0%  entry 25%; }
+  .stagger > *:nth-child(2) { animation-range: entry 5%  entry 30%; }
+  .stagger > *:nth-child(3) { animation-range: entry 10% entry 35%; }
+  .stagger > *:nth-child(4) { animation-range: entry 15% entry 40%; }
+  .stagger > *:nth-child(5) { animation-range: entry 20% entry 45%; }
+  .stagger > *:nth-child(6) { animation-range: entry 25% entry 50%; }
+
+  /* ── CRITICAL: Never animate these elements ── */
+  .wa,
+  .social-btn,
+  .footer,
+  .trust-sticky,
+  .nav,
+  .profile-shell {
+    animation: none !important;
+    animation-timeline: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 
 
