@@ -8414,3 +8414,207 @@ h1, h2, h3, h4,
 }
 
 
+
+
+/* ═══ ELEVATED BUTTON STATES ═════════════════════════════ */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(.25,.8,.25,1),
+              box-shadow 0.22s ease,
+              filter 0.22s ease;
+  box-shadow: 0 4px 20px rgba(255, 214, 106, 0.25);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    transparent 30%, rgba(255,255,255,0.28) 50%, transparent 70%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.5s ease;
+  border-radius: inherit;
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(255, 214, 106, 0.42);
+  filter: brightness(1.06);
+}
+.btn:hover::after {
+  background-position: 200% 0;  /* shimmer sweep */
+}
+.btn:active { transform: scale(0.97); }
+
+
+
+
+
+
+
+
+/* ═══ WHATSAPP BUTTON FIX & UPGRADE ══════════════════════ */
+/* Remove the !important override that kills the gradient */
+.wa {
+  background: linear-gradient(135deg, #25d366, #18a957) !important;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.38) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  animation: wa-pulse 2.8s ease-in-out infinite !important;
+}
+.wa:hover {
+  transform: scale(1.07) !important;
+  box-shadow: 0 12px 38px rgba(37, 211, 102, 0.55) !important;
+  animation: none !important;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 8px 28px rgba(37,211,102,0.38); }
+  50%       { box-shadow: 0 8px 44px rgba(37,211,102,0.62); }
+  }
+
+
+
+
+
+
+/* ═══ PREMIUM CARD HOVER — depth + glow ════════════════ */
+.panel, .story, .review, .contact-card, .faq-item, .review-card {
+  transition:
+    transform 0.28s cubic-bezier(.25,.8,.25,1.2),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+  will-change: transform;
+}
+.panel:hover, .story:hover, .review:hover,
+.contact-card:hover, .faq-item:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.42),
+    0 0 0 1px rgba(255,214,106,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+  border-color: rgba(255, 214, 106, 0.22) !important;
+  background: rgba(255,255,255,0.11) !important;
+      }
+
+
+
+
+
+
+
+/* ═══ ACCESSIBILITY — PREMIUM FOCUS RINGS ════════════════ */
+:focus-visible {
+  outline: 2px solid #ffd66a;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #ffd66a;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(255, 214, 106, 0.18);
+}
+
+
+
+
+
+
+
+/* ═══ HERO SECTION — DEEPER AURA ════════════════════════ */
+.hero {
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(255,214,106,0.10),
+    inset 0 0 120px rgba(255,214,106,0.04);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 60%; height: 120px;
+  background: radial-gradient(ellipse, rgba(255,214,106,0.14), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(30px);
+}
+
+/* Profile shell — glowing gold ring */
+.profile-shell {
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.45),
+    0 0 0 2px rgba(255,214,106,0.20),
+    0 0 60px rgba(255,214,106,0.08);
+  transition: box-shadow 0.4s ease;
+}
+.profile-shell:hover {
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.50),
+    0 0 0 2px rgba(255,214,106,0.40),
+    0 0 80px rgba(255,214,106,0.15);
+}
+
+
+
+
+/* ═══ NAV — PREMIUM GLASS + GOLD TOP BORDER ═════════════ */
+.nav {
+  z-index: 120 !important; /* fix the double z-index bug */
+  border-top: 1px solid rgba(255, 214, 106, 0.22) !important;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.46),
+    0 1px 0 rgba(255,214,106,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+
+
+
+
+
+
+/* ═══ TRUST TICKER — SMOOTH INFINITE SCROLL ═════════════ */
+.trust-track {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+/* Fade edges of trust bar */
+.trust-sticky {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%, black 8%, black 92%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%, black 8%, black 92%, transparent 100%
+  );
+  }
+
+
+
+
+
+/* ═══ SCROLL PROGRESS INDICATOR ══════════════════════════ */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: calc(var(--scroll-progress, 0) * 100%);
+  background: linear-gradient(90deg, #ffd66a, #ff7db0, #67d0ff);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
