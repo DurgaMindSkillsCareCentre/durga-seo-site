@@ -9324,84 +9324,40 @@ p, .review p, .panel p,
    ============================================================ */
 
 /* 1. Force the buttons to the viewport – override any inherited transform */
-html body .wa,
-html body .social-btn {
+
+
+
+/* ═══ FINAL FIX: Isolate Floating Buttons ═══ */
+.wa, 
+.social-btn {
   position: fixed !important;
-  bottom: 16px !important;          /* use 18px if you prefer a tiny gap */
-  z-index: 9999 !important;
-  transform: none !important;       /* kill any transform from animations */
-  animation: none !important;       /* kill any scroll‑driven animation */
-  will-change: auto !important;     /* prevent GPU layerisation */
+  bottom: 20px !important;
+  z-index: 99999 !important;
+  
+  /* This kills the scroll-animation inheritance */
+  animation: none !important;
+  animation-timeline: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-html body .wa {
-  right: 20px !important;
+.wa {
+  right: 12px !important;
   left: auto !important;
-  background: linear-gradient(135deg, #f0c45a, #d18e2c) !important;
-  color: #fff !important;
-  padding: 8px 20px !important;
-  border-radius: 24px !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
 }
 
-html body .social-btn {
-  left: 20px !important;
+.social-btn {
+  left: 12px !important;
   right: auto !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  padding: 8px 0 !important;
-  border-radius: 0 !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  background: none !important;
-  color: #b08c4c !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
 }
 
-/* 2. Ensure the transparent dock bar is also fixed at the bottom */
-html body::after {
-  content: "" !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 56px !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  backdrop-filter: blur(4px) !important;
-  -webkit-backdrop-filter: blur(4px) !important;
-  border: none !important;
-  box-shadow: none !important;
-  z-index: 100 !important;
-  pointer-events: none !important;
+/* Ensure they don't hide when the footer reveals */
+.reveal.wa, 
+.reveal.social-btn {
+  opacity: 1 !important;
+  transform: none !important;
 }
-
-/* 3. Centre profile watermark */
-html body::before {
-  content: "" !important;
-  position: fixed !important;
-  bottom: 12px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 36px !important;
-  height: 36px !important;
-  background-image: url('profile.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  border-radius: 50% !important;
-  opacity: 0.38 !important;
-  z-index: 101 !important;
-  pointer-events: none !important;
-}
-
-/* 4. Give the body enough padding so content doesn’t hide behind dock */
-html body {
-  padding-bottom: 72px !important;
-  }
-
 
 
 
