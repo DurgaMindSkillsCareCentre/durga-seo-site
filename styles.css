@@ -9328,13 +9328,15 @@ p, .review p, .panel p,
 
 
 /* ═══ FINAL FIX: Isolate Floating Buttons ═══ */
+
+/* ═══ FINAL BUTTON FIX ═══ */
 .wa, 
 .social-btn {
   position: fixed !important;
   bottom: 20px !important;
-  z-index: 99999 !important;
+  z-index: 999999 !important;
   
-  /* This kills the scroll-animation inheritance */
+  /* Kill all scroll-driven animation logic */
   animation: none !important;
   animation-timeline: none !important;
   transform: none !important;
@@ -9352,12 +9354,6 @@ p, .review p, .panel p,
   right: auto !important;
 }
 
-/* Ensure they don't hide when the footer reveals */
-.reveal.wa, 
-.reveal.social-btn {
-  opacity: 1 !important;
-  transform: none !important;
-}
 
 
 
