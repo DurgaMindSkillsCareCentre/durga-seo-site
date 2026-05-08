@@ -8379,3 +8379,38 @@ input[type="radio"] {
   background: linear-gradient(180deg, #fff2bf, #ffd66a);
 }
 * { scrollbar-width: thin; scrollbar-color: #ffd66a #060710; }
+
+
+
+
+
+
+
+/* ═══ PREMIUM TYPOGRAPHY POLISH ══════════════════════════ */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Use Playfair consistently for all headings */
+h1, h2, h3, h4,
+.hero h2, .panel h3, .section-title,
+.page-hero h2, .story h4, .faq-item summary {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* Body text — tighter, more readable */
+.hero p, .panel p, .story .bottom p, .review p, .focus-list li {
+  letter-spacing: 0.012em;
+  line-height: 1.72;
+}
+
+/* Gold headings — richer shimmer */
+.hero h2, .page-hero h2, .panel h3, .section-title {
+  text-shadow: 0 0 40px rgba(255, 214, 106, 0.18);
+}
+
+
