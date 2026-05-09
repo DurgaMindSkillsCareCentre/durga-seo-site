@@ -9941,3 +9941,69 @@ p, li {
 
 
   
+/* ═══ @property SPINNING BORDER — Houdini CSS ═══════════ */
+@property --spin-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.panel:hover,
+.review-card:hover,
+.faq-item[open] {
+  border: 1.5px solid transparent !important;
+  background:
+    linear-gradient(rgba(16,22,43,0.97), rgba(16,22,43,0.97)) padding-box,
+    conic-gradient(
+      from var(--spin-angle),
+      #ffd66a 0%,
+      #ff7db0 25%,
+      #67d0ff 50%,
+      #9333ea 75%,
+      #ffd66a 100%
+    ) border-box !important;
+  --spin-angle: 0deg;
+  animation: spinCardBorder 3s linear infinite;
+}
+
+@keyframes spinCardBorder {
+  to { --spin-angle: 360deg; }
+}
+
+
+
+
+
+/* ═══ WAVE SECTION DIVIDERS ═════════════════════════════ */
+.hero {
+  position: relative;
+}
+
+/* Gold wave at bottom of hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath fill='%23060710' d='M0,25 C360,50 720,0 1080,25 C1260,37 1380,18 1440,25 L1440,50 L0,50 Z'/%3E%3C/svg%3E")
+    no-repeat center bottom;
+  background-size: cover;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Gold wave top of AI strip */
+.ai-strip {
+  position: relative;
+}
+.ai-strip::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40'%3E%3Cpath fill='%23060710' d='M0,20 C480,40 960,0 1440,20 L1440,0 L0,0 Z'/%3E%3C/svg%3E")
+    no-repeat center top;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 2;
+}
