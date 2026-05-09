@@ -9873,10 +9873,10 @@ body {
    Uses ::after (::before is already the pulse ring). 
    Zero JS. Pure CSS. A premium micro-detail.
 ─────────────────────────────────────────────────────────────── */
-.wa {
+/*.wa {
   position: fixed !important; /* safety anchor */
-}
-.wa::after {
+/* }
+/*.wa::after {
   content: 'Chat — Free & Confidential';
   position: absolute;
   bottom: calc(100% + 10px);
@@ -9983,7 +9983,7 @@ body {
    main booking panel (.panel.lead) and AI strip.
    Technique used by: Vercel, Raycast, Resend.
 ─────────────────────────────────────────────────────────────── */
-@keyframes borderRotate {
+/*@keyframes borderRotate {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -10035,7 +10035,7 @@ body {
    });
    </script>
 ─────────────────────────────────────────────────────────────── */
-img[loading="lazy"] {
+/*img[loading="lazy"] {
   transition: filter 0.5s ease;
 }
 img[loading="lazy"].loaded {
@@ -10066,7 +10066,7 @@ img[loading="lazy"].loaded {
    clean white background, black text, no fixed buttons,
    phone numbers large and bold. Professional standard.
 ─────────────────────────────────────────────────────────────── */
-@media print {
+/*@media print {
   .wa, .social-btn, .back-top,
   .trust-sticky, .nav, .car-prev,
   .car-next, .car-dots, .ai-strip,
@@ -10106,7 +10106,7 @@ img[loading="lazy"].loaded {
    Users with motion sensitivity (vertigo, epilepsy) are
    protected. Always keep this block at the very end.
 ─────────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
+/*@media (prefers-reduced-motion: reduce) {
   body              { animation: none !important; }
   .hero > *,
   .hero-inner > *   { animation: none !important; opacity: 1 !important; transform: none !important; }
