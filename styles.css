@@ -9709,7 +9709,7 @@ body::before {
   background-size: 180px 180px;
   mix-blend-mode: overlay;
   /* Never interferes with clicks or fixed elements */
-  will-change: auto;
+/*  will-change: auto;
   animation: none !important;
   transform: none !important;
 }
