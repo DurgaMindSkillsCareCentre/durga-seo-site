@@ -9711,7 +9711,7 @@ body::after {
    Thicker blur, gold bottom border on scroll.
    The sticky nav used by Wix Studio, Webflow, Framer sites.
 ─────────────────────────────────────────────────────────────── */
-.nav {
+/* .nav {
   backdrop-filter: blur(22px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
   background: rgba(10, 14, 26, 0.82) !important;
