@@ -10014,13 +10014,7 @@ body {
    dark color instead of white. Tiny detail — huge polish.
    iOS Safari + Android Chrome both support this.
 ─────────────────────────────────────────────────────────────── */
-html {
-  background: #0a0e1a;
-  overscroll-behavior: none;
-}
-body {
-  overscroll-behavior-y: contain;
-}
+
 
 
 /* ── BLOCK 8: IMAGE BLUR-UP LOADING EFFECT ──────────────────
