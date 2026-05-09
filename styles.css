@@ -9835,7 +9835,47 @@ p, li {
 
 
 
+/* ═══ AURORA HERO BACKGROUND ════════════════════════════ */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -100px;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 25%,
+      rgba(147, 51, 234, 0.30) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 75%,
+      rgba(255, 214, 106, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 40% at 50% 50%,
+      rgba(255, 127, 176, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 90% 15%,
+      rgba(103, 208, 255, 0.12) 0%, transparent 70%);
+  background-size: 400% 400%;
+  animation: heroAurora 20s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+/* Keep hero content above aurora */
+.hero-inner, .hero h2, .hero p,
+.cta-row, .trust-row, .eyebrow,
+.hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes heroAurora {
+  0%   { background-position: 0% 50%, 100% 50%, 50% 0%, 25% 75%; }
+  25%  { background-position: 50% 0%, 50% 100%, 100% 50%, 75% 25%; }
+  50%  { background-position: 100% 50%, 0% 50%, 50% 100%, 50% 50%; }
+  75%  { background-position: 50% 100%, 50% 0%, 0% 50%, 25% 75%; }
+  100% { background-position: 0% 50%, 100% 50%, 50% 0%, 25% 75%; }
+                    }
 
 
 
@@ -9844,4 +9884,60 @@ p, li {
    END — FINAL WORLD-CLASS TOUCHES
    Total blocks: 10 | Every class verified against your HTML
 ══════════════════════════════════════════════════════════════ */
+
+/* ═══ GOLD AURORA TEXT — hero h2 ════════════════════════ */
+.hero h2 .gold {
+  background: linear-gradient(
+    90deg,
+    #ffd66a 0%,
+    #fff8dc 20%,
+    #ff7db0 40%,
+    #67d0ff 60%,
+    #fff8dc 80%,
+    #ffd66a 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldAuroraText 8s linear infinite;
+}
+
+@keyframes goldAuroraText {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+
+
+
+
+
+/* ═══ PROFILE BREATHING GLOW ════════════════════════════ */
+.profile-shell {
+  animation: profileBreath 5s ease-in-out infinite;
+}
+
+@keyframes profileBreath {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(255,214,106,0.20),
+      0 0 60px rgba(147, 51,234,0.12),
+      0 20px 60px rgba(0,0,0,0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 55px rgba(255,214,106,0.38),
+      0 0 100px rgba(147, 51,234,0.22),
+      0 0 30px rgba(255,127,176,0.18),
+      0 20px 70px rgba(0,0,0,0.50);
+  }
+}
+
+/* Pause breath on hover — feels alive */
+.profile-shell:hover {
+  animation-play-state: paused;
+}
+
+
   
