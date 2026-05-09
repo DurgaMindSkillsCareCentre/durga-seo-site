@@ -9587,7 +9587,7 @@ body::before {
    The hero h1 and section-title get a slow gold shimmer.
    No JS. Pure CSS. Signature move on luxury health sites.
 ─────────────────────────────────────────────────────────────── */
-/* .hero h1,
+ .hero h1,
 .hero-title {
   background: linear-gradient(
     270deg,
@@ -9794,7 +9794,7 @@ body::before {
    Professional letter-spacing and reading rhythm.
    Used by every medical / luxury brand globally.
 ─────────────────────────────────────────────────────────────── */
-h1, h2, h3 {
+/* h1, h2, h3 {
   font-optical-sizing: auto;
   letter-spacing: -0.02em;
   line-height: 1.2;
