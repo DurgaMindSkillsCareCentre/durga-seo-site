@@ -9587,7 +9587,7 @@ body::before {
    The hero h1 and section-title get a slow gold shimmer.
    No JS. Pure CSS. Signature move on luxury health sites.
 ─────────────────────────────────────────────────────────────── */
-.hero h1,
+/* .hero h1,
 .hero-title {
   background: linear-gradient(
     270deg,
