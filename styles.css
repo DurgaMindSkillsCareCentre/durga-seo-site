@@ -9941,6 +9941,25 @@ p, li {
         }
 
 
+/* Teardrop particle — award-winning mental health shape */
+.particle {
+  width: 6px;
+  height: 9px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: rgba(240, 196, 90, 0.35);
+  box-shadow:
+    0 0 6px  rgba(240, 196, 90, 0.3),
+    0 0 12px rgba(240, 196, 90, 0.12);
+}
+
+@keyframes floatParticle {
+  0%   { transform: rotate(-45deg) translateY(0)     scale(1);   opacity: 0.12; }
+  50%  { transform: rotate(-45deg) translateY(-40px) scale(1.3); opacity: 0.45; }
+  100% { transform: rotate(-45deg) translateY(0)     scale(1);   opacity: 0.12; }
+}
+
+
 /* ═══ GOLD AURORA TEXT — hero h2 ════════════════════════ */
 .hero h2 .gold {
   background: linear-gradient(
