@@ -9605,7 +9605,7 @@ body::before {
    Dark navy track + gold thumb. Thin, elegant, modern.
    Standard on every CSS Design Awards winner.
 ─────────────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
