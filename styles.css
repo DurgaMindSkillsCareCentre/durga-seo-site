@@ -9903,7 +9903,26 @@ p, li {
   transform: none !important;
 }
 
+/* ── FIX 1: PARTICLE (Firefly) CSS — was completely missing ── */
+.particle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(240, 196, 90, 0.85);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatParticle 6s ease-in-out infinite;
+  box-shadow:
+    0 0 8px  rgba(240, 196, 90, 0.7),
+    0 0 18px rgba(240, 196, 90, 0.3);
+}
 
+@keyframes floatParticle {
+  0%   { transform: translateY(0)    scale(1);   opacity: 0.3; }
+  50%  { transform: translateY(-40px) scale(1.4); opacity: 0.9; }
+  100% { transform: translateY(0)    scale(1);   opacity: 0.3; }
+      }
 
 /* ═══ GOLD AURORA TEXT — hero h2 ════════════════════════ */
 .hero h2 .gold {
