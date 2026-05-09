@@ -9544,7 +9544,7 @@ body::before {
    look glued to screen edges. Awwwards winners use 16–20px.
    This gives every card a floating, premium feel on mobile.
 ─────────────────────────────────────────────────────────────── */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .wrap {
     width: calc(100% - 32px) !important;
     margin: 0 auto !important;
