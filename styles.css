@@ -9422,4 +9422,8 @@ body::before {
 
 
 
-
+/* Remove content-visibility from footer — causes stacking context */
+.footer {
+  content-visibility: visible !important;
+  contain-intrinsic-size: none !important;
+}
