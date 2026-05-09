@@ -9552,7 +9552,7 @@ body::before {
    as user scrolls. Seen on every Awwwards SOTD winner.
    Uses width (not transform) — 100% safe for position:fixed.
 ─────────────────────────────────────────────────────────────── */
-@supports (animation-timeline: scroll()) {
+/* @supports (animation-timeline: scroll()) {
   .trust-sticky::after {
     content: '';
     position: fixed;
