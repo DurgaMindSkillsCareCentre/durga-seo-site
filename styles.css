@@ -9427,3 +9427,95 @@ body::before {
   content-visibility: visible !important;
   contain-intrinsic-size: none !important;
 }
+
+
+
+
+/* ══════════════════════════════════════════════════════════════
+   ULTIMATE FIX — paste at the very bottom of styles.css
+   
+   ROOT CAUSE (line ~7930 in your CSS):
+   ─────────────────────────────────────
+   .section-grid .panel,
+   .reviews-grid .review-card,
+   .section-grid .media-card {
+     animation: fadeUp ... both;
+     animation-timeline: view();   ← THIS LINE
+     animation-range: entry ...;
+   }
+
+   "fadeUp" uses  transform: translateY(20px).
+   animation-timeline: view() + transform = Chromium creates
+   a GPU compositing layer for those cards.
+   On Android Chrome, that layer breaks position:fixed
+   for EVERY element on the page — including .wa and .social-btn.
+   
+   All your previous fixes targeted .wa and .social-btn correctly
+   but the poison was upstream in the card animation.
+   This block kills it.
+══════════════════════════════════════════════════════════════ */
+
+
+/* ── THE ONE FIX ───────────────────────────────────────────── */
+.section-grid .panel,
+.reviews-grid .review-card,
+.section-grid .media-card {
+  animation: none !important;
+  animation-timeline: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+/* ─────────────────────────────────────────────────────────── */
+
+
+/* ── ALSO CANCEL the @supports .reveal animation ───────────
+   Prevents the same issue from the second animation-timeline
+   block (line ~9325). Falls back to JS IntersectionObserver
+   which already adds class "visible" via your script.js.
+─────────────────────────────────────────────────────────────── */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: none !important;
+    animation-timeline: auto !important;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+/* ── LOCK .wa and .social-btn as final word ─────────────────
+   Now that the root cause is gone, these will hold perfectly.
+─────────────────────────────────────────────────────────────── */
+.wa {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 12px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.social-btn {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 12px !important;
+  right: auto !important;
+  top: auto !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   END OF ULTIMATE FIX
+══════════════════════════════════════════════════════════════ */
+  
