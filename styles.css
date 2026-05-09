@@ -9885,6 +9885,26 @@ p, li {
    Total blocks: 10 | Every class verified against your HTML
 ══════════════════════════════════════════════════════════════ */
 
+/* ── BLOCK 7 REPLACEMENT: Film grain using canvas-layer div
+   Does NOT use body::after so golden drift is preserved.
+─────────────────────────────────────────────────────────── */
+.wrap::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  will-change: auto;
+  animation: none !important;
+  transform: none !important;
+}
+
+
+
 /* ═══ GOLD AURORA TEXT — hero h2 ════════════════════════ */
 .hero h2 .gold {
   background: linear-gradient(
