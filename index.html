@@ -622,102 +622,14 @@ Online appointments can be scheduled easily for both local and international cli
 
 </section>
 
-  <script>
-const carousel = document.querySelector('.seo-carousel');
 
-setInterval(() => {
-  carousel.scrollBy({
-    left: 250,
-    behavior: 'smooth'
-  });
 
-  // loop back
-  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-  }
-}, 3000);
-  </script>
-<script>
-if (location.hostname.includes("pages.dev") && location.protocol !== "https:") {
-  location.replace("https://" + location.hostname + location.pathname);
-}
-</script>
   <!-- your carousel section ends -->
 
 <!-- ADD HERE 👇 -->
 
   
 
-<script>
-function setLanguage(lang) {
-  if (lang === 'ta') {
-    window.location.href = "index-ta.html";
-  } else {
-    window.location.href = "index.html";
-  }
-}
-</script>
-
-
-<script>
-const depthObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wrap, .ws-card.featured').forEach(el => depthObserver.observe(el));
-                                                                                                               </script>
-
-    
-  <script>
-(function() {
-  const body = document.querySelector('body');
-  const particleCount = 20;  // how many fireflies
-  const container = document.createDocumentFragment();
-
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    // random starting position and animation delay to avoid synchrony
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top  = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 6 + 's';
-    container.appendChild(particle);
-  }
-  body.appendChild(container);
-})();
-</script>
-
-
-    <script>
-(function() {
-  // Add .card-spotlight to every card you want the hover glow on
-  const cards = document.querySelectorAll('.card-spotlight');
-  if (!cards.length) {
-    // Auto‑attach to panels and review cards if no manual classes
-    document.querySelectorAll('.panel, .review-card').forEach(c => c.classList.add('card-spotlight'));
-  }
-  document.addEventListener('mousemove', function(e) {
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', x + 'px');
-      card.style.setProperty('--mouse-y', y + 'px');
-    });
-  });
-})();
-    </script>
-
-
-<!-- SCROLL PROGRESS BAR -->
-<script>
-window.addEventListener('scroll', function() {
-  var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  document.body.style.setProperty('--scroll-progress', pct);
-});
-</script>
     
 
     
@@ -768,7 +680,76 @@ document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wra
   body.appendChild(container);
 })();
 </script>
+    
+<!-- ALL SCRIPTS — clean single block -->
+<script>
+// SEO Carousel auto-scroll
+const carousel = document.querySelector('.seo-carousel');
+if (carousel) {
+  setInterval(() => {
+    carousel.scrollBy({ left: 250, behavior: 'smooth' });
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, 3000);
+}
 
+// Language toggle
+function setLanguage(lang) {
+  window.location.href = lang === 'ta' ? 'index-ta.html' : 'index.html';
+}
+
+// WhatsApp Send
+document.getElementById('qi-send').addEventListener('click', function(e) {
+  e.preventDefault();
+  const n = document.getElementById('qi-name').value.trim() || 'Visitor';
+  const p = document.getElementById('qi-phone').value.trim();
+  const m = document.getElementById('qi-msg').value.trim() || 'I would like to book an appointment.';
+  const t = `Hello D. Durga 🙏\n\nName: ${n}\nPhone: ${p}\n\nMessage: ${m}\n\n(Sent from ddurga.dpdns.org)`;
+  window.open('https://wa.me/917395944527?text=' + encodeURIComponent(t), '_blank');
+});
+
+// Animation observer — declared ONCE
+const depthObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.profile-img,.car-slide img,.cardimg,.yt-embed-wrap,.ws-card.featured')
+  .forEach(el => depthObserver.observe(el));
+
+// Card spotlight
+const cards = document.querySelectorAll('.panel, .review-card');
+document.addEventListener('mousemove', function(e) {
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+  });
+});
+
+// Scroll progress bar
+window.addEventListener('scroll', function() {
+  var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  document.body.style.setProperty('--scroll-progress', pct);
+});
+
+// Firefly particles — declared ONCE (20 particles)
+(function() {
+  const container = document.createDocumentFragment();
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top  = Math.random() * 100 + '%';
+    p.style.animationDelay = Math.random() * 6 + 's';
+    container.appendChild(p);
+  }
+  document.body.appendChild(container);
+})();
+</script>
+
+    
 </body>
 </html>
 
