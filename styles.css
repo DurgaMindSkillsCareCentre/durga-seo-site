@@ -9924,6 +9924,23 @@ p, li {
   100% { transform: translateY(0)    scale(1);   opacity: 0.3; }
       }
 
+
+
+/* Softer premium particle — reduced opacity */
+.particle {
+  background: rgba(240, 196, 90, 0.35);
+  box-shadow:
+    0 0 6px  rgba(240, 196, 90, 0.3),
+    0 0 12px rgba(240, 196, 90, 0.12);
+}
+
+@keyframes floatParticle {
+  0%   { transform: translateY(0)     scale(1);   opacity: 0.12; }
+  50%  { transform: translateY(-40px) scale(1.4); opacity: 0.45; }
+  100% { transform: translateY(0)     scale(1);   opacity: 0.12; }
+        }
+
+
 /* ═══ GOLD AURORA TEXT — hero h2 ════════════════════════ */
 .hero h2 .gold {
   background: linear-gradient(
