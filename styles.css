@@ -9959,7 +9959,7 @@ body {
    Progressive enhancement — ignored on browsers that
    don't support it. Zero risk.
 ─────────────────────────────────────────────────────────────── */
-@view-transition {
+/*@view-transition {
   navigation: auto;
 }
 ::view-transition-old(root) {
