@@ -10298,3 +10298,116 @@ p, li {
   align-items: center;
   justify-content: center;
   }
+
+
+
+
+/* ═══ iOS PWA INSTALL BANNER ════════════════════════════ */
+.ios-install-banner {
+  display: none; /* shown by JS only on iPhone */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  padding: 0 0 8px 0;
+  animation: slideUpBanner 0.4s ease;
+}
+
+@keyframes slideUpBanner {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.ios-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 22, 43, 0.97),
+    rgba(36, 17, 55, 0.97)
+  );
+  border: 1px solid rgba(255, 214, 106, 0.30);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding: 16px 14px;
+  box-shadow:
+    0 -8px 40px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,214,106,0.10);
+  backdrop-filter: blur(20px);
+}
+
+.ios-banner-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(255,214,106,0.4);
+  flex-shrink: 0;
+}
+
+.ios-banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ios-banner-text strong {
+  color: #ffd66a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ios-banner-text span {
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ios-banner-text b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ios-banner-close {
+  background: rgba(255,255,255,0.10);
+  border: none;
+  color: rgba(255,255,255,0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ios-banner-close:hover {
+  background: rgba(255,255,255,0.20);
+  color: #fff;
+}
+
+/* Arrow pointing down to Safari share button */
+.ios-banner-arrow {
+  text-align: center;
+  color: #ffd66a;
+  font-size: 18px;
+  line-height: 1;
+  animation: arrowBounce 1.2s ease-in-out infinite;
+  padding-bottom: 4px;
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+
+/* Don't show on Android or desktop */
+@media (hover: hover) {
+  .ios-install-banner { display: none !important; }
+}
