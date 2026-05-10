@@ -10411,3 +10411,69 @@ p, li {
 @media (hover: hover) {
   .ios-install-banner { display: none !important; }
 }
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   PWA FLOATING INSTALL BUTTON
+   Position: Left side, above Social button
+   Label: "📲 Add to Phone" — clear for all patients
+   ═══════════════════════════════════════════════════════════ */
+
+.pwa-fab {
+  position: fixed;
+  left: 12px;
+  right: auto;
+  bottom: 80px;           /* sits above .social-btn at bottom:20px */
+  z-index: 9998;
+  display: none;          /* shown by JS only when install available */
+
+  /* pill shape — not just icon, has readable label */
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  /* gold gradient — matches site theme */
+  background: linear-gradient(135deg, #ffd66a, #ff7db0);
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+
+  box-shadow: 0 6px 20px rgba(255, 214, 106, 0.45);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  animation: pwaFabPulse 3s ease-in-out infinite;
+}
+
+/* Show as flex when JS sets display */
+.pwa-fab[style*="flex"],
+.pwa-fab.visible {
+  display: inline-flex !important;
+}
+
+.pwa-fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 214, 106, 0.65);
+  animation: none;
+}
+
+.pwa-fab:active {
+  transform: scale(0.96);
+}
+
+@keyframes pwaFabPulse {
+  0%, 100% { box-shadow: 0 6px 20px rgba(255,214,106,0.45); }
+  50%       { box-shadow: 0 6px 32px rgba(255,214,106,0.72); }
+}
+
+/* ── FINAL LAYOUT ON SCREEN ─────────────────────────────────
+   LEFT SIDE              RIGHT SIDE
+   [📲 Add to Phone]      [💬 AI Bot]
+   [🌐 Social]            [WhatsApp]
+   ─────────────────────────────────────────────────────────── */
+  
