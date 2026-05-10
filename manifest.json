@@ -1,0 +1,13 @@
+{
+  "name": "Durga Psychiatric Centre",
+  "short_name": "DPC Chennai",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#ffd66a",
+  "icons": [{
+    "src": "/profile.jpg",
+    "sizes": "192x192",
+    "type": "image/jpeg"
+  }]
+}
