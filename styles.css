@@ -10477,3 +10477,37 @@ p, li {
    [🌐 Social]            [WhatsApp]
    ─────────────────────────────────────────────────────────── */
   
+.pwa-fab {
+  position: fixed !important;
+  left: 12px !important;
+  right: auto !important;
+  bottom: 80px !important;    /* above Social button */
+  z-index: 9998;
+  display: none;              /* JS will show it */
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffd66a, #ff7db0);
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: inherit;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(255,214,106,0.45);
+  transition: transform 0.2s ease;
+  animation: pwaFabPulse 3s ease-in-out infinite;
+}
+@keyframes pwaFabPulse {
+  0%,100% { box-shadow: 0 6px 20px rgba(255,214,106,0.45); }
+  50%      { box-shadow: 0 6px 32px rgba(255,214,106,0.72); }
+}
+.pwa-fab:hover {
+  transform: scale(1.08);
+  animation: none;
+}
+
+
+
