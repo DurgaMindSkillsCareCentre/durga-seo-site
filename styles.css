@@ -10513,29 +10513,23 @@ p, li {
 
   
 
-
-/* ============================================================
-   LEFT FLOATING INSTALL BUTTON (always visible, like Chat AI)
-   ============================================================ */
-.float-install-btn {
+/* Always‑visible install pill – gold, small, top‑left */
+.install-pill {
   position: fixed !important;
-  top: 68px !important;            /* just below the trust-sticky bar */
-  left: 10px !important;
-  z-index: 10000 !important;       /* above content, below menu */
+  top: 10px !important;
+  left: 70px !important;          /* to the right of the language toggle */
+  z-index: 1000000 !important;    /* above everything */
   display: inline-flex !important;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-size: 13px;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: 22px;
+  font-size: 12px;
   font-weight: 600;
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   color: #0e1a26;
   text-decoration: none;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  animation: none !important;
-  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   white-space: nowrap;
-  letter-spacing: 0.2px;
   pointer-events: auto !important;
   }
