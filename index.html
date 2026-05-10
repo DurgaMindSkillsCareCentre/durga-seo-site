@@ -832,6 +832,47 @@ window.addEventListener('appinstalled', () => {
   document.getElementById('pwa-banner').style.display = 'none';
 });
       </script>
+
+
+
+
+<!-- iOS PWA INSTALL GUIDE -->
+<div class="ios-install-banner" id="iosBanner">
+  <div class="ios-banner-content">
+    <img src="/profile.jpg" alt="Durga Mind" class="ios-banner-icon">
+    <div class="ios-banner-text">
+      <strong>Install Durga Mind App</strong>
+      <span>Tap <b>Share</b> then <b>"Add to Home Screen"</b></span>
+    </div>
+    <button class="ios-banner-close" onclick="
+      document.getElementById('iosBanner').style.display='none';
+      localStorage.setItem('iosBannerDismissed','1');
+    ">✕</button>
+  </div>
+  <!-- Arrow pointing to Safari share button -->
+  <div class="ios-banner-arrow">▼</div>
+</div>
+
+<script>
+// Show ONLY on iPhone/iPad Safari — not Android, not Chrome
+(function() {
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isSafari = /safari/i.test(navigator.userAgent) 
+                 && !/chrome/i.test(navigator.userAgent);
+  var isStandalone = window.navigator.standalone === true;
+  var dismissed = localStorage.getItem('iosBannerDismissed');
+
+  if (isIOS && isSafari && !isStandalone && !dismissed) {
+    // Show after 3 seconds
+    setTimeout(function() {
+      document.getElementById('iosBanner')
+              .style.display = 'block';
+    }, 3000);
+  }
+})();
+</script>
+    
+    
 </body>
 </html>
 
