@@ -734,7 +734,9 @@ window.addEventListener('scroll', function() {
 });
 </script>
     
-
+<button class="pwa-fab" id="pwa-install-btn">
+  📲 Get App
+</button>
     
 <a class="wa" href="https://wa.me/917395944527" target="_blank" rel="noopener">WhatsApp</a>
 <a href="social.html" class="social-btn">🌐 Social</a>
@@ -802,6 +804,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
+document.getElementById('pwa-install-btn').style.display = 'inline-flex';
+  
   // Show banner every visit until installed
   if (!localStorage.getItem('pwa-installed')) {
     document.getElementById('pwa-banner').style.display = 'flex';
