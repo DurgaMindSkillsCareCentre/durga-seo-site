@@ -771,6 +771,14 @@ document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wra
 })();
 </script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('PWA ready'))
+      .catch(e => console.log('SW error', e));
+  }
+</script>
+    
 </body>
 </html>
 
