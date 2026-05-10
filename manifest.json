@@ -2,7 +2,7 @@
   "name": "Durga Psychiatric Centre",
   "short_name": "DPC Chennai",
   "description": "Best Psychologist in Chennai",
-  "start_url": "/index.html",
+  "start_url": "/",
   "scope": "/",
   "id": "/",
   "display": "standalone",
