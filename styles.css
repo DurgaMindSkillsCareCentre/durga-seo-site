@@ -10511,3 +10511,24 @@ p, li {
 
 
 
+/* ═══ PWA GET APP BUTTON ═══ */
+.pwa-fab {
+  position: fixed !important;
+  left: 12px !important;
+  bottom: 70px !important; /* Positioned above the Social button */
+  display: none; /* Hidden by default, shown via JS if available */
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #2dd4bf);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  z-index: 999999 !important;
+  cursor: pointer;
+  animation: none !important;
+  }
+  
