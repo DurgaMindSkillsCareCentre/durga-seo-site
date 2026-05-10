@@ -186,7 +186,20 @@
 </head>
 <body>
 
-
+<!-- PWA Install Banner -->
+<div id="pwa-banner" style="display:none">
+  <div class="pwa-left">
+    <img src="/profile.jpg" alt="DPC">
+    <div>
+      <strong>Durga Psychiatric Centre</strong>
+      <span>Install our free app — works offline</span>
+    </div>
+  </div>
+  <div class="pwa-right">
+    <button id="pwa-install-btn">📲 Install</button>
+    <button id="pwa-close-btn">✕</button>
+  </div>
+  </div>
 
   
 
@@ -778,7 +791,47 @@ document.querySelectorAll('.profile-img, .car-slide img, .cardimg, .yt-embed-wra
       .catch(e => console.log('SW error', e));
   }
 </script>
-    
+
+
+
+    <script>
+let deferredPrompt;
+
+// Intercept Chrome install event
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show banner every visit until installed
+  if (!localStorage.getItem('pwa-installed')) {
+    document.getElementById('pwa-banner').style.display = 'flex';
+  }
+});
+
+// Install button clicked
+document.getElementById('pwa-install-btn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const result = await deferredPrompt.userChoice;
+  if (result.outcome === 'accepted') {
+    localStorage.setItem('pwa-installed', 'true');
+    document.getElementById('pwa-banner').style.display = 'none';
+  }
+  deferredPrompt = null;
+});
+
+// Close button — hides for this session only
+// Shows again next visit until installed
+document.getElementById('pwa-close-btn').addEventListener('click', () => {
+  document.getElementById('pwa-banner').style.display = 'none';
+});
+
+// After install — hide permanently
+window.addEventListener('appinstalled', () => {
+  localStorage.setItem('pwa-installed', 'true');
+  document.getElementById('pwa-banner').style.display = 'none';
+});
+      </script>
 </body>
 </html>
 
