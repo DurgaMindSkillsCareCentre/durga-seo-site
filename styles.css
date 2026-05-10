@@ -10513,27 +10513,29 @@ p, li {
 
   
 
+
 /* ============================================================
-   SLEEK LEFT FLOATING INSTALL BUTTON
+   LEFT FLOATING INSTALL BUTTON (always visible, like Chat AI)
    ============================================================ */
-.float-install {
+.float-install-btn {
   position: fixed !important;
+  top: 68px !important;            /* just below the trust-sticky bar */
   left: 10px !important;
-  bottom: 120px !important;        /* well above the footer dock */
-  z-index: 998 !important;
+  z-index: 10000 !important;       /* above content, below menu */
   display: inline-flex !important;
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
   border-radius: 24px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   color: #0e1a26;
   text-decoration: none;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   animation: none !important;
   transform: none !important;
   white-space: nowrap;
   letter-spacing: 0.2px;
+  pointer-events: auto !important;
   }
