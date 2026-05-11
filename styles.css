@@ -10538,3 +10538,19 @@ p, li {
   gap: 5px;
   white-space: nowrap;
 }
+
+
+
+/* ── FIX: Stop fixed buttons cutting bottom carousel ── */
+@media (max-width: 700px) {
+  .wrap {
+    padding-bottom: 150px !important;
+  }
+           }
+
+
+
+.install-fab {
+  bottom: 80px; /* changed from 88px */
+}
+
