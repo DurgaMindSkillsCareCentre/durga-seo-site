@@ -10517,21 +10517,27 @@ p, li {
    UNBREAKABLE LEFT FLOATING INSTALL BUTTON
    ============================================================ */
 /* Simple gold pill – same engine as WhatsApp, left side */
-.install-pill {
-  position: fixed !important;
-  left: 12px !important;
-  bottom: 100px !important;          /* above the Social button */
-  z-index: 60 !important;
-  padding: 10px 14px !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, #f0c45a, #d18e2c) !important;
-  color: #0e1a26 !important;
-  text-decoration: none !important;
-  font-weight: 700 !important;
-  font-size: 13px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
-  display: inline-flex !important;
+
+
+
+.install-fab {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  margin-top: -20px;
+  z-index: 99999;
+  background: linear-gradient(135deg, #f0c45a, #d18e2c);
+  color: #0e1a26;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  display: flex;
   align-items: center;
-  gap: 6px;
-  white-space: nowrap !important;
+  gap: 5px;
+  white-space: nowrap;
+  border: none;
 }
+
