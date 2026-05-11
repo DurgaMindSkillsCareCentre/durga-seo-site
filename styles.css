@@ -10522,35 +10522,19 @@ p, li {
 
 .install-fab {
   position: fixed;
-  left: 10px;
-  bottom: 88px;
+  left: 12px;
+  bottom: 80px;
   z-index: 99999;
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   color: #0e1a26;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 5px;
-  white-space: nowrap;
-}
-
-
-
-/* ── FIX: Stop fixed buttons cutting bottom carousel ── */
-@media (max-width: 700px) {
-  .wrap {
-    padding-bottom: 150px !important;
-  }
-           }
-
-
-
-.install-fab {
-  bottom: 80px; /* changed from 88px */
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
