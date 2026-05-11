@@ -10518,8 +10518,6 @@ p, li {
    ============================================================ */
 /* Simple gold pill – same engine as WhatsApp, left side */
 
-
-
 .install-fab {
   position: fixed;
   left: 12px;
@@ -10527,14 +10525,24 @@ p, li {
   z-index: 99999;
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   color: #0e1a26;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  width: 42px;
+  height: 48px;
+  border-radius: 22px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 17px;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  gap: 1px;
 }
 
+.install-fab::after {
+  content: 'App';
+  font-size: 8px;
+  font-weight: 800;
+  color: #0e1a26;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.3px;
+}
