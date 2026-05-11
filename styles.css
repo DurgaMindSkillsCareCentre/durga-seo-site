@@ -10523,8 +10523,7 @@ p, li {
 .install-fab {
   position: fixed;
   left: 10px;
-  top: 50%;
-  margin-top: -20px;
+  bottom: 88px;
   z-index: 99999;
   background: linear-gradient(135deg, #f0c45a, #d18e2c);
   color: #0e1a26;
@@ -10538,6 +10537,4 @@ p, li {
   align-items: center;
   gap: 5px;
   white-space: nowrap;
-  border: none;
 }
-
