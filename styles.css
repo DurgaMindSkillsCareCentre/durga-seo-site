@@ -10558,46 +10558,40 @@ p, li {
    WORLD NO.1 FINAL POLISH — All 10 fixes
    ═══════════════════════════════════════════════════════ */
 
-/* 1. Dark scheme */
-:root { color-scheme: dark; }
+/* ═══════════════════════════════════════════════════════
+   WORLD NO.1 FINAL POLISH — 8 Safe Fixes
+   ═══════════════════════════════════════════════════════ */
 
-/* 2. No mobile bounce */
-html, body { overscroll-behavior: none; }
+/* 1. Dark scheme — no white flash on load */
+:root { color-scheme: dark; accent-color: #ffd66a; }
 
-/* 3. Gold text selection */
-::selection        { background: rgba(255,214,106,0.30); color:#fff; }
-::-moz-selection   { background: rgba(255,214,106,0.30); color:#fff; }
+/* 2. Gold text selection */
+::selection      { background: rgba(255,214,106,0.30); color: #fff; }
+::-moz-selection { background: rgba(255,214,106,0.30); color: #fff; }
 
-/* 4. No blue tap flash */
+/* 3. No blue tap flash on Android */
 * { -webkit-tap-highlight-color: transparent; }
 
-/* 5. Instant tap */
-a, button, .btn, .wa, .social-btn,
-.ws-card, .panel, .faq-item summary, .pwa-fab {
-  touch-action: manipulation;
-}
-
-/* 6. Anchor scroll clears sticky nav */
+/* 4. Anchor scroll clears sticky nav */
 html { scroll-padding-top: 70px; }
 
-/* 7. Gold form accent */
-:root { accent-color: #ffd66a; }
+/* 5. Gold form cursor and focus */
 input, textarea { caret-color: #ffd66a; }
 input:focus, textarea:focus {
   outline: 2px solid rgba(255,214,106,0.50);
   outline-offset: 2px;
 }
 
-/* 8. Premium link underlines */
+/* 6. Premium link underlines */
 a {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
 
-/* 9. Crisp images */
+/* 7. Balanced headings — no orphan words */
+h1, h2, h3, h4, .section-title { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* 8. Crisp images */
 img { image-rendering: -webkit-optimize-contrast; }
 .profile-img, .logo img { image-rendering: auto; }
-
-/* 10. text-wrap balance on all headings */
-h1,h2,h3,h4,.section-title,.hero h2 { text-wrap: balance; }
-p { text-wrap: pretty; }
