@@ -10595,3 +10595,26 @@ p { text-wrap: pretty; }
 /* 8. Crisp images */
 img { image-rendering: -webkit-optimize-contrast; }
 .profile-img, .logo img { image-rendering: auto; }
+
+
+
+
+
+/* ═══════════════════════════════════════════════════════
+   FINAL 3 — Truly last remaining world-class fixes
+   ═══════════════════════════════════════════════════════ */
+
+/* iPhone safe area for fixed buttons */
+.wa       { bottom: calc(20px + env(safe-area-inset-bottom)) !important; }
+.social-btn { bottom: calc(20px + env(safe-area-inset-bottom)) !important; }
+.pwa-fab  { bottom: calc(80px + env(safe-area-inset-bottom)) !important; }
+
+/* iOS text zoom prevention */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Luxury heading letter spacing */
+h1, h2, .hero h2, .page-hero h2 { letter-spacing: -0.02em; }
+h3, h4, .section-title           { letter-spacing: -0.01em; }
