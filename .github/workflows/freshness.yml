@@ -1,0 +1,28 @@
+name: Freshness Update
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update freshness file
+        run: |
+          echo "updated $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > site-freshness.txt
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add site-freshness.txt
+          git commit -m "Freshness update" || exit 0
+          git push
