@@ -463,37 +463,37 @@ body {
     </section>
 
 
-    <!-- ==============================
-🏆 FLAGSHIP KNOWLEDGE LIBRARY
-Insert ABOVE Featured Topics
-Uses your existing CSS (.section .tiles .tile .tile-body .open)
-============================== -->
+
+
+<!-- ========= PREMIUM KNOWLEDGE HEADER ========= -->
 
 <section class="section">
 
-<div style="text-align:center;margin-bottom:28px">
+<div style="text-align:center;margin-bottom:26px;">
 
-<div style="display:inline-block;padding:10px 26px;border-radius:40px;
+<div style="display:inline-flex;align-items:center;gap:10px;padding:10px 26px;
 background:rgba(255,215,90,.08);
 border:1px solid rgba(255,215,90,.30);
-color:#ffd95b;
+border-radius:40px;
 font-weight:700;
-letter-spacing:2px;">
+letter-spacing:2px;
+color:#ffd95b;">
 
 📚 KNOWLEDGE LIBRARY
 
 </div>
 
-<h2 style="font-size:clamp(2rem,5vw,3.3rem);
-margin:18px 0 10px;
+<h2 style="font-size:clamp(2rem,5vw,3.4rem);
+margin:18px 0 8px;
+font-weight:800;
 color:#ffd95b;">
 
 500+ Evidence-Based Articles
 
 </h2>
 
-<p style="max-width:850px;margin:auto;color:#d8e2ff;
-font-size:1.08rem;line-height:1.9">
+<p style="max-width:900px;margin:auto;color:#d8dff6;
+font-size:1.05rem;line-height:1.8">
 
 Mental Health • Psychology • Sexual Health • Family Well-being • Emotional Intelligence • Soft Skills • Tamil & English
 
@@ -501,221 +501,202 @@ Mental Health • Psychology • Sexual Health • Family Well-being • Emotion
 
 </div>
 
-<!-- TRUST BAR -->
+<!-- COMPACT AUTO TICKER -->
 
-<div style="display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:16px;
-margin:30px 0;">
+<div style="
+overflow:hidden;
+border-radius:50px;
+border:1px solid rgba(255,215,90,.22);
+margin:28px 0;
+background:rgba(255,255,255,.03);">
 
-<div class="glass">📚<br><strong>500+</strong><br>Articles</div>
+<div class="ticker">
 
-<div class="glass">👥<br><strong>1000+</strong><br>Clients</div>
+<a href="https://durgamindskillscarecentre.github.io/durga-tamil-hub/" target="_blank">
+🇮🇳 Tamil Hub
+</a>
 
-<div class="glass">🌍<br><strong>Tamil & English</strong></div>
+<a href="https://durgapsychiatriccentrechennai.wordpress.com/" target="_blank">
+🌐 WordPress
+</a>
 
-<div class="glass">🤖<br><strong>AI Powered</strong></div>
+<a href="https://durgapsychiatric.blogspot.com/p/durga-psychiatric-centre-resource_01609012793.html" target="_blank">
+📝 Blogger
+</a>
 
-</div>
+<a href="https://ddurga.streamlit.app/" target="_blank">
+🤖 AI Assessment
+</a>
 
-<!-- FEATURED HERO -->
+<a href="https://durgamindskillscarecentre.github.io/durga-tamil-hub/" target="_blank">
+🇮🇳 Tamil Hub
+</a>
 
-<div class="tile"
-style="margin-bottom:26px;
-position:relative;
-overflow:hidden;">
+<a href="https://durgapsychiatriccentrechennai.wordpress.com/" target="_blank">
+🌐 WordPress
+</a>
 
-<img src="profile.jpg"
-style="filter:brightness(.35);">
+<a href="https://durgapsychiatric.blogspot.com/p/durga-psychiatric-centre-resource_01609012793.html" target="_blank">
+📝 Blogger
+</a>
 
-<div style="position:absolute;inset:0;
-background:linear-gradient(180deg,
-rgba(0,30,60,.15),
-rgba(0,20,40,.55),
-rgba(3,8,22,.95));"></div>
-
-<div class="tile-body"
-style="position:relative;z-index:5;max-width:650px;">
-
-<div style="display:inline-block;
-padding:8px 18px;
-border-radius:30px;
-background:#00b37a;
-font-weight:700;
-margin-bottom:16px;">
-
-FREE AI TOOLS
-
-</div>
-
-<h2 style="font-size:2.5rem;color:#7dfcd1">
-
-🤖 AI Mental Health Assessment
-
-</h2>
-
-<p>
-
-Stress Screening • Anxiety Screening • Depression Screening
-
-<br><br>
-
-Evidence-Based AI Mental Wellness Assistant
-
-</p>
-
-<a class="open"
-href="https://ddurga.streamlit.app/"
-target="_blank">
-
-Start Free Assessment →
-
+<a href="https://ddurga.streamlit.app/" target="_blank">
+🤖 AI Assessment
 </a>
 
 </div>
 
 </div>
 
-<!-- KNOWLEDGE CARDS -->
+<style>
+
+.ticker{
+
+display:flex;
+
+gap:70px;
+
+padding:14px 0;
+
+white-space:nowrap;
+
+animation:ticker 20s linear infinite;
+
+}
+
+.ticker:hover{
+
+animation-play-state:paused;
+
+}
+
+.ticker a{
+
+color:#ffd95b;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+@keyframes ticker{
+
+from{transform:translateX(0)}
+
+to{transform:translateX(-50%)}
+
+}
+
+</style>
+
+<!-- FOUR MATCHING CARDS -->
 
 <div class="tiles">
 
-<a class="tile"
-href="https://durgamindskillscarecentre.github.io/durga-tamil-hub/"
-target="_blank">
+<!-- CARD -->
+
+<a class="tile" href="https://durgamindskillscarecentre.github.io/durga-tamil-hub/" target="_blank">
 
 <img src="profile.jpg"
-style="filter:brightness(.45);">
+style="filter:brightness(.40);object-position:center 22%;">
 
-<div style="position:absolute;inset:0;
-background:linear-gradient(180deg,
-rgba(0,0,0,.15),
-rgba(0,0,0,.45),
-rgba(7,18,40,.92));"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.72));"></div>
 
 <div class="tile-body">
 
-<div class="badgeGold">
+<div class="badge">🇮🇳 100+ Articles</div>
 
-100+ ARTICLES
-
-</div>
-
-<h3>
-
-🇮🇳 Tamil Knowledge Hub
-
-</h3>
+<h3>Tamil Knowledge Hub</h3>
 
 <p>
 
-Evidence-Based Tamil Articles
-
-<br>
-
-Mental Health • Psychology • Sexual Health • Parenting
+Evidence-based Tamil resources covering Mental Health, Psychology and Family Well-being.
 
 </p>
 
-<span class="open">
-
-Explore →
-
-</span>
+<span class="open">Explore →</span>
 
 </div>
 
 </a>
 
-<a class="tile"
-href="https://durgapsychiatriccentrechennai.wordpress.com/"
-target="_blank">
+<!-- CARD -->
+
+<a class="tile" href="https://durgapsychiatriccentrechennai.wordpress.com/" target="_blank">
 
 <img src="profile.jpg"
-style="filter:brightness(.45);">
+style="filter:brightness(.40);object-position:center 22%;">
 
-<div style="position:absolute;inset:0;
-background:linear-gradient(180deg,
-rgba(0,0,0,.15),
-rgba(0,0,0,.45),
-rgba(7,18,40,.92));"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.72));"></div>
 
 <div class="tile-body">
 
-<div class="badgeBlue">
+<div class="badge badgeBlue">🌐 200+ Articles</div>
 
-200+ ARTICLES
-
-</div>
-
-<h3>
-
-🌐 WordPress Knowledge Centre
-
-</h3>
+<h3>WordPress Knowledge Centre</h3>
 
 <p>
 
-Latest Evidence-Based Psychology,
-
-Relationships,
-
-Mental Wellness & AI
+Latest evidence-based articles on Psychology, Relationships and Mental Wellness.
 
 </p>
 
-<span class="open">
-
-Read →
-
-</span>
+<span class="open">Read →</span>
 
 </div>
 
 </a>
 
-<a class="tile"
-href="https://durgapsychiatric.blogspot.com/p/durga-psychiatric-centre-resource_01609012793.html"
-target="_blank">
+<!-- CARD -->
+
+<a class="tile" href="https://durgapsychiatric.blogspot.com/p/durga-psychiatric-centre-resource_01609012793.html" target="_blank">
 
 <img src="profile.jpg"
-style="filter:brightness(.45);">
+style="filter:brightness(.40);object-position:center 22%;">
 
-<div style="position:absolute;inset:0;
-background:linear-gradient(180deg,
-rgba(0,0,0,.15),
-rgba(0,0,0,.45),
-rgba(7,18,40,.92));"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.72));"></div>
 
 <div class="tile-body">
 
-<div class="badgeRed">
+<div class="badge badgeRed">📝 200+ Articles</div>
 
-200+ ARTICLES
-
-</div>
-
-<h3>
-
-📝 Blogger Knowledge Archive
-
-</h3>
+<h3>Blogger Knowledge Archive</h3>
 
 <p>
 
-Educational Library
-
-<br>
-
-Psychology • Counselling • Soft Skills
+Educational library covering Psychology, Counselling and Soft Skills.
 
 </p>
 
-<span class="open">
+<span class="open">Browse →</span>
 
-Browse →
+</div>
 
-</span>
+</a>
+
+<!-- CARD -->
+
+<a class="tile" href="https://ddurga.streamlit.app/" target="_blank">
+
+<img src="profile.jpg"
+style="filter:brightness(.40);object-position:center 22%;">
+
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.72));"></div>
+
+<div class="tile-body">
+
+<div class="badge badgeGreen">🤖 Free AI</div>
+
+<h3>AI Mental Health Assessment</h3>
+
+<p>
+
+Stress, Anxiety & Depression self-screening with AI wellness tools.
+
+</p>
+
+<span class="open">Start →</span>
 
 </div>
 
@@ -725,85 +706,68 @@ Browse →
 
 <style>
 
-.glass{
-
-padding:20px;
-
-text-align:center;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,215,90,.15);
-
-border-radius:22px;
-
-font-size:1rem;
-
-}
-
-.badgeGold,
-.badgeBlue,
-.badgeRed{
+.badge{
 
 display:inline-block;
 
-padding:8px 16px;
+padding:6px 14px;
 
 border-radius:999px;
-
-font-weight:700;
-
-margin-bottom:14px;
-
-}
-
-.badgeGold{
 
 background:#d4af37;
 
 color:#111;
 
-}
+font-weight:700;
 
-.badgeBlue{
+font-size:.82rem;
 
-background:#2d7cff;
-
-}
-
-.badgeRed{
-
-background:#b92d2d;
+margin-bottom:12px;
 
 }
 
-.tile{
+.badgeBlue{background:#2d7dff;color:#fff;}
 
-transition:.35s;
+.badgeRed{background:#d13b3b;color:#fff;}
+
+.badgeGreen{background:#00b37a;color:#fff;}
+
+.tile h3{
+
+font-size:1.55rem;
+
+margin-bottom:10px;
 
 }
 
-.tile:hover{
+.tile p{
 
-transform:translateY(-8px);
+font-size:.98rem;
 
-box-shadow:0 25px 60px rgba(0,0,0,.35);
+line-height:1.65;
+
+max-width:90%;
 
 }
 
 .open{
 
-margin-top:14px;
+padding:10px 24px;
 
-display:inline-block;
+font-size:.95rem;
 
 }
 
 </style>
 
-</section>
+  </section>
+
+
+
+
+
+
+
 
     
 
