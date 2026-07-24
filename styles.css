@@ -5,16 +5,16 @@
    ========================================== */
 
 :root {
-  --bg: #d5e3e8;            /* Calming therapeutic medical background */
-  --card-bg: #edf4f6;       /* Soft pale therapeutic teal-tinted cards (NOT pure white) */
-  --text: #0f172a;          /* Crisp dark text for high readability */
-  --text-muted: #334155;    /* Professional muted text */
-  --primary: #007791;       /* Professional clinical teal */
-  --primary-dark: #005f73;  /* Deep medical teal */
-  --accent: #2a9d8f;        /* Calming psychology green-teal accent */
-  --gold: #b5838d;          /* Warm therapeutic accent */
-  --border: #b5ccd3;        /* Cohesive therapeutic border color */
-  --radius: 12px;
+  --bg: #dce7eb;          /* Soothing clinical teal-gray background */
+  --card-bg: #f2f7f9;     /* Soft pale therapeutic tone for cards (not pure white) */
+  --text: #0f172a;
+  --text-muted: #334155;
+  --primary: #007791;     /* Professional clinical teal */
+  --primary-dark: #005f73;/* Deep medical teal */
+  --accent: #2a9d8f;      /* Calming psychology accent */
+  --gold: #b5838d;        /* Warm therapeutic accent */
+  --border: #b8ccd3;      /* Cohesive medical border */
+  --radius: 10px;
 }
 
 
