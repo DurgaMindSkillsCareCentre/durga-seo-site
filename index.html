@@ -8,7 +8,7 @@
 </head>
 <body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: var(--bg-color);">
 
-  <!-- Background Audio Element (Replace 'ringtone.mp3' with your audio file name) -->
+  <!-- Background Audio Element -->
   <audio id="splashAudio" src="ringtone.mp3" preload="auto" loop></audio>
 
   <div class="page-wrapper" style="text-align: center; width: 100%;">
@@ -17,7 +17,10 @@
       
       <span class="badge-tag" style="margin-bottom: 8px;">T Nagar · Chennai</span>
       <h1 style="font-size: 24px; margin-bottom: 6px; color: var(--text-main);">Durga Psychiatric Centre</h1>
-      <p class="text-muted" style="font-size: 13.5px; margin-bottom: 28px;">Best Psychologist &amp; Mental Health Clinic</p>
+      <p class="text-muted" style="font-size: 13.5px; margin-bottom: 8px;">Best Psychologist &amp; Mental Health Clinic</p>
+      
+      <!-- Visual notice for audio activation -->
+      <p style="font-size: 11.5px; color: var(--primary); margin-bottom: 20px;">🎵 Tap anywhere to enable sound</p>
       
       <button id="enterBtn" class="btn" style="background-color: var(--primary); color: #0b1329; text-decoration: none; font-weight: 700; padding: 14px 24px; border-radius: 10px; display: block; width: 100%; box-shadow: 0 4px 12px rgba(56,189,248,0.3); font-size: 15px; border: none; cursor: pointer;">
         Enter Site ➔
@@ -28,24 +31,30 @@
   <script>
     const audio = document.getElementById('splashAudio');
     
-    // Attempt to play audio automatically on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      audio.play().catch(error => {
-        // Modern browsers block autoplay until a user interacts with the page.
-        // If blocked, the audio will play instantly when the user clicks anywhere or taps the screen.
-        document.body.addEventListener('click', () => {
-          audio.play().catch(e => console.log(e));
-        }, { once: true });
+    // Function to trigger audio playback on first interaction
+    const unlockAudio = () => {
+      audio.play().then(() => {
+        window.removeEventListener('click', unlockAudio);
+        window.removeEventListener('touchstart', unlockAudio);
+      }).catch(err => {
+        console.log("Audio playback blocked:", err);
       });
+    };
+
+    // Listen for any click or touch on the page to satisfy browser autoplay requirements
+    window.addEventListener('click', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+
+    // Attempt automatic playback on load
+    audio.play().catch(() => {
+      // Handled by the window event listeners above if blocked
     });
 
-    // When the Enter button is clicked, stop the audio and navigate to home.html
+    // When Enter is clicked, stop audio and redirect to main site
     document.getElementById('enterBtn').addEventListener('click', function(e) {
       e.preventDefault();
       audio.pause();
       audio.currentTime = 0;
-      
-      // Navigate to the main site after stopping the music
       window.location.href = 'home.html';
     });
   </script>
