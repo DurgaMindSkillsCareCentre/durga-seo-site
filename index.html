@@ -19,7 +19,7 @@
       <h1 style="font-size: 24px; margin-bottom: 6px; color: var(--text-main);">Durga Psychiatric Centre</h1>
       <p class="text-muted" style="font-size: 13.5px; margin-bottom: 16px;">Best Psychologist &amp; Mental Health Clinic</p>
       
-      <!-- Manual Audio Toggle Button -->
+      <!-- Manual Audio Fallback Button -->
       <button id="audioToggleBtn" style="background: #1b2a4a; color: var(--primary); border: 1px solid var(--primary); padding: 12px 16px; border-radius: 10px; font-weight: 600; font-size: 13.5px; width: 100%; cursor: pointer; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
         🔊 Play Welcome Music
       </button>
@@ -35,17 +35,35 @@
     const audio = document.getElementById('splashAudio');
     const audioBtn = document.getElementById('audioToggleBtn');
 
+    // Helper function to play audio and update button state
+    function startAudio() {
+      audio.play().then(() => {
+        audioBtn.innerHTML = '🔇 Pause Music';
+        audioBtn.style.background = 'rgba(56, 189, 248, 0.15)';
+      }).catch(err => {
+        console.log("Autoplay blocked by browser policy. Waiting for user interaction.");
+      });
+    }
+
+    // Try auto-playing immediately on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      startAudio();
+    });
+
+    // Fallback: If browser blocks autoplay, any first click/tap on the page unlocks and starts the audio
+    const unlockAudio = () => {
+      startAudio();
+      window.removeEventListener('click', unlockAudio);
+      window.removeEventListener('touchstart', unlockAudio);
+    };
+    window.addEventListener('click', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+
+    // Manual toggle button fallback
     audioBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      
+      e.stopPropagation(); // Prevent double-triggering window listener
       if (audio.paused) {
-        audio.play().then(() => {
-          audioBtn.innerHTML = '🔇 Pause Music';
-          audioBtn.style.background = 'rgba(56, 189, 248, 0.15)';
-        }).catch(err => {
-          console.error("Playback error:", err);
-          alert("Could not play audio. Please check if 'ringtone.mp3' is uploaded correctly.");
-        });
+        startAudio();
       } else {
         audio.pause();
         audioBtn.innerHTML = '🔊 Play Welcome Music';
@@ -53,12 +71,12 @@
       }
     });
 
-    // Stop audio cleanly before redirecting to main site
+    // Stop audio cleanly and navigate to the main site when Enter is clicked
     document.getElementById('enterBtn').addEventListener('click', function(e) {
       e.preventDefault();
       audio.pause();
       audio.currentTime = 0;
-      window.location.href = 'home.html';
+      window.location.href = 'home1.html';
     });
   </script>
 
