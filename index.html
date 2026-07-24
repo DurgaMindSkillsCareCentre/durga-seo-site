@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Durga Psychiatric Centre — Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: var(--bg-color);">
+
+  <!-- Background Audio Element (Replace 'ringtone.mp3' with your audio file name) -->
+  <audio id="splashAudio" src="ringtone.mp3" preload="auto" loop></audio>
+
+  <div class="page-wrapper" style="text-align: center; width: 100%;">
+    <div class="panel" style="display: flex; flex-direction: column; align-items: center; padding: 36px 20px;">
+      <img src="profile.jpg" alt="Durga Psychiatric Centre" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
+      
+      <span class="badge-tag" style="margin-bottom: 8px;">T Nagar · Chennai</span>
+      <h1 style="font-size: 24px; margin-bottom: 6px; color: var(--text-main);">Durga Psychiatric Centre</h1>
+      <p class="text-muted" style="font-size: 13.5px; margin-bottom: 28px;">Best Psychologist &amp; Mental Health Clinic</p>
+      
+      <button id="enterBtn" class="btn" style="background-color: var(--primary); color: #0b1329; text-decoration: none; font-weight: 700; padding: 14px 24px; border-radius: 10px; display: block; width: 100%; box-shadow: 0 4px 12px rgba(56,189,248,0.3); font-size: 15px; border: none; cursor: pointer;">
+        Enter Site ➔
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('splashAudio');
+    
+    // Attempt to play audio automatically on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      audio.play().catch(error => {
+        // Modern browsers block autoplay until a user interacts with the page.
+        // If blocked, the audio will play instantly when the user clicks anywhere or taps the screen.
+        document.body.addEventListener('click', () => {
+          audio.play().catch(e => console.log(e));
+        }, { once: true });
+      });
+    });
+
+    // When the Enter button is clicked, stop the audio and navigate to home.html
+    document.getElementById('enterBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      audio.pause();
+      audio.currentTime = 0;
+      
+      // Navigate to the main site after stopping the music
+      window.location.href = 'home.html';
+    });
+  </script>
+
+</body>
+</html>
