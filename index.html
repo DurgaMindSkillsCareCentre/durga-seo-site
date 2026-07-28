@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Durga Psychiatric Centre — Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: var(--bg-color);">
+
+  <!-- Background Audio Element -->
+  <audio id="splashAudio" src="ringtone.mp3" preload="auto" loop></audio>
+
+  <div class="page-wrapper" style="text-align: center; width: 100%;">
+    <div class="panel" style="display: flex; flex-direction: column; align-items: center; padding: 30px 20px;">
+      
+      <!-- Extra Large Profile Picture -->
+      <img src="profile.jpg" alt="D. Durga - Durga Psychiatric Centre" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.5);">
+      
+      <!-- Name & Credentials -->
+      <h1 style="font-size: 22px; margin-bottom: 4px; color: var(--text-main);">D. Durga</h1>
+      <p style="font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 8px;">DPN, DAHM, BBA, MBA, MSW</p>
+      
+      <span class="badge-tag" style="margin-bottom: 8px;">Durga Psychiatric Centre</span>
+      <p class="text-muted" style="font-size: 13px; margin-bottom: 14px;">Best Psychologist &amp; Mental Health Clinic — T Nagar, Chennai</p>
+      
+      <!-- Address Details -->
+      <div style="background: #1b2a4a; border: 1px solid var(--border-color); padding: 10px 14px; border-radius: 10px; font-size: 12px; color: var(--text-muted); margin-bottom: 16px; width: 100%; line-height: 1.4;">
+        📍 Old No.14, New No.29, Srinivasa Nagar,<br>Near Aruna Hotel, T Nagar, Chennai – 600017
+      </div>
+
+      <!-- Manual Audio Toggle Button -->
+      <button id="audioToggleBtn" style="background: #1b2a4a; color: var(--primary); border: 1px solid var(--primary); padding: 12px 16px; border-radius: 10px; font-weight: 600; font-size: 13.5px; width: 100%; cursor: pointer; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        🔊 Play Welcome Music
+      </button>
+
+      <!-- Enter Site Button -->
+      <button id="enterBtn" class="btn" style="background-color: var(--primary); color: #0b1329; text-decoration: none; font-weight: 700; padding: 14px 24px; border-radius: 10px; display: block; width: 100%; box-shadow: 0 4px 12px rgba(56,189,248,0.3); font-size: 15px; border: none; cursor: pointer; margin-bottom: 12px;">
+        Enter Site ➔
+      </button>
+
+      <!-- Bottom Quick Action Buttons: Call (Left) & WhatsApp (Right) -->
+      <div style="display: flex; gap: 10px; width: 100%;">
+        <a href="tel:+917395944527" class="action-trigger" style="flex: 1; background: #1b2a4a; color: var(--primary); border: 1px solid var(--primary); text-decoration: none; padding: 12px 10px; border-radius: 10px; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+          📞 Call Now
+        </a>
+        <a href="https://wa.me/917395944527" target="_blank" rel="noopener noreferrer" class="action-trigger" style="flex: 1; background: #064e3b; color: #34d399; border: 1px solid #34d399; text-decoration: none; padding: 12px 10px; border-radius: 10px; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+          💬 WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('splashAudio');
+    const audioBtn = document.getElementById('audioToggleBtn');
+
+    // Function to handle redirection safely
+    function redirectToHome() {
+      audio.pause();
+      audio.currentTime = 0;
+      window.location.href = 'home.html';
+    }
+
+    // Automatic 3-second timer redirect (3000 milliseconds = 3 seconds)
+    const autoRedirectTimer = setTimeout(() => {
+      redirectToHome();
+    }, 3000);
+
+    // Manual playback toggle via direct button click
+    audioBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (audio.paused) {
+        audio.play().then(() => {
+          audioBtn.innerHTML = '🔇 Pause Music';
+          audioBtn.style.background = 'rgba(56, 189, 248, 0.15)';
+        }).catch(err => {
+          console.error("Playback error:", err);
+        });
+      } else {
+        audio.pause();
+        audioBtn.innerHTML = '🔊 Play Welcome Music';
+        audioBtn.style.background = '#1b2a4a';
+      }
+    });
+
+    // When Enter button is clicked, cancel the auto-timer and go immediately
+    document.getElementById('enterBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      clearTimeout(autoRedirectTimer);
+      redirectToHome();
+    });
+
+    // If the user clicks Call or WhatsApp, cancel the auto-timer so they aren't yanked away mid-call/chat opening
+    document.querySelectorAll('.action-trigger').forEach(el => {
+      el.addEventListener('click', () => {
+        clearTimeout(autoRedirectTimer);
+      });
+    });
+  </script>
+
+</body>
+</html>
